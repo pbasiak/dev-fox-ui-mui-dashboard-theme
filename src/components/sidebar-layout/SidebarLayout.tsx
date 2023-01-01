@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ReactNode, useState } from 'react';
+import { Navigation } from './components/navigation/Navigation';
 
 const drawerWidth = 240;
 
@@ -73,7 +74,7 @@ interface Props {
 
 export function SidebarLayout({children}: Props) {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -121,6 +122,7 @@ export function SidebarLayout({children}: Props) {
           </IconButton>
         </DrawerHeader>
         <Divider />
+        <Navigation />
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
