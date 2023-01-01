@@ -5,6 +5,8 @@ import {
   createReactRouter,
   createRouteConfig
 } from "@tanstack/react-router";
+import { ThemeProvider } from '@mui/material';
+import { AppTheme } from './theme/theme';
 
 const rootRoute = createRouteConfig({
     "component": () => <>
@@ -35,7 +37,7 @@ const rootRoute = createRouteConfig({
   router = createReactRouter({routeConfig});
 
 export function App () {
-  return <RouterProvider router={router} />;
+  return <ThemeProvider theme={AppTheme}><RouterProvider router={router} /></ThemeProvider>;
 }
 
 function Index () {

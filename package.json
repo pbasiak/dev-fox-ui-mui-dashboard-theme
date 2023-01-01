@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
     "@mui/material": "^5.11.2",
     "@tanstack/react-router": "0.0.1-beta.38",
     "@testing-library/jest-dom": "^5.16.5",
@@ -40,7 +41,10 @@
       "sort-vars": "off",
       "sort-keys": "off",
       "sort-imports": "off",
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "no-multiple-empty-lines": "error"
     },
     "overrides": [
