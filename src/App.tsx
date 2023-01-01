@@ -1,32 +1,22 @@
 import {
-  Link,
-  Outlet,
   RouterProvider,
   createReactRouter,
   createRouteConfig
 } from "@tanstack/react-router";
 import { ThemeProvider } from '@mui/material';
 import { AppTheme } from './theme/theme';
+import { Dashboard } from './pages/dashboard/Dashboard';
 
-const rootRoute = createRouteConfig({
-    "component": () => <>
-      <div>
-        <Link to="/">Home</Link> <Link to="/about">About</Link>
-      </div>
-      <hr />
-      <Outlet />
-    </>
-
-  }),
+const rootRoute = createRouteConfig(),
 
   indexRoute = rootRoute.createRoute({
     "path": "/",
-    "component": Index
+    "component": Dashboard
   }),
 
   aboutRoute = rootRoute.createRoute({
     "path": "/about",
-    "component": About
+    "component": Dashboard
   }),
 
   routeConfig = rootRoute.addChildren([
@@ -39,19 +29,6 @@ const rootRoute = createRouteConfig({
 export function App () {
   return <ThemeProvider theme={AppTheme}><RouterProvider router={router} /></ThemeProvider>;
 }
-
-function Index () {
-  return (
-    <div>
-      <h3>Welcome Home!</h3>
-    </div>
-  );
-}
-
-function About () {
-  return <div>Hello from About!</div>;
-}
-
 
 declare module "@tanstack/react-router" {
   interface RegisterRouter {
