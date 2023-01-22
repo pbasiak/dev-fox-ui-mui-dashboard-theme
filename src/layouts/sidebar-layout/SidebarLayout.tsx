@@ -1,7 +1,5 @@
 import {
   Box,
-  CssBaseline,
-  Divider,
   Drawer,
   IconButton,
   styled,
@@ -17,7 +15,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ReactNode, useState } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
-const drawerWidth = 240;
+import Devpebe from './assets/devpebe-logo.png';
+
+const drawerWidth = 270;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -65,7 +65,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: 'center',
 }));
 
 interface Props {
@@ -86,8 +86,7 @@ export function SidebarLayout({children}: Props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} color='transparent'>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -117,11 +116,11 @@ export function SidebarLayout({children}: Props) {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <img src={Devpebe} width={120} />
+          <IconButton onClick={handleDrawerClose} sx={{ position: 'absolute', right: '0', top: '12px', transform: 'translateX(-50%)'}}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
-        <Divider />
         <Navigation />
       </Drawer>
       <Main open={open}>

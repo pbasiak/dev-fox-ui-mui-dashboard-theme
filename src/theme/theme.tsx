@@ -1,8 +1,8 @@
 import {createTheme} from "@mui/material";
 
 const Colors = {
-  primary: "#2962ff",
-  secondary: "#ff5252",
+  primary: "#2962FF",
+  secondary: "#FF5252",
 }
 
 export const AppTheme = createTheme({
@@ -20,5 +20,19 @@ export const AppTheme = createTheme({
         disableRipple: true,
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+        }
+      }
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          borderRight: '1px dashed rgba(0, 0, 0, 0.1)',
+        }
+      }
+    }
   },
 });

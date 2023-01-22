@@ -1,4 +1,4 @@
-import { SidebarLayout } from '../../components/sidebar-layout/SidebarLayout';
+import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 
 export const Dashboard = () => {
   return (

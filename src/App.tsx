@@ -3,7 +3,7 @@ import {
   createReactRouter,
   createRouteConfig
 } from "@tanstack/react-router";
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppTheme } from './theme/theme';
 import { Dashboard } from './pages/dashboard/Dashboard';
 
@@ -27,7 +27,10 @@ const rootRoute = createRouteConfig(),
   router = createReactRouter({routeConfig});
 
 export function App () {
-  return <ThemeProvider theme={AppTheme}><RouterProvider router={router} /></ThemeProvider>;
+  return <ThemeProvider theme={AppTheme}>
+    <CssBaseline />
+    <RouterProvider router={router} />
+  </ThemeProvider>;
 }
 
 declare module "@tanstack/react-router" {
