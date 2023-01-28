@@ -1,0 +1,17 @@
+import { Box, Grid, styled, Typography } from '@mui/material';
+
+export const WidgetContainer = styled(Grid)(({ theme }) => ({
+  border: `1px solid #F0F0F0`,
+  padding: theme.spacing(2),
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: '0 3px 12px 0 rgba(0, 0, 0, 0.05)',
+}))
+
+export const WidgetTitleContainer = styled(Box)(({ theme }) => ({
+
+}))
+
+export const WidgetTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: theme.typography.fontWeightMedium,
+  fontSize: '14px',
+}))
