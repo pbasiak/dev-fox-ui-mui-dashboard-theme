@@ -2,9 +2,13 @@ import {createTheme} from "@mui/material";
 
 const sidebarColors = {
   sidebarIconColor: '#94a8bd',
-  sidebarIconColorHover: '#54afff',
-  sidebarButtonBackgroundColorHover: '#e6f4ff',
+  sidebarIconColorHover: '#94a8bd',
+  sidebarIconColorActive: '#54afff',
+  sidebarButtonBackgroundColorHover: '#f5f7ff',
+  sidebarButtonBackgroundColorActive: '#e6f4ff',
   sidebarButtonTextColor: '#70768a',
+  sidebarButtonTextColorActive: '#3198ff',
+  sidebarButtonTextColorHover: '#70768a',
   sidebarTextColor: '#70768a',
 }
 

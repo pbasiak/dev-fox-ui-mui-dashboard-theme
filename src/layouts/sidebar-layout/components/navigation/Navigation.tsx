@@ -9,7 +9,7 @@ import { Colors } from '../../../../theme/theme';
 
 const menuItems: NavigationItemType[] = [
   {
-    path: '/dashboard',
+    path: '/',
     label: 'Dashboard',
     icon: (props: any) => <DashboardIcon {...props} />,
   },
@@ -37,6 +37,7 @@ const menuItems: NavigationItemType[] = [
 ]
 
 export function Navigation() {
+
   const navigationItems = menuItems.map((item) => {
     return (
       <NavigationItem {...item} />
