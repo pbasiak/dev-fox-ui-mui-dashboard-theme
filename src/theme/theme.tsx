@@ -1,18 +1,32 @@
 import {createTheme} from "@mui/material";
 
-const Colors = {
-  primary: "#2962FF",
-  secondary: "#FF5252",
+const sidebarColors = {
+  sidebarIconColor: '#94a8bd',
+  sidebarIconColorHover: '#54afff',
+  sidebarButtonBackgroundColorHover: '#e6f4ff',
+  sidebarButtonTextColor: '#70768a',
+  sidebarTextColor: '#70768a',
 }
+
+export const Colors = {
+  primary: "#108DFF",
+  secondary: "#FF5252",
+  baseTextColor: '#0C1722',
+  ...sidebarColors
+}
+
 
 export const AppTheme = createTheme({
   palette: {
     primary: {
-      main: Colors.primary
+      main: Colors.primary,
     },
     secondary: {
       main: Colors.secondary
-    }
+    },
+    text: {
+      primary: Colors.baseTextColor
+    },
   },
   components: {
     MuiButtonBase: {

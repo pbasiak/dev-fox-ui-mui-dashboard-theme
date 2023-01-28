@@ -5,6 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import { NavigationItem } from './components/navigation-item/NavigationItem';
 import { NavigationItemType } from './components/navigation-item/types';
 import { ImportContacts, SignalWifiConnectedNoInternet4 } from '@mui/icons-material';
+import { Colors } from '../../../../theme/theme';
 
 const menuItems: NavigationItemType[] = [
   {
@@ -48,7 +49,7 @@ export function Navigation() {
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader"sx={{ textTransform: 'uppercase', fontSize: '11px', fontWeight: 'bold', pl: 2.2 }}>
+        <ListSubheader component="div" id="nested-list-subheader" sx={{ textTransform: 'uppercase', fontSize: '11px', fontWeight: 'bold', pl: 2.2, color: Colors.sidebarTextColor }}>
           Navigation
         </ListSubheader>
       }

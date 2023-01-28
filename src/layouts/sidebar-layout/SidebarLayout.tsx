@@ -1,7 +1,7 @@
 import {
   Box,
   Drawer,
-  IconButton,
+  IconButton, Stack,
   styled,
   Toolbar,
   Typography,
@@ -15,7 +15,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ReactNode, useState } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
-import Devpebe from './assets/devpebe-logo.png';
+import Logo from '../../assets/logo.svg';
+import { DrawerLogoText } from './styled';
 
 const drawerWidth = 270;
 
@@ -62,10 +63,10 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(0, 1),
+  padding: theme.spacing(2, 2, 2, 4),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: 'center',
+  justifyContent: 'space-between',
 }));
 
 interface Props {
@@ -116,8 +117,11 @@ export function SidebarLayout({children}: Props) {
         open={open}
       >
         <DrawerHeader>
-          <img src={Devpebe} width={120} />
-          <IconButton onClick={handleDrawerClose} sx={{ position: 'absolute', right: '0', top: '12px', transform: 'translateX(-50%)'}}>
+          <Stack direction={'row'} alignItems={'center'} justifyContent={'flex-start'}>
+            <img src={Logo} width={50} />
+            <DrawerLogoText variant="h6">DevZone</DrawerLogoText>
+          </Stack>
+          <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>

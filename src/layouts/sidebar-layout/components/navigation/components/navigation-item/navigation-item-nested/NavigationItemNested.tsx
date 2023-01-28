@@ -1,6 +1,4 @@
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
 import { NavigationItemIconProps, NavigationItemNestedType } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -9,6 +7,7 @@ import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import * as React from 'react';
 import { NavigationItemSimple } from '../navigation-item-simple/NavigationItemSimple';
+import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
 
 interface Props extends NavigationItemNestedType {
   iconColor?: NavigationItemIconProps['color'];
@@ -32,13 +31,13 @@ export const NavigationItemNested = (item: Props) => {
 
   return  (
     <>
-      <ListItemButton onClick={handleToggleOpen} >
-        <ListItemIcon>
+      <NavigationListItemButton onClick={handleToggleOpen} >
+        <NavigationListItemIcon>
           {item.icon(iconProps)}
-        </ListItemIcon>
+        </NavigationListItemIcon>
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
         {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
+      </NavigationListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {nestedItems}

@@ -1,9 +1,8 @@
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
 import { useCallback } from 'react';
 import { NavigationItemIconProps, NavigationItemSimpleType } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
+import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
 
 interface Props extends NavigationItemSimpleType {
   iconColor?: NavigationItemIconProps['color'];
@@ -16,15 +15,16 @@ export const NavigationItemSimple = (item: Props) => {
   }, [item]);
 
   const iconProps: NavigationItemIconProps = {
-    color: item?.iconColor || item?.active ? 'primary' : 'action',
+    // color: item?.iconColor || item?.active ? 'primary' : 'action',
+    // sx: { color: Colors.sidebarIconColor, '&:hover': {color: Colors.sidebarIconColorHover} },
   }
 
   return (
-    <ListItemButton onClick={handleClick} sx={{ paddingLeft: item.nested ? 4 : 2 }}>
-      <ListItemIcon>
+    <NavigationListItemButton onClick={handleClick} sx={{ paddingLeft: item.nested ? 4 : 2 }}>
+      <NavigationListItemIcon>
         {item.icon(iconProps)}
-      </ListItemIcon>
+      </NavigationListItemIcon>
       <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
-    </ListItemButton>
+    </NavigationListItemButton>
   );
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import { SvgIconProps } from '@mui/material';
 
-export interface NavigationItemIconProps {
-  color: SvgIconProps['color'];
-}
+export type NavigationItemIconProps = SvgIconProps;
 export interface NavigationItemBaseType {
   label: string;
   icon: (props: any) => React.ReactElement;
