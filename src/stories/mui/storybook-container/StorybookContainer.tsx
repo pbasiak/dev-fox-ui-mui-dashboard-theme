@@ -7,7 +7,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-export const Container = ({children}: {children: ReactNode}) => {
+export const StorybookContainer = ({children}: {children: ReactNode}) => {
   return (<ThemeProvider theme={AppTheme}>
     {children}
   </ThemeProvider>)
