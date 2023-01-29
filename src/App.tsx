@@ -37,8 +37,9 @@ const router = createBrowserRouter([
 const queryClient = new QueryClient();
 
 const AppRouter = () => {
-  const user = useUser();
-  if (!user) {
+  const { user } = useUser();
+
+  if (user.id === null) {
     return <Loader />;
   }
   return (<RouterProvider router={router} />)

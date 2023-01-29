@@ -3,13 +3,11 @@ import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 import { useUser } from '../../hooks/api/use-user/useUser';
 
 export const UserAccountPage = () => {
-  const user = useUser();
-  console.log('XXXX', user);
+  const { user } = useUser();
 
   return (
     <SidebarLayout>
-      {/*@ts-ignore*/}
-      {user?.firstName}
+      {user.firstName}
     </SidebarLayout>
   )
 }

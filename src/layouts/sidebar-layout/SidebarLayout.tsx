@@ -16,6 +16,7 @@ import { Navigation } from './components/navigation/Navigation';
 
 import Logo from '../../assets/logo.svg';
 import { DrawerLogoText } from './styled';
+import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
 
 const drawerWidth = 270;
 
@@ -98,9 +99,7 @@ export function SidebarLayout({children}: Props) {
             >
               <MenuIcon />
             </IconButton>
-            <Box>
-              Menu
-            </Box>
+            <ToolbarElements />
           </Stack>
         </Toolbar>
       </AppBar>

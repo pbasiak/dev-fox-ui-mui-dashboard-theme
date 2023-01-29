@@ -2,7 +2,7 @@ import List from '@mui/material/List';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { NavigationItem } from './components/navigation-item/NavigationItem';
 import { NavigationItemType } from './components/navigation-item/types';
-import { Abc, AccountBox, ColorLens, DesignServices, People, Person, PersonAdd } from '@mui/icons-material';
+import { Abc, AccountBox, ColorLens, DesignServices, People, Person, PersonAdd, ShapeLine } from '@mui/icons-material';
 
 const menuItems: NavigationItemType[] = [
   {
@@ -63,6 +63,17 @@ const menuItems: NavigationItemType[] = [
         path: '/theme/colors',
         label: 'Colors',
         icon: (props:any) => <ColorLens {...props} />,
+      },
+    ]
+  },
+  {
+    label: 'Components',
+    icon: (props: any) => <ShapeLine {...props} />,
+    items: [
+      {
+        path: '/theme/components',
+        label: 'TODO',
+        icon: (props:any) => <DashboardIcon {...props} />,
       },
     ]
   },
