@@ -6,11 +6,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { routes } from './contants/routes';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout';
 import { ColorsPage } from './demo-pages/colors-page/ColorsPage';
+import { UserAccountPage } from './pages/user-account-page/UserAccountPage';
 
 const router = createBrowserRouter([
   {
     path: routes.dashboard,
     element: <Dashboard />,
+  },
+  {
+    path: routes.userAccount,
+    element: <UserAccountPage />
   },
   {
     path: routes.themeColors,
