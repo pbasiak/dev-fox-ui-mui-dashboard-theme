@@ -10,6 +10,7 @@ import { UserAccountPage } from './pages/user-account-page/UserAccountPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useUser } from './hooks/api/use-user/useUser';
 import { Loader } from './components/loader/Loader';
+import { PageNotFound } from './components/page-not-found/PageNotFound';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <SidebarLayout>Not ready</SidebarLayout>,
+    element: <SidebarLayout><PageNotFound /></SidebarLayout>,
   },
 ])
 
