@@ -7,6 +7,9 @@ import { routes } from './contants/routes';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout';
 import { ColorsPage } from './demo-pages/colors-page/ColorsPage';
 import { UserAccountPage } from './pages/user-account-page/UserAccountPage';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useUser } from './hooks/api/use-user/useUser';
+import { Loader } from './components/loader/Loader';
 
 const router = createBrowserRouter([
   {
@@ -31,9 +34,21 @@ const router = createBrowserRouter([
   },
 ])
 
+const queryClient = new QueryClient();
+
+const AppRouter = () => {
+  const user = useUser();
+  if (!user) {
+    return <Loader />;
+  }
+  return (<RouterProvider router={router} />)
+}
+
 export function App () {
   return <ThemeProvider theme={AppTheme}>
     <CssBaseline />
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <AppRouter />
+    </QueryClientProvider>
   </ThemeProvider>;
 }

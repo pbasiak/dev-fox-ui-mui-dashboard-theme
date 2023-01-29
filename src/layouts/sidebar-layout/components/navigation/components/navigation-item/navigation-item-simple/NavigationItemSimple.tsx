@@ -18,8 +18,6 @@ export const NavigationItemSimple = (item: Props) => {
     navigate(item.path);
   }, [item.path, navigate]);
 
-  console.log(location);
-
   const iconProps: NavigationItemIconProps = {
     // color: item?.iconColor || item?.active ? 'primary' : 'action',
     // sx: { color: Colors.sidebarIconColor, '&:hover': {color: Colors.sidebarIconColorHover} },
