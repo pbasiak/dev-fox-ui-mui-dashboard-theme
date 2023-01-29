@@ -16,5 +16,9 @@ export interface NavigationItemNestedType extends NavigationItemBaseType {
   items: NavigationItemSimpleType[];
 }
 
-export type NavigationItemType = NavigationItemSimpleType | NavigationItemNestedType;
+export interface NavigationItemHeaderType {
+  header: string;
+}
+
+export type NavigationItemType = NavigationItemSimpleType | NavigationItemNestedType | NavigationItemHeaderType;
 

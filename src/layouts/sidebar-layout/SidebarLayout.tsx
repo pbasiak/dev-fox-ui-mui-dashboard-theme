@@ -4,7 +4,6 @@ import {
   IconButton, Stack,
   styled,
   Toolbar,
-  Typography,
   useTheme,
 } from '@mui/material';
 
@@ -88,19 +87,21 @@ export function SidebarLayout({children}: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" open={open} color='transparent'>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
-          </Typography>
+        <Toolbar sx={{ backgroundColor: 'rgba(255,255,255, 0.9)' }}>
+          <Stack justifyContent={open ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
+            <IconButton
+              color="inherit"
+              aria-label="open navigation"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Box>
+              Menu
+            </Box>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { NavigationItemIconProps, NavigationItemSimpleType } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
 import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
+import { useNavigate } from 'react-router-dom';
 
 interface Props extends NavigationItemSimpleType {
   iconColor?: NavigationItemIconProps['color'];
@@ -11,10 +12,11 @@ interface Props extends NavigationItemSimpleType {
 
 export const NavigationItemSimple = (item: Props) => {
   const location = window.location.pathname;
+  const navigate = useNavigate();
   const isActive = location === item.path;
   const handleClick = useCallback(() => {
-    console.log(item?.path);
-  }, [item]);
+    navigate(item.path);
+  }, [item.path, navigate]);
 
   console.log(location);
 
