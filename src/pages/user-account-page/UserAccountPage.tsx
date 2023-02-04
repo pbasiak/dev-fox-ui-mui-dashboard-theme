@@ -1,7 +1,7 @@
 import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 
 import { useUser } from '../../hooks/api/use-user/useUser';
-import { Box, Button, Card, CardActions, CardContent, Container, Tab, TabProps, Tabs } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardHeader, Container, Tab, TabProps, Tabs } from '@mui/material';
 import { PageHeader } from '../../components/page-header/PageHeader';
 import React, { useCallback } from 'react';
 import { Link, Person, Settings } from '@mui/icons-material';
@@ -62,6 +62,9 @@ export const UserAccountPage = () => {
     defaultValues: {
       [AccountFieldsNames.firstName]: user?.firstName,
       [AccountFieldsNames.lastName]: user?.lastName,
+      [AccountFieldsNames.email]: user?.email,
+      [AccountFieldsNames.phone]: user?.phone,
+      [AccountFieldsNames.username]: user?.username,
     }
   });
 
@@ -82,16 +85,21 @@ export const UserAccountPage = () => {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <Card sx={{ padding: 3 }}>
-              <form onSubmit={handleSubmit(handleSave)}>
+            <form onSubmit={handleSubmit(handleSave)}>
+              <Card sx={{ padding: 1 }}>
+                <CardHeader title={'Account'} subheader={'Basic settings'}  />
                 <CardContent>
                   <FormTextField<AccountFormValues> register={register} errors={errors} name={AccountFieldsNames.firstName} label={'First name'} />
                   <FormTextField<AccountFormValues> register={register} errors={errors} name={AccountFieldsNames.lastName} label={'Last name'} />
+                  <FormTextField<AccountFormValues> register={register} errors={errors} name={AccountFieldsNames.username} textFieldProps={{ disabled: true }} label={'Username'} />
+                  <FormTextField<AccountFormValues> register={register} errors={errors} name={AccountFieldsNames.email} label={'Email'} />
+                  <FormTextField<AccountFormValues> register={register} errors={errors} name={AccountFieldsNames.phone} label={'Phone'} />
                 </CardContent>
 
                 <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}><Button variant={'contained'}>Save changes</Button></CardActions>
-              </form>
-            </Card>
+              </Card>
+            </form>
+              
           </TabPanel>
           <TabPanel value={value} index={1}>
             Item Two

@@ -13,12 +13,13 @@ interface FormTextFieldProps<TFormValues extends FieldValues> {
 
 export function FormTextField <TFormValues extends FieldValues>({ register, errors, name, label, formControlProps, textFieldProps }: FormTextFieldProps<TFormValues>) {
   const isError = Boolean(errors && errors[name]);
+  const errorMessage = errors && errors[name]?.message;
 
   return (
     <FormControl fullWidth margin={'normal'} {...formControlProps}>
       <TextField error={isError} {...textFieldProps} {...register(name)} label={label} size={'small'}/>
-      {/*@ts-ignore TODO: fix*/}
-      {isError ? <FormHelperText error >{errors[name].message}</FormHelperText> : null}
+      {/*// @ts-ignore TODO: FIX */}
+      {isError ? <FormHelperText error>{errorMessage}</FormHelperText> : null}
     </FormControl>
   )
 }

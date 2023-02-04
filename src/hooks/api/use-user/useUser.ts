@@ -13,6 +13,9 @@ export const useUser = (): UserReturn => {
       lastName: user?.lastName || '',
       image: user?.image || '',
       email: user?.email || '',
+      phone: user?.phone || '',
+      username: user?.username || '',
+      birthDate: user?.birthDate || '',
     },
     ...result
   }

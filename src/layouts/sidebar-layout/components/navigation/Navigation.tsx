@@ -6,7 +6,7 @@ import { Abc, AccountBox, ColorLens, DesignServices, People, Person, PersonAdd, 
 
 const menuItems: NavigationItemType[] = [
   {
-    header: 'Navigation',
+    header: 'Dashboards',
   },
   {
     path: '/',
@@ -14,7 +14,7 @@ const menuItems: NavigationItemType[] = [
     icon: (props: any) => <DashboardIcon {...props} />,
   },
   {
-    header: 'Management',
+    header: 'Apps & Pages',
   },
   {
     label: 'User',
@@ -43,10 +43,10 @@ const menuItems: NavigationItemType[] = [
     ]
   },
   {
-    header: 'Theme',
+    header: 'Documentation',
   },
   {
-    label: 'Base',
+    label: 'Theme',
     icon: (props: any) => <DesignServices {...props} />,
     items: [
       {
@@ -82,7 +82,7 @@ const menuItems: NavigationItemType[] = [
 export function Navigation() {
   const navigationItems = menuItems.map((item) => {
     return (
-      <NavigationItem {...item} />
+      <NavigationItem key={Object.values(item).toString()} {...item} />
     );
   });
 

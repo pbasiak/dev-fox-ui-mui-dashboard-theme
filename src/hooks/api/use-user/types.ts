@@ -6,6 +6,9 @@ export interface User {
   lastName: string;
   image: string;
   email: string;
+  phone: string;
+  username: string;
+  birthDate: string;
 }
 
 export type UserReturn = UseQueryResult & {
