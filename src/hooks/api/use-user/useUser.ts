@@ -4,7 +4,7 @@ import { UserReturn } from './types';
 
 export const useUser = (): UserReturn => {
   const result = useQuery({queryKey: ['user'], queryFn: () => users});
-  const user = result?.data?.users[0];
+  const user = result?.data?.users[1];
 
   return {
     user: {

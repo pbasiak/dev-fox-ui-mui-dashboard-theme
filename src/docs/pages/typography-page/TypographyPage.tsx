@@ -1,4 +1,4 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
+import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Box } from '@mui/material';
 import { DemoTypography } from './styled';
 

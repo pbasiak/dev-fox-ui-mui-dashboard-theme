@@ -19,7 +19,6 @@ export const Colors = {
   ...sidebarColors
 }
 
-
 export const AppTheme = createTheme({
   palette: {
     primary: {
@@ -33,10 +32,35 @@ export const AppTheme = createTheme({
     },
   },
   components: {
-    MuiButtonBase: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundColor: '#fdfdfd',
+        }
+      }
+    },
+    MuiButton: {
       defaultProps: {
         disableRipple: true,
       },
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
+          boxShadow: 'none',
+        },
+        contained: {
+          boxShadow: '5px 3px 0px 0 rgba(16, 141, 255, 0.1)',
+        },
+        sizeSmall: {
+          padding: '2px 12px',
+        },
+        sizeMedium: {
+          padding: '4px 16px',
+        },
+        sizeLarge: {
+          padding: '6px 22px',
+        },
+      }
     },
     MuiAppBar: {
       styleOverrides: {
@@ -49,6 +73,13 @@ export const AppTheme = createTheme({
       styleOverrides: {
         paper: {
           borderRight: '1px dashed rgba(0, 0, 0, 0.1)',
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)',
         }
       }
     }

@@ -1,4 +1,4 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
+import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Box, Typography } from '@mui/material';
 import { ColorStack } from './styled';
 

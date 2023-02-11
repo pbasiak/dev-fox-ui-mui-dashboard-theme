@@ -7,6 +7,7 @@ export enum AccountFieldsNames {
   email = "email",
   phone = "phone",
   birthDate = "birthDate",
+  age = "age",
 }
 
 export const accountSchema = yup.object({
@@ -16,6 +17,7 @@ export const accountSchema = yup.object({
   [AccountFieldsNames.email]: yup.string().email().required(),
   [AccountFieldsNames.phone]: yup.string().required(),
   [AccountFieldsNames.birthDate]: yup.string().required(),
+  [AccountFieldsNames.age]: yup.number(),
 }).required();
 
 export type AccountFormValues = yup.InferType<typeof accountSchema>;

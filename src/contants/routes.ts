@@ -1,5 +1,6 @@
 const themePrefix = '/theme';
 const userPrefix = '/user';
+const componentPrefix = `${themePrefix}/component`;
 
 export const routes = {
   dashboard: '/',
@@ -11,4 +12,5 @@ export const routes = {
   themeGeneral: `${themePrefix}/general`,
   themeTypography: `${themePrefix}/typography`,
   themeColors: `${themePrefix}/colors`,
+  componentsButton: `${componentPrefix}/button`,
 }
