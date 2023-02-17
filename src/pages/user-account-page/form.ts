@@ -8,9 +8,13 @@ export enum AccountFieldsNames {
   phone = "phone",
   birthDate = "birthDate",
   age = "age",
+  facebook = "facebook",
+  twitter = "twitter",
+  instagram = "instagram",
+  linkedin = "linkedin",
 }
 
-export const accountSchema = yup.object({
+export const accountGeneralFormSchema = yup.object({
   [AccountFieldsNames.firstName]: yup.string().required(),
   [AccountFieldsNames.lastName]: yup.string().required(),
   [AccountFieldsNames.username]: yup.string().required(),
@@ -18,6 +22,15 @@ export const accountSchema = yup.object({
   [AccountFieldsNames.phone]: yup.string().required(),
   [AccountFieldsNames.birthDate]: yup.string().required(),
   [AccountFieldsNames.age]: yup.number(),
-}).required();
+});
 
-export type AccountFormValues = yup.InferType<typeof accountSchema>;
+export type AccountGeneralForm = yup.InferType<typeof accountGeneralFormSchema>;
+
+export const accountSocialLinksFormSchema = yup.object({
+  [AccountFieldsNames.facebook]: yup.string().url(),
+  [AccountFieldsNames.twitter]: yup.string().url(),
+  [AccountFieldsNames.instagram]: yup.string().url(),
+  [AccountFieldsNames.linkedin]: yup.string().url(),
+});
+
+export type AccountSocialLinksForm = yup.InferType<typeof accountSocialLinksFormSchema>;

@@ -1,4 +1,5 @@
 import {createTheme} from "@mui/material";
+import { themeShadows } from './shadows';
 
 const sidebarColors = {
   sidebarIconColor: '#94a8bd',
@@ -13,9 +14,10 @@ const sidebarColors = {
 }
 
 export const Colors = {
-  primary: "#108DFF",
+  primary: "#116af6",
   secondary: "#FF5252",
   baseTextColor: '#0C1722',
+  textGray: '#6A6A6A',
   ...sidebarColors
 }
 
@@ -30,7 +32,25 @@ export const AppTheme = createTheme({
     text: {
       primary: Colors.baseTextColor
     },
+    divider: 'rgba(0, 0, 0, 0.10)',
   },
+  shape: {
+    borderRadius: 8
+  },
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+  shadows: themeShadows,
   components: {
     MuiCssBaseline: {
       styleOverrides: {
@@ -41,11 +61,11 @@ export const AppTheme = createTheme({
     },
     MuiButton: {
       defaultProps: {
-        disableRipple: true,
+        // disableRipple: true,
       },
       styleOverrides: {
         root: {
-          borderRadius: 16,
+          textTransform: 'none',
           boxShadow: 'none',
         },
         contained: {
@@ -55,10 +75,10 @@ export const AppTheme = createTheme({
           padding: '2px 12px',
         },
         sizeMedium: {
-          padding: '4px 16px',
+          padding: '6px 18px',
         },
         sizeLarge: {
-          padding: '6px 22px',
+          padding: '10px 24px',
         },
       }
     },
@@ -76,12 +96,5 @@ export const AppTheme = createTheme({
         }
       }
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)',
-        }
-      }
-    }
   },
 });
