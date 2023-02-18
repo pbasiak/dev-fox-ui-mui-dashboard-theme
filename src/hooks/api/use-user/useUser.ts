@@ -1,22 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import users from '../../../mocks/users.json';
-import { UserReturn } from './types';
+import { UserReturn } from '../use-current-user/types';
+import { useCurrentUser } from '../use-current-user/useCurrentUser';
 
-export const useUser = (): UserReturn => {
-  const result = useQuery({queryKey: ['user'], queryFn: () => users});
-  const user = result?.data?.users[1];
+export const useUser = ({ id }: { id?: number } = {}): UserReturn => {
+  const { data } = useCurrentUser();
+  return useQuery({queryKey: ['user'], queryFn: () => users.users.find((user) => user.id === id || user.id === data?.id)});
 
-  return {
-    user: {
-      id: user?.id || null,
-      firstName: user?.firstName || '',
-      lastName: user?.lastName || '',
-      image: user?.image || '',
-      email: user?.email || '',
-      phone: user?.phone || '',
-      username: user?.username || '',
-      birthDate: user?.birthDate || '',
-    },
-    ...result
-  }
 }

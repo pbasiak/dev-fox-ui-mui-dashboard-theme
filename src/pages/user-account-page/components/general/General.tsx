@@ -14,10 +14,11 @@ import { AccountFieldsNames, AccountGeneralForm, accountGeneralFormSchema } from
 import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useUser } from '../../../../hooks/api/use-user/useUser';
+import { useCurrentUser } from '../../../../hooks/api/use-current-user/useCurrentUser';
+import { Loader } from '../../../../components/loader/Loader';
 
 export const General = () => {
-  const { user } = useUser();
+  const { data: user, isLoading } = useCurrentUser();
 
   const { register, handleSubmit, formState: { errors } } = useForm<AccountGeneralForm>({
     resolver: yupResolver(accountGeneralFormSchema),
@@ -33,6 +34,9 @@ export const General = () => {
   const handleSave = useCallback((data: AccountGeneralForm) => {
     console.log(data);
   }, [])
+
+  if (isLoading) return (<Loader />)
+  if (!user) return null;
 
   return (
     <form onSubmit={handleSubmit(handleSave)}>

@@ -1,10 +1,9 @@
-import { useUser } from '../../../../hooks/api/use-user/useUser';
 import { UserMenuContainer, UserMenuIconButton, UserMenuInfo, UserMenuMenu, UserMenuMenuItem } from './styled';
 import React, { useState } from 'react';
 import { Typography } from '@mui/material';
+import { User } from '../../../../types/user/userTypes';
 
-export const UserMenu = () => {
-  const { user } = useUser();
+export const UserMenu = ({user}: {user: User}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 

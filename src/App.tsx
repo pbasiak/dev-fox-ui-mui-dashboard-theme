@@ -8,10 +8,11 @@ import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout';
 import { ColorsPage } from './docs/pages/colors-page/ColorsPage';
 import { UserAccountPage } from './pages/user-account-page/UserAccountPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useUser } from './hooks/api/use-user/useUser';
+import { useCurrentUser } from './hooks/api/use-current-user/useCurrentUser';
 import { Loader } from './components/loader/Loader';
 import { PageNotFound } from './components/page-not-found/PageNotFound';
 import { ButtonPage } from './docs/pages/button-page/ButtonPage';
+import { UserProfilePage } from './pages/user-profile-page/UserProfilePage';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: routes.userAccount,
     element: <UserAccountPage />
+  },
+  {
+    path: routes.userProfile,
+    element: <UserProfilePage />
   },
   {
     path: routes.themeColors,
@@ -43,11 +48,12 @@ const router = createBrowserRouter([
 const queryClient = new QueryClient();
 
 const AppRouter = () => {
-  const { user } = useUser();
+  const { data: user, isLoading } = useCurrentUser();
 
-  if (user.id === null) {
+  if (isLoading) {
     return <Loader />;
   }
+  if (!user) return null;
   return (<RouterProvider router={router} />)
 }
 
