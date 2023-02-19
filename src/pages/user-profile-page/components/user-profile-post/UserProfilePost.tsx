@@ -1,9 +1,10 @@
-import { IconButton, Menu, MenuItem, Paper, Stack, Typography } from '@mui/material';
+import { IconButton, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material';
 import { UserPost } from '../../../../types/user/userPostsTypes';
 import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
 import { User } from '../../../../types/user/userTypes';
 import React from 'react';
 import { Comment, Delete, Edit, Favorite, MoreVert, Share } from '@mui/icons-material';
+import { UserProfileComment } from '../user-profile-comment/UserProfileComment';
 
 export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -14,6 +15,12 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const commentsList = post.comments.map(comment => {
+    return (
+      <UserProfileComment comment={comment} />
+    )
+  });
 
   return (
     <Paper sx={{ padding: 2 }}>
@@ -83,6 +90,12 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
             <IconButton><Comment /></IconButton>
             <Typography variant={'body2'}>{post.commentsTotal} comment(s)</Typography>
           </Stack>
+        </Stack>
+        {commentsList}
+
+        <Stack direction={'row'} spacing={2}>
+          <UserAvatar />
+          <TextField fullWidth size={'small'} placeholder={'Write a comment...'} />
         </Stack>
       </Stack>
     </Paper>

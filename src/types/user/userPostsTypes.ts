@@ -1,9 +1,16 @@
+interface Author {
+  firstName: string;
+  lastName: string;
+  image: string;
+}
+
 export interface Comment {
   userId: number;
-  comment: string;
-  created: Date;
-  updated: Date;
+  content: string;
+  created: string;
+  updated: string;
   id: number;
+  author: Author;
 }
 
 export interface UserPost {
@@ -15,4 +22,5 @@ export interface UserPost {
   likes: number;
   comments: Comment[];
   commentsTotal: number;
+  author: Author;
 }

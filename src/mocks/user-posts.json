@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "author": {
+        "firstName": "Terry",
+        "lastName": "Medhurst",
+        "id": 1,
+        "image": "https://robohash.org/hicveldicta.png"
+      },
       "description": "This is a description",
       "created": "2018-01-01",
       "updated": "2018-01-01",
@@ -9,87 +15,68 @@
       "commentsTotal": 3,
       "comments": [
         {
-          "userId": 1,
-          "comment": "This is a comment",
+          "author": {
+            "firstName": "Random",
+            "lastName": "Guy",
+            "id": 1,
+            "image": "https://robohash.org/hicveldicta.png"
+          },
+          "content": "This is a comment",
           "created": "2018-01-01",
           "updated": "2018-01-01",
           "id": 1
         },
         {
-          "userId": 1,
-          "comment": "This is a comment",
+          "author": {
+            "firstName": "Random",
+            "lastName": "Guy",
+            "id": 1,
+            "image": "https://robohash.org/hicveldicta.png"
+          },
+          "content": "This is a comment",
           "created": "2018-01-01",
           "updated": "2018-01-01",
-          "id": 2
-        },
-        {
-          "userId": 1,
-          "comment": "This is a comment",
-          "created": "2018-01-01",
-          "updated": "2018-01-01",
-          "id": 3
+          "id": 1
         }
       ]
     },
     {
-      "description": "This is a description escriptionwad  pihnd iuurg",
+      "author": {
+        "firstName": "Terry",
+        "lastName": "Medhurst",
+        "id": 1,
+        "image": "https://robohash.org/hicveldicta.png"
+      },
+      "description": "This is a description awd wad d aww ad wad wad wad wadwa dw ad aw d",
       "created": "2018-01-01",
       "updated": "2018-01-01",
       "id": 1,
-      "likes": 16,
-      "commentsTotal": 9,
+      "likes": 0,
+      "commentsTotal": 3,
       "comments": [
         {
-          "userId": 1,
-          "comment": "This is a comment",
+          "author": {
+            "firstName": "Random",
+            "lastName": "Guy",
+            "id": 1,
+            "image": "https://robohash.org/hicveldicta.png"
+          },
+          "content": "This is a comment",
           "created": "2018-01-01",
           "updated": "2018-01-01",
           "id": 1
         },
         {
-          "userId": 1,
-          "comment": "This is a comment",
-          "created": "2018-01-01",
-          "updated": "2018-01-01",
-          "id": 2
-        },
-        {
-          "userId": 1,
-          "comment": "This is a comment",
-          "created": "2018-01-01",
-          "updated": "2018-01-01",
-          "id": 3
-        }
-      ]
-    },
-    {
-      "description": "Lorem ipsum dolor amet sit comed dol sum porro camet si molo di amertium",
-      "created": "2018-01-01",
-      "updated": "2018-01-01",
-      "id": 3,
-      "likes": 25,
-      "commentsTotal": 1,
-      "comments": [
-        {
-          "userId": 1,
-          "comment": "This is a comment",
+          "author": {
+            "firstName": "Random",
+            "lastName": "Guy",
+            "id": 1,
+            "image": "https://robohash.org/hicveldicta.png"
+          },
+          "content": "This is a comment",
           "created": "2018-01-01",
           "updated": "2018-01-01",
           "id": 1
-        },
-        {
-          "userId": 1,
-          "comment": "This is a comment",
-          "created": "2018-01-01",
-          "updated": "2018-01-01",
-          "id": 2
-        },
-        {
-          "userId": 1,
-          "comment": "This is a comment",
-          "created": "2018-01-01",
-          "updated": "2018-01-01",
-          "id": 3
         }
       ]
     }
