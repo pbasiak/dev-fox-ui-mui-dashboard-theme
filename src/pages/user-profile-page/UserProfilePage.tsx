@@ -1,5 +1,5 @@
 import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
-import { Container, Grid, Stack } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { UserProfileHeader } from './components/user-profile-header/UserProfileHeader';
 import { UserProfileInfo } from './components/user-profile-info/UserProfileInfo';
 import { UserProfilePostsList } from './components/user-profile-posts-list/UserProfilePostsList';
@@ -20,14 +20,10 @@ export const UserProfilePage = () => {
             <UserProfileHeader user={user} />
           </Grid>
           <Grid item xs={4}>
-            <Stack spacing={2}>
-              <UserProfileInfo user={user} />
-            </Stack>
+            <UserProfileInfo user={user} />
           </Grid>
           <Grid item xs={8}>
-            <Stack spacing={2}>
-              <UserProfilePostsList posts={posts} user={user} />
-            </Stack>
+            <UserProfilePostsList posts={posts} user={user} />
           </Grid>
         </Grid>
       </Container>
