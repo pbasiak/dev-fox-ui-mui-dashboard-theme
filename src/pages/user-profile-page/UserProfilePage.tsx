@@ -5,6 +5,7 @@ import { UserProfileInfo } from './components/user-profile-info/UserProfileInfo'
 import { UserProfilePostsList } from './components/user-profile-posts-list/UserProfilePostsList';
 import { useUser } from '../../hooks/api/use-user/useUser';
 import { useUserPosts } from '../../hooks/api/use-user-posts/useUserPosts';
+import { UserProfileNewComment } from './components/user-profile-new-comment/UserProfileNewComment';
 
 export const UserProfilePage = () => {
   const { data: user } = useUser({ id: 1 });
@@ -22,8 +23,13 @@ export const UserProfilePage = () => {
           <Grid item xs={4}>
             <UserProfileInfo user={user} />
           </Grid>
-          <Grid item xs={8}>
-            <UserProfilePostsList posts={posts} user={user} />
+          <Grid container item xs={8} spacing={2}>
+            <Grid item xs={12}>
+              <UserProfileNewComment user={user} />
+            </Grid>
+            <Grid item xs={12}>
+              <UserProfilePostsList posts={posts} user={user} />
+            </Grid>
           </Grid>
         </Grid>
       </Container>
