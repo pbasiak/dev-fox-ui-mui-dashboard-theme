@@ -13,6 +13,7 @@ import { Loader } from './components/loader/Loader';
 import { PageNotFound } from './components/page-not-found/PageNotFound';
 import { ButtonPage } from './docs/pages/button-page/ButtonPage';
 import { UserProfilePage } from './pages/user-profile-page/UserProfilePage';
+import { UserListPage } from './pages/user-list-page/UserListPage';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: routes.userProfile,
     element: <UserProfilePage />
+  },
+  {
+    path: routes.userList,
+    element: <UserListPage />
   },
   {
     path: routes.themeColors,
