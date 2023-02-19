@@ -6,6 +6,8 @@ import { UserProfilePostsList } from './components/user-profile-posts-list/UserP
 import { useUser } from '../../hooks/api/use-user/useUser';
 import { useUserPosts } from '../../hooks/api/use-user-posts/useUserPosts';
 import { UserProfileNewComment } from './components/user-profile-new-comment/UserProfileNewComment';
+import { PageHeader } from '../../components/page-header/PageHeader';
+import React from 'react';
 
 export const UserProfilePage = () => {
   const { data: user } = useUser({ id: 1 });
@@ -16,6 +18,7 @@ export const UserProfilePage = () => {
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
+        <PageHeader title={'User profile'} breadcrumbs={['User', 'Profile']} />
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <UserProfileHeader user={user} />
