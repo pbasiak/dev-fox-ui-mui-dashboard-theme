@@ -1,7 +1,8 @@
 import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../components/page-header/PageHeader';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { Container } from '@mui/material';
+import { Container, Button } from '@mui/material';
+import { Add } from '@mui/icons-material';
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -36,12 +37,13 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
+// TODO: refactor data
 
 export const UserListPage = () => {
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
-        <PageHeader title={'Users list'} breadcrumbs={['Users', 'List']} />
+        <PageHeader title={'Users list'} breadcrumbs={['Users', 'List']} renderRight={<Button variant={'contained'} startIcon={<Add />}>Add user</Button>} />
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
             rows={rows}
