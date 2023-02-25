@@ -24,9 +24,10 @@ import { User } from '../../../../types/user/userTypes';
 
 interface Props {
   user?: User;
+  submitButtonText?: string;
 }
 
-export const UserForm = ({ user }: Props) => {
+export const UserForm = ({ user, submitButtonText = 'Save changes' }: Props) => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm<AccountGeneralForm>({
     resolver: yupResolver(accountGeneralFormSchema),
     defaultValues: {
@@ -103,7 +104,7 @@ export const UserForm = ({ user }: Props) => {
             </CardContent>
 
             <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2 }}>
-              <Button type={'submit'} variant={'contained'}>Save changes</Button>
+              <Button type={'submit'} variant={'contained'}>{submitButtonText}</Button>
             </CardActions>
           </Card>
         </Grid>
