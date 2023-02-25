@@ -4,13 +4,19 @@ import {
   Card, CardActions,
   CardContent,
   CardHeader,
-  FormControl, FormHelperText,
+  FormControl,
+  FormHelperText,
+  Grid,
   Stack,
   TextField,
   Typography,
 } from '@mui/material';
 import { Colors } from '../../../../theme/theme';
-import { AccountFieldsNames, AccountGeneralForm, accountGeneralFormSchema } from '../../utils/userForms';
+import {
+  AccountGeneralFieldsNames,
+  AccountGeneralForm,
+  accountGeneralFormSchema,
+} from '../../utils/userForms';
 import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -24,12 +30,12 @@ export const UserForm = ({ user }: Props) => {
   const { register, handleSubmit, formState: { errors }, getValues } = useForm<AccountGeneralForm>({
     resolver: yupResolver(accountGeneralFormSchema),
     defaultValues: {
-      [AccountFieldsNames.firstName]: user?.firstName || '',
-      [AccountFieldsNames.lastName]: user?.lastName || '',
-      [AccountFieldsNames.email]: user?.email || '',
-      [AccountFieldsNames.phone]: user?.phone || '',
-      [AccountFieldsNames.username]: user?.username || '',
-      [AccountFieldsNames.image]: user?.image || ''
+      [AccountGeneralFieldsNames.firstName]: user?.firstName || '',
+      [AccountGeneralFieldsNames.lastName]: user?.lastName || '',
+      [AccountGeneralFieldsNames.email]: user?.email || '',
+      [AccountGeneralFieldsNames.phone]: user?.phone || '',
+      [AccountGeneralFieldsNames.username]: user?.username || '',
+      [AccountGeneralFieldsNames.image]: user?.image || ''
     }
   });
 
@@ -41,63 +47,67 @@ export const UserForm = ({ user }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(handleSave)}>
-      <Stack direction={'row'} spacing={4}>
-        <Card sx={{ padding: 2, maxWidth: '30%', width: '100%', borderRadius: 2 }} elevation={2}>
-          <CardContent>
-            <Stack direction={'column'} spacing={2} justifyContent={'center'} alignItems={'center'}>
-              <Avatar src={userFormValues.image} sx={{ width: '128px', height: '128px', border: '5px solid #DDD' }} alt={userFormValues.username} />
-              <Stack justifyContent={'center'}>
-                <Typography textAlign={'center'} component={'p'} variant={'subtitle1'}>{userFormValues.firstName} {userFormValues.lastName}</Typography>
-                <Typography textAlign={'center'} component={'p'} variant={'subtitle2'}>{userFormValues.username}</Typography>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={4}>
+          <Card sx={{ padding: 2, borderRadius: 2, height: '100%' }} elevation={2}>
+            <CardContent>
+              <Stack direction={'column'} spacing={2} justifyContent={'center'} alignItems={'center'}>
+                <Avatar src={userFormValues.image} sx={{ width: '128px', height: '128px', border: '5px solid #DDD' }} alt={userFormValues.username} />
+                <Stack justifyContent={'center'}>
+                  <Typography textAlign={'center'} component={'p'} variant={'subtitle1'}>{userFormValues.firstName} {userFormValues.lastName}</Typography>
+                  <Typography textAlign={'center'} component={'p'} variant={'subtitle2'}>{userFormValues.username}</Typography>
+                </Stack>
+                <Typography textAlign={'center'} fontSize={12} color={Colors.textGray}>Allowed *.jpeg, *.jpg, *.png, *.gif <br/>max size of 5.0 MB</Typography>
+                <Button size={'small'} variant={'contained'}>Upload new</Button>
+                <Button color={'error'} size={'small'}>Remove picture</Button>
               </Stack>
-              <Typography textAlign={'center'} fontSize={12} color={Colors.textGray}>Allowed *.jpeg, *.jpg, *.png, *.gif <br/>max size of 5.0 MB</Typography>
-              <Button size={'small'} variant={'contained'}>Upload new</Button>
-              <Button color={'error'} size={'small'}>Remove picture</Button>
-            </Stack>
-          </CardContent>
-        </Card>
-        <Card sx={{ padding: 2, flex: 1 }} elevation={2}>
-          <CardHeader title={'Account'} subheader={'Basic account information'}  />
-          <CardContent>
-            <Stack spacing={4}>
-              <Stack direction={'row'} spacing={4}>
-                <FormControl fullWidth>
-                  <TextField error={!!errors[AccountFieldsNames.firstName]} {...register(AccountFieldsNames.firstName)} label={'First name'} size={'small'}/>
-                  {errors[AccountFieldsNames.firstName] ? <FormHelperText error>{errors[AccountFieldsNames.firstName].message}</FormHelperText> : null}
-                </FormControl>
-                <FormControl fullWidth>
-                  <TextField error={!!errors[AccountFieldsNames.lastName]} {...register(AccountFieldsNames.lastName)} label={'Last name'} size={'small'}/>
-                  {errors[AccountFieldsNames.lastName] ? <FormHelperText error>{errors[AccountFieldsNames.lastName].message}</FormHelperText> : null}
-                </FormControl>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <Card sx={{ padding: 2, flex: 1, height: '100%'  }} elevation={2}>
+            <CardHeader title={'Account'} subheader={'Basic account information'}  />
+            <CardContent>
+              <Stack spacing={4}>
+                <Stack direction={'row'} spacing={4}>
+                  <FormControl fullWidth>
+                    <TextField error={!!errors[AccountGeneralFieldsNames.firstName]} {...register(AccountGeneralFieldsNames.firstName)} label={'First name'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.firstName] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.firstName].message}</FormHelperText> : null}
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <TextField error={!!errors[AccountGeneralFieldsNames.lastName]} {...register(AccountGeneralFieldsNames.lastName)} label={'Last name'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.lastName] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.lastName].message}</FormHelperText> : null}
+                  </FormControl>
+                </Stack>
+                <Stack direction={'row'} spacing={4}>
+                  <FormControl fullWidth>
+                    <TextField error={!!errors[AccountGeneralFieldsNames.username]} {...register(AccountGeneralFieldsNames.username)} label={'Username'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.username] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.username].message}</FormHelperText> : null}
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <TextField error={!!errors[AccountGeneralFieldsNames.email]} {...register(AccountGeneralFieldsNames.email)} label={'Email'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.email] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.email].message}</FormHelperText> : null}
+                  </FormControl>
+                </Stack>
+                <Stack direction={'row'} spacing={4}>
+                  <FormControl fullWidth>
+                    <TextField type={'date'} error={!!errors[AccountGeneralFieldsNames.birthDate]} {...register(AccountGeneralFieldsNames.birthDate)} InputLabelProps={{ shrink: true }} label={'Birth date'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.birthDate] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.birthDate].message}</FormHelperText> : null}
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <TextField error={!!errors[AccountGeneralFieldsNames.age]} {...register(AccountGeneralFieldsNames.age)} label={'Age'} size={'medium'}/>
+                    {errors[AccountGeneralFieldsNames.age] ? <FormHelperText error>{errors[AccountGeneralFieldsNames.age].message}</FormHelperText> : null}
+                  </FormControl>
+                </Stack>
               </Stack>
-              <Stack direction={'row'} spacing={4}>
-                <FormControl fullWidth>
-                  <TextField error={!!errors[AccountFieldsNames.username]} {...register(AccountFieldsNames.username)} label={'Username'} size={'small'}/>
-                  {errors[AccountFieldsNames.username] ? <FormHelperText error>{errors[AccountFieldsNames.username].message}</FormHelperText> : null}
-                </FormControl>
-                <FormControl fullWidth>
-                  <TextField error={!!errors[AccountFieldsNames.email]} {...register(AccountFieldsNames.email)} label={'Email'} size={'small'}/>
-                  {errors[AccountFieldsNames.email] ? <FormHelperText error>{errors[AccountFieldsNames.email].message}</FormHelperText> : null}
-                </FormControl>
-              </Stack>
-              <Stack direction={'row'} spacing={4}>
-                <FormControl fullWidth>
-                  <TextField type={'date'} error={!!errors[AccountFieldsNames.birthDate]} {...register(AccountFieldsNames.birthDate)} label={'Birth date'} size={'small'}/>
-                  {errors[AccountFieldsNames.birthDate] ? <FormHelperText error>{errors[AccountFieldsNames.birthDate].message}</FormHelperText> : null}
-                </FormControl>
-                <FormControl fullWidth>
-                  <TextField error={!!errors[AccountFieldsNames.age]} {...register(AccountFieldsNames.age)} label={'Age'} size={'small'}/>
-                  {errors[AccountFieldsNames.age] ? <FormHelperText error>{errors[AccountFieldsNames.age].message}</FormHelperText> : null}
-                </FormControl>
-              </Stack>
-            </Stack>
-          </CardContent>
+            </CardContent>
 
-          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button type={'submit'} variant={'contained'}>Save changes</Button>
-          </CardActions>
-        </Card>
-      </Stack>
+            <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', padding: 2 }}>
+              <Button type={'submit'} variant={'contained'}>Save changes</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
     </form>
   )
 }

@@ -12,7 +12,7 @@ import {
 import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
 import { useForm } from 'react-hook-form';
 import {
-  AccountFieldsNames,
+  AccountSocialFieldsNames,
   AccountSocialLinksForm,
   accountSocialLinksFormSchema,
 } from '../../utils/userForms';
@@ -23,10 +23,10 @@ export const SocialLinksForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<AccountSocialLinksForm>({
     resolver: yupResolver(accountSocialLinksFormSchema),
     defaultValues: {
-      [AccountFieldsNames.facebook]: 'https://www.facebook.com/',
-      [AccountFieldsNames.twitter]: 'https://twitter.com/',
-      [AccountFieldsNames.instagram]: 'https://www.instagram.com/',
-      [AccountFieldsNames.linkedin]: 'https://www.linkedin.com/',
+      [AccountSocialFieldsNames.facebook]: 'https://www.facebook.com/',
+      [AccountSocialFieldsNames.twitter]: 'https://twitter.com/',
+      [AccountSocialFieldsNames.instagram]: 'https://www.instagram.com/',
+      [AccountSocialFieldsNames.linkedin]: 'https://www.linkedin.com/',
     }
   });
 
@@ -41,52 +41,52 @@ export const SocialLinksForm = () => {
           <Stack spacing={2}>
             <Stack direction={'row'} alignItems={'center'} spacing={2}>
               <FormControl fullWidth>
-                <TextField {...register(AccountFieldsNames.facebook)} InputProps={{
+                <TextField {...register(AccountSocialFieldsNames.facebook)} InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
                       <Facebook />
                     </InputAdornment>
                   ),
                 }} label={'Facebook'} size={'medium'} />
-                {errors[AccountFieldsNames.facebook] && <FormHelperText error>{errors[AccountFieldsNames.facebook].message}</FormHelperText>}
+                {errors[AccountSocialFieldsNames.facebook] && <FormHelperText error>{errors[AccountSocialFieldsNames.facebook].message}</FormHelperText>}
               </FormControl>
             </Stack>
             <Stack direction={'row'} alignItems={'center'} spacing={2}>
               <FormControl fullWidth>
-                <TextField {...register(AccountFieldsNames.instagram)} InputProps={{
+                <TextField {...register(AccountSocialFieldsNames.instagram)} InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
                       <Instagram />
                     </InputAdornment>
                   ),
                 }} label={'Instagram'} size={'medium'} />
-                {errors[AccountFieldsNames.instagram] && <FormHelperText error>{errors[AccountFieldsNames.instagram].message}</FormHelperText>}
+                {errors[AccountSocialFieldsNames.instagram] && <FormHelperText error>{errors[AccountSocialFieldsNames.instagram].message}</FormHelperText>}
               </FormControl>
             </Stack>
 
             <Stack direction={'row'} alignItems={'center'} spacing={2}>
               <FormControl fullWidth>
-                <TextField {...register(AccountFieldsNames.twitter)} InputProps={{
+                <TextField {...register(AccountSocialFieldsNames.twitter)} InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
                       <Twitter />
                     </InputAdornment>
                   ),
                 }} label={'Instagram'} size={'medium'} />
-                {errors[AccountFieldsNames.twitter] && <FormHelperText error>{errors[AccountFieldsNames.twitter].message}</FormHelperText>}
+                {errors[AccountSocialFieldsNames.twitter] && <FormHelperText error>{errors[AccountSocialFieldsNames.twitter].message}</FormHelperText>}
               </FormControl>
             </Stack>
 
             <Stack direction={'row'} alignItems={'center'} spacing={2}>
               <FormControl fullWidth>
-                <TextField {...register(AccountFieldsNames.linkedin)} InputProps={{
+                <TextField {...register(AccountSocialFieldsNames.linkedin)} InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
                       <LinkedIn />
                     </InputAdornment>
                   ),
                 }} label={'Instagram'} size={'medium'} />
-                {errors[AccountFieldsNames.linkedin] && <FormHelperText error>{errors[AccountFieldsNames.linkedin].message}</FormHelperText>}
+                {errors[AccountSocialFieldsNames.linkedin] && <FormHelperText error>{errors[AccountSocialFieldsNames.linkedin].message}</FormHelperText>}
               </FormControl>
             </Stack>
           </Stack>

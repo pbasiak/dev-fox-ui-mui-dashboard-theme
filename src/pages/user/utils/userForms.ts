@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
-export enum AccountFieldsNames {
+
+export enum AccountGeneralFieldsNames {
   firstName = "firstName",
   lastName = "lastName",
   username = "username",
@@ -9,6 +10,9 @@ export enum AccountFieldsNames {
   image = "image",
   birthDate = "birthDate",
   age = "age",
+}
+
+export enum AccountSocialFieldsNames {
   facebook = "facebook",
   twitter = "twitter",
   instagram = "instagram",
@@ -16,23 +20,23 @@ export enum AccountFieldsNames {
 }
 
 export const accountGeneralFormSchema = yup.object({
-  [AccountFieldsNames.firstName]: yup.string().required(),
-  [AccountFieldsNames.lastName]: yup.string().required(),
-  [AccountFieldsNames.username]: yup.string().required(),
-  [AccountFieldsNames.email]: yup.string().email().required(),
-  [AccountFieldsNames.phone]: yup.string().required(),
-  [AccountFieldsNames.birthDate]: yup.string().required(),
-  [AccountFieldsNames.age]: yup.number(),
-  [AccountFieldsNames.image]: yup.string(),
+  [AccountGeneralFieldsNames.firstName]: yup.string().required(),
+  [AccountGeneralFieldsNames.lastName]: yup.string().required(),
+  [AccountGeneralFieldsNames.username]: yup.string().required(),
+  [AccountGeneralFieldsNames.email]: yup.string().email().required(),
+  [AccountGeneralFieldsNames.phone]: yup.string().required(),
+  [AccountGeneralFieldsNames.birthDate]: yup.string().required(),
+  [AccountGeneralFieldsNames.age]: yup.number(),
+  [AccountGeneralFieldsNames.image]: yup.string(),
 });
 
 export type AccountGeneralForm = yup.InferType<typeof accountGeneralFormSchema>;
 
 export const accountSocialLinksFormSchema = yup.object({
-  [AccountFieldsNames.facebook]: yup.string().url(),
-  [AccountFieldsNames.twitter]: yup.string().url(),
-  [AccountFieldsNames.instagram]: yup.string().url(),
-  [AccountFieldsNames.linkedin]: yup.string().url(),
+  [AccountSocialFieldsNames.facebook]: yup.string().url(),
+  [AccountSocialFieldsNames.twitter]: yup.string().url(),
+  [AccountSocialFieldsNames.instagram]: yup.string().url(),
+  [AccountSocialFieldsNames.linkedin]: yup.string().url(),
 });
 
 export type AccountSocialLinksForm = yup.InferType<typeof accountSocialLinksFormSchema>;
