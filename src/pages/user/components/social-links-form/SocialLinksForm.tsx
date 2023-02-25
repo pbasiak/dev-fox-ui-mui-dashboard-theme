@@ -15,11 +15,11 @@ import {
   AccountFieldsNames,
   AccountSocialLinksForm,
   accountSocialLinksFormSchema,
-} from '../../form';
+} from '../../utils/userForms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useCallback } from 'react';
 
-export const SocialLinks = () => {
+export const SocialLinksForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<AccountSocialLinksForm>({
     resolver: yupResolver(accountSocialLinksFormSchema),
     defaultValues: {

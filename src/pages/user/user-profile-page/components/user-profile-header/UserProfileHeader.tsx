@@ -1,8 +1,8 @@
 import { Button, Paper, Stack, Typography } from '@mui/material';
 import { Edit, Message, Photo } from '@mui/icons-material';
 
-import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
-import { User } from '../../../../types/user/userTypes';
+import { UserAvatar } from '../../../../../components/user-avatar/UserAvatar';
+import { User } from '../../../../../types/user/userTypes';
 
 export const UserProfileHeader = ({user}: {user:User}) => {
 

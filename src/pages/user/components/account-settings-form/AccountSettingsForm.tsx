@@ -29,7 +29,7 @@ const CheckboxWithForm = ({control, name, label}: { control: any, name: string, 
   )
 }
 
-export const AccountSettings = () => {
+export const AccountSettingsForm = () => {
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       enableEmailNotifications: true,

@@ -1,6 +1,6 @@
-import { Comment } from '../../../../types/user/userPostsTypes';
+import { Comment } from '../../../../../types/user/userPostsTypes';
 import { Stack, Typography } from '@mui/material';
-import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
+import { UserAvatar } from '../../../../../components/user-avatar/UserAvatar';
 
 export const UserProfileComment = ({ comment }: {comment: Comment}) => {
   return (

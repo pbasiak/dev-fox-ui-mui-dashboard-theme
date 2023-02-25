@@ -12,7 +12,7 @@ export const PageHeader = ({title, breadcrumbs, renderRight}: PageHeaderProps) =
   const breadcrumbsList = breadcrumbs?.map((breadcrumb) => <Typography key="3" color="text.primary" fontSize={14}>{breadcrumb}</Typography>);
 
   return (
-    <Stack direction={'row'} alignItems={'flex-start'} justifyContent={'space-between'}>
+    <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'} marginBottom={2}>
       <Stack spacing={2} marginBottom={2}>
         <PageHeaderTitle>{title}</PageHeaderTitle>
         { breadcrumbs ?

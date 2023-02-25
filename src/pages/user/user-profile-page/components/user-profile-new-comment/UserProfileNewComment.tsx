@@ -1,6 +1,6 @@
 import { Button, Paper, Stack, TextField } from '@mui/material';
-import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
-import { User } from '../../../../types/user/userTypes';
+import { UserAvatar } from '../../../../../components/user-avatar/UserAvatar';
+import { User } from '../../../../../types/user/userTypes';
 import { Camera, EmojiEmotions, Image } from '@mui/icons-material';
 
 export const UserProfileNewComment = ({ user }: { user: User }) => {

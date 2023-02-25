@@ -1,4 +1,4 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
+import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 
 import {
   Box,
@@ -7,12 +7,14 @@ import {
   TabProps,
   Tabs,
 } from '@mui/material';
-import { PageHeader } from '../../components/page-header/PageHeader';
+import { PageHeader } from '../../../components/page-header/PageHeader';
 import React from 'react';
 import { Person, Settings, Share } from '@mui/icons-material';
-import { SocialLinks } from './components/social-links/SocialLinks';
-import { General } from './components/general/General';
-import { AccountSettings } from './components/account-settings/AccountSettings';
+import { SocialLinksForm } from '../components/social-links-form/SocialLinksForm';
+import { AccountSettingsForm } from '../components/account-settings-form/AccountSettingsForm';
+import { UserForm } from '../components/user-form/UserForm';
+import { useCurrentUser } from '../../../hooks/api/use-current-user/useCurrentUser';
+import { Loader } from '../../../components/loader/Loader';
 
 function a11yProps(index: number) {
   return {
@@ -49,6 +51,7 @@ function TabPanel(props: TabPanelProps) {
 
 export const UserAccountPage = () => {
   const [value, setValue] = React.useState(0);
+  const { data: user, isLoading } = useCurrentUser();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -58,6 +61,8 @@ export const UserAccountPage = () => {
     sx: { minHeight: 42, textTransform: 'capitalize' },
     iconPosition: 'start',
   }
+
+  if (isLoading) return <Loader />
 
   return (
     <SidebarLayout>
@@ -72,13 +77,13 @@ export const UserAccountPage = () => {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <General />
+            <UserForm user={user} />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <SocialLinks />
+            <SocialLinksForm />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <AccountSettings />
+            <AccountSettingsForm />
           </TabPanel>
         </Box>
       </Container>

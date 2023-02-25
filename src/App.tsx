@@ -6,14 +6,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { routes } from './contants/routes';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout';
 import { ColorsPage } from './docs/pages/colors-page/ColorsPage';
-import { UserAccountPage } from './pages/user-account-page/UserAccountPage';
+import { UserAccountPage } from './pages/user/user-account-page/UserAccountPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCurrentUser } from './hooks/api/use-current-user/useCurrentUser';
 import { Loader } from './components/loader/Loader';
 import { PageNotFound } from './components/page-not-found/PageNotFound';
 import { ButtonPage } from './docs/pages/button-page/ButtonPage';
-import { UserProfilePage } from './pages/user-profile-page/UserProfilePage';
-import { UserListPage } from './pages/user-list-page/UserListPage';
+import { UserProfilePage } from './pages/user/user-profile-page/UserProfilePage';
+import { UserListPage } from './pages/user/user-list-page/UserListPage';
+import { UserCreatePage } from './pages/user/user-create-page/UserCreatePage';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: routes.userList,
     element: <UserListPage />
+  },
+  {
+    path: routes.userCreate,
+    element: <UserCreatePage />
   },
   {
     path: routes.themeColors,

@@ -1,12 +1,12 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
+import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Container, Grid } from '@mui/material';
 import { UserProfileHeader } from './components/user-profile-header/UserProfileHeader';
 import { UserProfileInfo } from './components/user-profile-info/UserProfileInfo';
 import { UserProfilePostsList } from './components/user-profile-posts-list/UserProfilePostsList';
-import { useUser } from '../../hooks/api/use-user/useUser';
-import { useUserPosts } from '../../hooks/api/use-user-posts/useUserPosts';
+import { useUser } from '../../../hooks/api/use-user/useUser';
+import { useUserPosts } from '../../../hooks/api/use-user-posts/useUserPosts';
 import { UserProfileNewComment } from './components/user-profile-new-comment/UserProfileNewComment';
-import { PageHeader } from '../../components/page-header/PageHeader';
+import { PageHeader } from '../../../components/page-header/PageHeader';
 import React from 'react';
 
 export const UserProfilePage = () => {

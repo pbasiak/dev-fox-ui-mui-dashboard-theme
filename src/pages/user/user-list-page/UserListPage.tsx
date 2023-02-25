@@ -1,5 +1,5 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
-import { PageHeader } from '../../components/page-header/PageHeader';
+import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
+import { PageHeader } from '../../../components/page-header/PageHeader';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import { Container, Button } from '@mui/material';
 import { Add } from '@mui/icons-material';

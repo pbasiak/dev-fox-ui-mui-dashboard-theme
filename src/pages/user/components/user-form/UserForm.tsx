@@ -10,33 +10,34 @@ import {
   Typography,
 } from '@mui/material';
 import { Colors } from '../../../../theme/theme';
-import { AccountFieldsNames, AccountGeneralForm, accountGeneralFormSchema } from '../../form';
+import { AccountFieldsNames, AccountGeneralForm, accountGeneralFormSchema } from '../../utils/userForms';
 import React, { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useCurrentUser } from '../../../../hooks/api/use-current-user/useCurrentUser';
-import { Loader } from '../../../../components/loader/Loader';
+import { User } from '../../../../types/user/userTypes';
 
-export const General = () => {
-  const { data: user, isLoading } = useCurrentUser();
+interface Props {
+  user?: User;
+}
 
-  const { register, handleSubmit, formState: { errors } } = useForm<AccountGeneralForm>({
+export const UserForm = ({ user }: Props) => {
+  const { register, handleSubmit, formState: { errors }, getValues } = useForm<AccountGeneralForm>({
     resolver: yupResolver(accountGeneralFormSchema),
     defaultValues: {
-      [AccountFieldsNames.firstName]: user?.firstName,
-      [AccountFieldsNames.lastName]: user?.lastName,
-      [AccountFieldsNames.email]: user?.email,
-      [AccountFieldsNames.phone]: user?.phone,
-      [AccountFieldsNames.username]: user?.username,
+      [AccountFieldsNames.firstName]: user?.firstName || '',
+      [AccountFieldsNames.lastName]: user?.lastName || '',
+      [AccountFieldsNames.email]: user?.email || '',
+      [AccountFieldsNames.phone]: user?.phone || '',
+      [AccountFieldsNames.username]: user?.username || '',
+      [AccountFieldsNames.image]: user?.image || ''
     }
   });
+
+  const userFormValues = getValues();
 
   const handleSave = useCallback((data: AccountGeneralForm) => {
     console.log(data);
   }, [])
-
-  if (isLoading) return (<Loader />)
-  if (!user) return null;
 
   return (
     <form onSubmit={handleSubmit(handleSave)}>
@@ -44,10 +45,10 @@ export const General = () => {
         <Card sx={{ padding: 2, maxWidth: '30%', width: '100%', borderRadius: 2 }} elevation={2}>
           <CardContent>
             <Stack direction={'column'} spacing={2} justifyContent={'center'} alignItems={'center'}>
-              <Avatar src={user.image} sx={{ width: '128px', height: '128px', border: '5px solid #DDD' }} alt={user.username} />
+              <Avatar src={userFormValues.image} sx={{ width: '128px', height: '128px', border: '5px solid #DDD' }} alt={userFormValues.username} />
               <Stack justifyContent={'center'}>
-                <Typography textAlign={'center'} component={'p'} variant={'subtitle1'}>{user.firstName} {user.lastName}</Typography>
-                <Typography textAlign={'center'} component={'p'} variant={'subtitle2'}>{user.username}</Typography>
+                <Typography textAlign={'center'} component={'p'} variant={'subtitle1'}>{userFormValues.firstName} {userFormValues.lastName}</Typography>
+                <Typography textAlign={'center'} component={'p'} variant={'subtitle2'}>{userFormValues.username}</Typography>
               </Stack>
               <Typography textAlign={'center'} fontSize={12} color={Colors.textGray}>Allowed *.jpeg, *.jpg, *.png, *.gif <br/>max size of 5.0 MB</Typography>
               <Button size={'small'} variant={'contained'}>Upload new</Button>

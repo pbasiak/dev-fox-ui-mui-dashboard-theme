@@ -1,6 +1,6 @@
 import { Paper, Stack, Typography } from '@mui/material';
 import { Email, Home, Link, Work } from '@mui/icons-material';
-import { User } from '../../../../types/user/userTypes';
+import { User } from '../../../../../types/user/userTypes';
 
 export const UserProfileInfo = ({user} : { user: User}) => {
   return (

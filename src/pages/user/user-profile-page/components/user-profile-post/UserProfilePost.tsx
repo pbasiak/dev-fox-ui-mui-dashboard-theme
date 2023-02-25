@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem, Paper, Stack, TextField, Typography } from '@mui/material';
-import { UserPost } from '../../../../types/user/userPostsTypes';
-import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
-import { User } from '../../../../types/user/userTypes';
+import { UserPost } from '../../../../../types/user/userPostsTypes';
+import { UserAvatar } from '../../../../../components/user-avatar/UserAvatar';
+import { User } from '../../../../../types/user/userTypes';
 import React from 'react';
 import { Comment, Delete, Edit, Favorite, MoreVert, Share } from '@mui/icons-material';
 import { UserProfileComment } from '../user-profile-comment/UserProfileComment';
