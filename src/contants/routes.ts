@@ -1,5 +1,6 @@
 const themePrefix = '/theme';
 const userPrefix = '/user';
+const blogPrefix = '/blog';
 const componentPrefix = `${themePrefix}/component`;
 
 export const routes = {
@@ -9,6 +10,10 @@ export const routes = {
   userList: `${userPrefix}/list`,
   userCreate: `${userPrefix}/create`,
   userEdit: `${userPrefix}/edit`,
+  blog: `${blogPrefix}/list`,
+  blogCreatePost: `${blogPrefix}/create`,
+  blogEditPost: `${blogPrefix}/edit`,
+  blogPost: `${blogPrefix}/post`,
   themeGeneral: `${themePrefix}/general`,
   themeTypography: `${themePrefix}/typography`,
   themeColors: `${themePrefix}/colors`,

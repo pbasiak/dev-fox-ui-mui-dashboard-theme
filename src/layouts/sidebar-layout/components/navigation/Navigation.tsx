@@ -2,7 +2,17 @@ import List from '@mui/material/List';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import { NavigationItem } from './components/navigation-item/NavigationItem';
 import { NavigationItemType } from './components/navigation-item/types';
-import { Abc, AccountBox, ColorLens, DesignServices, People, Person, PersonAdd, ShapeLine } from '@mui/icons-material';
+import {
+  Abc,
+  AccountBox,
+  ColorLens,
+  DesignServices, Edit,
+  Notes,
+  People,
+  Person,
+  PersonAdd, PostAdd,
+  ShapeLine, ShortText,
+} from '@mui/icons-material';
 import { routes } from '../../../../contants/routes';
 
 const menuItems: NavigationItemType[] = [
@@ -40,6 +50,32 @@ const menuItems: NavigationItemType[] = [
         path: routes.userCreate,
         label: 'Create',
         icon: (props:any) => <PersonAdd {...props} />,
+      },
+    ]
+  },
+  {
+    label: 'Blog',
+    icon: (props: any) => <Notes {...props} />,
+    items: [
+      {
+        path: routes.blog,
+        label: 'List',
+        icon: (props:any) => <Notes {...props} />,
+      },
+      {
+        path: routes.blogPost,
+        label: 'Post',
+        icon: (props:any) => <ShortText {...props} />,
+      },
+      {
+        path: routes.blogEditPost,
+        label: 'Edit',
+        icon: (props:any) => <Edit {...props} />,
+      },
+      {
+        path: routes.blogCreatePost,
+        label: 'Create',
+        icon: (props:any) => <PostAdd {...props} />,
       },
     ]
   },

@@ -15,6 +15,7 @@ import { ButtonPage } from './docs/pages/button-page/ButtonPage';
 import { UserProfilePage } from './pages/user/user-profile-page/UserProfilePage';
 import { UserListPage } from './pages/user/user-list-page/UserListPage';
 import { UserCreatePage } from './pages/user/user-create-page/UserCreatePage';
+import { BlogPage } from './pages/blog/blog-page/BlogPage';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: routes.userCreate,
     element: <UserCreatePage />
+  },
+  {
+    path: routes.blog,
+    element: <BlogPage />
   },
   {
     path: routes.themeColors,
