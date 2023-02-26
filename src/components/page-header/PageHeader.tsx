@@ -1,6 +1,7 @@
 import { PageHeaderTitle } from './styled';
 import { Breadcrumbs, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { APP_NAME } from '../../contants/appInfo';
 
 interface PageHeaderProps {
   title: string;
@@ -17,6 +18,7 @@ export const PageHeader = ({title, breadcrumbs, renderRight}: PageHeaderProps) =
         <PageHeaderTitle>{title}</PageHeaderTitle>
         { breadcrumbs ?
           <Breadcrumbs separator="-" aria-label="breadcrumb">
+            <Typography key="3" color="text.primary" fontSize={14}>{APP_NAME}</Typography>
             {breadcrumbsList}
           </Breadcrumbs> : null }
       </Stack>
