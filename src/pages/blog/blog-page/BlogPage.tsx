@@ -6,7 +6,11 @@ import { useQuery } from '@tanstack/react-query';
 import posts from '../../../mocks/blog/blog-posts.json';
 import { Loader } from '../../../components/loader/Loader';
 
-export const BlogPage = () => {
+interface Props {
+  columns?: 1 | 2 | 3;
+}
+
+export const BlogPage = ({ columns = 1 }: Props) => {
   const { data, isLoading } = useQuery({queryKey: ['blog-posts'], queryFn: () => posts.posts});
 
   if (!isLoading && !data) return null;
@@ -15,7 +19,7 @@ export const BlogPage = () => {
     <SidebarLayout>
       <Container maxWidth={'lg'}>
         <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} />
-        { isLoading ? <Loader /> : <BlogList posts={data} /> }
+        { isLoading ? <Loader /> : <BlogList posts={data} columns={columns} /> }
       </Container>
     </SidebarLayout>
   )

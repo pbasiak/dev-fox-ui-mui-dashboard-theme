@@ -1,25 +1,32 @@
 import { BlogPost } from '../../types/blogPost';
 import { BlogListPost } from '../blog-list-post/BlogListPost';
-import { Stack } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 
 interface Props {
   posts: BlogPost[];
+  columns?: 1 | 2 | 3;
 }
 
-export const BlogList = ({posts}: Props) => {
+const mdConfig = {
+  1: 12,
+  2: 6,
+  3: 4
+}
+
+export const BlogList = ({posts, columns = 1}: Props) => {
   const postsList = posts.map((post) => {
     return (
-      <BlogListPost post={post} key={post.id} />
+      <Grid item xs={12} md={mdConfig[columns]} key={post.id}>
+        <BlogListPost post={post} key={post.id} size={columns === 3 ? 'small' : 'medium'} />
+      </Grid>
     )
   });
 
   return (
-    <div>
-      <h1>BlogList</h1>
-
-      <Stack spacing={4}>
+    <Stack spacing={6}>
+      <Grid container spacing={4}>
         {postsList}
-      </Stack>
-    </div>
+      </Grid>
+    </Stack>
   )
 }

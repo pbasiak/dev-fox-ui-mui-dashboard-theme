@@ -2,6 +2,7 @@ import { UserMenuContainer, UserMenuIconButton, UserMenuInfo, UserMenuMenu, User
 import React, { useState } from 'react';
 import { Typography } from '@mui/material';
 import { User } from '../../../../types/user/userTypes';
+import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
 
 export const UserMenu = ({user}: {user: User}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -15,7 +16,7 @@ export const UserMenu = ({user}: {user: User}) => {
   return (
     <UserMenuContainer>
       <UserMenuIconButton sx={{ padding: 0 }} onClick={handleClick}>
-        <img src={user.image} alt={'User menu'} title='User menu' />
+        <UserAvatar src={user.image} />
       </UserMenuIconButton>
       <UserMenuMenu
         id="user-menu"

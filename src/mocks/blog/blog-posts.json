@@ -4,8 +4,100 @@
       "id": 1,
       "title": "The Shawshank Redemption",
       "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
-      "date": "2017-01-01",
-      "image": "http://lorempixel.com/640/480/",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/440/",
+      "author": {
+          "id": 1,
+          "name": "John Doe"
+      },
+      "comments": [
+          {
+              "id": 1,
+              "content": "Lorem ipsum",
+              "date": "2017-01-23",
+              "author": {
+                  "id": 2,
+                  "name": "Jane Doe"
+              }
+          },
+          {
+              "id": 2,
+              "content": "Lorem ipsum",
+              "date": "2017-01-23",
+              "author": {
+                  "id": 3,
+                  "name": "John Smith"
+              }
+          }
+      ],
+      "tags": [
+          {
+              "id": 1,
+              "name": "drama"
+          },
+          {
+              "id": 2,
+              "name": "crime"
+          }
+      ],
+      "category": {
+          "id": 1,
+          "name": "Movies"
+      },
+      "commentsCount": 2
+    },
+{
+      "id": 2,
+      "title": "The consectetur pellentesque",
+      "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/441/",
+      "author": {
+          "id": 1,
+          "name": "John Doe"
+      },
+      "comments": [
+          {
+              "id": 1,
+              "content": "Lorem ipsum",
+              "date": "2017-01-23",
+              "author": {
+                  "id": 2,
+                  "name": "Jane Doe"
+              }
+          },
+          {
+              "id": 2,
+              "content": "Lorem ipsum",
+              "date": "2017-01-23",
+              "author": {
+                  "id": 3,
+                  "name": "John Smith"
+              }
+          }
+      ],
+      "tags": [
+          {
+              "id": 1,
+              "name": "drama"
+          },
+          {
+              "id": 2,
+              "name": "crime"
+          }
+      ],
+      "category": {
+          "id": 1,
+          "name": "Movies"
+      },
+      "commentsCount": 2
+    },
+{
+      "id": 3,
+      "title": "The Lorem ipsum",
+      "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/442/",
       "author": {
           "id": 1,
           "name": "John Doe"
@@ -47,48 +139,140 @@
       "commentsCount": 2
     },
     {
-      "id": 2,
-      "title": "The Godfather",
-      "content": "LOrem ipsum",
-      "date": "2017-01-01",
-      "image": "http://lorempixel.com/640/480/",
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/440/",
       "author": {
-          "id": 1,
-          "name": "John Doe"
+        "id": 1,
+        "name": "John Doe"
       },
       "comments": [
-          {
-              "id": 3,
-              "content": "Lorem ipsum",
-              "date": "2017-01-23",
-              "author": {
-                  "id": 2,
-                  "name": "Jane Doe"
-              }
-          },
-          {
-              "id": 4,
-              "content": "Lorem ipsum",
-              "date": "2017-01-23",
-              "author": {
-                  "id": 3,
-                  "name": "John Smith"
-              }
+        {
+          "id": 1,
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 2,
+            "name": "Jane Doe"
           }
+        },
+        {
+          "id": 2,
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 3,
+            "name": "John Smith"
+          }
+        }
       ],
       "tags": [
-          {
-              "id": 1,
-              "name": "drama"
-          },
-          {
-              "id": 3,
-              "name": "mafia"
-          }
+        {
+          "id": 1,
+          "name": "drama"
+        },
+        {
+          "id": 2,
+          "name": "crime"
+        }
       ],
       "category": {
+        "id": 1,
+        "name": "Movies"
+      },
+      "commentsCount": 2
+    },
+    {
+      "id": 2,
+      "title": "The consectetur pellentesque",
+      "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/441/",
+      "author": {
+        "id": 1,
+        "name": "John Doe"
+      },
+      "comments": [
+        {
           "id": 1,
-          "name": "Movies"
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 2,
+            "name": "Jane Doe"
+          }
+        },
+        {
+          "id": 2,
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 3,
+            "name": "John Smith"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "drama"
+        },
+        {
+          "id": 2,
+          "name": "crime"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Movies"
+      },
+      "commentsCount": 2
+    },
+    {
+      "id": 3,
+      "title": "The Lorem ipsum",
+      "content": "Praesent consectetur pellentesque est at ultrices. Fusce quis mollis lorem.",
+      "date": "13 Jan 2022",
+      "image": "https://picsum.photos/1120/442/",
+      "author": {
+        "id": 1,
+        "name": "John Doe"
+      },
+      "comments": [
+        {
+          "id": 1,
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 2,
+            "name": "Jane Doe"
+          }
+        },
+        {
+          "id": 2,
+          "content": "Lorem ipsum",
+          "date": "2017-01-23",
+          "author": {
+            "id": 3,
+            "name": "John Smith"
+          }
+        }
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "drama"
+        },
+        {
+          "id": 2,
+          "name": "crime"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Movies"
       },
       "commentsCount": 2
     }

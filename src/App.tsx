@@ -43,6 +43,14 @@ const router = createBrowserRouter([
     element: <BlogPage />
   },
   {
+    path: routes.blog2x,
+    element: <BlogPage columns={2} />
+  },
+  {
+    path: routes.blog3x,
+    element: <BlogPage columns={3} />
+  },
+  {
     path: routes.themeColors,
     element: <ColorsPage />,
   },
