@@ -6,7 +6,7 @@ import {
   Abc,
   AccountBox,
   ColorLens,
-  DesignServices, Edit,
+  DesignServices,
   Notes,
   People,
   Person,
@@ -76,11 +76,6 @@ const menuItems: NavigationItemType[] = [
         path: routes.blogPost,
         label: 'Post',
         icon: (props:any) => <ShortText {...props} />,
-      },
-      {
-        path: routes.blogEditPost,
-        label: 'Edit',
-        icon: (props:any) => <Edit {...props} />,
       },
       {
         path: routes.blogCreatePost,

@@ -16,6 +16,7 @@ import { UserProfilePage } from './pages/user/user-profile-page/UserProfilePage'
 import { UserListPage } from './pages/user/user-list-page/UserListPage';
 import { UserCreatePage } from './pages/user/user-create-page/UserCreatePage';
 import { BlogPage } from './pages/blog/blog-page/BlogPage';
+import { CreatePostBlogPage } from './pages/blog/create-post-blog-page/CreatePostBlogPage';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: routes.blog3x,
     element: <BlogPage columns={3} />
+  },
+  {
+    path: routes.blogCreatePost,
+    element: <CreatePostBlogPage />
   },
   {
     path: routes.themeColors,

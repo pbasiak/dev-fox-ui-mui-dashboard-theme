@@ -17,6 +17,8 @@ import posts from '../../../mocks/blog/blog-posts.json';
 import { Loader } from '../../../components/loader/Loader';
 import { useState } from 'react';
 import { Add, Search } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../../contants/routes';
 
 interface Props {
   columns?: 1 | 2 | 3;
@@ -25,6 +27,7 @@ interface Props {
 export const BlogPage = ({ columns = 1 }: Props) => {
   const { data, isLoading } = useQuery({queryKey: ['blog-posts'], queryFn: () => posts.posts});
   const [sort, setSort] = useState('newest');
+  const navigate = useNavigate();
 
   const handleChange = (event: SelectChangeEvent) => {
     setSort(event.target.value as string);
@@ -35,7 +38,7 @@ export const BlogPage = ({ columns = 1 }: Props) => {
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
-        <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} renderRight={<Button startIcon={<Add />} variant={'contained'}>Add post</Button>} />
+        <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} renderRight={<Button onClick={() => navigate(routes.blogCreatePost)} startIcon={<Add />} variant={'contained'}>Add post</Button>} />
         <Stack direction={'row'} marginBottom={2} justifyContent={'space-between'} alignItems={'flex-start'}>
           <TextField InputProps={{ startAdornment:  <InputAdornment position="start"><Search color={'inherit'} /></InputAdornment> }} fullWidth={false} size={'small'} variant={'outlined'} placeholder={'Search posts...'} />
           <FormControl>

@@ -14,7 +14,6 @@ export const routes = {
   blog2x: `${blogPrefix}/list2x`,
   blog3x: `${blogPrefix}/list3x`,
   blogCreatePost: `${blogPrefix}/create`,
-  blogEditPost: `${blogPrefix}/edit`,
   blogPost: `${blogPrefix}/post`,
   themeGeneral: `${themePrefix}/general`,
   themeTypography: `${themePrefix}/typography`,
