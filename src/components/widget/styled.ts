@@ -8,10 +8,11 @@ export const WidgetContainer = styled(Grid)(({ theme }) => ({
 }))
 
 export const WidgetTitleContainer = styled(Box)(({ theme }) => ({
-
+  marginBottom: theme.spacing(1),
 }))
 
 export const WidgetTitle = styled(Typography)(({ theme }) => ({
   fontWeight: theme.typography.fontWeightMedium,
   fontSize: '14px',
+  color: theme.palette.text.secondary,
 }))
