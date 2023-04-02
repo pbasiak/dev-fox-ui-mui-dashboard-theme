@@ -7,9 +7,9 @@ interface StatWidgetProps extends WidgetProps {
   icon: ReactNode;
 }
 
-export const StatWidget = ({ title, value, icon, columns = 3 }: StatWidgetProps) => {
+export const StatWidget = ({ title, value, icon }: StatWidgetProps) => {
   return (
-    <Widget title={title} columns={columns}>
+    <Widget title={title}>
       <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
         <Typography fontSize={'24px'} fontWeight={'bold'}>
           {value}
