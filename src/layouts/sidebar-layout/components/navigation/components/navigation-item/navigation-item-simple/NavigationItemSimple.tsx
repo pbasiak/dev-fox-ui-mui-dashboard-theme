@@ -19,16 +19,16 @@ export const NavigationItemSimple = (item: Props) => {
   }, [item.path, navigate]);
 
   const iconProps: NavigationItemIconProps = {
-    // color: item?.iconColor || item?.active ? 'primary' : 'action',
-    // sx: { color: Colors.sidebarIconColor, '&:hover': {color: Colors.sidebarIconColorHover} },
-    // TODO: cleanup
+    fontSize: item.nested ? 'small' : 'medium',
   }
 
   return (
-    <NavigationListItemButton onClick={handleClick} sx={{ paddingLeft: item.nested ? 4 : 2 }} active={isActive}>
-      <NavigationListItemIcon>
-        {item.icon(iconProps)}
-      </NavigationListItemIcon>
+    <NavigationListItemButton nested={item.nested} onClick={handleClick} active={isActive}>
+      {!item.nested ?
+        <NavigationListItemIcon>
+          {item.icon(iconProps)}
+        </NavigationListItemIcon> : null}
+
       <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
     </NavigationListItemButton>
   );
