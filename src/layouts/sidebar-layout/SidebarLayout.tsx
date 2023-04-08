@@ -14,7 +14,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ReactNode, useState } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
-import Logo from '../../assets/logo.svg';
 import { DrawerLogoText } from './styled';
 import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
 
@@ -63,7 +62,7 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(2, 2, 2, 4),
+  padding: theme.spacing(2, 2, 2, 3),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'space-between',
@@ -88,7 +87,7 @@ export function SidebarLayout({children}: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" open={open} color='transparent'>
-        <Toolbar sx={{ backgroundColor: 'rgba(255,255,255, 0.9)' }}>
+        <Toolbar>
           <Stack justifyContent={open ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
             <IconButton
               color="inherit"
@@ -118,7 +117,6 @@ export function SidebarLayout({children}: Props) {
       >
         <DrawerHeader>
           <Stack direction={'row'} alignItems={'center'} justifyContent={'flex-start'}>
-            <img src={Logo} width={50} />
             <DrawerLogoText variant="h6">DevZone</DrawerLogoText>
           </Stack>
           <IconButton onClick={handleDrawerClose}>

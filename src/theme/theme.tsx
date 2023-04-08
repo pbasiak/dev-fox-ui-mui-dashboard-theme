@@ -1,36 +1,16 @@
 import {createTheme} from "@mui/material";
 import { themeShadows } from './shadows';
 
-const sidebarColors = {
-  sidebarIconColor: '#94a8bd',
-  sidebarIconColorHover: '#94a8bd',
-  sidebarIconColorActive: '#54afff',
-  sidebarButtonBackgroundColorHover: '#f5f7ff',
-  sidebarButtonBackgroundColorActive: '#e6f4ff',
-  sidebarButtonTextColor: '#70768a',
-  sidebarButtonTextColorActive: '#3198ff',
-  sidebarButtonTextColorHover: '#70768a',
-  sidebarTextColor: '#70768a',
-}
-
-export const Colors = {
-  primary: "#116af6",
-  secondary: "#FF5252",
-  baseTextColor: '#0C1722',
-  textGray: '#6A6A6A',
-  ...sidebarColors
-}
-
 export const AppTheme = createTheme({
   palette: {
     primary: {
-      main: Colors.primary,
+      main: '#2f63f8', //"#116af6",
     },
     secondary: {
-      main: Colors.secondary
+      main: '#fafaff',
     },
     text: {
-      primary: Colors.baseTextColor
+      primary: "#0C1722",
     },
     divider: 'rgba(0, 0, 0, 0.10)',
   },
@@ -39,6 +19,7 @@ export const AppTheme = createTheme({
   },
   typography: {
     fontFamily: [
+      '"Source Sans Pro"',
       '-apple-system',
       'BlinkMacSystemFont',
       'Roboto',
@@ -55,7 +36,7 @@ export const AppTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#fdfdfd',
+          backgroundColor: '#f2f4f8',
         }
       }
     },
@@ -92,9 +73,27 @@ export const AppTheme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          borderRight: '1px dashed rgba(0, 0, 0, 0.1)',
+          // borderRight: '1px solid rgba(0, 0, 0, 0.05)',
+          // boxShadow: themeShadows[3],
         }
       }
     },
   },
 });
+
+const sidebarColors = {
+  sidebarIconColor: AppTheme.palette.grey[500],
+  sidebarIconColorHover: AppTheme.palette.primary.dark,
+  sidebarIconColorActive: AppTheme.palette.primary.main,
+  sidebarButtonBackgroundColorHover: `${AppTheme.palette.primary.main}1A`,
+  sidebarButtonBackgroundColorActive: `${AppTheme.palette.primary.main}26`,
+  sidebarButtonTextColor: AppTheme.palette.text.secondary,
+  sidebarButtonTextColorActive: AppTheme.palette.primary.main, //'#3198ff',
+  sidebarButtonTextColorHover: AppTheme.palette.primary.dark,
+  sidebarTextColor: AppTheme.palette.text.secondary,
+}
+
+export const Colors = {
+  ...sidebarColors
+}
+

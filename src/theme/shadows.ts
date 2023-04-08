@@ -1,9 +1,9 @@
 import { Shadows } from '@mui/material';
 
 const shadowsOpacity = {
-  first: 0.04,
-  second: 0.04,
-  third: 0.04,
+  first: 0.02,
+  second: 0.02,
+  third: 0.02,
 }
 
 export const themeShadows: Shadows = [

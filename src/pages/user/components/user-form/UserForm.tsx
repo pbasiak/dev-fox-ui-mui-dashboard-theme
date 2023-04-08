@@ -11,7 +11,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { Colors } from '../../../../theme/theme';
 import {
   AccountGeneralFieldsNames,
   AccountGeneralForm,
@@ -58,7 +57,7 @@ export const UserForm = ({ user, submitButtonText = 'Save changes' }: Props) => 
                   <Typography textAlign={'center'} component={'p'} variant={'subtitle1'}>{userFormValues.firstName} {userFormValues.lastName}</Typography>
                   <Typography textAlign={'center'} component={'p'} variant={'subtitle2'}>{userFormValues.username}</Typography>
                 </Stack>
-                <Typography textAlign={'center'} fontSize={12} color={Colors.textGray}>Allowed *.jpeg, *.jpg, *.png, *.gif <br/>max size of 5.0 MB</Typography>
+                <Typography textAlign={'center'} fontSize={12} color={'text.secondary'}>Allowed *.jpeg, *.jpg, *.png, *.gif <br/>max size of 5.0 MB</Typography>
                 <Button size={'small'} variant={'contained'}>Upload new</Button>
                 <Button color={'error'} size={'small'}>Remove picture</Button>
               </Stack>

@@ -15,7 +15,7 @@ interface Props extends NavigationItemNestedType {
 }
 
 export const NavigationItemNested = (item: Props) => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleToggleOpen = () => {
     setOpen(!open);

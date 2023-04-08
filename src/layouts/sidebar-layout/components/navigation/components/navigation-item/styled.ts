@@ -27,7 +27,7 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
     transform: 'translateY(-50%)',
     width: '4px',
     height: '4px',
-    backgroundColor: active ? Colors.primary : Colors.sidebarIconColor,
+    backgroundColor: active ? theme.palette.primary.main : Colors.sidebarIconColor,
     borderRadius: theme.shape.borderRadius,
   },
   '&:hover': {
@@ -41,9 +41,6 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
   ...(active && {
     backgroundColor: Colors.sidebarButtonBackgroundColorActive,
     color: Colors.sidebarButtonTextColorActive,
-    '.MuiTypography-root': {
-      fontWeight: theme.typography.fontWeightBold,
-    },
 
     '.MuiSvgIcon-root': {
       color: Colors.sidebarIconColorActive,
