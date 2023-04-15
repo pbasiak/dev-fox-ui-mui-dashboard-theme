@@ -51,7 +51,7 @@ export const AccountSettingsForm = () => {
           <Stack spacing={6}>
             <Stack direction={'row'} spacing={2}>
               <Stack spacing={2} paddingY={1} sx={leftColumnSx}>
-                <Typography fontWeight={500}>Notifications</Typography>
+                <Typography fontWeight={'fontWeightMedium'}>Notifications</Typography>
               </Stack>
               <Stack spacing={2}>
                 <FormGroup>
@@ -63,7 +63,7 @@ export const AccountSettingsForm = () => {
 
             <Stack direction={'row'} spacing={2}>
               <Stack spacing={2} paddingY={1} sx={leftColumnSx}>
-                <Typography fontWeight={500}>Privacy</Typography>
+                <Typography fontWeight={'fontWeightMedium'}>Privacy</Typography>
               </Stack>
               <Stack spacing={2}>
                 <FormGroup>
@@ -75,7 +75,7 @@ export const AccountSettingsForm = () => {
 
             <Stack direction={'row'} spacing={2}>
               <Stack spacing={2} paddingY={1} sx={leftColumnSx}>
-                <Typography fontWeight={500}>Adds</Typography>
+                <Typography fontWeight={'fontWeightMedium'}>Adds</Typography>
               </Stack>
               <Stack spacing={2}>
                 <Typography variant={'body2'}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ante sapien. Sed quis mattis mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque vel mattis magna. Ut risus ipsum, consequat at est non, interdum consequat elit. Aenean non est interdum, sagittis elit sodales, tincidunt leo. Vivamus quis viverra est. Suspendisse potenti. Sed lobortis arcu in porttitor venenatis. In hac habitasse platea dictumst. </Typography>
@@ -84,7 +84,7 @@ export const AccountSettingsForm = () => {
 
             <Stack direction={'row'} spacing={2}>
               <Stack spacing={2} paddingY={1} sx={leftColumnSx}>
-                <Typography fontWeight={500}>Delete account</Typography>
+                <Typography fontWeight={'fontWeightMedium'}>Delete account</Typography>
               </Stack>
               <Stack spacing={2}>
                 <Button variant={'contained'} color={'error'}>Delete account</Button>
