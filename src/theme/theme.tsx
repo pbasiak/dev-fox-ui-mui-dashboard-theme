@@ -1,5 +1,6 @@
 import {createTheme} from "@mui/material";
 import { themeShadows } from './shadows';
+import waveSvg from '../assets/wave.svg';
 
 export const AppTheme = createTheme({
   palette: {
@@ -10,7 +11,7 @@ export const AppTheme = createTheme({
       main: '#fafaff',
     },
     text: {
-      primary: "#0C1722",
+      primary: "#0a204f",
     },
     divider: 'rgba(0, 0, 0, 0.10)',
   },
@@ -30,13 +31,45 @@ export const AppTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    h1: {
+      fontSize: '5rem',
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: '3.75rem',
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: '3rem',
+      fontWeight: 600,
+    },
+    h4: {
+      fontSize: '2.125rem',
+      fontWeight: 600,
+    },
+    h5: {
+      fontSize: '1.5rem',
+      fontWeight: 600,
+    },
+    h6: {
+      fontSize: '1.25rem',
+      fontWeight: 600,
+    }
   },
   shadows: themeShadows,
   components: {
     MuiCssBaseline: {
       styleOverrides: {
+        html: {
+          minHeight: '100%',
+        },
         body: {
+          minHeight: '100%',
           backgroundColor: '#f2f4f8',
+          backgroundImage: `url(${waveSvg})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'bottom',
+          backgroundSize: '100%',
         }
       }
     },
@@ -73,8 +106,8 @@ export const AppTheme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          // borderRight: '1px solid rgba(0, 0, 0, 0.05)',
-          // boxShadow: themeShadows[3],
+          borderRight: '0',
+          boxShadow: themeShadows[15],
         }
       }
     },

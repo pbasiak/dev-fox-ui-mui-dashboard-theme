@@ -23,18 +23,18 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ theme, open }) => ({
   flexGrow: 1,
-  padding: theme.spacing(3),
+  padding: theme.spacing(4),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
+  marginLeft: 0,
   ...(open && {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginLeft: `${drawerWidth}px`,
   }),
 }));
 
@@ -85,8 +85,8 @@ export function SidebarLayout({children}: Props) {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" open={open} color='transparent'>
+    <Box>
+      <AppBar position="relative" open={open} color='transparent'>
         <Toolbar>
           <Stack justifyContent={open ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
             <IconButton
@@ -126,7 +126,7 @@ export function SidebarLayout({children}: Props) {
         <Navigation />
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+        {/*<DrawerHeader />*/}
         {children}
       </Main>
     </Box>
