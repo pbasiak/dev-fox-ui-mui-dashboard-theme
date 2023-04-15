@@ -1,6 +1,6 @@
 import {createTheme} from "@mui/material";
 import { themeShadows } from './shadows';
-import waveSvg from '../assets/wave.svg';
+import waveSvg from '../assets/wave-top.svg';
 
 export const AppTheme = createTheme({
   palette: {
@@ -12,6 +12,7 @@ export const AppTheme = createTheme({
     },
     text: {
       primary: "#0a204f",
+      secondary: "#4c5e86",
     },
     divider: 'rgba(0, 0, 0, 0.10)',
   },
@@ -68,7 +69,7 @@ export const AppTheme = createTheme({
           backgroundColor: '#f2f4f8',
           backgroundImage: `url(${waveSvg})`,
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'bottom',
+          backgroundPosition: 'top',
           backgroundSize: '100%',
         }
       }
@@ -107,6 +108,7 @@ export const AppTheme = createTheme({
       styleOverrides: {
         paper: {
           borderRight: '0',
+          backgroundColor: '#fbfbff',
           boxShadow: themeShadows[15],
         }
       }

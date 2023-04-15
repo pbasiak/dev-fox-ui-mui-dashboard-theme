@@ -130,7 +130,7 @@ export function Navigation() {
 
   return (
     <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', padding: 2 }}
+      sx={{ width: '100%', maxWidth: 360, padding: 2 }}
       component="nav"
       aria-labelledby="nested-list-subheader"
     >
