@@ -86,7 +86,8 @@ export const AppTheme = createTheme({
           boxShadow: 'none',
         },
         contained: {
-          boxShadow: '5px 3px 0px 0 rgba(16, 141, 255, 0.1)',
+          // boxShadow: '5px 3px 0px 0 rgba(16, 141, 255, 0.1)',
+          boxShadow: '2px 5px 10px 2px rgba(16, 141, 255, 0.2)'
         },
         sizeSmall: {
           padding: '2px 12px',
