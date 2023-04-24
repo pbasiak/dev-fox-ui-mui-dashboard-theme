@@ -1,8 +1,10 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { Container, Button } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { DataGrid, GridColDef, GridSelectionModel, GridValueGetterParams } from '@mui/x-data-grid';
+import { Container, Button, Stack, IconButton } from '@mui/material';
+import { Add, DeleteOutline, Edit } from '@mui/icons-material';
+import { useCallback, useState } from 'react';
+import { DeleteDialog } from './components/delete-dialog/DeleteDialog';
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -40,10 +42,37 @@ const rows = [
 // TODO: refactor data
 
 export const UserListPage = () => {
+  const [showEditBar, setShowEditBar] = useState(false);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+  const [selectedRows, setSelectedRows] = useState<GridSelectionModel>([]);
+
+  const isSingleRowSelected = selectedRows.length === 1;
+
+  const handleSelectionChange = useCallback((model: GridSelectionModel) => {
+    const isSelectionEmpty = model.length === 0;
+
+    setSelectedRows(model);
+    setShowEditBar(!isSelectionEmpty);
+  }, []);
+
+  const handleDeleteDialogOpen = () => setDeleteDialogOpen(true);
+  const handleDeleteDialogClose = () => setDeleteDialogOpen(false);
+
+  const handleDeleteItems = useCallback(() => {
+    console.log('delete items');
+  }, [])
+
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
         <PageHeader title={'Users list'} breadcrumbs={['Users', 'List']} renderRight={<Button variant={'contained'} startIcon={<Add />}>Add user</Button>} />
+        {showEditBar ? <Stack direction={'row'} spacing={1} sx={{ backgroundColor: 'primary.main', borderRadius: '4px', mb: 1, px: 1, py: 0.5 }}>
+          {isSingleRowSelected ? <IconButton color={'secondary'}><Edit /></IconButton> : null}
+
+          <IconButton color={'secondary'} onClick={handleDeleteDialogOpen}><DeleteOutline /></IconButton>
+
+          <DeleteDialog open={deleteDialogOpen} onClose={handleDeleteDialogClose} onDeleteItems={handleDeleteItems} itemsLength={selectedRows.length} />
+        </Stack> : null}
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
             rows={rows}
@@ -51,6 +80,7 @@ export const UserListPage = () => {
             pageSize={5}
             rowsPerPageOptions={[5]}
             checkboxSelection
+            onSelectionModelChange={handleSelectionChange}
           />
         </div>
       </Container>
