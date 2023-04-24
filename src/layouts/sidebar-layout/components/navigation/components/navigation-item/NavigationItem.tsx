@@ -3,7 +3,11 @@ import { NavigationItemSimple } from './navigation-item-simple/NavigationItemSim
 import { NavigationItemNested } from './navigation-item-nested/NavigationItemNested';
 import { NavigationItemHeader } from './navigation-item-header/NavigationItemHeader';
 
-export const NavigationItem = (item: NavigationItemType) => {
+interface Props {
+  item: NavigationItemType;
+}
+
+export const NavigationItem = ({ item }: Props) => {
   const isSimple = 'path' in item;
   const isHeader = 'header' in item;
 
@@ -11,5 +15,5 @@ export const NavigationItem = (item: NavigationItemType) => {
     return <NavigationItemHeader header={item.header} />
   }
 
-  return isSimple ? (<NavigationItemSimple {...item} />) : <NavigationItemNested {...item} />
+  return isSimple ? (<NavigationItemSimple {...item} />) : <NavigationItemNested item={item} />
 }

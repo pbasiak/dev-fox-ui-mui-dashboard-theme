@@ -11,11 +11,12 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
 import { DrawerLogoText } from './styled';
 import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
+import { useNavigation } from './components/navigation/hooks/use-navigation/useNavigation';
 
 const drawerWidth = 270;
 
@@ -74,27 +75,19 @@ interface Props {
 
 export function SidebarLayout({children}: Props) {
   const theme = useTheme();
-  const [open, setOpen] = useState(true);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  const { isSidebarOpen, toggleSidebar } = useNavigation();
 
   return (
     <Box>
-      <AppBar position="relative" open={open} color='transparent'>
+      <AppBar position="relative" open={isSidebarOpen} color='transparent'>
         <Toolbar>
-          <Stack justifyContent={open ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
+          <Stack justifyContent={isSidebarOpen ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
             <IconButton
               color="inherit"
               aria-label="open navigation"
-              onClick={handleDrawerOpen}
+              onClick={toggleSidebar}
               edge="start"
-              sx={{ mr: 2, ...(open && { display: 'none' }) }}
+              sx={{ mr: 2, ...(isSidebarOpen && { display: 'none' }) }}
             >
               <MenuIcon />
             </IconButton>
@@ -113,19 +106,19 @@ export function SidebarLayout({children}: Props) {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={isSidebarOpen}
       >
         <DrawerHeader>
           <Stack direction={'row'} alignItems={'center'} justifyContent={'flex-start'}>
             <DrawerLogoText variant="h6">DevZone</DrawerLogoText>
           </Stack>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={toggleSidebar}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Navigation />
       </Drawer>
-      <Main open={open}>
+      <Main open={isSidebarOpen}>
         {/*<DrawerHeader />*/}
         {children}
       </Main>

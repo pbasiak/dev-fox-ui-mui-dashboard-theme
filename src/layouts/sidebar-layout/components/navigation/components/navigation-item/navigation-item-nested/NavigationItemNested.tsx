@@ -8,21 +8,24 @@ import List from '@mui/material/List';
 import * as React from 'react';
 import { NavigationItemSimple } from '../navigation-item-simple/NavigationItemSimple';
 import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
+import { useCallback } from 'react';
+import { useNavigation } from '../../../hooks/use-navigation/useNavigation';
 
-interface Props extends NavigationItemNestedType {
-  iconColor?: NavigationItemIconProps['color'];
-  nested?: boolean;
+interface Props {
+  item: NavigationItemNestedType;
 }
 
-export const NavigationItemNested = (item: Props) => {
-  const [open, setOpen] = React.useState(false);
+export const NavigationItemNested = ({ item }: Props) => {
+  const { getIsOpen, toggleNavigationId } = useNavigation();
+  const isOpen = getIsOpen(item.label);
 
-  const handleToggleOpen = () => {
-    setOpen(!open);
-  };
+  const handleToggleOpen = useCallback(() => {
+    console.log('xxx', item.label);
+    toggleNavigationId(item.label);
+  }, [item.label, toggleNavigationId]);
 
   const iconProps: NavigationItemIconProps = {
-    color: item?.iconColor || item?.active ? 'primary' : 'action',
+    color: item?.active ? 'primary' : 'action',
   }
 
   const nestedItems = item.items.map((item) => {
@@ -36,9 +39,9 @@ export const NavigationItemNested = (item: Props) => {
           {item.icon(iconProps)}
         </NavigationListItemIcon>
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        {isOpen ? <ExpandLess /> : <ExpandMore />}
       </NavigationListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={isOpen} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {nestedItems}
         </List>

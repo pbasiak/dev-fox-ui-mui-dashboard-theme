@@ -10,6 +10,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.2",
     "@mui/x-data-grid": "^5.17.24",
+    "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-query": "^4.23.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -23,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.42.1",
     "react-quill": "^2.0.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.4",
@@ -82,6 +84,7 @@
     ]
   },
   "devDependencies": {
+    "@redux-devtools/core": "^3.13.1",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
