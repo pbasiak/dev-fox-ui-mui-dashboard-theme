@@ -18,8 +18,8 @@ export const UserProfileHeader = ({user}: {user:User}) => {
         <Stack marginTop={2} spacing={2} direction={'row'} alignItems={'center'}>
           <UserAvatar sx={{ width: '120px', height: '120px' }} />
           <Stack>
-            <Typography fontWeight={'600'} fontSize={22}>{user.firstName} {user.lastName}</Typography>
-            <Typography fontWeight={'400'} fontSize={14}>{user.company.department}</Typography>
+            <Typography fontWeight={'fontWeightMedium'} fontSize={22}>{user.firstName} {user.lastName}</Typography>
+            <Typography fontSize={14}>{user.company.department}</Typography>
           </Stack>
         </Stack>
         <Stack spacing={2} direction={'row'}>

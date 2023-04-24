@@ -10,7 +10,7 @@ export const WelcomeWidget = ({ title, description }: WelcomeWidgetProps) => {
   return (
     <WelcomeWidgetContainer>
       <WelcomeWidgetContent>
-        <Typography variant={'h4'} fontWeight={'bold'}>{title}</Typography>
+        <Typography variant={'h4'} fontWeight={'fontWeightBold'}>{title}</Typography>
         <Typography variant={'body1'}>{description}</Typography>
       </WelcomeWidgetContent>
     </WelcomeWidgetContainer>

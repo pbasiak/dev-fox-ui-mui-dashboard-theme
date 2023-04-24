@@ -7,7 +7,7 @@ export const UserProfileInfo = ({user} : { user: User}) => {
     <Paper>
       <Stack padding={2} spacing={2}>
         <Stack spacing={2}>
-          <Typography fontWeight={'bold'}>About</Typography>
+          <Typography fontWeight={'fontWeightBold'}>About</Typography>
           <Typography variant={'body2'}>{user.about}</Typography>
         </Stack>
 

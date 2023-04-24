@@ -30,7 +30,7 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
             <UserAvatar />
             <Stack>
               <Stack spacing={0.5} direction={'row'} alignItems={'center'}>
-                <Typography fontSize={'14px'} fontWeight={'500'}>{user.firstName} {user.lastName}</Typography>
+                <Typography fontSize={'14px'} fontWeight={'fontWeightMedium'}>{user.firstName} {user.lastName}</Typography>
                 <Typography fontSize={'14px'}>updated status</Typography>
               </Stack>
               <Typography fontSize={'12px'}>{post.created}</Typography>

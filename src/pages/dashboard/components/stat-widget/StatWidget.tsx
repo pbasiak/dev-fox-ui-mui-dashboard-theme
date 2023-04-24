@@ -9,7 +9,7 @@ export const StatWidget = ({ title, value }: StatWidgetProps) => {
   return (
     <Widget title={title} sx={{ minHeight: '120px' }}>
       <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-        <Typography variant={'h4'} component={'p'} fontWeight={'bold'}>
+        <Typography variant={'h4'} component={'p'} fontWeight={'fontWeightBold'}>
           {value}
         </Typography>
       </Stack>
