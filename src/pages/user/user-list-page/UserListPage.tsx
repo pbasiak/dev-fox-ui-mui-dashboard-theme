@@ -1,7 +1,7 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { DataGrid, GridColDef, GridSelectionModel, GridValueGetterParams } from '@mui/x-data-grid';
-import { Container, Button, Stack, IconButton } from '@mui/material';
+import { Container, Button, Stack, IconButton, Box } from '@mui/material';
 import { Add, DeleteOutline, Edit } from '@mui/icons-material';
 import { useCallback, useState } from 'react';
 import { DeleteDialog } from './components/delete-dialog/DeleteDialog';
@@ -73,7 +73,7 @@ export const UserListPage = () => {
 
           <DeleteDialog open={deleteDialogOpen} onClose={handleDeleteDialogClose} onDeleteItems={handleDeleteItems} itemsLength={selectedRows.length} />
         </Stack> : null}
-        <div style={{ height: 400, width: '100%' }}>
+        <Box sx={{ height: 400, width: '100%', p: 0, backgroundColor: 'background.paper', borderRadius: '4px' }}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -82,7 +82,7 @@ export const UserListPage = () => {
             checkboxSelection
             onSelectionModelChange={handleSelectionChange}
           />
-        </div>
+        </Box>
       </Container>
     </SidebarLayout>
   );
