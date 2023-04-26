@@ -1,8 +1,10 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import {
   Button,
+  ButtonGroup,
   Container,
-  FormControl, InputAdornment,
+  FormControl,
+  InputAdornment,
   InputLabel,
   MenuItem,
   Select,
@@ -15,23 +17,25 @@ import { BlogList } from './components/blog-list/BlogList';
 import { useQuery } from '@tanstack/react-query';
 import posts from '../../../mocks/blog/blog-posts.json';
 import { Loader } from '../../../components/loader/Loader';
-import { useState } from 'react';
-import { Add, Search } from '@mui/icons-material';
+import { useCallback, useState } from 'react';
+import { Add, GridView, Search, Splitscreen } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../../contants/routes';
+import { BlogView } from './types/blogView';
 
-interface Props {
-  columns?: 1 | 2 | 3;
-}
-
-export const BlogPage = ({ columns = 1 }: Props) => {
+export const BlogPage = () => {
   const { data, isLoading } = useQuery({queryKey: ['blog-posts'], queryFn: () => posts.posts});
   const [sort, setSort] = useState('newest');
+  const [view, setView] = useState<BlogView>(BlogView.GRID);
   const navigate = useNavigate();
 
   const handleChange = (event: SelectChangeEvent) => {
     setSort(event.target.value as string);
   };
+
+  const handleViewChange = useCallback((view: BlogView) => {
+    setView(view);
+  }, []);
 
   if (!isLoading && !data) return null;
 
@@ -41,23 +45,30 @@ export const BlogPage = ({ columns = 1 }: Props) => {
         <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} renderRight={<Button onClick={() => navigate(routes.blogCreatePost)} startIcon={<Add />} variant={'contained'}>Add post</Button>} />
         <Stack direction={'row'} marginBottom={2} justifyContent={'space-between'} alignItems={'flex-start'}>
           <TextField InputProps={{ startAdornment:  <InputAdornment position="start"><Search color={'inherit'} /></InputAdornment> }} fullWidth={false} size={'small'} variant={'outlined'} placeholder={'Search posts...'} />
-          <FormControl>
-            <InputLabel id="sort-select-label">Sort</InputLabel>
-            <Select
-              labelId="sort-select-label"
-              id="sort-select"
-              value={sort}
-              label="Sort"
-              size={'small'}
-              onChange={handleChange}
-            >
-              <MenuItem value={'newest'}>Newest</MenuItem>
-              <MenuItem value={'most-popular'}>Most popular</MenuItem>
-              <MenuItem value={'recommended'}>Recommended</MenuItem>
-            </Select>
-          </FormControl>
+          <Stack direction={'row'} spacing={2}>
+            <FormControl>
+              <InputLabel id="sort-select-label">Sort</InputLabel>
+              <Select
+                labelId="sort-select-label"
+                id="sort-select"
+                value={sort}
+                label="Sort"
+                size={'small'}
+                onChange={handleChange}
+              >
+                <MenuItem value={'newest'}>Newest</MenuItem>
+                <MenuItem value={'most-popular'}>Most popular</MenuItem>
+                <MenuItem value={'recommended'}>Recommended</MenuItem>
+              </Select>
+            </FormControl>
+
+            <ButtonGroup variant={'outlined'} color={'primary'}>
+              <Button onClick={() => handleViewChange(BlogView.GRID)} variant={view === BlogView.GRID ? 'contained' : 'outlined'} size={'small'}><GridView /></Button>
+              <Button onClick={() => handleViewChange(BlogView.LIST)} variant={view === BlogView.LIST ? 'contained' : 'outlined'} size={'small'}><Splitscreen /></Button>
+            </ButtonGroup>
+          </Stack>
         </Stack>
-        { isLoading ? <Loader /> : <BlogList posts={data} columns={columns} /> }
+        { isLoading ? <Loader /> : <BlogList posts={data} view={view} /> }
       </Container>
     </SidebarLayout>
   )

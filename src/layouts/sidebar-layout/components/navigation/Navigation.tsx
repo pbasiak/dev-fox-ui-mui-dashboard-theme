@@ -59,17 +59,7 @@ const menuItems: NavigationItemType[] = [
     items: [
       {
         path: routes.blog,
-        label: 'List (Columns: 1)',
-        icon: (props:any) => <Notes {...props} />,
-      },
-      {
-        path: routes.blog2x,
-        label: 'List (Columns: 2)',
-        icon: (props:any) => <Notes {...props} />,
-      },
-      {
-        path: routes.blog3x,
-        label: 'List (Columns: 3)',
+        label: 'List',
         icon: (props:any) => <Notes {...props} />,
       },
       {

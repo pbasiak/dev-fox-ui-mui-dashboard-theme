@@ -1,23 +1,20 @@
 import { BlogPost } from '../../types/blogPost';
 import { BlogListPost } from '../blog-list-post/BlogListPost';
 import { Grid, Stack } from '@mui/material';
+import { BlogView } from '../../types/blogView';
 
 interface Props {
   posts: BlogPost[];
-  columns?: 1 | 2 | 3;
+  view: BlogView;
 }
 
-const mdConfig = {
-  1: 12,
-  2: 6,
-  3: 4
-}
+export const BlogList = ({posts, view}: Props) => {
+  const mdConfig = view === BlogView.LIST ? 12 : 4;
 
-export const BlogList = ({posts, columns = 1}: Props) => {
   const postsList = posts.map((post) => {
     return (
-      <Grid item xs={12} md={mdConfig[columns]} key={post.id}>
-        <BlogListPost post={post} key={post.id} size={columns === 3 ? 'small' : 'medium'} />
+      <Grid item xs={12} md={mdConfig} key={post.id}>
+        <BlogListPost post={post} key={post.id} size={view === BlogView.GRID ? 'small' : 'medium'} />
       </Grid>
     )
   });
