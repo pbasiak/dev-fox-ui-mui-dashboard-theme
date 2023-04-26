@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { navigationReducer } from './sidebar/navigationSlice';
+import { calendarReducer } from './calendar/calendarSlice';
 
 export const store = configureStore({
   reducer: {
     navigation: navigationReducer,
+    calendar: calendarReducer,
   }
 })
 

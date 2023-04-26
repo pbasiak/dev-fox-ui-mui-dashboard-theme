@@ -4,7 +4,7 @@ import { NavigationItem } from './components/navigation-item/NavigationItem';
 import { NavigationItemType } from './components/navigation-item/types';
 import {
   Abc,
-  AccountBox,
+  AccountBox, CalendarMonth,
   ColorLens,
   DesignServices,
   Notes,
@@ -83,6 +83,11 @@ const menuItems: NavigationItemType[] = [
         icon: (props:any) => <PostAdd {...props} />,
       },
     ]
+  },
+  {
+    path: routes.calendar,
+    label: 'Calendar',
+    icon: (props: any) => <CalendarMonth {...props} />,
   },
   {
     header: 'Documentation',

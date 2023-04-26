@@ -19,4 +19,5 @@ export const routes = {
   themeTypography: `${themePrefix}/typography`,
   themeColors: `${themePrefix}/colors`,
   componentsButton: `${componentPrefix}/button`,
+  calendar: `/calendar`,
 }

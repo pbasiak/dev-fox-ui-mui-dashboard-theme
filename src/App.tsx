@@ -18,6 +18,7 @@ import { UserCreatePage } from './pages/user/user-create-page/UserCreatePage';
 import { BlogPage } from './pages/blog/blog-page/BlogPage';
 import { CreatePostBlogPage } from './pages/blog/create-post-blog-page/CreatePostBlogPage';
 import { BlogPostPage } from './pages/blog/blog-post-page/BlogPostPage';
+import { CalendarPage } from './pages/calendar/Calendar';
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: routes.componentsButton,
     element: <ButtonPage />,
+  },
+  {
+    path: routes.calendar,
+    element: <CalendarPage />,
   },
   {
     path: '*',

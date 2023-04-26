@@ -1,0 +1,71 @@
+[
+  {
+    "date": "2023-04-04",
+    "events": [
+      {
+        "id": "2",
+        "name": "Hey",
+        "startDate": "2023-04-04T00:00:00Z",
+        "endDate": "2023-04-06T00:00:00Z",
+        "description": "test",
+        "location": "test"
+      },
+      {
+        "id": "1",
+        "name": "All hands meeting",
+        "startDate": "2023-04-04T00:00:00Z",
+        "endDate": "2023-04-05T00:00:00Z",
+        "description": "test",
+        "location": "test"
+      }
+
+    ]
+  },
+  {
+    "date": "2023-04-05",
+    "events": [
+      {
+        "id": "1",
+        "name": "All hands meeting",
+        "startDate": "2023-04-04T00:00:00Z",
+        "endDate": "2023-04-05T00:00:00Z",
+        "description": "test",
+        "location": "test"
+      },
+      {
+        "id": "2",
+        "name": "Hey",
+        "startDate": "2023-04-04T00:00:00Z",
+        "endDate": "2023-04-06T00:00:00Z",
+        "description": "test",
+        "location": "test"
+      }
+    ]
+  },
+  {
+    "date": "2023-04-06",
+    "events": [
+      {
+        "id": "2",
+        "name": "Hey",
+        "startDate": "2023-04-04T00:00:00Z",
+        "endDate": "2023-04-06T00:00:00Z",
+        "description": "test",
+        "location": "test"
+      }
+    ]
+  },
+  {
+    "date": "2023-04-12",
+    "events": [
+      {
+        "id": "5",
+        "name": "All hands meeting NEW",
+        "startDate": "2023-04-12T00:00:00Z",
+        "endDate": "2023-04-12T12:00:00Z",
+        "description": "test",
+        "location": "test"
+      }
+    ]
+  }
+]
