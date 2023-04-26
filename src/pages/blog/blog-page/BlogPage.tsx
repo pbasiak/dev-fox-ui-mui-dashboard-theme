@@ -10,7 +10,7 @@ import {
   Select,
   SelectChangeEvent,
   Stack,
-  TextField,
+  TextField, Typography,
 } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { BlogList } from './components/blog-list/BlogList';
@@ -43,6 +43,7 @@ export const BlogPage = () => {
     <SidebarLayout>
       <Container maxWidth={'lg'}>
         <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} renderRight={<Button onClick={() => navigate(routes.blogCreatePost)} startIcon={<Add />} variant={'contained'}>Add post</Button>} />
+
         <Stack direction={'row'} marginBottom={2} justifyContent={'space-between'} alignItems={'flex-start'}>
           <TextField InputProps={{ startAdornment:  <InputAdornment position="start"><Search color={'inherit'} /></InputAdornment> }} fullWidth={false} size={'small'} variant={'outlined'} placeholder={'Search posts...'} />
           <Stack direction={'row'} spacing={2}>
@@ -67,6 +68,11 @@ export const BlogPage = () => {
               <Button onClick={() => handleViewChange(BlogView.LIST)} variant={view === BlogView.LIST ? 'contained' : 'outlined'} size={'small'}><Splitscreen /></Button>
             </ButtonGroup>
           </Stack>
+        </Stack>
+        <Stack mt={4} mb={4} spacing={2}>
+          <Typography variant={'h4'}>Read latest articles</Typography>
+          <Typography variant={'body1'}>
+            Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere. Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam porttitor vel purus eu commodo.          </Typography>
         </Stack>
         { isLoading ? <Loader /> : <BlogList posts={data} view={view} /> }
       </Container>
