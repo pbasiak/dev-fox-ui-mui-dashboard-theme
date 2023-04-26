@@ -4,13 +4,11 @@ import { Dashboard } from './pages/dashboard/Dashboard';
 import { TypographyPage } from './docs/pages/typography-page/TypographyPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { routes } from './contants/routes';
-import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout';
 import { ColorsPage } from './docs/pages/colors-page/ColorsPage';
 import { UserAccountPage } from './pages/user/user-account-page/UserAccountPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCurrentUser } from './hooks/api/use-current-user/useCurrentUser';
 import { Loader } from './components/loader/Loader';
-import { PageNotFound } from './components/page-not-found/PageNotFound';
 import { ButtonPage } from './docs/pages/button-page/ButtonPage';
 import { UserProfilePage } from './pages/user/user-profile-page/UserProfilePage';
 import { UserListPage } from './pages/user/user-list-page/UserListPage';
@@ -19,6 +17,8 @@ import { BlogPage } from './pages/blog/blog-page/BlogPage';
 import { CreatePostBlogPage } from './pages/blog/create-post-blog-page/CreatePostBlogPage';
 import { BlogPostPage } from './pages/blog/blog-post-page/BlogPostPage';
 import { CalendarPage } from './pages/calendar/Calendar';
+import { NotFoundPage } from './pages/not-found/NotFoundPage';
+import { MaintenancePage } from './pages/maintenance/MaintenancePage';
 
 const router = createBrowserRouter([
   {
@@ -70,8 +70,16 @@ const router = createBrowserRouter([
     element: <CalendarPage />,
   },
   {
+    path: routes.notFound,
+    element: <NotFoundPage />,
+  },
+  {
+    path: routes.maintenance,
+    element: <MaintenancePage />
+  },
+  {
     path: '*',
-    element: <SidebarLayout><PageNotFound /></SidebarLayout>,
+    element: <NotFoundPage />,
   },
 ])
 

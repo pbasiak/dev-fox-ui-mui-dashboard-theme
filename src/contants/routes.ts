@@ -18,4 +18,6 @@ export const routes = {
   themeColors: `${themePrefix}/colors`,
   componentsButton: `${componentPrefix}/button`,
   calendar: `/calendar`,
+  notFound: '/404',
+  maintenance: '/maintenance',
 }

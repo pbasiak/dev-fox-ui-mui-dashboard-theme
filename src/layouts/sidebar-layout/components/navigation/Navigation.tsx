@@ -5,12 +5,12 @@ import { NavigationItemType } from './components/navigation-item/types';
 import {
   Abc,
   AccountBox, CalendarMonth,
-  ColorLens,
+  ColorLens, Construction,
   DesignServices,
   Notes,
   People,
   Person,
-  PersonAdd, PostAdd,
+  PersonAdd, PostAdd, QuestionMark,
   ShapeLine, ShortText,
 } from '@mui/icons-material';
 import { routes } from '../../../../contants/routes';
@@ -78,6 +78,19 @@ const menuItems: NavigationItemType[] = [
     path: routes.calendar,
     label: 'Calendar',
     icon: (props: any) => <CalendarMonth {...props} />,
+  },
+  {
+    header: 'Other pages',
+  },
+  {
+    path: routes.notFound,
+    label: 'Page not found',
+    icon: (props: any) => <QuestionMark {...props} />,
+  },
+  {
+    path: routes.maintenance,
+    label: 'Maintenance',
+    icon: (props: any) => <Construction {...props} />,
   },
   {
     header: 'Documentation',

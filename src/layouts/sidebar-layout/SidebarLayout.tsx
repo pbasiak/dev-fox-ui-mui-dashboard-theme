@@ -14,9 +14,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { ReactNode } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
-import { DrawerLogoText } from './styled';
 import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
 import { useNavigation } from './components/navigation/hooks/use-navigation/useNavigation';
+import { Logo } from '../../components/logo/Logo';
 
 const drawerWidth = 270;
 
@@ -110,7 +110,7 @@ export function SidebarLayout({children}: Props) {
       >
         <DrawerHeader>
           <Stack direction={'row'} alignItems={'center'} justifyContent={'flex-start'}>
-            <DrawerLogoText variant="h6">DevZone</DrawerLogoText>
+            <Logo />
           </Stack>
           <IconButton onClick={toggleSidebar}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
