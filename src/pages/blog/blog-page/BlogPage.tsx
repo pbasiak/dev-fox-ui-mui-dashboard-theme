@@ -71,8 +71,9 @@ export const BlogPage = () => {
         </Stack>
         <Stack mt={4} mb={4} spacing={2}>
           <Typography variant={'h4'}>Read latest articles</Typography>
-          <Typography variant={'body1'}>
-            Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere. Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam porttitor vel purus eu commodo.          </Typography>
+          <Typography variant={'body1'} color={'text.secondary'}>
+            Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere. Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam porttitor vel purus eu commodo.
+          </Typography>
         </Stack>
         { isLoading ? <Loader /> : <BlogList posts={data} view={view} /> }
       </Container>
