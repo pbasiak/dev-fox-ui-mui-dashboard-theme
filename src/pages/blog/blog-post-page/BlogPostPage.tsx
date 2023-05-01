@@ -2,7 +2,7 @@ import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { useBlogPost } from '../../../hooks/api/use-blog-post/useBlogPost';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import ReactQuill from 'react-quill';
-import { Container, Paper } from '@mui/material';
+import { Box, Container, Paper } from '@mui/material';
 
 export const BlogPostPage = () => {
   const { data, isLoading } = useBlogPost();
@@ -13,6 +13,9 @@ export const BlogPostPage = () => {
     <SidebarLayout>
       <Container maxWidth='lg'>
         <PageHeader title={data?.title || ''} breadcrumbs={['Blog', data?.title || '']} />
+        <Box sx={{ borderRadius: '6px', overflow: 'hidden', mb: 2, boxShadow: 5 }}>
+          <img src={data?.image} alt={data?.title} style={{ maxWidth: '100%', display: 'block' }} />
+        </Box>
         <Paper sx={{ padding: 4 }}>
           <ReactQuill
             value={data?.content}
