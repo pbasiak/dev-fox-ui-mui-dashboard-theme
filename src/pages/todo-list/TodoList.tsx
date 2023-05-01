@@ -12,10 +12,15 @@ import { PageHeader } from '../../components/page-header/PageHeader';
 import { Task } from './types/task';
 import { TodoListItem } from './components/todo-list-item/TodoListItem';
 
+const defaultTasks: Task[] = [
+  { id: uuid(), name: 'Task 1', completed: true },
+  { id: uuid(), name: 'Task 2', completed: false },
+  { id: uuid(), name: 'Task 3', completed: false },
+];
 
 export const TodoList: React.FC = () => {
   const [task, setTask] = useState<string>('');
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(defaultTasks);
 
   const handleAddTask = () => {
     if (task.trim() !== '') {
