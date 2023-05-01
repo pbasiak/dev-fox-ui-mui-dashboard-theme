@@ -9,7 +9,7 @@ interface Props {
 export const FullWidthLayout = ({children}: Props) => {
   return (
     <div>
-      <Stack><Logo /></Stack>
+      <Stack px={3} py={2}><Logo /></Stack>
       {children}
     </div>
   )
