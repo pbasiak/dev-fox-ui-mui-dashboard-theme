@@ -20,4 +20,5 @@ export const routes = {
   calendar: `/calendar`,
   notFound: '/404',
   maintenance: '/maintenance',
+  todoList: '/todo-list',
 }

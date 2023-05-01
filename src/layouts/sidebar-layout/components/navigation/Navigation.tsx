@@ -6,7 +6,7 @@ import {
   Abc,
   AccountBox, CalendarMonth,
   ColorLens, Construction,
-  DesignServices,
+  DesignServices, ListAlt,
   Notes,
   People,
   Person,
@@ -75,9 +75,17 @@ const menuItems: NavigationItemType[] = [
     ]
   },
   {
+    header: 'Apps',
+  },
+  {
     path: routes.calendar,
     label: 'Calendar',
     icon: (props: any) => <CalendarMonth {...props} />,
+  },
+  {
+    path: routes.todoList,
+    label: 'Todo list',
+    icon: (props: any) => <ListAlt {...props} />,
   },
   {
     header: 'Other pages',

@@ -19,6 +19,7 @@ import { BlogPostPage } from './pages/blog/blog-post-page/BlogPostPage';
 import { CalendarPage } from './pages/calendar/Calendar';
 import { NotFoundPage } from './pages/not-found/NotFoundPage';
 import { MaintenancePage } from './pages/maintenance/MaintenancePage';
+import { TodoList } from './pages/todo-list/TodoList';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: routes.maintenance,
     element: <MaintenancePage />
+  },
+  {
+    path: routes.todoList,
+    element: <TodoList />,
   },
   {
     path: '*',
