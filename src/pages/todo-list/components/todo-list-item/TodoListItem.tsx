@@ -18,7 +18,8 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
       key={task.id}
       sx={{
         textDecoration: task.completed ? 'line-through' : 'none',
-        backgroundColor: 'background.paper',
+        backgroundColor: task.completed ? 'success.light' : 'background.paper',
+        color: task.completed ? 'success.contrastText' : 'text.primary',
         borderRadius: '4px',
         marginBottom: 1,
       }}
@@ -34,7 +35,7 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setEditTaskValue(e.target.value)
             }
-            sx={{ flexGrow: 1, marginRight: 4 }}
+            sx={{ flexGrow: 1, marginRight: 4, color: task.completed ? 'success.contrastText' : 'text.primary' }}
           />
         ) : (
           <ListItemText primary={task.name} />
@@ -42,14 +43,14 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
       }
       <ListItemIcon>
         {
-          editMode ? <IconButton onClick={() => setEditMode(false)}><Save /></IconButton> :
-            <IconButton onClick={() => setEditMode(true)}>
+          editMode ? <IconButton sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }} onClick={() => setEditMode(false)}><Save /></IconButton> :
+            <IconButton onClick={() => setEditMode(true)} sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}>
               <Edit />
             </IconButton>
         }
       </ListItemIcon>
       <ListItemIcon>
-        <IconButton onClick={() => onDelete(task.id)}>
+        <IconButton onClick={() => onDelete(task.id)} sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}>
           <Delete />
         </IconButton>
       </ListItemIcon>
