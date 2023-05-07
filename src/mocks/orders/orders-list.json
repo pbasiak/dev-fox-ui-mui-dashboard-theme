@@ -1,0 +1,103 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "customer": "John Doe",
+      "items": [
+        {
+          "id": 1001,
+          "name": "T-Shirt",
+          "price": 19.99,
+          "quantity": 2
+        },
+        {
+          "id": 1002,
+          "name": "Jeans",
+          "price": 39.99,
+          "quantity": 1
+        }
+      ],
+      "total": 79.97,
+      "date": "2022-04-01",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "customer": "Jane Smith",
+      "items": [
+        {
+          "id": 1003,
+          "name": "Sneakers",
+          "price": 59.99,
+          "quantity": 1
+        },
+        {
+          "id": 1004,
+          "name": "Backpack",
+          "price": 29.99,
+          "quantity": 1
+        },
+        {
+          "id": 1005,
+          "name": "Water Bottle",
+          "price": 9.99,
+          "quantity": 2
+        }
+      ],
+      "total": 109.95,
+      "date": "2022-04-02",
+      "status": "delivered"
+    },
+    {
+      "id": 3,
+      "customer": "Bob Johnson",
+      "items": [
+        {
+          "id": 1006,
+          "name": "Hoodie",
+          "price": 49.99,
+          "quantity": 2
+        },
+        {
+          "id": 1007,
+          "name": "Sweatpants",
+          "price": 39.99,
+          "quantity": 1
+        },
+        {
+          "id": 1008,
+          "name": "Sneakers",
+          "price": 59.99,
+          "quantity": 1
+        }
+      ],
+      "total": 199.95,
+      "date": "2022-04-03",
+      "status": "delivered"
+    },
+    {
+      "id": 4,
+      "customer": "Sarah Lee",
+      "items": [
+        {
+          "id": 1009,
+          "name": "Pencil Case",
+          "price": 7.99,
+          "quantity": 1
+        },
+        {
+          "id": 1010,
+          "name": "Notebook",
+          "price": 12.99,
+          "quantity": 2
+        }
+      ],
+      "total": 33.97,
+      "date": "2022-04-04",
+      "status": "delivered"
+    }
+  ],
+  "totalItems": 33,
+  "totalPages": 3,
+  "page": 1
+}

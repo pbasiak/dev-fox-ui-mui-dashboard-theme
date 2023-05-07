@@ -20,6 +20,7 @@ import { CalendarPage } from './pages/calendar/Calendar';
 import { NotFoundPage } from './pages/not-found/NotFoundPage';
 import { MaintenancePage } from './pages/maintenance/MaintenancePage';
 import { TodoList } from './pages/todo-list/TodoList';
+import { OrderList } from './pages/orders/orders-list/OrdersList';
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
   {
     path: routes.todoList,
     element: <TodoList />,
+  },
+  {
+    path: routes.ordersList,
+    element: <OrderList />,
   },
   {
     path: '*',

@@ -2,6 +2,7 @@ const themePrefix = '/theme';
 const userPrefix = '/user';
 const blogPrefix = '/blog';
 const componentPrefix = `${themePrefix}/component`;
+const orderPrefix = '/order';
 
 export const routes = {
   dashboard: '/',
@@ -21,4 +22,5 @@ export const routes = {
   notFound: '/404',
   maintenance: '/maintenance',
   todoList: '/todo-list',
+  ordersList: `${orderPrefix}/list`,
 }

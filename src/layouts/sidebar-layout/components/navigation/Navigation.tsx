@@ -75,6 +75,17 @@ const menuItems: NavigationItemType[] = [
     ]
   },
   {
+    label: 'Orders',
+    icon: (props: any) => <Abc {...props} />,
+    items: [
+      {
+        path: routes.ordersList,
+        label: 'List',
+        icon: (props:any) => <Abc {...props} />,
+      },
+    ]
+  },
+  {
     header: 'Apps',
   },
   {
