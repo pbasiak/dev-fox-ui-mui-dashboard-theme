@@ -17,6 +17,7 @@ export const NavigationItemHeader = ({ header }: NavigationItemHeaderProps) => {
         pl: 2.2,
         color: Colors.sidebarTextColor,
         backgroundColor: 'transparent',
+        position: 'relative',
       }}
     >
       {header}

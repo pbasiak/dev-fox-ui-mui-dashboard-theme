@@ -86,6 +86,22 @@ const menuItems: NavigationItemType[] = [
     ]
   },
   {
+    label: 'Jobs',
+    icon: (props: any) => <Abc {...props} />,
+    items: [
+      {
+        path: routes.jobsList,
+        label: 'List',
+        icon: (props:any) => <Abc {...props} />,
+      },
+      {
+        path: routes.jobsDetails,
+        label: 'Details',
+        icon: (props:any) => <Abc {...props} />,
+      },
+    ]
+  },
+  {
     header: 'Apps',
   },
   {
@@ -95,7 +111,7 @@ const menuItems: NavigationItemType[] = [
   },
   {
     path: routes.todoList,
-    label: 'Todo list',
+    label: 'Tasks',
     icon: (props: any) => <ListAlt {...props} />,
   },
   {

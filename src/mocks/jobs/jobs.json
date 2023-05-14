@@ -1,0 +1,83 @@
+{
+  "jobs": [
+    {
+      "title": "Software Engineer",
+      "company": "Acme Corp",
+      "location": "San Francisco, CA",
+      "description": "We are seeking a talented software engineer to join our team and help us build the next generation of software products. The ideal candidate should have experience in software development, be familiar with agile methodologies, and be passionate about building great software.",
+      "requirements": [
+        "Bachelor's degree in Computer Science or related field",
+        "Experience with at least one programming language (e.g. Java, Python, Ruby)",
+        "Familiarity with agile methodologies",
+        "Excellent problem-solving skills"
+      ],
+      "salary": "$120,000 - $150,000 per year",
+      "tags": [
+        "Software Development",
+        "Java",
+        "Python",
+        "Ruby",
+        "Agile"
+      ]
+    },
+    {
+      "title": "Marketing Manager",
+      "company": "Globex Corporation",
+      "location": "New York, NY",
+      "description": "We are looking for a driven and creative Marketing Manager to lead our marketing team and help us promote our brand and products. The ideal candidate should have experience in digital marketing, be able to develop and execute marketing campaigns, and have excellent communication skills.",
+      "requirements": [
+        "Bachelor's degree in Marketing, Communications, or related field",
+        "Experience in digital marketing",
+        "Proven track record of developing and executing successful marketing campaigns",
+        "Excellent communication skills"
+      ],
+      "salary": "$80,000 - $100,000 per year",
+      "tags": [
+        "Marketing",
+        "Digital Marketing",
+        "Communications"
+      ]
+    },
+    {
+      "title": "Financial Analyst",
+      "company": "XYZ Corporation",
+      "location": "Chicago, IL",
+      "description": "We are seeking a detail-oriented Financial Analyst to join our team and help us analyze financial data and make informed business decisions. The ideal candidate should have experience in financial analysis, be familiar with financial modeling and forecasting, and be able to communicate complex financial information to non-financial stakeholders.",
+      "requirements": [
+        "Bachelor's degree in Finance, Accounting, or related field",
+        "Experience in financial analysis",
+        "Familiarity with financial modeling and forecasting",
+        "Strong communication and presentation skills"
+      ],
+      "salary": "$70,000 - $90,000 per year",
+      "tags": [
+        "Finance",
+        "Accounting",
+        "Financial Analysis",
+        "Financial Modeling",
+        "Forecasting"
+      ]
+    },
+    {
+      "title": "Marketing Manager",
+      "company": "Globex Corporation",
+      "location": "New York, NY",
+      "description": "We are looking for a driven and creative Marketing Manager to lead our marketing team and help us promote our brand and products. The ideal candidate should have experience in digital marketing, be able to develop and execute marketing campaigns, and have excellent communication skills.",
+      "requirements": [
+        "Bachelor's degree in Marketing, Communications, or related field",
+        "Experience in digital marketing",
+        "Proven track record of developing and executing successful marketing campaigns",
+        "Excellent communication skills"
+      ],
+      "salary": "$80,000 - $100,000 per year",
+      "tags": [
+        "Marketing",
+        "Digital Marketing",
+        "Communications"
+      ]
+    }
+  ],
+  "totalItems": 33,
+  "totalPages": 3,
+  "page": 1
+}

@@ -21,6 +21,8 @@ import { NotFoundPage } from './pages/not-found/NotFoundPage';
 import { MaintenancePage } from './pages/maintenance/MaintenancePage';
 import { TodoList } from './pages/todo-list/TodoList';
 import { OrderList } from './pages/orders/orders-list/OrdersList';
+import { JobsList } from './pages/jobs/jobs-list/JobsListPage';
+import { JobDetails } from './pages/jobs/job-details/JobDetails';
 
 const router = createBrowserRouter([
   {
@@ -86,6 +88,14 @@ const router = createBrowserRouter([
   {
     path: routes.ordersList,
     element: <OrderList />,
+  },
+  {
+    path: routes.jobsList,
+    element: <JobsList />,
+  },
+  {
+    path: routes.jobsDetails,
+    element: <JobDetails />,
   },
   {
     path: '*',
