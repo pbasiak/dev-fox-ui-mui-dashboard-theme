@@ -4,31 +4,41 @@
       "id": 1,
       "title": "New Message",
       "message": "You have received a new message.",
-      "timestamp": "2023-05-17T09:30:00Z"
+      "timestamp": "2023-05-17T09:30:00Z",
+      "status": "unread",
+      "type": "message"
     },
     {
       "id": 2,
       "title": "Reminder",
       "message": "Don't forget to submit your report by end of day.",
-      "timestamp": "2023-05-16T18:00:00Z"
+      "timestamp": "2023-05-16T18:00:00Z",
+      "status": "unread",
+      "type": "reminder"
     },
     {
       "id": 3,
       "title": "Meeting Update",
       "message": "The meeting scheduled for tomorrow has been postponed.",
-      "timestamp": "2023-05-15T14:15:00Z"
+      "timestamp": "2023-05-15T14:15:00Z",
+      "status": "read",
+        "type": "reminder"
     },
     {
       "id": 4,
       "title": "Payment Received",
       "message": "Your payment of $100 has been received.",
-      "timestamp": "2023-05-14T11:45:00Z"
+      "timestamp": "2023-05-14T11:45:00Z",
+      "status": "read",
+      "type": "alert"
     },
     {
       "id": 5,
       "title": "New Feature Announcement",
       "message": "Introducing a new feature in our app. Check it out!",
-      "timestamp": "2023-05-13T16:30:00Z"
+      "timestamp": "2023-05-13T16:30:00Z",
+      "status": "read",
+      "type": "alert"
     }
   ]
 }

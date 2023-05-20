@@ -2,6 +2,7 @@ import { UserMenu } from '../user-menu/UserMenu';
 import { Stack, TextField } from '@mui/material';
 import { useCurrentUser } from '../../../../hooks/api/use-current-user/useCurrentUser';
 import { Search } from '@mui/icons-material';
+import { Notifications } from '../notifications/Notifications';
 
 export const ToolbarElements = () => {
   const { data: user } = useCurrentUser();
@@ -17,6 +18,7 @@ export const ToolbarElements = () => {
           endAdornment: <Search sx={{ color: 'grey.500' }} />,
         }}
       />
+      <Notifications />
       <UserMenu user={user} />
     </Stack>
   );
