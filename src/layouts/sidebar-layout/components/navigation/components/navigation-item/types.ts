@@ -1,6 +1,8 @@
 import React from 'react';
 import { SvgIconProps } from '@mui/material';
 
+type NavigationItemIconColor = 'primary' | 'secondary' | 'default' | 'error' | 'info' | 'success' | 'warning';
+
 export type NavigationItemIconProps = SvgIconProps;
 export interface NavigationItemBaseType {
   label: string;
@@ -10,6 +12,9 @@ export interface NavigationItemBaseType {
 
 export interface NavigationItemSimpleType extends NavigationItemBaseType {
   path: string;
+  badgeText?: string | number;
+  badgeColor?: NavigationItemIconColor,
+  external?: boolean;
 }
 
 export interface NavigationItemNestedType extends NavigationItemBaseType {
