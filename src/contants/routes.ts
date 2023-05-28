@@ -27,4 +27,8 @@ export const routes = {
   jobsList: `${jobsPrefix}/list`,
   jobsDetails: `${jobsPrefix}/details`,
   jobsCreate: `${jobsPrefix}/create`,
+  login: '/login',
+  register: '/register',
+  forgotPassword: '/forgot-password',
+  resetPassword: '/reset-password',
 }

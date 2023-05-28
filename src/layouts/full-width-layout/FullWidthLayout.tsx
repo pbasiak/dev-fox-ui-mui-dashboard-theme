@@ -4,12 +4,15 @@ import { Stack } from '@mui/material';
 
 interface Props {
   children: ReactNode;
+  hideLogo?: boolean;
 }
 
-export const FullWidthLayout = ({children}: Props) => {
+export const FullWidthLayout = ({children, hideLogo = false}: Props) => {
   return (
     <div>
-      <Stack px={3} py={2}><Logo /></Stack>
+      {!hideLogo && (
+        <Stack px={3} py={2}><Logo /></Stack>
+      )}
       {children}
     </div>
   )
