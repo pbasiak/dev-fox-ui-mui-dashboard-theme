@@ -24,6 +24,7 @@ import { OrderList } from './pages/orders/orders-list/OrdersList';
 import { JobsList } from './pages/jobs/jobs-list/JobsListPage';
 import { JobsDetails } from './pages/jobs/jobs-details/JobsDetails';
 import { JobsCreate } from './pages/jobs/jobs-create/JobsCreate';
+import { LoginPage } from './pages/login/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
   {
     path: routes.jobsCreate,
     element: <JobsCreate />,
+  },
+  {
+    path: routes.login,
+    element: <LoginPage />,
   },
   {
     path: '*',

@@ -1,0 +1,20 @@
+<svg width="100%" height="100%" viewBox="0 0 980 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <g transform="matrix(1,0,0,1,-162.74,-124.521)">
+            <circle cx="190.103" cy="135.308" r="135.308" style="fill:rgb(28,63,163);"/>
+        </g>
+        <g transform="matrix(0.268793,0,0,0.268793,197.874,24.6575)">
+            <circle cx="190.103" cy="135.308" r="135.308" style="fill:rgb(28,63,163);"/>
+        </g>
+        <g transform="matrix(1.18451,0,0,1.11162,-116.138,883.973)">
+            <circle cx="190.103" cy="135.308" r="135.308" style="fill:rgb(28,63,163);"/>
+        </g>
+        <g transform="matrix(0.646925,0,0,0.596811,473.045,733.562)">
+            <circle cx="190.103" cy="135.308" r="135.308" style="fill:rgb(28,63,163);fill-opacity:0.5;"/>
+        </g>
+        <g transform="matrix(1.18451,0,0,1.11162,618.657,-76.4384)">
+            <circle cx="190.103" cy="135.308" r="135.308" style="fill:rgb(28,63,163);"/>
+        </g>
+        <rect x="0" y="0" width="980" height="1080" style="fill:white;fill-opacity:0;"/>
+    </g>
+</svg>

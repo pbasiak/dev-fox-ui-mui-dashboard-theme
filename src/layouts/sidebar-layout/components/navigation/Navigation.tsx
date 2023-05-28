@@ -6,7 +6,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import {
   Abc,
   AccountBox,
-  CalendarMonth, ColorLens, Construction, DesignServices, ListAlt,
+  CalendarMonth, ColorLens, Construction, DesignServices, ListAlt, Login,
   Notes,
   People,
   Person,
@@ -138,6 +138,14 @@ export function Navigation() {
       path: routes.maintenance,
       label: 'Maintenance',
       icon: (props: any) => <Construction {...props} />,
+    },
+    {
+      header: 'Authentication',
+    },
+    {
+      path: routes.login,
+      label: 'Login',
+      icon: (props: any) => <Login {...props} />,
     },
     {
       header: 'Documentation',
