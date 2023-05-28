@@ -17,7 +17,7 @@ import {
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
 
-export const JobDetails = () => {
+export const JobsDetails = () => {
   const { data: job } = useJobsDetails();
 
   if (!job) {

@@ -26,7 +26,6 @@ import { useNavigate } from 'react-router-dom';
 export const CreatePostBlogPage = () => {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { register, handleSubmit, formState: { errors }, control } = useForm<BlogPostForm>({
     resolver: yupResolver(blogPostFormSchema),
   });

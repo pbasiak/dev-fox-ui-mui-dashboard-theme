@@ -97,6 +97,11 @@ export function Navigation() {
       icon: (props: any) => <Abc {...props} />,
       items: [
         {
+          path: routes.jobsCreate,
+          label: 'Create',
+          icon: (props:any) => <Abc {...props} />,
+        },
+        {
           path: routes.jobsList,
           label: 'List',
           icon: (props:any) => <Abc {...props} />,
