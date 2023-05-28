@@ -22,7 +22,8 @@ import { MaintenancePage } from './pages/maintenance/MaintenancePage';
 import { TodoList } from './pages/todo-list/TodoList';
 import { OrderList } from './pages/orders/orders-list/OrdersList';
 import { JobsList } from './pages/jobs/jobs-list/JobsListPage';
-import { JobDetails } from './pages/jobs/job-details/JobDetails';
+import { JobsDetails } from './pages/jobs/jobs-details/JobsDetails';
+import { JobsCreate } from './pages/jobs/jobs-create/JobsCreate';
 
 const router = createBrowserRouter([
   {
@@ -95,7 +96,11 @@ const router = createBrowserRouter([
   },
   {
     path: routes.jobsDetails,
-    element: <JobDetails />,
+    element: <JobsDetails />,
+  },
+  {
+    path: routes.jobsCreate,
+    element: <JobsCreate />,
   },
   {
     path: '*',

@@ -26,4 +26,5 @@ export const routes = {
   ordersList: `${orderPrefix}/list`,
   jobsList: `${jobsPrefix}/list`,
   jobsDetails: `${jobsPrefix}/details`,
+  jobsCreate: `${jobsPrefix}/create`,
 }
