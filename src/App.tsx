@@ -25,6 +25,7 @@ import { JobsList } from './pages/jobs/jobs-list/JobsListPage';
 import { JobsDetails } from './pages/jobs/jobs-details/JobsDetails';
 import { JobsCreate } from './pages/jobs/jobs-create/JobsCreate';
 import { LoginPage } from './pages/login/LoginPage';
+import { RegisterPage } from './pages/register/RegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
   {
     path: routes.login,
     element: <LoginPage />,
+  },
+  {
+    path: routes.register,
+    element: <RegisterPage />,
   },
   {
     path: '*',

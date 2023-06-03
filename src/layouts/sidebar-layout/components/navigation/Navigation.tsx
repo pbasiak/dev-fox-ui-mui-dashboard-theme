@@ -148,6 +148,11 @@ export function Navigation() {
       icon: (props: any) => <Login {...props} />,
     },
     {
+      path: routes.register,
+      label: 'Register',
+      icon: (props: any) => <Login {...props} />,
+    },
+    {
       header: 'Documentation',
     },
     {
