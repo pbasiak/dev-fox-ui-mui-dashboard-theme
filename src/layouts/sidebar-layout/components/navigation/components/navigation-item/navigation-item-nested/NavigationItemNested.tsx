@@ -28,7 +28,7 @@ export const NavigationItemNested = ({ item }: Props) => {
   }
 
   const nestedItems = item.items.map((item) => {
-    return <NavigationItemSimple {...item} nested />
+    return <NavigationItemSimple item={item} nested />
   })
 
   return  (

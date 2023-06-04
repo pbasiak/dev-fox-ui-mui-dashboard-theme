@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { NavigationItemIconProps, NavigationItemSimpleType } from '../types';
+import { NavigationItemIconProps, NavigationItemSimpleType, NavigationItemSimpleTypeWithoutIcon } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
 import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
 import { useNavigate } from 'react-router-dom';
@@ -7,12 +7,13 @@ import { NavigationItemBadge } from './styled';
 import { Stack, ListItemText } from '@mui/material';
 import { Launch } from '@mui/icons-material';
 
-interface Props extends NavigationItemSimpleType {
+interface Props {
   iconColor?: NavigationItemIconProps['color'];
   nested?: boolean;
+  item: NavigationItemSimpleType | NavigationItemSimpleTypeWithoutIcon;
 }
 
-export const NavigationItemSimple = (item: Props) => {
+export const NavigationItemSimple = ({ item, nested = false }: Props) => {
   const location = window.location.pathname;
   const navigate = useNavigate();
   const isActive = location === item.path;
@@ -21,22 +22,21 @@ export const NavigationItemSimple = (item: Props) => {
   }, [item.path, navigate]);
 
   const iconProps: NavigationItemIconProps = {
-    fontSize: item.nested ? 'small' : 'medium',
+    fontSize: nested ? 'small' : 'medium',
   }
 
   const shouldDisplayBadge = Boolean(item?.badgeText) && !item?.external;
   const shouldDisplayLaunchIcon = item?.external && !shouldDisplayBadge;
 
   return (
-    <NavigationListItemButton nested={item.nested} onClick={handleClick} active={isActive}>
+    <NavigationListItemButton nested={nested} onClick={handleClick} active={isActive}>
       <Stack direction={'row'} flex={1} alignItems={'center'} overflow={'hidden'}>
-        {!item.nested ?
+        {!nested && 'icon' in item ?
           <NavigationListItemIcon>
             {item.icon(iconProps)}
           </NavigationListItemIcon> : null}
 
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
-        {/* TODO: fix long text issue */}
       </Stack>
       <Stack direction={'row'} alignItems={'center'} spacing={1}>
         {shouldDisplayLaunchIcon ? <Launch /> : null}

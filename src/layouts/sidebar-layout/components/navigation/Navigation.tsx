@@ -2,17 +2,18 @@ import List from '@mui/material/List';
 import { NavigationItem } from './components/navigation-item/NavigationItem';
 import { NavigationItemType } from './components/navigation-item/types';
 import { routes } from '../../../../contants/routes';
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import {
   Abc,
-  AccountBox,
-  CalendarMonth, ColorLens, Construction, DesignServices, ListAlt, Login,
+  AccountBoxOutlined,
+  CalendarMonthOutlined,
+  ConstructionOutlined, DashboardOutlined,
+  DesignServicesOutlined,
+  ListAltOutlined,
+  Login,
   Notes,
-  People,
-  Person,
-  PersonAdd,
-  PostAdd, QuestionMark, ShapeLine,
-  ShortText, ViewStream,
+  QuestionMarkOutlined,
+  ShapeLineOutlined,
+  ViewStreamOutlined,
 } from '@mui/icons-material';
 import { useMemo } from 'react';
 import { useNotifications } from '../../../../hooks/api/use-notifications/useNotifications';
@@ -27,34 +28,30 @@ export function Navigation() {
     {
       path: routes.dashboard,
       label: 'Dashboard',
-      icon: (props: any) => <DashboardIcon {...props} />,
+      icon: (props: any) => <DashboardOutlined {...props} />,
     },
     {
       header: 'Apps & Pages',
     },
     {
       label: 'User',
-      icon: (props: any) => <AccountBox {...props} />,
+      icon: (props: any) => <AccountBoxOutlined {...props} />,
       items: [
         {
           path: routes.userAccount,
           label: 'Account',
-          icon: (props:any) => <Person {...props} />,
         },
         {
           path: routes.userProfile,
           label: 'Public profile',
-          icon: (props:any) => <Person {...props} />,
         },
         {
           path: routes.userList,
           label: 'List',
-          icon: (props:any) => <People {...props} />,
         },
         {
           path: routes.userCreate,
           label: 'Create',
-          icon: (props:any) => <PersonAdd {...props} />,
         },
       ]
     },
@@ -65,17 +62,14 @@ export function Navigation() {
         {
           path: routes.blog,
           label: 'List',
-          icon: (props:any) => <Notes {...props} />,
         },
         {
           path: routes.blogPost,
           label: 'Post',
-          icon: (props:any) => <ShortText {...props} />,
         },
         {
           path: routes.blogCreatePost,
           label: 'Create',
-          icon: (props:any) => <PostAdd {...props} />,
         },
       ]
     },
@@ -86,7 +80,6 @@ export function Navigation() {
         {
           path: routes.ordersList,
           label: 'List',
-          icon: (props:any) => <Abc {...props} />,
         },
       ]
     },
@@ -97,17 +90,14 @@ export function Navigation() {
         {
           path: routes.jobsCreate,
           label: 'Create',
-          icon: (props:any) => <Abc {...props} />,
         },
         {
           path: routes.jobsList,
           label: 'List',
-          icon: (props:any) => <Abc {...props} />,
         },
         {
           path: routes.jobsDetails,
           label: 'Details',
-          icon: (props:any) => <Abc {...props} />,
         },
       ]
     },
@@ -117,12 +107,12 @@ export function Navigation() {
     {
       path: routes.calendar,
       label: 'Calendar',
-      icon: (props: any) => <CalendarMonth {...props} />,
+      icon: (props: any) => <CalendarMonthOutlined {...props} />,
     },
     {
       path: routes.todoList,
       label: 'Tasks',
-      icon: (props: any) => <ListAlt {...props} />,
+      icon: (props: any) => <ListAltOutlined {...props} />,
     },
     {
       header: 'Other pages',
@@ -130,12 +120,12 @@ export function Navigation() {
     {
       path: routes.notFound,
       label: 'Page not found',
-      icon: (props: any) => <QuestionMark {...props} />,
+      icon: (props: any) => <QuestionMarkOutlined {...props} />,
     },
     {
       path: routes.maintenance,
       label: 'Maintenance',
-      icon: (props: any) => <Construction {...props} />,
+      icon: (props: any) => <ConstructionOutlined {...props} />,
     },
     {
       header: 'Authentication',
@@ -165,33 +155,29 @@ export function Navigation() {
     },
     {
       label: 'Theme',
-      icon: (props: any) => <DesignServices {...props} />,
+      icon: (props: any) => <DesignServicesOutlined {...props} />,
       items: [
         {
           path: routes.themeGeneral,
           label: 'General',
-          icon: (props:any) => <DashboardIcon {...props} />,
         },
         {
           path: routes.themeTypography,
           label: 'Typography',
-          icon: (props:any) => <Abc {...props} />,
         },
         {
           path: routes.themeColors,
           label: 'Colors',
-          icon: (props:any) => <ColorLens {...props} />,
         },
       ]
     },
     {
       label: 'Components',
-      icon: (props: any) => <ShapeLine {...props} />,
+      icon: (props: any) => <ShapeLineOutlined {...props} />,
       items: [
         {
           path: routes.componentsButton,
           label: 'Button',
-          icon: (props:any) => <DashboardIcon {...props} />,
         },
       ]
     },
@@ -201,35 +187,35 @@ export function Navigation() {
     {
       path: '',
       label: 'Number',
-      icon: (props: any) => <ViewStream {...props} />,
+      icon: (props: any) => <ViewStreamOutlined {...props} />,
       badgeText: `${notifications?.notifications?.length}`,
       badgeColor: 'primary',
     },
     {
       path: '',
       label: 'Text (primary)',
-      icon: (props: any) => <ViewStream {...props} />,
+      icon: (props: any) => <ViewStreamOutlined {...props} />,
       badgeText: 'New',
       badgeColor: 'primary',
     },
     {
       path: '',
       label: 'Text (secondary)',
-      icon: (props: any) => <ViewStream {...props} />,
+      icon: (props: any) => <ViewStreamOutlined {...props} />,
       badgeText: 'New',
       badgeColor: 'secondary',
     },
     {
       path: '',
       label: 'Text (info)',
-      icon: (props: any) => <ViewStream {...props} />,
+      icon: (props: any) => <ViewStreamOutlined {...props} />,
       badgeText: 'New',
       badgeColor: 'info',
     },
     {
       path: '',
       label: 'Very long text as a link text',
-      icon: (props: any) => <ViewStream {...props} />,
+      icon: (props: any) => <ViewStreamOutlined {...props} />,
       badgeText: 'New',
       badgeColor: 'info',
       external: true,
