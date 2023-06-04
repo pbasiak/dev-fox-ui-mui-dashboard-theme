@@ -29,6 +29,6 @@ export const routes = {
   jobsCreate: `${jobsPrefix}/create`,
   login: '/login',
   register: '/register',
-  forgotPassword: '/forgot-password',
   resetPassword: '/reset-password',
+  verifyCode: '/verify-code',
 }

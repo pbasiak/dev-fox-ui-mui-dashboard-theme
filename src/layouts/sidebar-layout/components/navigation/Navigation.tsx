@@ -20,8 +20,6 @@ import { useNotifications } from '../../../../hooks/api/use-notifications/useNot
 export function Navigation() {
   const { data: notifications } = useNotifications();
 
-  console.log(notifications);
-
   const navigationItems: NavigationItemType[] = useMemo(() => [
     {
       header: 'Dashboards',
@@ -150,6 +148,16 @@ export function Navigation() {
     {
       path: routes.register,
       label: 'Register',
+      icon: (props: any) => <Login {...props} />,
+    },
+    {
+      path: routes.resetPassword,
+      label: 'Reset password',
+      icon: (props: any) => <Login {...props} />,
+    },
+    {
+      path: routes.verifyCode,
+      label: 'Verify code',
       icon: (props: any) => <Login {...props} />,
     },
     {
