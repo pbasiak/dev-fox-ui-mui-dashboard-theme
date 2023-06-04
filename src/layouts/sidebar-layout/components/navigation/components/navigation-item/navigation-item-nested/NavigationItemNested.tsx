@@ -20,7 +20,6 @@ export const NavigationItemNested = ({ item }: Props) => {
   const isOpen = getIsOpen(item.label);
 
   const handleToggleOpen = useCallback(() => {
-    console.log('xxx', item.label);
     toggleNavigationId(item.label);
   }, [item.label, toggleNavigationId]);
 

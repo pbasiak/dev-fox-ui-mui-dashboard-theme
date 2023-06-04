@@ -26,6 +26,8 @@ import { JobsDetails } from './pages/jobs/jobs-details/JobsDetails';
 import { JobsCreate } from './pages/jobs/jobs-create/JobsCreate';
 import { LoginPage } from './pages/login/LoginPage';
 import { RegisterPage } from './pages/register/RegisterPage';
+import { ResetPassword } from './pages/reset-password/ResetPassword';
+import { VerifyCode } from './pages/verify-code/VerifyCode';
 
 const router = createBrowserRouter([
   {
@@ -111,6 +113,14 @@ const router = createBrowserRouter([
   {
     path: routes.register,
     element: <RegisterPage />,
+  },
+  {
+    path: routes.resetPassword,
+    element: <ResetPassword />,
+  },
+  {
+    path: routes.verifyCode,
+    element: <VerifyCode />,
   },
   {
     path: '*',
