@@ -15,5 +15,5 @@ export const NavigationItem = ({ item }: Props) => {
     return <NavigationItemHeader header={item.header} />
   }
 
-  return isSimple ? (<NavigationItemSimple {...item} />) : <NavigationItemNested item={item} />
+  return isSimple ? (<NavigationItemSimple item={item} />) : <NavigationItemNested item={item} />
 }
