@@ -10,7 +10,7 @@ export const UserProfileHeader = ({user}: {user:User}) => {
     <Stack>
       <Paper sx={{ background: `url(${user.profileBackground})`, backgroundSize: 'cover', height: '300px', padding: 2 }}>
         <Stack justifyContent={'flex-end'} alignItems={'flex-end'} height={'100%'}>
-          <Button startIcon={<Photo />} variant={'contained'} color={'secondary'}>Add photo</Button>
+          <Button startIcon={<Photo />} variant={'outlined'} color={'info'}>Add photo</Button>
         </Stack>
       </Paper>
 
@@ -24,7 +24,7 @@ export const UserProfileHeader = ({user}: {user:User}) => {
         </Stack>
         <Stack spacing={2} direction={'row'}>
           <Button startIcon={<Message />} variant={'contained'}>Send message</Button>
-          <Button startIcon={<Edit />} variant={'contained'} color={'secondary'}>Edit profile</Button>
+          <Button startIcon={<Edit />} variant={'outlined'}>Edit profile</Button>
         </Stack>
       </Stack>
     </Stack>

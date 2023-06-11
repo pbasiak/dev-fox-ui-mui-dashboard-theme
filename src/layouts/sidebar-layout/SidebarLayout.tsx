@@ -63,7 +63,7 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(2, 2, 2, 3),
+  padding: theme.spacing(4, 1, 2, 4),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'space-between',

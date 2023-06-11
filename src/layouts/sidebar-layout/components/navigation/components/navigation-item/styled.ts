@@ -7,7 +7,7 @@ interface NavigationListItemButtonProps {
 }
 
 export const NavigationListItemButton = styled(ListItemButton)<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
-  color: Colors.sidebarButtonTextColor,
+  color: Colors.buttonText,
   borderRadius: theme.shape.borderRadius,
   paddingLeft: nested ? theme.spacing(8) : theme.spacing(2),
   paddingTop: nested ? theme.spacing(0.5) : theme.spacing(1),
@@ -15,7 +15,7 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
   marginBottom: theme.spacing(1),
   position: 'relative',
   '.MuiSvgIcon-root': {
-    color: Colors.sidebarIconColor,
+    color: Colors.icon,
     transition: `color 0.2s ${theme.transitions.easing.easeInOut}`,
   },
   '&::before': {
@@ -25,25 +25,25 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
     left: theme.spacing(5),
     display: nested ? 'block' : 'none',
     transform: 'translateY(-50%)',
-    width: '4px',
-    height: '4px',
-    backgroundColor: active ? theme.palette.primary.main : Colors.sidebarIconColor,
-    borderRadius: theme.shape.borderRadius,
+    width: '5px',
+    height: '5px',
+    backgroundColor: active ? theme.palette.primary.main : Colors.icon,
+    borderRadius: '40%',
   },
   '&:hover': {
-    backgroundColor: Colors.sidebarButtonBackgroundColorHover,
-    color: Colors.sidebarButtonTextColorHover,
+    backgroundColor: Colors.buttonBackgroundHover,
+    color: Colors.buttonTextHover,
 
     '.MuiSvgIcon-root': {
-      color: Colors.sidebarIconColorHover,
+      color: Colors.iconHover,
     },
   },
   ...(active && {
-    backgroundColor: Colors.sidebarButtonBackgroundColorActive,
-    color: Colors.sidebarButtonTextColorActive,
+    backgroundColor: Colors.buttonBackgroundActive,
+    color: Colors.buttonTextActive,
 
     '.MuiSvgIcon-root': {
-      color: Colors.sidebarIconColorActive,
+      color: Colors.iconActive,
     },
   }),
 }))

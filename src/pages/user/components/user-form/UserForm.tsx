@@ -49,7 +49,7 @@ export const UserForm = ({ user, submitButtonText = 'Save changes' }: Props) => 
     <form onSubmit={handleSubmit(handleSave)}>
       <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <Card sx={{ padding: 2, borderRadius: 2, height: '100%' }} elevation={2}>
+          <Card sx={{ padding: 2, height: '100%' }} elevation={2}>
             <CardContent>
               <Stack direction={'column'} spacing={2} justifyContent={'center'} alignItems={'center'}>
                 <Avatar src={userFormValues.image} sx={{ width: '128px', height: '128px', border: '5px solid #DDD' }} alt={userFormValues.username} />

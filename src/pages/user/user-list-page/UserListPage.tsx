@@ -73,7 +73,7 @@ export const UserListPage = () => {
 
           <DeleteDialog open={deleteDialogOpen} onClose={handleDeleteDialogClose} onDeleteItems={handleDeleteItems} itemsLength={selectedRows.length} />
         </Stack> : null}
-        <Box sx={{ height: 400, width: '100%', p: 0, backgroundColor: 'background.paper', borderRadius: '4px' }}>
+        <Box sx={{ height: 400, width: '100%', p: 0, backgroundColor: 'background.paper', borderRadius: 1, overflow:'hidden' }}>
           <DataGrid
             rows={rows}
             columns={columns}

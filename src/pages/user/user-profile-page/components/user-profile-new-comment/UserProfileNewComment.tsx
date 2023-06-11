@@ -13,9 +13,9 @@ export const UserProfileNewComment = ({ user }: { user: User }) => {
         </Stack>
         <Stack direction={'row'} alignItems={'flex-end'} color={'red'} justifyContent={'space-between'}>
           <Stack direction={'row'} spacing={2}>
-            <Button size={'small'} startIcon={<Image />} variant={'contained'} color={'secondary'}>Add image / video</Button>
-            <Button startIcon={<Camera />} size={'small'} variant={'contained'} color={'secondary'}>Streaming</Button>
-            <Button startIcon={<EmojiEmotions />} size={'small'} variant={'contained'} color={'secondary'}>Mood / activity</Button>
+            <Button size={'small'} startIcon={<Image />} variant={'outlined'}>Add image / video</Button>
+            <Button startIcon={<Camera />} size={'small'} variant={'outlined'}>Streaming</Button>
+            <Button startIcon={<EmojiEmotions />} size={'small'} variant={'outlined'}>Mood / activity</Button>
           </Stack>
           <div><Button size={'small'} variant={'contained'} color={'primary'}>Publish</Button></div>
         </Stack>
