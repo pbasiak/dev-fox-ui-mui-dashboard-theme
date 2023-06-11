@@ -1,5 +1,6 @@
 import { WidgetContainer, WidgetTitle, WidgetTitleContainer } from './styled';
 import { ReactNode } from 'react';
+import { Box } from '@mui/material';
 
 export interface WidgetProps {
   title: string;
@@ -13,9 +14,9 @@ export const Widget = ({ title, children, sx }: WidgetProps) => {
       <WidgetTitleContainer>
         <WidgetTitle>{title}</WidgetTitle>
       </WidgetTitleContainer>
-      <div>
+      <Box sx={{ flex: 1, height: '100%' }}>
         {children}
-      </div>
+      </Box>
     </WidgetContainer>
   );
 };

@@ -14,7 +14,7 @@ export const WidgetContainer = styled(Box)(({ theme }) => ({
   backgroundSize: '100%',
   justifyContent: 'space-between',
   flexDirection: 'column',
-  display: 'flex',
+  // display: 'flex',
 }))
 
 export const WidgetTitleContainer = styled(Box)(({ theme }) => ({
