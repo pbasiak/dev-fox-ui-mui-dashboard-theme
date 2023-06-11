@@ -4,11 +4,10 @@ import {
   useNotifications,
 } from '../../../../hooks/api/use-notifications/useNotifications';
 import IconButton from '@mui/material/IconButton';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Badge, Box, Button, Menu, MenuItem, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Event, Info, Message } from '@mui/icons-material';
+import { Event, Info, MessageOutlined, NotificationsOutlined } from '@mui/icons-material';
 
 export const MessageContainer = styled(Box, { shouldForwardProp: prop => prop !== 'status' })<{status: NotificationStatus}>(({ theme, status }) => ({
   borderLeft: '2px solid transparent',
@@ -34,9 +33,9 @@ export const Notifications = () => {
   const notificationIcon = (type: NotificationType) => {
     switch (type) {
     case NotificationType.Message:
-      return <Message />;
+      return <MessageOutlined />;
     case NotificationType.Alert:
-      return <NotificationsIcon />;
+      return <NotificationsOutlined />;
     case NotificationType.Reminder:
       return <Event />;
     default:
@@ -48,7 +47,7 @@ export const Notifications = () => {
     <>
       <IconButton onClick={handleClick}>
         <Badge badgeContent={unreadNotifications?.length} color={'primary'}>
-          <NotificationsIcon />
+          <NotificationsOutlined />
         </Badge>
       </IconButton>
       <Menu

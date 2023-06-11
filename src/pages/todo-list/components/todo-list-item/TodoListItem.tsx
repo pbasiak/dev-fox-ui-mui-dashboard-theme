@@ -24,7 +24,7 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
         marginBottom: 1,
       }}
     >
-      <Checkbox color={'success'} checked={task.completed} onChange={() => onComplete(task.id)} />
+      <Checkbox color={'default'} checked={task.completed} onChange={() => onComplete(task.id)} />
       {
         editMode ? (
           <TextField

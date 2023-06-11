@@ -13,11 +13,12 @@ export const NavigationItemHeader = ({ header }: NavigationItemHeaderProps) => {
       sx={{
         textTransform: 'uppercase',
         fontSize: '11px',
-        fontWeight: 'bold',
+        fontWeight: 'fontWeightBold',
         pl: 2.2,
-        color: Colors.sidebarTextColor,
+        color: Colors.textColor,
         backgroundColor: 'transparent',
         position: 'relative',
+        letterSpacing: '1px',
       }}
     >
       {header}
