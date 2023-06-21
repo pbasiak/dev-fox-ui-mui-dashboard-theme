@@ -1,4 +1,3 @@
-import React from 'react';
 import { Widget } from '../../../../components/widget/Widget';
 import {
   Chart as ChartJS,
@@ -41,16 +40,16 @@ export const data = {
   labels,
   datasets: [
     {
-      label: 'Sales',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: AppTheme.palette.primary.dark,
+      label: 'Dataset 1',
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
+      backgroundColor: AppTheme.palette.secondary.main,
     },
   ],
 };
 
-export const SalesWidget = () => {
+export const UsersStatsWidget = () => {
   return (
-    <Widget title={'Sales summary'}>
+    <Widget title={'Users'}>
       <Bar options={options} data={data} />
     </Widget>
   );
