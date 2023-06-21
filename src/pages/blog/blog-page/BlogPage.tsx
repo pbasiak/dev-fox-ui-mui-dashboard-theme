@@ -14,17 +14,16 @@ import {
 } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { BlogList } from './components/blog-list/BlogList';
-import { useQuery } from '@tanstack/react-query';
-import posts from '../../../mocks/blog/blog-posts.json';
 import { Loader } from '../../../components/loader/Loader';
 import { useCallback, useState } from 'react';
 import { Add, GridView, Search, Splitscreen } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../../contants/routes';
 import { BlogView } from './types/blogView';
+import { useBlogPosts } from '../../../hooks/api/use-blog-posts';
 
 export const BlogPage = () => {
-  const { data, isLoading } = useQuery({queryKey: ['blog-posts'], queryFn: () => posts.posts});
+  const { isLoading, data } = useBlogPosts();
   const [sort, setSort] = useState('newest');
   const [view, setView] = useState<BlogView>(BlogView.GRID);
   const navigate = useNavigate();

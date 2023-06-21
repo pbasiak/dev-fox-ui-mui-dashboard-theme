@@ -1,8 +1,8 @@
 import { Box, styled } from '@mui/material';
-import WelcomeSvg from '../../../../assets/backgrounds/widget/welcome.svg';
+import BlogSvg from '../../../../assets/backgrounds/widget/blog.svg';
 
-export const WelcomeWidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${WelcomeSvg})`,
+export const BlogWidgetContainer = styled(Box)(({ theme }) => ({
+  backgroundImage: `url(${BlogSvg})`,
   backgroundSize: 'cover',
   width: '100%',
   borderRadius: theme.shape.borderRadius,
@@ -14,7 +14,7 @@ export const WelcomeWidgetContainer = styled(Box)(({ theme }) => ({
   overflow: 'hidden',
 }));
 
-export const WelcomeWidgetContent = styled(Box)(({ theme }) => ({
+export const BlogWidgetContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
