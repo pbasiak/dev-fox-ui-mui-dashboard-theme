@@ -2,8 +2,7 @@ import { Box, styled, Typography } from '@mui/material';
 import widgetBackgroundSvg from '../../assets/backgrounds/widget-bg.svg'
 
 export const WidgetContainer = styled(Box)(({ theme }) => ({
-  border: `1px solid #F0F0F0`,
-  backgroundColor: '#FFFFFF',
+  backgroundColor: theme.palette.background.default,
   padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
   boxShadow: theme.shadows[10],

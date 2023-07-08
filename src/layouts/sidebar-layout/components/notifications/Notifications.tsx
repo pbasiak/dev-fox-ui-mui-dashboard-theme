@@ -15,7 +15,7 @@ export const MessageContainer = styled(Box, { shouldForwardProp: prop => prop !=
   paddingLeft: theme.spacing(1),
   display: 'flex',
   alignItems: 'center',
-  color: status === NotificationStatus.Unread ? theme.palette.primary.main : theme.palette.grey[900],
+  color: status === NotificationStatus.Unread ? theme.palette.primary.main : theme.palette.text.primary,
 }))
 
 export const Notifications = () => {
@@ -60,7 +60,7 @@ export const Notifications = () => {
           sx: { paddingBottom: 0 }
         }}
       >
-        <Typography variant={'h6'} textAlign={'center'} padding={1} mb={1} borderColor={'grey[100]'} sx={{ borderBottomWidth: 1, borderBottomStyle: 'solid', borderColor: 'grey.200' }}>Notifications</Typography>
+        <Typography variant={'h6'} textAlign={'center'} padding={1} mb={1} borderColor={'grey[100]'} sx={{ borderBottomWidth: 1, borderBottomStyle: 'solid', borderColor: 'divider' }}>Notifications</Typography>
         {notificationsData?.notifications.map((notification) => (
           <MenuItem key={notification.id} sx={{ fontSize: 14, maxWidth: 320, whiteSpace: 'normal'}}>
             <MessageContainer status={notification.status}>

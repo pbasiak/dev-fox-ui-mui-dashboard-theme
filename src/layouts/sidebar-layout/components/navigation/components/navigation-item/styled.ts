@@ -1,5 +1,4 @@
 import { ListItemButton, ListItemIcon, styled } from '@mui/material';
-import { Colors } from '../../../../../../theme/theme';
 
 interface NavigationListItemButtonProps {
   active?: boolean;
@@ -7,7 +6,7 @@ interface NavigationListItemButtonProps {
 }
 
 export const NavigationListItemButton = styled(ListItemButton)<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
-  color: Colors.buttonText,
+  color: nested ? theme.palette.text.secondary : theme.palette.text.primary,
   borderRadius: theme.shape.borderRadius,
   paddingLeft: nested ? theme.spacing(8) : theme.spacing(2),
   paddingTop: nested ? theme.spacing(0.5) : theme.spacing(1),
@@ -15,7 +14,7 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
   marginBottom: theme.spacing(1),
   position: 'relative',
   '.MuiSvgIcon-root': {
-    color: Colors.icon,
+    color: theme.palette.primary.main,
     transition: `color 0.2s ${theme.transitions.easing.easeInOut}`,
   },
   '&::before': {
@@ -27,23 +26,27 @@ export const NavigationListItemButton = styled(ListItemButton)<NavigationListIte
     transform: 'translateY(-50%)',
     width: '5px',
     height: '5px',
-    backgroundColor: active ? theme.palette.primary.main : Colors.icon,
+    backgroundColor: active ? theme.palette.primary.contrastText : theme.palette.primary.light,
     borderRadius: '40%',
   },
   '&:hover': {
-    backgroundColor: Colors.buttonBackgroundHover,
-    color: Colors.buttonTextHover,
+    backgroundColor: theme.palette.primary.dark,
+    color: theme.palette.primary.contrastText,
+
+    '&::before': {
+      backgroundColor: theme.palette.primary.contrastText,
+    },
 
     '.MuiSvgIcon-root': {
-      color: Colors.iconHover,
+      color: theme.palette.primary.contrastText,
     },
   },
   ...(active && {
-    backgroundColor: Colors.buttonBackgroundActive,
-    color: Colors.buttonTextActive,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
 
     '.MuiSvgIcon-root': {
-      color: Colors.iconActive,
+      color: theme.palette.primary.contrastText,
     },
   }),
 }))

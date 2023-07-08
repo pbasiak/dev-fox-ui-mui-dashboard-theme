@@ -8,7 +8,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 export const StorybookContainer = ({children}: {children: ReactNode}) => {
-  return (<ThemeProvider theme={AppTheme}>
+  const theme = AppTheme('light');
+  return (<ThemeProvider theme={theme}>
     {children}
   </ThemeProvider>)
 }

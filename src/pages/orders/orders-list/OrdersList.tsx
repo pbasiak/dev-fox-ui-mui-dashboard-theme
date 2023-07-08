@@ -46,7 +46,7 @@ export const OrderList: FC = () => {
     <SidebarLayout>
       <Container>
         <PageHeader title={'Orders'} breadcrumbs={['Orders']} />
-        <List sx={{ backgroundColor: 'grey.200', borderRadius: 1, marginBottom: 1, px: 2, pr: 11 }}>
+        <List sx={{ backgroundColor: 'background.default', borderRadius: 1, marginBottom: 1, px: 2, pr: 11 }}>
           <ListItem dense>
             <ListItemIcon>
               <Checkbox

@@ -15,4 +15,5 @@
 .ql-toolbar.ql-snow {
     font-family: "Source Sans Pro", sans-serif;
     border-radius: 6px 6px 0 0;
+    border: 0;
 }

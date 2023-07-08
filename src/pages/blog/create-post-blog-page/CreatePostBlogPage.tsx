@@ -78,7 +78,7 @@ export const CreatePostBlogPage = () => {
                   <Controller
                     render={({ field, fieldState, formState, }) => (
                       <>
-                        <ReactQuill theme="snow" value={field.value} onChange={field.onChange}/>
+                        <ReactQuill value={field.value} onChange={field.onChange}/>
                         {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
                       </>
                     )}
