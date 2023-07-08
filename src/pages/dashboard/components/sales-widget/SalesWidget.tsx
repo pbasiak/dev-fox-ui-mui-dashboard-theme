@@ -11,7 +11,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import { AppTheme } from '../../../../theme/theme';
+import { useTheme } from '@mui/material';
 
 ChartJS.register(
   CategoryScale,
@@ -37,18 +37,21 @@ export const options = {
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
+export const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
   labels,
   datasets: [
     {
       label: 'Sales',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: AppTheme.palette.primary.dark,
+      backgroundColor,
     },
   ],
-};
+});
 
 export const SalesWidget = () => {
+  const theme = useTheme();
+  const data = getData({ backgroundColor: theme.palette.primary.dark })
+
   return (
     <Widget title={'Sales summary'}>
       <Bar options={options} data={data} />

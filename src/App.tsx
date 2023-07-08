@@ -1,5 +1,4 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { AppTheme } from './theme/theme';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { TypographyPage } from './docs/pages/typography-page/TypographyPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -28,6 +27,9 @@ import { LoginPage } from './pages/login/LoginPage';
 import { RegisterPage } from './pages/register/RegisterPage';
 import { ResetPassword } from './pages/reset-password/ResetPassword';
 import { VerifyCode } from './pages/verify-code/VerifyCode';
+import { ThemeConfigurator } from './demo/theme-configurator/ThemeConfigurator';
+import React from 'react';
+import { AppTheme } from './theme/theme';
 
 const router = createBrowserRouter([
   {
@@ -130,6 +132,8 @@ const router = createBrowserRouter([
 
 const queryClient = new QueryClient();
 
+export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
 const AppRouter = () => {
   const { data: user, isLoading } = useCurrentUser();
 
@@ -141,10 +145,33 @@ const AppRouter = () => {
 }
 
 export function App () {
-  return <ThemeProvider theme={AppTheme}>
-    <CssBaseline />
-    <QueryClientProvider client={queryClient}>
-      <AppRouter />
-    </QueryClientProvider>
-  </ThemeProvider>;
+  const [mode, setMode] = React.useState<'light' | 'dark'>('dark');
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = React.useMemo(
+    () =>
+      AppTheme(mode),
+    [mode],
+  );
+
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <QueryClientProvider client={queryClient}>
+          <>
+            <AppRouter />
+            <ThemeConfigurator />
+          </>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  )
 }

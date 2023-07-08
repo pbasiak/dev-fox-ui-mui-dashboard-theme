@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
-import { AppTheme } from '../../../../theme/theme';
+import { useTheme } from '@mui/material';
 
 ChartJS.register(
   CategoryScale,
@@ -36,18 +36,21 @@ export const options = {
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
+export const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
   labels,
   datasets: [
     {
       label: 'Dataset 1',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 500 })),
-      backgroundColor: AppTheme.palette.secondary.main,
+      backgroundColor,
     },
   ],
-};
+});
 
 export const UsersStatsWidget = () => {
+  const theme = useTheme();
+  const data = getData({ backgroundColor: theme.palette.secondary.main })
+
   return (
     <Widget title={'Users'}>
       <Bar options={options} data={data} />

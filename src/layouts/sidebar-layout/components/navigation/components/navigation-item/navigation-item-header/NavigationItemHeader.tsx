@@ -1,4 +1,3 @@
-import { Colors } from '../../../../../../../theme/theme';
 import { ListSubheader } from '@mui/material';
 
 interface NavigationItemHeaderProps {
@@ -15,7 +14,7 @@ export const NavigationItemHeader = ({ header }: NavigationItemHeaderProps) => {
         fontSize: '11px',
         fontWeight: 'fontWeightBold',
         pl: 2.2,
-        color: Colors.textColor,
+        color: 'text.secondary',
         backgroundColor: 'transparent',
         position: 'relative',
         letterSpacing: '1px',
