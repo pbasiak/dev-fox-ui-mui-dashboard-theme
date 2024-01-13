@@ -4,8 +4,8 @@ import { StatWidget } from './components/stat-widget/StatWidget';
 import { WelcomeWidget } from './components/welcome-widget/WelcomeWidget';
 import { PageHeader } from '../../components/page-header/PageHeader';
 import { SalesWidget } from './components/sales-widget/SalesWidget';
-import { UsersStatsWidget } from './components/users-stats-widget/UsersStatsWidget';
 import { BlogWidget } from './components/blog-widget/BlogWidget';
+import { UsersStatsWidget } from './components/users-stats-widget/UsersStatsWidget.tsx';
 
 export const Dashboard = () => {
   return (

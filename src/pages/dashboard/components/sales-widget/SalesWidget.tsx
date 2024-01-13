@@ -1,4 +1,3 @@
-import React from 'react';
 import { Widget } from '../../../../components/widget/Widget';
 import {
   Chart as ChartJS,
@@ -22,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+const options = {
   responsive: true,
   plugins: {
     legend: {
@@ -37,12 +36,12 @@ export const options = {
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
+const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
   labels,
   datasets: [
     {
       label: 'Sales',
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
       backgroundColor,
     },
   ],

@@ -7,7 +7,6 @@ import { useUser } from '../../../hooks/api/use-user/useUser';
 import { useUserPosts } from '../../../hooks/api/use-user-posts/useUserPosts';
 import { UserProfileNewComment } from './components/user-profile-new-comment/UserProfileNewComment';
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import React from 'react';
 
 export const UserProfilePage = () => {
   const { data: user } = useUser({ id: 1 });

@@ -1,11 +1,10 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Button, Container, FormControl, Paper, Stack, TextField } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { JobsCreateFieldsNames, JobsCreateForm, jobsCreateFormSchema } from './utils/jobsCreateForm';
-import ReactQuill from 'react-quill';
 import { BlogPostFieldsNames } from '../../blog/create-post-blog-page/utils/blogPostForms';
 import { FieldErrorText } from '../../../components/field-error-text/FieldErrorText';
 
@@ -53,7 +52,6 @@ export const JobsCreate = () => {
               <Controller
                 render={({ field, fieldState, formState, }) => (
                   <>
-                    <ReactQuill theme="snow" value={field.value} onChange={field.onChange}/>
                     {fieldState.error && <FieldErrorText>{fieldState.error.message}</FieldErrorText>}
                   </>
                 )}

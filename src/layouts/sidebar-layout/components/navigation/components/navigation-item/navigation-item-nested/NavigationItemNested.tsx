@@ -5,7 +5,6 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
-import * as React from 'react';
 import { NavigationItemSimple } from '../navigation-item-simple/NavigationItemSimple';
 import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
 import { useCallback } from 'react';
@@ -28,7 +27,7 @@ export const NavigationItemNested = ({ item }: Props) => {
   }
 
   const nestedItems = item.items.map((item) => {
-    return <NavigationItemSimple item={item} nested />
+    return <NavigationItemSimple key={item.path} item={item} nested />
   })
 
   return  (

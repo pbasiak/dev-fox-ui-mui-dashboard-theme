@@ -68,7 +68,7 @@ export const TodoList: React.FC = () => {
         ) : (
           <List>
             {tasks.map((task) => (
-              <TodoListItem task={task} onDelete={handleDeleteTask} onComplete={handleCompleteTask} />
+              <TodoListItem key={task.id} task={task} onDelete={handleDeleteTask} onComplete={handleCompleteTask} />
             ))}
           </List>
         )}

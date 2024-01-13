@@ -18,7 +18,7 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
 
   const commentsList = post.comments.map(comment => {
     return (
-      <UserProfileComment comment={comment} />
+      <UserProfileComment key={comment.id} comment={comment} />
     )
   });
 

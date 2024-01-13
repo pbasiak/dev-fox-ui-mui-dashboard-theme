@@ -1,7 +1,6 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { useBlogPost } from '../../../hooks/api/use-blog-post/useBlogPost';
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import ReactQuill from 'react-quill';
 import { Box, Container, Paper } from '@mui/material';
 
 export const BlogPostPage = () => {
@@ -17,11 +16,7 @@ export const BlogPostPage = () => {
           <img src={data?.image} alt={data?.title} style={{ maxWidth: '100%', display: 'block' }} />
         </Box>
         <Paper sx={{ padding: 4 }}>
-          <ReactQuill
-            value={data?.content}
-            readOnly={true}
-            theme={"bubble"}
-          />
+
         </Paper>
       </Container>
     </SidebarLayout>
