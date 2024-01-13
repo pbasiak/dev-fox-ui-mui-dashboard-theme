@@ -1,6 +1,6 @@
 import { Box, IconButton, Menu, MenuItem, styled } from '@mui/material';
 
-export const UserMenuContainer = styled(Box)(({ theme }) => ({
+export const UserMenuContainer = styled(Box)(() => ({
 }))
 
 

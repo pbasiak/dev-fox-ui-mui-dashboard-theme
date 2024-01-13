@@ -50,7 +50,7 @@ export const JobsCreate = () => {
                 {errors.location && <FieldErrorText>{errors.location.message}</FieldErrorText>}
               </FormControl>
               <Controller
-                render={({ field, fieldState, formState, }) => (
+                render={({ fieldState }) => (
                   <>
                     {fieldState.error && <FieldErrorText>{fieldState.error.message}</FieldErrorText>}
                   </>

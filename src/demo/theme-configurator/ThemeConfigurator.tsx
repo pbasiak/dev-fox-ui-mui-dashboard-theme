@@ -17,7 +17,7 @@ export function ThemeConfigurator() {
     setOpen((prev) => !prev);
   }, [])
 
-  const handleModeChange = useCallback((event: React.MouseEvent<HTMLElement>, newMode: 'light' | 'dark') => {
+  const handleModeChange = useCallback(() => {
     setMode(isDarkTheme ? 'light' : 'dark');
     colorMode.toggleColorMode();
   }, [colorMode, isDarkTheme]);

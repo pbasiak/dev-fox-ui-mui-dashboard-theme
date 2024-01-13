@@ -73,7 +73,7 @@ export const CreatePostBlogPage = () => {
                   </FormControl>
 
                   <Controller
-                    render={({ field, fieldState, formState, }) => (
+                    render={({ fieldState }) => (
                       <>
                         {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
                       </>
