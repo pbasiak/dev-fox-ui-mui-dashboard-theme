@@ -3,5 +3,5 @@ import orders from '../../../mocks/orders/orders-list.json';
 import { OrderType } from './types';
 
 export const useOrders = (): OrderType => {
-  return useQuery({ queryKey: ['orders'], queryFn: ({ pageParam = 1 }) => orders});
+  return useQuery({ queryKey: ['orders'], queryFn: () => orders});
 }

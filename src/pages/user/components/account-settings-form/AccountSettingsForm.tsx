@@ -16,7 +16,7 @@ const CheckboxWithForm = ({control, name, label}: { control: any, name: string, 
       control={control}
       name={name}
       render={({
-        field: { onChange, onBlur, value, name, ref },
+        field: { onChange, onBlur, value, ref },
       }) => (
         <FormControlLabel control={<Checkbox
           onBlur={onBlur}
@@ -30,7 +30,7 @@ const CheckboxWithForm = ({control, name, label}: { control: any, name: string, 
 }
 
 export const AccountSettingsForm = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm({
+  const { control, handleSubmit } = useForm({
     defaultValues: {
       enableEmailNotifications: true,
       enableSmsNotifications: false,
@@ -40,8 +40,8 @@ export const AccountSettingsForm = () => {
   });
   
 
-  const handleSave = useCallback((data: any) => {
-    console.log(errors);
+  const handleSave = useCallback((data: unknown) => {
+    console.log(data);
   }, [])
 
   return (

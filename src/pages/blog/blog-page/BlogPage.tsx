@@ -74,7 +74,8 @@ export const BlogPage = () => {
             Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere. Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam porttitor vel purus eu commodo.
           </Typography>
         </Stack>
-        { isLoading ? <Loader /> : <BlogList posts={data} view={view} /> }
+        { isLoading && <Loader /> }
+        { !isLoading && data && <BlogList posts={data} view={view} /> }
       </Container>
     </SidebarLayout>
   )

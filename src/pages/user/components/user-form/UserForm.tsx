@@ -16,7 +16,7 @@ import {
   AccountGeneralForm,
   accountGeneralFormSchema,
 } from '../../utils/userForms';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { User } from '../../../../types/user/userTypes';

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { styled } from '@mui/material/styles';
 import { Card, CardContent, Typography, List, Container, Stack, Chip, Pagination } from '@mui/material';
 import { useJobs } from '../../../hooks/api/use-jobs/useJobs';

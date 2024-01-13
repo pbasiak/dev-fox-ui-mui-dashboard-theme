@@ -1,4 +1,3 @@
-import React from 'react';
 import { useJobsDetails } from '../../../hooks/api/use-jobs-details/useJobsDetails';
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import {

@@ -53,7 +53,7 @@ export const UserAccountPage = () => {
   const [value, setValue] = React.useState(0);
   const { data: user, isLoading } = useCurrentUser();
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
