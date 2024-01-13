@@ -10,15 +10,12 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import 'react-quill/dist/quill.snow.css';
-import './quill.css';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { Controller, useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BlogPostFieldsNames, BlogPostForm, blogPostFormSchema } from './utils/blogPostForms';
-import React, { useCallback, useRef } from 'react';
-import ReactQuill from 'react-quill';
+import { useCallback, useRef } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +36,7 @@ export const CreatePostBlogPage = () => {
   ];
 
   const categoriesList = categories.map((category) => (
-    <FormGroup aria-label="position" row>
+    <FormGroup key={category.id} aria-label="position" row>
       <FormControlLabel control={<Checkbox />} label={category.name} />
     </FormGroup>
   ));
@@ -78,7 +75,6 @@ export const CreatePostBlogPage = () => {
                   <Controller
                     render={({ field, fieldState, formState, }) => (
                       <>
-                        <ReactQuill value={field.value} onChange={field.onChange}/>
                         {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
                       </>
                     )}

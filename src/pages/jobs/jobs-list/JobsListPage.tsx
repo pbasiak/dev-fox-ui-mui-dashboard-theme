@@ -42,8 +42,8 @@ export const JobsList = () => {
         <PageHeader title={'Jobs'} breadcrumbs={['Jobs', 'List']} />
         <JobsSearch />
         <List sx={{ marginTop: 2 }}>
-          {data.jobs.map((job, index) => (
-            <CardWrapper key={index} onClick={handleJobClick}>
+          {data.jobs.map((job) => (
+            <CardWrapper key={job.title} onClick={handleJobClick}>
               <CardContent>
                 <Stack direction={'row'} justifyContent={'space-between'}>
                   <Stack>

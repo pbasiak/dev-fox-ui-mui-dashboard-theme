@@ -6,7 +6,7 @@ import { User } from '../../../../../types/user/userTypes';
 export const UserProfilePostsList = ({posts, user}: {posts: UserPost[], user: User}) => {
   const postList = posts.map(post => {
     return (
-      <UserProfilePost post={post} user={user} />
+      <UserProfilePost key={post.id} post={post} user={user} />
     );
   });
 

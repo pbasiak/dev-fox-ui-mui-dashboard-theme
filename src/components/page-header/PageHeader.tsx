@@ -11,7 +11,7 @@ interface PageHeaderProps {
 }
 
 export const PageHeader = ({title, breadcrumbs, renderRight}: PageHeaderProps) => {
-  const breadcrumbsList = breadcrumbs?.map((breadcrumb) => <Typography key="3" color="text.primary" fontSize={14}>{breadcrumb}</Typography>);
+  const breadcrumbsList = breadcrumbs?.map((breadcrumb) => <Typography key={breadcrumb} color="text.primary" fontSize={14}>{breadcrumb}</Typography>);
 
   return (
     <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'} marginBottom={2}>

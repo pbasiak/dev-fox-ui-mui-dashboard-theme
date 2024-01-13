@@ -38,7 +38,7 @@ export const OrderList: FC = () => {
 
   const ordersList = data?.orders.map((order) => {
     return (
-      <OrderItem order={order} onSelect={handleToggleSelect} selected={selected.indexOf(order.id) !== -1} />
+      <OrderItem key={order.id} order={order} onSelect={handleToggleSelect} selected={selected.indexOf(order.id) !== -1} />
     )
   });
 
