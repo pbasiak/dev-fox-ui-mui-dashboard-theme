@@ -1,5 +1,5 @@
 import { Box, styled } from '@mui/material';
-import BlogSvg from '../../../../assets/backgrounds/widget/blog.svg';
+import BlogSvg from '../../../../assets/backgrounds/widget/blog.svg?url';
 
 export const BlogWidgetContainer = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${BlogSvg})`,
