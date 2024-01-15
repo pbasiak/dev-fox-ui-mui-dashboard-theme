@@ -1,8 +1,8 @@
 import { createTheme } from '@mui/material';
 import { themeShadows } from './shadows';
 // import waveSvg from '../assets/wave-top.svg';
-import squaresSvg from '../assets/backgrounds/squares.svg';
-import squaresDarkSvg from '../assets/backgrounds/squares-dark.svg';
+import squaresSvg from '../assets/backgrounds/squares.svg?url';
+import squaresDarkSvg from '../assets/backgrounds/squares-dark.svg?inline';
 import { amber, blue, blueGrey, deepOrange, grey, lightGreen } from '@mui/material/colors';
 
 // Color transparency: https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
