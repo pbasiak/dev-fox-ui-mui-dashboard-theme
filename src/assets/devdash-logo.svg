@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 149 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-2250,-1561)">
+        <g id="LOGO" transform="matrix(0.0690546,0,0,0.0690546,2109.45,1513.15)">
+            <g transform="matrix(0.707107,-0.707107,0.707107,0.707107,-51.45,2024.84)">
+                <path d="M2707,875.043L2707,1281.36C2707,1329.31 2668.07,1368.25 2620.12,1368.25L2213.8,1368.25C2165.85,1368.25 2126.91,1329.31 2126.91,1281.36L2126.91,875.043C2126.91,827.088 2165.85,788.155 2213.8,788.155L2620.12,788.155C2668.07,788.155 2707,827.088 2707,875.043Z" style="fill:url(#_Radial1);"/>
+            </g>
+            <g transform="matrix(-0.16261,-0.16261,-0.16261,0.16261,2986.23,1018.29)">
+                <clipPath id="_clip2">
+                    <path d="M2126.91,848.922L2126.91,838.155C2126.91,810.56 2149.32,788.155 2176.91,788.155L2657,788.155C2684.6,788.155 2707,810.56 2707,838.155L2707,1318.25C2707,1345.84 2684.6,1368.25 2657,1368.25L2646.24,1368.25L2646.24,898.922C2646.24,871.327 2623.83,848.922 2596.24,848.922L2126.91,848.922Z"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <g transform="matrix(-44.5277,-44.5277,-44.5277,44.5277,3924.1,1923.22)">
+                        <use xlink:href="#_Image3" x="20.228" y="1.25" width="13px" height="7px"/>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(-1.22438,1.49943e-16,-1.49943e-16,-1.22438,5577.32,2738.69)">
+                <path d="M2656.19,1255.11C2677.5,1255.11 2696.13,1259.33 2712.06,1267.78C2728,1276.23 2740.34,1288.09 2749.07,1303.35C2757.81,1318.61 2762.18,1336.23 2762.18,1356.2C2762.18,1375.97 2757.81,1393.54 2749.07,1408.9C2740.34,1424.26 2727.95,1436.16 2711.92,1444.61C2695.89,1453.06 2677.31,1457.29 2656.19,1457.29L2580.45,1457.29L2580.45,1255.11L2656.19,1255.11ZM2653.02,1414.66C2671.65,1414.66 2686.14,1409.57 2696.51,1399.4C2706.88,1389.22 2712.06,1374.82 2712.06,1356.2C2712.06,1337.57 2706.88,1323.08 2696.51,1312.71C2686.14,1302.34 2671.65,1297.16 2653.02,1297.16L2629.7,1297.16L2629.7,1414.66L2653.02,1414.66Z" style="fill:white;fill-opacity:0.89;"/>
+            </g>
+            <g transform="matrix(1.22438,0,0,1.22438,-1207.94,-618.642)">
+                <path d="M3040.57,1284.8C3061.88,1284.8 3080.5,1289.02 3096.44,1297.47C3112.38,1305.92 3124.71,1317.77 3133.45,1333.04C3142.18,1348.3 3146.55,1365.92 3146.55,1385.88C3146.55,1405.66 3142.18,1423.23 3133.45,1438.59C3124.71,1453.95 3112.33,1465.85 3096.3,1474.3C3080.26,1482.75 3061.69,1486.97 3040.57,1486.97L2964.82,1486.97L2964.82,1284.8L3040.57,1284.8ZM3037.4,1444.35C3056.02,1444.35 3070.52,1439.26 3080.89,1429.08C3091.26,1418.91 3096.44,1404.51 3096.44,1385.88C3096.44,1367.26 3091.26,1352.76 3080.89,1342.4C3070.52,1332.03 3056.02,1326.84 3037.4,1326.84L3014.07,1326.84L3014.07,1444.35L3037.4,1444.35Z" style="fill:white;fill-opacity:0.89;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-75.358,-303.364)">
+                <g transform="matrix(288,0,0,288,4273.78,1486.97)">
+                </g>
+                <text x="2946.97px" y="1486.97px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:288px;fill:rgb(41,98,255);">DevDash</text>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(580.09,0,0,580.09,2126.91,1078.2)"><stop offset="0" style="stop-color:rgb(0,55,205);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(41,98,255);stop-opacity:1"/></radialGradient>
+        <image id="_Image3" width="13px" height="7px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAYAAADTcMcaAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAqklEQVQYlVWPSZKEMAwEU97Y/P+XEhBI2OoDg4PxSVtVloXP671XM6O1RimF3js5Z0Rk/97JW+z7XrdtG4vrujAzRIR5nkkpDWEAcPdaSnlp/M2otRJjJMaIu9dB+jbneWJmrOtKSmlQVZXXVET2fyJ3R1VJKaGqLMuCmZFzHgmO43jivbFEni/e9z2c3f0lEEKg1vrE672jqkzThIjg7rg7ITyerbUhAvgB5ftgdiJBlTsAAAAASUVORK5CYII="/>
+    </defs>
+</svg>
