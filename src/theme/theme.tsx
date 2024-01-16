@@ -66,6 +66,7 @@ export const AppTheme = (mode: 'light' | 'dark') => {
     spacing: 8,
     typography: {
       fontFamily: [
+        'Noto Sans',
         '"Source Sans Pro"',
         '-apple-system',
         'BlinkMacSystemFont',

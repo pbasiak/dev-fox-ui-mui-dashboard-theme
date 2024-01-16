@@ -14,7 +14,6 @@ export const NavigationListItemButton = styled(ListItemButton, { shouldForwardPr
   marginBottom: theme.spacing(1),
   position: 'relative',
   '.MuiSvgIcon-root': {
-    color: theme.palette.primary.main,
     transition: `color 0.2s ${theme.transitions.easing.easeInOut}`,
   },
   '&::before': {
