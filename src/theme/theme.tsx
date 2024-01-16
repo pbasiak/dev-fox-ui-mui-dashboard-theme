@@ -108,6 +108,9 @@ export const AppTheme = (mode: 'light' | 'dark') => {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          ':root': {
+            colorScheme: isDarkMode ? 'dark' : 'light',
+          },
           html: {
             minHeight: '100%',
           },
