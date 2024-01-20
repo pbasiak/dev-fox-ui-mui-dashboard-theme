@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import logoSvg from '../../assets/devdash-logo.svg?url';
+import logoSvg from '../../assets/app-logo.svg?url';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../contants/routes';
 
