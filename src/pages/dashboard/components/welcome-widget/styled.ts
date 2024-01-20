@@ -1,13 +1,12 @@
 import { Box, styled } from '@mui/material';
-import WelcomeSvg from '../../../../assets/backgrounds/widget/welcome.svg';
+import { blue } from '@mui/material/colors';
 
 export const WelcomeWidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${WelcomeSvg})`,
+  backgroundColor: theme.palette.mode === 'light' ? blue[100] : theme.palette.primary.dark,
   backgroundSize: 'cover',
   width: '100%',
   borderRadius: theme.shape.borderRadius,
   padding: theme.spacing(2, 6),
-  color: theme.palette.primary.contrastText,
   minHeight: '235px',
   display: 'flex',
   position: 'relative',

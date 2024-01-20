@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 import { NavigationItemIconProps, NavigationItemSimpleType, NavigationItemSimpleTypeWithoutIcon } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
-import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
+import { NavigationListItemButton, NavigationListItemIcon, NavigationListItemNestedIcon } from '../styled';
 import { useNavigate } from 'react-router-dom';
 import { NavigationItemBadge } from './styled';
 import { Stack, ListItemText } from '@mui/material';
-import { Launch } from '@mui/icons-material';
+import { Launch, Circle } from '@mui/icons-material';
 
 interface Props {
   iconColor?: NavigationItemIconProps['color'];
@@ -34,7 +34,9 @@ export const NavigationItemSimple = ({ item, nested = false }: Props) => {
         {!nested && 'icon' in item ?
           <NavigationListItemIcon>
             {item.icon(iconProps)}
-          </NavigationListItemIcon> : null}
+          </NavigationListItemIcon> : <NavigationListItemNestedIcon>
+            <Circle fontSize={'inherit'} />
+          </NavigationListItemNestedIcon>}
 
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
       </Stack>

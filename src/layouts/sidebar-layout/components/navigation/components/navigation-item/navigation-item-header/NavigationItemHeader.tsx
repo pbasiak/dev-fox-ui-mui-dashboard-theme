@@ -11,7 +11,7 @@ export const NavigationItemHeader = ({ header }: NavigationItemHeaderProps) => {
       id="nested-list-subheader"
       sx={{
         textTransform: 'uppercase',
-        fontSize: '11px',
+        fontSize: '12px',
         fontWeight: 'fontWeightBold',
         pl: 2.2,
         color: 'text.secondary',

@@ -1,5 +1,5 @@
 import ListItemText from '@mui/material/ListItemText';
-import { NavigationItemIconProps, NavigationItemNestedType } from '../types';
+import { NavigationItemNestedType } from '../types';
 import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
@@ -22,10 +22,6 @@ export const NavigationItemNested = ({ item }: Props) => {
     toggleNavigationId(item.label);
   }, [item.label, toggleNavigationId]);
 
-  const iconProps: NavigationItemIconProps = {
-    color: item?.active ? 'primary' : 'action',
-  }
-
   const nestedItems = item.items.map((item) => {
     return <NavigationItemSimple key={item.path} item={item} nested />
   })
@@ -34,7 +30,7 @@ export const NavigationItemNested = ({ item }: Props) => {
     <>
       <NavigationListItemButton onClick={handleToggleOpen} >
         <NavigationListItemIcon>
-          {item.icon(iconProps)}
+          {item.icon({})}
         </NavigationListItemIcon>
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
         {isOpen ? <ExpandLess /> : <ExpandMore />}

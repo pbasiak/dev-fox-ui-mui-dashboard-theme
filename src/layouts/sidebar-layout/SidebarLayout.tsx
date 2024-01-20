@@ -103,6 +103,7 @@ export function SidebarLayout({children}: Props) {
             boxSizing: 'border-box',
           },
         }}
+        elevation={0}
         variant="persistent"
         anchor="left"
         open={isSidebarOpen}

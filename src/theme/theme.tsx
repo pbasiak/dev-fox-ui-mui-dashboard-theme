@@ -1,25 +1,6 @@
 import { createTheme } from '@mui/material';
 import { themeShadows } from './shadows';
-// import waveSvg from '../assets/wave-top.svg';
-import squaresSvg from '../assets/backgrounds/squares.svg?url';
-import squaresDarkSvg from '../assets/backgrounds/squares-dark.svg?inline';
-import { amber, blue, blueGrey, deepOrange, grey, lightGreen } from '@mui/material/colors';
-
-// Color transparency: https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-
-function convertAlphaToHex(alphaDecimal: number) {
-  // Convert alphaDecimal to a value between 0 and 1
-  const alpha = alphaDecimal / 100;
-
-  // Calculate the equivalent alpha value in the range of 0 to 255
-  const alphaInt = Math.round(alpha * 255);
-
-  // Convert alphaInt to hexadecimal string
-  const alphaHex = alphaInt.toString(16).toUpperCase();
-
-  // Pad the hexadecimal value with leading zero if needed
-  return alphaHex.padStart(2, '0');
-}
+import { amber, blue, blueGrey, grey, lightBlue, lightGreen, pink, red } from '@mui/material/colors';
 
 
 const background = '#171a1f';
@@ -36,20 +17,16 @@ export const AppTheme = (mode: 'light' | 'dark') => {
         main: isDarkMode ? blue['A400'] : blue['A700'], //"#2F63F8",
       },
       secondary: {
-        main: amber['A700'],
+        main: pink['A700'],
       },
       success: {
         main: lightGreen['A700'],
       },
       error: {
-        main: deepOrange['A700'],
+        main: red['A400'],
       },
       info: {
-        main: blue[50]
-      },
-      text: {
-        primary: isDarkMode ? blueGrey[100] : blueGrey[900],
-        secondary: isDarkMode ? blueGrey[200] : blueGrey[700],
+        main: lightBlue['A400']
       },
       warning: {
         main: amber['A700'],
@@ -61,7 +38,7 @@ export const AppTheme = (mode: 'light' | 'dark') => {
       }
     },
     shape: {
-      borderRadius: 16
+      borderRadius: 4
     },
     spacing: 8,
     typography: {
@@ -117,17 +94,21 @@ export const AppTheme = (mode: 'light' | 'dark') => {
           },
           body: {
             minHeight: '100%',
-            backgroundColor: isDarkMode ? bodyBackground : `${blue['A700']}${convertAlphaToHex(7)}`,
-            backgroundImage: `url(${isDarkMode ? squaresDarkSvg : squaresSvg})`,
+            backgroundColor: isDarkMode ? bodyBackground : blueGrey[50],
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top right',
             backgroundSize: '100%',
           }
         }
       },
+      MuiListItemButton: {
+        defaultProps: {
+          disableRipple: true,
+        }
+      },
       MuiButton: {
         defaultProps: {
-          // disableRipple: true,
+          disableRipple: true,
         },
         styleOverrides: {
           root: {
@@ -161,7 +142,6 @@ export const AppTheme = (mode: 'light' | 'dark') => {
           paper: {
             borderRight: '0',
             backgroundColor: isDarkMode ? background : grey[50],
-            boxShadow: themeShadows[15],
           }
         }
       },
