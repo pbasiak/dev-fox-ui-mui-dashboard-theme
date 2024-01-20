@@ -2,10 +2,8 @@ import { createTheme } from '@mui/material';
 import { themeShadows } from './shadows';
 import { amber, blue, blueGrey, grey, lightBlue, lightGreen, pink, red } from '@mui/material/colors';
 
-
 const background = '#171a1f';
 const bodyBackground = '#111111';
-
 
 export const AppTheme = (mode: 'light' | 'dark') => {
   const isDarkMode = mode === 'dark';
@@ -14,7 +12,7 @@ export const AppTheme = (mode: 'light' | 'dark') => {
     palette: {
       mode,
       primary: {
-        main: isDarkMode ? blue['A400'] : blue['A700'], //"#2F63F8",
+        main: blue['A700'],
       },
       secondary: {
         main: pink['A700'],
