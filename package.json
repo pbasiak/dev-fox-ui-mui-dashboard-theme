@@ -33,6 +33,8 @@
     "react-hook-form": "^7.49.3",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.21.2",
+    "slate": "^0.101.5",
+    "slate-react": "^0.101.5",
     "uuid": "^9.0.1",
     "yup": "^0.32.11"
   },
