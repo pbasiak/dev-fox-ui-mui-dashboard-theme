@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { JobsCreateFieldsNames, JobsCreateForm, jobsCreateFormSchema } from './utils/jobsCreateForm';
 import { BlogPostFieldsNames } from '../../blog/create-post-blog-page/utils/blogPostForms';
 import { FieldErrorText } from '../../../components/field-error-text/FieldErrorText';
+import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 
 export const JobsCreate = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -50,8 +51,9 @@ export const JobsCreate = () => {
                 {errors.location && <FieldErrorText>{errors.location.message}</FieldErrorText>}
               </FormControl>
               <Controller
-                render={({ fieldState }) => (
+                render={({ fieldState, field }) => (
                   <>
+                    <SlateEditor onChange={field.onChange} placeholder={'Description'} />
                     {fieldState.error && <FieldErrorText>{fieldState.error.message}</FieldErrorText>}
                   </>
                 )}
