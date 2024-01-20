@@ -18,7 +18,7 @@ import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
 import { useNavigation } from './components/navigation/hooks/use-navigation/useNavigation';
 import { Logo } from '../../components/logo/Logo';
 
-const drawerWidth = 270;
+const drawerWidth = 280;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -63,9 +63,8 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(4, 1, 2, 4),
+  padding: theme.spacing(4, 1, 0, 4),
   // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
   justifyContent: 'space-between',
 }));
 
@@ -104,6 +103,7 @@ export function SidebarLayout({children}: Props) {
             boxSizing: 'border-box',
           },
         }}
+        elevation={0}
         variant="persistent"
         anchor="left"
         open={isSidebarOpen}

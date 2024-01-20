@@ -12,7 +12,7 @@ export const WelcomeWidget = ({ title, description }: WelcomeWidgetProps) => {
       <WelcomeWidgetContent>
         <Typography variant={'h3'} fontWeight={'fontWeightBold'}>{title}</Typography>
         <Typography variant={'body1'} mb={1}>{description}</Typography>
-        <Button color={'info'} variant={'outlined'} size={'small'}>Documentation</Button>
+        <Button color={'primary'} variant={'outlined'} size={'small'}>Documentation</Button>
       </WelcomeWidgetContent>
     </WelcomeWidgetContainer>
   );

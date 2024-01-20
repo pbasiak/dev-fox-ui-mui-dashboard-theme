@@ -1,13 +1,11 @@
 import { Box, styled } from '@mui/material';
-import BlogSvg from '../../../../assets/backgrounds/widget/blog.svg?url';
+import { pink } from '@mui/material/colors';
 
 export const BlogWidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${BlogSvg})`,
-  backgroundSize: 'cover',
+  backgroundColor: theme.palette.mode === 'light' ? pink['100'] : theme.palette.primary.dark,
   width: '100%',
   borderRadius: theme.shape.borderRadius,
   padding: theme.spacing(2, 6),
-  color: theme.palette.primary.contrastText,
   minHeight: '235px',
   display: 'flex',
   position: 'relative',

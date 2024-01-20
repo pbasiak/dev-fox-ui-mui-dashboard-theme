@@ -1,15 +1,10 @@
 import { Box, styled, Typography } from '@mui/material';
-import widgetBackgroundSvg from '../../assets/backgrounds/widget-bg.svg'
 
 export const WidgetContainer = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
-  boxShadow: theme.shadows[10],
   flex: 1,
-  backgroundImage: `url(${widgetBackgroundSvg})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: '105% 105%',
   justifyContent: 'space-between',
   flexDirection: 'column',
   height: '100%',
