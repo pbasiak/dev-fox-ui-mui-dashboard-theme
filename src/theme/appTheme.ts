@@ -5,7 +5,7 @@ import { amber, blue, blueGrey, grey, lightBlue, lightGreen, pink, red } from '@
 const background = '#171a1f';
 const bodyBackground = '#111111';
 
-export const AppTheme = (mode: 'light' | 'dark') => {
+export const appTheme = (mode: 'light' | 'dark') => {
   const isDarkMode = mode === 'dark';
 
   return createTheme({

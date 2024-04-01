@@ -3,11 +3,20 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import { Close, Lightbulb, LightbulbOutlined, Tune } from '@mui/icons-material';
-import { Stack, ToggleButton, ToggleButtonGroup, Typography, useTheme } from '@mui/material';
+import {
+  FormControl,
+  InputLabel, MenuItem,
+  Select, SelectChangeEvent,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import { useCallback } from 'react';
 import { ColorModeContext } from '../../App';
 
-export function ThemeConfigurator() {
+export function ThemeConfigurator({ setThemeName, themeName }: { setThemeName: React.Dispatch<React.SetStateAction<"appTheme" | "shadTheme">>; themeName: string }) {
   const [open, setOpen] = React.useState(false);
   const isDarkTheme = useTheme().palette.mode === 'dark';
   const [mode, setMode] = React.useState<'light' | 'dark'>(isDarkTheme ? 'dark' : 'light');
@@ -21,6 +30,10 @@ export function ThemeConfigurator() {
     setMode(isDarkTheme ? 'light' : 'dark');
     colorMode.toggleColorMode();
   }, [colorMode, isDarkTheme]);
+
+  const handleThemeChange = useCallback((event: SelectChangeEvent<string>) => {
+    setThemeName(event.target.value as "appTheme" | "shadTheme");
+  }, [setThemeName]);
 
   return (
     <React.Fragment key={'right'}>
@@ -67,6 +80,26 @@ export function ThemeConfigurator() {
                   Dark
                 </ToggleButton>
               </ToggleButtonGroup>
+            </Box>
+          </Stack>
+
+          <Stack sx={{ p: 2}}>
+            <Box>
+              <Typography variant={'body2'} color={'text.secondary'} textTransform={'uppercase'} mb={2}>Theme</Typography>
+
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Choose theme</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={themeName}
+                  label="Choose theme"
+                  onChange={handleThemeChange}
+                >
+                  <MenuItem value={'appTheme'}>AppTheme</MenuItem>
+                  <MenuItem value={'shadTheme'}>ShadTheme</MenuItem>
+                </Select>
+              </FormControl>
             </Box>
           </Stack>
         </Box>
