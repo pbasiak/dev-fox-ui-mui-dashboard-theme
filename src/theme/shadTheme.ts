@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 import { themeShadows } from './shadows';
-import { amber, blueGrey, common, grey, lightBlue, lightGreen, pink, red } from '@mui/material/colors';
+import { amber, blueGrey, common, grey, lightBlue, lightGreen, red } from '@mui/material/colors';
 
 const background = common['black'];
 const bodyBackground = common['black'];
