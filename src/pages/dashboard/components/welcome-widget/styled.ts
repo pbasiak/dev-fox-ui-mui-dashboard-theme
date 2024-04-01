@@ -1,11 +1,9 @@
 import { Box, styled } from '@mui/material';
-import { blue } from '@mui/material/colors';
 
 export const WelcomeWidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'light' ? blue[100] : theme.palette.primary.dark,
-  backgroundSize: 'cover',
   width: '100%',
   borderRadius: theme.shape.borderRadius,
+  border: `1px solid ${theme.palette.divider}`,
   padding: theme.spacing(2, 6),
   minHeight: '235px',
   display: 'flex',

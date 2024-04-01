@@ -2,9 +2,9 @@ import { Box, styled } from '@mui/material';
 import { pink } from '@mui/material/colors';
 
 export const BlogWidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'light' ? pink['100'] : theme.palette.primary.dark,
   width: '100%',
   borderRadius: theme.shape.borderRadius,
+  border: `1px solid ${theme.palette.divider}`,
   padding: theme.spacing(2, 6),
   minHeight: '235px',
   display: 'flex',
