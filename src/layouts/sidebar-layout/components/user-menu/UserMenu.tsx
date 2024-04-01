@@ -1,4 +1,11 @@
-import { UserMenuContainer, UserMenuIconButton, UserMenuInfo, UserMenuMenu, UserMenuMenuItem } from './styled';
+import {
+  UserMenuContainer,
+  UserMenuIconButton,
+  UserMenuInfo,
+  UserMenuMenu,
+  UserMenuMenuItem,
+  UserMenuMenuItemWithSeparator,
+} from './styled';
 import React, { useState } from 'react';
 import { Typography } from '@mui/material';
 import { User } from '../../../../types/user/userTypes';
@@ -32,7 +39,7 @@ export const UserMenu = ({user}: {user: User}) => {
         </UserMenuInfo>
         <UserMenuMenuItem onClick={handleClose}>Profile</UserMenuMenuItem>
         <UserMenuMenuItem onClick={handleClose}>My account</UserMenuMenuItem>
-        <UserMenuMenuItem onClick={handleClose}>Logout</UserMenuMenuItem>
+        <UserMenuMenuItemWithSeparator onClick={handleClose}>Logout</UserMenuMenuItemWithSeparator>
       </UserMenuMenu>
     </UserMenuContainer>
   );

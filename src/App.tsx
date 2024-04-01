@@ -29,8 +29,8 @@ import { ResetPassword } from './pages/reset-password/ResetPassword';
 import { VerifyCode } from './pages/verify-code/VerifyCode';
 import { ThemeConfigurator } from './demo/theme-configurator/ThemeConfigurator';
 import React from 'react';
-import { AppTheme } from './theme/theme';
 import { Analytics } from '@vercel/analytics/react';
+import { ShadTheme } from './theme/shadTheme.ts';
 
 const router = createBrowserRouter([
   {
@@ -158,7 +158,7 @@ export function App () {
 
   const theme = React.useMemo(
     () =>
-      AppTheme(mode),
+      ShadTheme(mode),
     [mode],
   );
 
