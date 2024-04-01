@@ -5,7 +5,7 @@ import { amber, blueGrey, common, grey, lightBlue, lightGreen, red } from '@mui/
 const background = common['black'];
 const bodyBackground = common['black'];
 
-export const ShadTheme = (mode: 'light' | 'dark') => {
+export const shadTheme = (mode: 'light' | 'dark') => {
   const isDarkMode = mode === 'dark';
 
   return createTheme({

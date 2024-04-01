@@ -28,9 +28,9 @@ import { RegisterPage } from './pages/register/RegisterPage';
 import { ResetPassword } from './pages/reset-password/ResetPassword';
 import { VerifyCode } from './pages/verify-code/VerifyCode';
 import { ThemeConfigurator } from './demo/theme-configurator/ThemeConfigurator';
-import React from 'react';
+import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
-import { ShadTheme } from './theme/shadTheme.ts';
+import { getThemeByName } from './theme/theme.ts';
 
 const router = createBrowserRouter([
   {
@@ -147,6 +147,7 @@ const AppRouter = () => {
 
 export function App () {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+  const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme'>('shadTheme');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -156,11 +157,7 @@ export function App () {
     [],
   );
 
-  const theme = React.useMemo(
-    () =>
-      ShadTheme(mode),
-    [mode],
-  );
+  const theme = getThemeByName(themeName, mode);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
@@ -170,7 +167,7 @@ export function App () {
         <QueryClientProvider client={queryClient}>
           <>
             <AppRouter />
-            <ThemeConfigurator />
+            <ThemeConfigurator setThemeName={setThemeName} themeName={themeName} />
           </>
         </QueryClientProvider>
       </ThemeProvider>
