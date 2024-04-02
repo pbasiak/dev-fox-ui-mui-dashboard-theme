@@ -1,5 +1,4 @@
 import { Box, styled } from '@mui/material';
-import { pink } from '@mui/material/colors';
 
 export const BlogWidgetContainer = styled(Box)(({ theme }) => ({
   width: '100%',

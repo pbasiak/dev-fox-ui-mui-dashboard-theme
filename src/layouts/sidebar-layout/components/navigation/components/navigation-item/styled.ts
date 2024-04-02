@@ -1,5 +1,4 @@
-import { ListItemButton, ListItemIcon, styled } from '@mui/material';
-import { indigo } from '@mui/material/colors';
+import { alpha, ListItemButton, ListItemIcon, styled } from '@mui/material';
 
 interface NavigationListItemButtonProps {
   active?: boolean;
@@ -15,7 +14,7 @@ export const NavigationListItemButton = styled(ListItemButton, { shouldForwardPr
   position: 'relative',
 
   '&:hover': {
-    backgroundColor: theme.palette.mode === 'light' ? indigo[50] : indigo[900],
+    backgroundColor: `${alpha(theme.palette.primary.main, 0.1)}`,
   },
   ...(active && {
     backgroundColor: theme.palette.primary.main,
