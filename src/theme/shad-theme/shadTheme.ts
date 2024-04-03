@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
-import { themeShadows } from './shadows';
-import { amber, blueGrey, common, grey, lightBlue, lightGreen, red } from '@mui/material/colors';
+import { amber, common, grey, lightBlue, lightGreen, red } from '@mui/material/colors';
+import { shadThemeShadows } from './shadows.ts';
 
 const background = common['black'];
 const bodyBackground = common['black'];
@@ -29,7 +29,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       warning: {
         main: amber['A700'],
       },
-      divider: isDarkMode ? blueGrey[800] : blueGrey[100],
+      divider: isDarkMode ? grey[800] : grey[300],
       background: {
         default: isDarkMode ? background : grey[50],
         paper: isDarkMode ? background : grey[50],
@@ -40,6 +40,8 @@ export const shadTheme = (mode: 'light' | 'dark') => {
     },
     spacing: 8,
     typography: {
+      fontSize: 14,
+      htmlFontSize: 18,
       fontFamily: [
         'Noto Sans',
         '"Source Sans Pro"',
@@ -80,7 +82,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         fontWeight: 600,
       }
     },
-    shadows: themeShadows,
+    shadows: shadThemeShadows,
     components: {
       MuiCssBaseline: {
         styleOverrides: {
@@ -99,7 +101,17 @@ export const shadTheme = (mode: 'light' | 'dark') => {
           }
         }
       },
+      MuiIconButton: {
+        defaultProps: {
+          disableRipple: true,
+        }
+      },
       MuiListItemButton: {
+        defaultProps: {
+          disableRipple: true,
+        }
+      },
+      MuiButtonBase: {
         defaultProps: {
           disableRipple: true,
         }
@@ -132,6 +144,8 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             boxShadow: "none",
+            border: 0,
+            borderBottom: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
       },
@@ -139,6 +153,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           paper: {
             backgroundColor: isDarkMode ? background : grey[50],
+            border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
       },
@@ -153,6 +168,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
+            border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
       }

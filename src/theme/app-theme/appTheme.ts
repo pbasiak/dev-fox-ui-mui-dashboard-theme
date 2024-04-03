@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { themeShadows } from './shadows';
+import { themeShadows } from './shadows.ts';
 import { amber, blue, blueGrey, grey, lightBlue, lightGreen, pink, red } from '@mui/material/colors';
 
 const background = '#171a1f';

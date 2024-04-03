@@ -37,7 +37,7 @@ export function ThemeConfigurator({ setThemeName, themeName }: { setThemeName: R
 
   return (
     <React.Fragment key={'right'}>
-      <IconButton size={'large'} color={'primary'} onClick={toggleDrawer} sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: 100, backgroundColor: 'background.paper' }}>
+      <IconButton size={'large'} color={'primary'} onClick={toggleDrawer} sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: 100, backgroundColor: 'background.paper', border: `1px solid` }}>
         <Tune fontSize={'large'} color={'inherit'} />
       </IconButton>
       <Drawer
