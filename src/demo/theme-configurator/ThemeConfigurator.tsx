@@ -44,7 +44,7 @@ export function ThemeConfigurator({ setThemeName, themeName }: { setThemeName: R
         anchor={'right'}
         open={open}
         onClose={toggleDrawer}
-        hideBackdrop={true}
+        hideBackdrop={false}
         transitionDuration={500}
         elevation={20}
       >
