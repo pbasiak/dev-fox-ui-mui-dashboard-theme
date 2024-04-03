@@ -94,7 +94,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
           },
           body: {
             minHeight: '100%',
-            backgroundColor: isDarkMode ? bodyBackground : '#fafafa',
+            backgroundColor: isDarkMode ? bodyBackground : '#fefefe',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top right',
             backgroundSize: '100%',
@@ -125,10 +125,6 @@ export const shadTheme = (mode: 'light' | 'dark') => {
             textTransform: 'none',
             boxShadow: 'none',
           },
-          contained: {
-            // boxShadow: '5px 3px 0px 0 rgba(16, 141, 255, 0.1)',
-            // boxShadow: '2px 5px 10px 2px rgba(16, 141, 255, 0.2)'
-          },
           sizeSmall: {
             padding: '2px 12px',
           },
@@ -152,7 +148,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundColor: isDarkMode ? background : grey[50],
+            backgroundColor: isDarkMode ? background : '#FEFEFE',
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
@@ -168,7 +164,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-            backgroundColor: isDarkMode ? '#090909' : grey[100],
+            backgroundColor: isDarkMode ? '#090909' : grey[50],
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
