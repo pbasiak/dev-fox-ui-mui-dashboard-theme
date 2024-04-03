@@ -168,6 +168,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
+            backgroundColor: isDarkMode ? '#090909' : grey[100],
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }

@@ -1,7 +1,6 @@
 import { Box, styled, Typography } from '@mui/material';
 
 export const WidgetContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.background.default,
   border: `1px solid ${theme.palette.divider}`,
   padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
