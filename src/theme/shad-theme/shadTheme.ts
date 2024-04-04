@@ -94,7 +94,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
           },
           body: {
             minHeight: '100%',
-            backgroundColor: isDarkMode ? bodyBackground : '#fefefe',
+            backgroundColor: isDarkMode ? bodyBackground : '#fbfbfb',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top right',
             backgroundSize: '100%',
@@ -109,6 +109,13 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiListItemButton: {
         defaultProps: {
           disableRipple: true,
+        }
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            backgroundColor: "#FFFFFF",
+          }
         }
       },
       MuiButtonBase: {
@@ -148,7 +155,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundColor: isDarkMode ? background : '#FEFEFE',
+            backgroundColor: isDarkMode ? background : '#FFFFFF',
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
@@ -164,7 +171,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-            backgroundColor: isDarkMode ? '#090909' : grey[50],
+            backgroundColor: isDarkMode ? '#090909' : '#FFFFFF',
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           }
         }
