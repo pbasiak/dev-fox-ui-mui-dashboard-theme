@@ -114,7 +114,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiInputBase: {
         styleOverrides: {
           root: {
-            backgroundColor: "#FFFFFF",
+            backgroundColor: isDarkMode ? 'none' : '#FFFFFF',
           }
         }
       },
