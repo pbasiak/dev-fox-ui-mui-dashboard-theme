@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { styled } from '@mui/material/styles';
 import { Card, CardContent, Typography, List, Container, Stack, Chip, Pagination } from '@mui/material';
 import { useJobs } from '../../../hooks/api/use-jobs/useJobs';
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { JobsSearch } from './components/jobs-search/JobsSearch';
 import { routes } from '../../../contants/routes';
@@ -34,39 +33,37 @@ export const JobsList = () => {
   };
 
   return (
-    <SidebarLayout>
-      <Container maxWidth={'lg'}>
-        <PageHeader title={'Jobs'} breadcrumbs={['Jobs', 'List']} />
-        <JobsSearch />
-        <List sx={{ marginTop: 2 }}>
-          {data.jobs.map((job) => (
-            <CardWrapper key={job.title} onClick={handleJobClick}>
-              <CardContent>
-                <Stack direction={'row'} justifyContent={'space-between'}>
-                  <Stack>
-                    <Typography variant='h6' component={'h2'}>
-                      {job.title}
-                    </Typography>
-                    <Typography variant='subtitle1' component={'h3'}>
-                      {job.company} - {job.location}
-                    </Typography>
-                  </Stack>
-                  <Typography fontWeight={'fontWeightMedium'} variant='subtitle1'>
-                    {job.salary}
+    <Container maxWidth={'lg'}>
+      <PageHeader title={'Jobs'} breadcrumbs={['Jobs', 'List']} />
+      <JobsSearch />
+      <List sx={{ marginTop: 2 }}>
+        {data.jobs.map((job) => (
+          <CardWrapper key={job.title} onClick={handleJobClick}>
+            <CardContent>
+              <Stack direction={'row'} justifyContent={'space-between'}>
+                <Stack>
+                  <Typography variant='h6' component={'h2'}>
+                    {job.title}
+                  </Typography>
+                  <Typography variant='subtitle1' component={'h3'}>
+                    {job.company} - {job.location}
                   </Typography>
                 </Stack>
-                <Stack mt={1} direction={'row'} spacing={1}>
-                  {jobsTagsList({ tags: job.tags })}
-                </Stack>
-              </CardContent>
-            </CardWrapper>
-          ))}
-        </List>
+                <Typography fontWeight={'fontWeightMedium'} variant='subtitle1'>
+                  {job.salary}
+                </Typography>
+              </Stack>
+              <Stack mt={1} direction={'row'} spacing={1}>
+                {jobsTagsList({ tags: job.tags })}
+              </Stack>
+            </CardContent>
+          </CardWrapper>
+        ))}
+      </List>
 
-        <Stack alignItems={'center'}>
-          <Pagination count={10} variant='outlined' shape='rounded' />
-        </Stack>
-      </Container>
-    </SidebarLayout>
+      <Stack alignItems={'center'}>
+        <Pagination count={10} variant='outlined' shape='rounded' />
+      </Stack>
+    </Container>
   );
 };

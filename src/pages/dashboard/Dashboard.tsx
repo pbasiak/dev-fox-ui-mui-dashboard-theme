@@ -1,5 +1,4 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import { StatWidget } from './components/stat-widget/StatWidget';
 import { WelcomeWidget } from './components/welcome-widget/WelcomeWidget';
 import { PageHeader } from '../../components/page-header/PageHeader';
@@ -9,7 +8,7 @@ import { UsersStatsWidget } from './components/users-stats-widget/UsersStatsWidg
 
 export const Dashboard = () => {
   return (
-    <SidebarLayout>
+    <Container maxWidth={false}>
       <PageHeader title={'Dashboard'} />
       <Grid container spacing={4}>
         <Grid container item xs={12} md={12} spacing={2}>
@@ -49,6 +48,6 @@ export const Dashboard = () => {
           </Grid>
         </Grid>
       </Grid>
-    </SidebarLayout>
+    </Container>
   );
 };

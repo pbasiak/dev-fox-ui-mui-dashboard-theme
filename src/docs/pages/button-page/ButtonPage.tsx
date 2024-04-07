@@ -1,4 +1,3 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Container, Paper, Stack, Typography } from '@mui/material';
 import Buttons from './components/Buttons';
 import { DocBox } from '../components/doc-box/DocBox';
@@ -68,15 +67,13 @@ export const ButtonPage = () => {
   ));
 
   return (
-    <SidebarLayout>
-      <Container maxWidth={'md'}>
-        <Typography variant={'h4'}>Button</Typography>
-        <Paper sx={{ padding: 4, marginTop: 2 }} variant={'outlined'}>
-          <Stack spacing={2} direction={'column'} flexWrap={'wrap'} flexBasis={'50%'}>
-            {components}
-          </Stack>
-        </Paper>
-      </Container>
-    </SidebarLayout>
+    <Container maxWidth={'md'}>
+      <Typography variant={'h4'}>Button</Typography>
+      <Paper sx={{ padding: 4, marginTop: 2 }} variant={'outlined'}>
+        <Stack spacing={2} direction={'column'} flexWrap={'wrap'} flexBasis={'50%'}>
+          {components}
+        </Stack>
+      </Paper>
+    </Container>
   );
 };

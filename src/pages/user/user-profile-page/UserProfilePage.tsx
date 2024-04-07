@@ -1,4 +1,3 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { Container, Grid } from '@mui/material';
 import { UserProfileHeader } from './components/user-profile-header/UserProfileHeader';
 import { UserProfileInfo } from './components/user-profile-info/UserProfileInfo';
@@ -15,26 +14,24 @@ export const UserProfilePage = () => {
   if (!user || !posts) return null;
 
   return (
-    <SidebarLayout>
-      <Container maxWidth={'lg'}>
-        <PageHeader title={'User profile'} breadcrumbs={['User', 'Profile']} />
-        <Grid container spacing={4}>
+    <Container maxWidth={'lg'}>
+      <PageHeader title={'User profile'} breadcrumbs={['User', 'Profile']} />
+      <Grid container spacing={4}>
+        <Grid item xs={12}>
+          <UserProfileHeader user={user} />
+        </Grid>
+        <Grid item xs={4}>
+          <UserProfileInfo user={user} />
+        </Grid>
+        <Grid container item xs={8} spacing={2}>
           <Grid item xs={12}>
-            <UserProfileHeader user={user} />
+            <UserProfileNewComment user={user} />
           </Grid>
-          <Grid item xs={4}>
-            <UserProfileInfo user={user} />
-          </Grid>
-          <Grid container item xs={8} spacing={2}>
-            <Grid item xs={12}>
-              <UserProfileNewComment user={user} />
-            </Grid>
-            <Grid item xs={12}>
-              <UserProfilePostsList posts={posts} user={user} />
-            </Grid>
+          <Grid item xs={12}>
+            <UserProfilePostsList posts={posts} user={user} />
           </Grid>
         </Grid>
-      </Container>
-    </SidebarLayout>
+      </Grid>
+    </Container>
   );
 };

@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { TypographyPage } from './docs/pages/typography-page/TypographyPage';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { routes } from './contants/routes';
 import { ColorsPage } from './docs/pages/colors-page/ColorsPage';
 import { UserAccountPage } from './pages/user/user-account-page/UserAccountPage';
@@ -31,55 +31,86 @@ import { ThemeConfigurator } from './demo/theme-configurator/ThemeConfigurator';
 import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { getThemeByName } from './theme/theme.ts';
+import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
 
 const router = createBrowserRouter([
   {
-    path: routes.dashboard,
-    element: <Dashboard />,
-  },
-  {
-    path: routes.userAccount,
-    element: <UserAccountPage />,
-  },
-  {
-    path: routes.userProfile,
-    element: <UserProfilePage />,
-  },
-  {
-    path: routes.userList,
-    element: <UserListPage />,
-  },
-  {
-    path: routes.userCreate,
-    element: <UserCreatePage />,
-  },
-  {
-    path: routes.blog,
-    element: <BlogPage />,
-  },
-  {
-    path: routes.blogPost,
-    element: <BlogPostPage />,
-  },
-  {
-    path: routes.blogCreatePost,
-    element: <CreatePostBlogPage />,
-  },
-  {
-    path: routes.themeColors,
-    element: <ColorsPage />,
-  },
-  {
-    path: routes.themeTypography,
-    element: <TypographyPage />,
-  },
-  {
-    path: routes.componentsButton,
-    element: <ButtonPage />,
-  },
-  {
-    path: routes.calendar,
-    element: <CalendarPage />,
+    path: '/',
+    element: (
+      <SidebarLayout>
+        <Outlet />
+      </SidebarLayout>
+    ),
+    children: [
+      {
+        path: routes.dashboard,
+        element: <Dashboard />,
+      },
+      {
+        path: routes.userAccount,
+        element: <UserAccountPage />,
+      },
+      {
+        path: routes.userProfile,
+        element: <UserProfilePage />,
+      },
+      {
+        path: routes.userList,
+        element: <UserListPage />,
+      },
+      {
+        path: routes.userCreate,
+        element: <UserCreatePage />,
+      },
+      {
+        path: routes.blog,
+        element: <BlogPage />,
+      },
+      {
+        path: routes.blogPost,
+        element: <BlogPostPage />,
+      },
+      {
+        path: routes.blogCreatePost,
+        element: <CreatePostBlogPage />,
+      },
+      {
+        path: routes.themeColors,
+        element: <ColorsPage />,
+      },
+      {
+        path: routes.themeTypography,
+        element: <TypographyPage />,
+      },
+      {
+        path: routes.componentsButton,
+        element: <ButtonPage />,
+      },
+      {
+        path: routes.calendar,
+        element: <CalendarPage />,
+      },
+      {
+        path: routes.todoList,
+        element: <TodoList />,
+      },
+      {
+        path: routes.ordersList,
+        element: <OrderList />,
+      },
+      {
+        path: routes.jobsList,
+        element: <JobsList />,
+      },
+      {
+        path: routes.jobsDetails,
+        element: <JobsDetails />,
+      },
+      {
+        path: routes.jobsCreate,
+        element: <JobsCreate />,
+      },
+    ],
   },
   {
     path: routes.notFound,
@@ -88,26 +119,6 @@ const router = createBrowserRouter([
   {
     path: routes.maintenance,
     element: <MaintenancePage />,
-  },
-  {
-    path: routes.todoList,
-    element: <TodoList />,
-  },
-  {
-    path: routes.ordersList,
-    element: <OrderList />,
-  },
-  {
-    path: routes.jobsList,
-    element: <JobsList />,
-  },
-  {
-    path: routes.jobsDetails,
-    element: <JobsDetails />,
-  },
-  {
-    path: routes.jobsCreate,
-    element: <JobsCreate />,
   },
   {
     path: routes.login,
@@ -124,10 +135,6 @@ const router = createBrowserRouter([
   {
     path: routes.verifyCode,
     element: <VerifyCode />,
-  },
-  {
-    path: '*',
-    element: <NotFoundPage />,
   },
 ]);
 

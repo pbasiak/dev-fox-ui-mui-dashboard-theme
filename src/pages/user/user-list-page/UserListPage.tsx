@@ -1,4 +1,3 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { DataGrid, GridColDef, GridSelectionModel, GridValueGetterParams } from '@mui/x-data-grid';
 import { Container, Button, Stack, IconButton, Box, Paper } from '@mui/material';
@@ -62,52 +61,50 @@ export const UserListPage = () => {
   }, []);
 
   return (
-    <SidebarLayout>
-      <Container maxWidth={'lg'}>
-        <PageHeader
-          title={'Users list'}
-          breadcrumbs={['Users', 'List']}
-          renderRight={
-            <Button variant={'contained'} startIcon={<Add />}>
-              Add user
-            </Button>
-          }
-        />
-        {showEditBar ? (
-          <Stack
-            direction={'row'}
-            spacing={1}
-            sx={{ backgroundColor: 'primary.main', borderRadius: '4px', mb: 1, px: 1, py: 0.5 }}
-          >
-            {isSingleRowSelected ? (
-              <IconButton color={'secondary'}>
-                <Edit />
-              </IconButton>
-            ) : null}
-
-            <IconButton color={'secondary'} onClick={handleDeleteDialogOpen}>
-              <DeleteOutline />
+    <Container maxWidth={'lg'}>
+      <PageHeader
+        title={'Users list'}
+        breadcrumbs={['Users', 'List']}
+        renderRight={
+          <Button variant={'contained'} startIcon={<Add />}>
+            Add user
+          </Button>
+        }
+      />
+      {showEditBar ? (
+        <Stack
+          direction={'row'}
+          spacing={1}
+          sx={{ backgroundColor: 'primary.main', borderRadius: '4px', mb: 1, px: 1, py: 0.5 }}
+        >
+          {isSingleRowSelected ? (
+            <IconButton color={'secondary'}>
+              <Edit />
             </IconButton>
+          ) : null}
 
-            <DeleteDialog
-              open={deleteDialogOpen}
-              onClose={handleDeleteDialogClose}
-              onDeleteItems={handleDeleteItems}
-              itemsLength={selectedRows.length}
-            />
-          </Stack>
-        ) : null}
-        <Box sx={{ height: 400, width: '100%', p: 0, borderRadius: 1, overflow: 'hidden' }} component={Paper}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5]}
-            checkboxSelection
-            onSelectionModelChange={handleSelectionChange}
+          <IconButton color={'secondary'} onClick={handleDeleteDialogOpen}>
+            <DeleteOutline />
+          </IconButton>
+
+          <DeleteDialog
+            open={deleteDialogOpen}
+            onClose={handleDeleteDialogClose}
+            onDeleteItems={handleDeleteItems}
+            itemsLength={selectedRows.length}
           />
-        </Box>
-      </Container>
-    </SidebarLayout>
+        </Stack>
+      ) : null}
+      <Box sx={{ height: 400, width: '100%', p: 0, borderRadius: 1, overflow: 'hidden' }} component={Paper}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          pageSize={5}
+          rowsPerPageOptions={[5]}
+          checkboxSelection
+          onSelectionModelChange={handleSelectionChange}
+        />
+      </Box>
+    </Container>
   );
 };
