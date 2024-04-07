@@ -1,6 +1,6 @@
 import { WidgetContainer, WidgetTitle, WidgetTitleContainer } from './styled';
 import { ReactNode } from 'react';
-import { Box } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 
 export interface WidgetProps {
   title: string;
@@ -10,7 +10,7 @@ export interface WidgetProps {
 
 export const Widget = ({ title, children, sx }: WidgetProps) => {
   return (
-    <WidgetContainer sx={sx}>
+    <WidgetContainer sx={sx} component={Paper}>
       <WidgetTitleContainer>
         <WidgetTitle>{title}</WidgetTitle>
       </WidgetTitleContainer>

@@ -1,5 +1,5 @@
 import {
-  Button,
+  Button, Divider,
   FormControl,
   Link,
   Stack,
@@ -29,6 +29,7 @@ export const LoginPage = () => {
         </FormControl>
 
         <Button variant={'contained'} fullWidth onClick={() => navigate(routes.dashboard)}>Login</Button>
+        <Divider sx={{ width: '100%' }} />
         <Typography variant={'body2'}>Or login with</Typography>
         <Stack direction={'row'} spacing={1}>
           <Button variant={'outlined'} startIcon={<Google />}>Google</Button>

@@ -1,5 +1,5 @@
 import {
-  Button,
+  Button, Divider,
   FormControl,
   Link,
   Stack,
@@ -43,6 +43,7 @@ export const RegisterPage = () => {
         </FormControl>
 
         <Button variant={'contained'} fullWidth onClick={() => navigate(routes.dashboard)}>Create account</Button>
+        <Divider sx={{ width: '100%' }} />
         <Typography variant={'body2'}>Or register with</Typography>
         <Stack direction={'row'} spacing={1}>
           <Button variant={'outlined'} startIcon={<Google />}>Google</Button>
