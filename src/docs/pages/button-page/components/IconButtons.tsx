@@ -6,17 +6,17 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function IconButtons() {
   return (
-    <Stack direction="row" spacing={1}>
-      <IconButton aria-label="delete">
+    <Stack direction='row' spacing={1}>
+      <IconButton aria-label='delete'>
         <DeleteIcon />
       </IconButton>
-      <IconButton aria-label="delete" disabled color="primary">
+      <IconButton aria-label='delete' disabled color='primary'>
         <DeleteIcon />
       </IconButton>
-      <IconButton color="secondary" aria-label="add an alarm">
+      <IconButton color='secondary' aria-label='add an alarm'>
         <AlarmIcon />
       </IconButton>
-      <IconButton color="primary" aria-label="add to shopping cart">
+      <IconButton color='primary' aria-label='add to shopping cart'>
         <AddShoppingCartIcon />
       </IconButton>
     </Stack>

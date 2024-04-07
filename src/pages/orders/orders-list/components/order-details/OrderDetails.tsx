@@ -9,7 +9,7 @@ interface Props {
   onClose: () => void;
 }
 
-const OrderDetailsRow = ({ label, value }: { label: string, value: ReactNode }) => {
+const OrderDetailsRow = ({ label, value }: { label: string; value: ReactNode }) => {
   return (
     <Box marginBottom={1}>
       <Stack sx={{ marginBottom: 1 }} direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
@@ -18,8 +18,8 @@ const OrderDetailsRow = ({ label, value }: { label: string, value: ReactNode }) 
       </Stack>
       <Divider />
     </Box>
-  )
-}
+  );
+};
 
 export const OrderDetails = ({ order, open, onClose }: Props) => {
   return (
@@ -30,9 +30,11 @@ export const OrderDetails = ({ order, open, onClose }: Props) => {
         <OrderDetailsRow label={'Status'} value={<Chip label={order.status} />} />
         <OrderDetailsRow label={'Total'} value={order.total} />
         <OrderDetailsRow label={'Date'} value={order.date} />
-        <Typography mt={2} variant={'subtitle1'}>Products</Typography>
+        <Typography mt={2} variant={'subtitle1'}>
+          Products
+        </Typography>
         <OrderDetailsProductsList products={order.items} />
       </DialogContent>
     </Dialog>
   );
-}
+};

@@ -3,5 +3,5 @@ import calendarData from '../../../mocks/calendar/calendar.json';
 import { CalendarType } from './types';
 
 export const useCalendar = (): CalendarType => {
-  return useQuery({queryKey: ['calendar'], queryFn: () => calendarData});
-}
+  return useQuery({ queryKey: ['calendar'], queryFn: () => calendarData });
+};

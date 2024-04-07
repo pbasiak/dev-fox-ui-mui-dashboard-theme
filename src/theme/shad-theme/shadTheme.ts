@@ -24,7 +24,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         main: red['A400'],
       },
       info: {
-        main: lightBlue['A400']
+        main: lightBlue['A400'],
       },
       warning: {
         main: amber['A700'],
@@ -33,10 +33,10 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       background: {
         default: isDarkMode ? background : grey[50],
         paper: isDarkMode ? background : grey[50],
-      }
+      },
     },
     shape: {
-      borderRadius: 4
+      borderRadius: 4,
     },
     spacing: 8,
     typography: {
@@ -80,7 +80,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       h6: {
         fontSize: '1rem',
         fontWeight: 600,
-      }
+      },
     },
     shadows: shadThemeShadows,
     components: {
@@ -98,30 +98,30 @@ export const shadTheme = (mode: 'light' | 'dark') => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top right',
             backgroundSize: '100%',
-          }
-        }
+          },
+        },
       },
       MuiIconButton: {
         defaultProps: {
           disableRipple: true,
-        }
+        },
       },
       MuiListItemButton: {
         defaultProps: {
           disableRipple: true,
-        }
+        },
       },
       MuiInputBase: {
         styleOverrides: {
           root: {
             backgroundColor: isDarkMode ? 'none' : '#FFFFFF',
-          }
-        }
+          },
+        },
       },
       MuiButtonBase: {
         defaultProps: {
           disableRipple: true,
-        }
+        },
       },
       MuiButton: {
         defaultProps: {
@@ -141,31 +141,31 @@ export const shadTheme = (mode: 'light' | 'dark') => {
           sizeLarge: {
             padding: '10px 24px',
           },
-        }
+        },
       },
       MuiAppBar: {
         styleOverrides: {
           root: {
-            boxShadow: "none",
+            boxShadow: 'none',
             border: 0,
             borderBottom: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
-          }
-        }
+          },
+        },
       },
       MuiDrawer: {
         styleOverrides: {
           paper: {
             backgroundColor: isDarkMode ? background : '#FFFFFF',
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
-          }
-        }
+          },
+        },
       },
       MuiCard: {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-          }
-        }
+          },
+        },
       },
       MuiPaper: {
         styleOverrides: {
@@ -173,9 +173,9 @@ export const shadTheme = (mode: 'light' | 'dark') => {
             backgroundImage: 'none',
             backgroundColor: isDarkMode ? '#090909' : '#FFFFFF',
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
-          }
-        }
-      }
+          },
+        },
+      },
     },
   });
 };

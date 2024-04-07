@@ -7,8 +7,8 @@ interface NavigationItemHeaderProps {
 export const NavigationItemHeader = ({ header }: NavigationItemHeaderProps) => {
   return (
     <ListSubheader
-      component="div"
-      id="nested-list-subheader"
+      component='div'
+      id='nested-list-subheader'
       sx={{
         textTransform: 'uppercase',
         fontSize: '12px',

@@ -6,7 +6,8 @@ import {
   Abc,
   AccountBoxOutlined,
   CalendarMonthOutlined,
-  ConstructionOutlined, DashboardOutlined,
+  ConstructionOutlined,
+  DashboardOutlined,
   DesignServicesOutlined,
   ListAltOutlined,
   Login,
@@ -21,219 +22,216 @@ import { useNotifications } from '../../../../hooks/api/use-notifications/useNot
 export function Navigation() {
   const { data: notifications } = useNotifications();
 
-  const navigationItems: NavigationItemType[] = useMemo(() => [
-    {
-      header: 'Dashboards',
-    },
-    {
-      path: routes.dashboard,
-      label: 'Dashboard',
-      icon: (props: any) => <DashboardOutlined {...props} />,
-    },
-    {
-      header: 'Apps & Pages',
-    },
-    {
-      label: 'User',
-      icon: (props: any) => <AccountBoxOutlined {...props} />,
-      items: [
-        {
-          path: routes.userAccount,
-          label: 'Account',
-        },
-        {
-          path: routes.userProfile,
-          label: 'Public profile',
-        },
-        {
-          path: routes.userList,
-          label: 'List',
-        },
-        {
-          path: routes.userCreate,
-          label: 'Create',
-        },
-      ]
-    },
-    {
-      label: 'Blog',
-      icon: (props: any) => <Notes {...props} />,
-      items: [
-        {
-          path: routes.blog,
-          label: 'List',
-        },
-        {
-          path: routes.blogPost,
-          label: 'Post',
-        },
-        {
-          path: routes.blogCreatePost,
-          label: 'Create',
-        },
-      ]
-    },
-    {
-      label: 'Orders',
-      icon: (props: any) => <Abc {...props} />,
-      items: [
-        {
-          path: routes.ordersList,
-          label: 'List',
-        },
-      ]
-    },
-    {
-      label: 'Jobs',
-      icon: (props: any) => <Abc {...props} />,
-      items: [
-        {
-          path: routes.jobsCreate,
-          label: 'Create',
-        },
-        {
-          path: routes.jobsList,
-          label: 'List',
-        },
-        {
-          path: routes.jobsDetails,
-          label: 'Details',
-        },
-      ]
-    },
-    {
-      header: 'Apps',
-    },
-    {
-      path: routes.calendar,
-      label: 'Calendar',
-      icon: (props: any) => <CalendarMonthOutlined {...props} />,
-    },
-    {
-      path: routes.todoList,
-      label: 'Tasks',
-      icon: (props: any) => <ListAltOutlined {...props} />,
-    },
-    {
-      header: 'Other pages',
-    },
-    {
-      path: routes.notFound,
-      label: 'Page not found',
-      icon: (props: any) => <QuestionMarkOutlined {...props} />,
-    },
-    {
-      path: routes.maintenance,
-      label: 'Maintenance',
-      icon: (props: any) => <ConstructionOutlined {...props} />,
-    },
-    {
-      header: 'Authentication',
-    },
-    {
-      path: routes.login,
-      label: 'Login',
-      icon: (props: any) => <Login {...props} />,
-    },
-    {
-      path: routes.register,
-      label: 'Register',
-      icon: (props: any) => <Login {...props} />,
-    },
-    {
-      path: routes.resetPassword,
-      label: 'Reset password',
-      icon: (props: any) => <Login {...props} />,
-    },
-    {
-      path: routes.verifyCode,
-      label: 'Verify code',
-      icon: (props: any) => <Login {...props} />,
-    },
-    {
-      header: 'Documentation',
-    },
-    {
-      label: 'Theme',
-      icon: (props: any) => <DesignServicesOutlined {...props} />,
-      items: [
-        {
-          path: routes.themeGeneral,
-          label: 'General',
-        },
-        {
-          path: routes.themeTypography,
-          label: 'Typography',
-        },
-        {
-          path: routes.themeColors,
-          label: 'Colors',
-        },
-      ]
-    },
-    {
-      label: 'Components',
-      icon: (props: any) => <ShapeLineOutlined {...props} />,
-      items: [
-        {
-          path: routes.componentsButton,
-          label: 'Button',
-        },
-      ]
-    },
-    {
-      header: 'Navigation',
-    },
-    {
-      path: '',
-      label: 'Number',
-      icon: (props: any) => <ViewStreamOutlined {...props} />,
-      badgeText: `${notifications?.notifications?.length}`,
-      badgeColor: 'primary',
-    },
-    {
-      path: '',
-      label: 'Text (primary)',
-      icon: (props: any) => <ViewStreamOutlined {...props} />,
-      badgeText: 'New',
-      badgeColor: 'primary',
-    },
-    {
-      path: '',
-      label: 'Text (secondary)',
-      icon: (props: any) => <ViewStreamOutlined {...props} />,
-      badgeText: 'New',
-      badgeColor: 'secondary',
-    },
-    {
-      path: '',
-      label: 'Text (info)',
-      icon: (props: any) => <ViewStreamOutlined {...props} />,
-      badgeText: 'New',
-      badgeColor: 'info',
-    },
-    {
-      path: '',
-      label: 'Very long text as a link text',
-      icon: (props: any) => <ViewStreamOutlined {...props} />,
-      badgeText: 'New',
-      badgeColor: 'info',
-      external: true,
-    },
-  ], [notifications?.notifications?.length])
+  const navigationItems: NavigationItemType[] = useMemo(
+    () => [
+      {
+        header: 'Dashboards',
+      },
+      {
+        path: routes.dashboard,
+        label: 'Dashboard',
+        icon: (props: any) => <DashboardOutlined {...props} />,
+      },
+      {
+        header: 'Apps & Pages',
+      },
+      {
+        label: 'User',
+        icon: (props: any) => <AccountBoxOutlined {...props} />,
+        items: [
+          {
+            path: routes.userAccount,
+            label: 'Account',
+          },
+          {
+            path: routes.userProfile,
+            label: 'Public profile',
+          },
+          {
+            path: routes.userList,
+            label: 'List',
+          },
+          {
+            path: routes.userCreate,
+            label: 'Create',
+          },
+        ],
+      },
+      {
+        label: 'Blog',
+        icon: (props: any) => <Notes {...props} />,
+        items: [
+          {
+            path: routes.blog,
+            label: 'List',
+          },
+          {
+            path: routes.blogPost,
+            label: 'Post',
+          },
+          {
+            path: routes.blogCreatePost,
+            label: 'Create',
+          },
+        ],
+      },
+      {
+        label: 'Orders',
+        icon: (props: any) => <Abc {...props} />,
+        items: [
+          {
+            path: routes.ordersList,
+            label: 'List',
+          },
+        ],
+      },
+      {
+        label: 'Jobs',
+        icon: (props: any) => <Abc {...props} />,
+        items: [
+          {
+            path: routes.jobsCreate,
+            label: 'Create',
+          },
+          {
+            path: routes.jobsList,
+            label: 'List',
+          },
+          {
+            path: routes.jobsDetails,
+            label: 'Details',
+          },
+        ],
+      },
+      {
+        header: 'Apps',
+      },
+      {
+        path: routes.calendar,
+        label: 'Calendar',
+        icon: (props: any) => <CalendarMonthOutlined {...props} />,
+      },
+      {
+        path: routes.todoList,
+        label: 'Tasks',
+        icon: (props: any) => <ListAltOutlined {...props} />,
+      },
+      {
+        header: 'Other pages',
+      },
+      {
+        path: routes.notFound,
+        label: 'Page not found',
+        icon: (props: any) => <QuestionMarkOutlined {...props} />,
+      },
+      {
+        path: routes.maintenance,
+        label: 'Maintenance',
+        icon: (props: any) => <ConstructionOutlined {...props} />,
+      },
+      {
+        header: 'Authentication',
+      },
+      {
+        path: routes.login,
+        label: 'Login',
+        icon: (props: any) => <Login {...props} />,
+      },
+      {
+        path: routes.register,
+        label: 'Register',
+        icon: (props: any) => <Login {...props} />,
+      },
+      {
+        path: routes.resetPassword,
+        label: 'Reset password',
+        icon: (props: any) => <Login {...props} />,
+      },
+      {
+        path: routes.verifyCode,
+        label: 'Verify code',
+        icon: (props: any) => <Login {...props} />,
+      },
+      {
+        header: 'Documentation',
+      },
+      {
+        label: 'Theme',
+        icon: (props: any) => <DesignServicesOutlined {...props} />,
+        items: [
+          {
+            path: routes.themeGeneral,
+            label: 'General',
+          },
+          {
+            path: routes.themeTypography,
+            label: 'Typography',
+          },
+          {
+            path: routes.themeColors,
+            label: 'Colors',
+          },
+        ],
+      },
+      {
+        label: 'Components',
+        icon: (props: any) => <ShapeLineOutlined {...props} />,
+        items: [
+          {
+            path: routes.componentsButton,
+            label: 'Button',
+          },
+        ],
+      },
+      {
+        header: 'Navigation',
+      },
+      {
+        path: '',
+        label: 'Number',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: `${notifications?.notifications?.length}`,
+        badgeColor: 'primary',
+      },
+      {
+        path: '',
+        label: 'Text (primary)',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'primary',
+      },
+      {
+        path: '',
+        label: 'Text (secondary)',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'secondary',
+      },
+      {
+        path: '',
+        label: 'Text (info)',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'info',
+      },
+      {
+        path: '',
+        label: 'Very long text as a link text',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'info',
+        external: true,
+      },
+    ],
+    [notifications?.notifications?.length],
+  );
 
   const navigationItemsList = navigationItems.map((item) => {
-    return (
-      <NavigationItem key={Object.values(item).toString()} item={item} />
-    );
+    return <NavigationItem key={Object.values(item).toString()} item={item} />;
   });
 
   return (
-    <List
-      sx={{ width: '100%', maxWidth: 360, padding: 2 }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-    >
+    <List sx={{ width: '100%', maxWidth: 360, padding: 2 }} component='nav' aria-labelledby='nested-list-subheader'>
       {navigationItemsList}
     </List>
   );

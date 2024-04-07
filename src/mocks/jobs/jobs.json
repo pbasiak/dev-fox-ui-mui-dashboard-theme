@@ -12,13 +12,7 @@
         "Excellent problem-solving skills"
       ],
       "salary": "$120,000 - $150,000 per year",
-      "tags": [
-        "Software Development",
-        "Java",
-        "Python",
-        "Ruby",
-        "Agile"
-      ]
+      "tags": ["Software Development", "Java", "Python", "Ruby", "Agile"]
     },
     {
       "title": "Marketing Manager",
@@ -32,11 +26,7 @@
         "Excellent communication skills"
       ],
       "salary": "$80,000 - $100,000 per year",
-      "tags": [
-        "Marketing",
-        "Digital Marketing",
-        "Communications"
-      ]
+      "tags": ["Marketing", "Digital Marketing", "Communications"]
     },
     {
       "title": "Financial Analyst",
@@ -50,13 +40,7 @@
         "Strong communication and presentation skills"
       ],
       "salary": "$70,000 - $90,000 per year",
-      "tags": [
-        "Finance",
-        "Accounting",
-        "Financial Analysis",
-        "Financial Modeling",
-        "Forecasting"
-      ]
+      "tags": ["Finance", "Accounting", "Financial Analysis", "Financial Modeling", "Forecasting"]
     },
     {
       "title": "Marketing Manager",
@@ -70,11 +54,7 @@
         "Excellent communication skills"
       ],
       "salary": "$80,000 - $100,000 per year",
-      "tags": [
-        "Marketing",
-        "Digital Marketing",
-        "Communications"
-      ]
+      "tags": ["Marketing", "Digital Marketing", "Communications"]
     }
   ],
   "totalItems": 33,

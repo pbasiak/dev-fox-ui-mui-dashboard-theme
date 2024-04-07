@@ -16,11 +16,11 @@ export interface NavigationItemBaseType {
 export interface NavigationItemSimpleType extends NavigationItemBaseType, NavigationItemIcon {
   path: string;
   badgeText?: string | number;
-  badgeColor?: NavigationItemIconColor,
+  badgeColor?: NavigationItemIconColor;
   external?: boolean;
 }
 
-export type NavigationItemSimpleTypeWithoutIcon = Omit<NavigationItemSimpleType, 'icon'>
+export type NavigationItemSimpleTypeWithoutIcon = Omit<NavigationItemSimpleType, 'icon'>;
 
 export interface NavigationItemNestedType extends NavigationItemBaseType, NavigationItemIcon {
   items: NavigationItemSimpleTypeWithoutIcon[];
@@ -31,4 +31,3 @@ export interface NavigationItemHeaderType {
 }
 
 export type NavigationItemType = NavigationItemSimpleType | NavigationItemNestedType | NavigationItemHeaderType;
-

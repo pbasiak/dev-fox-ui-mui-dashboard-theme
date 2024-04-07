@@ -3,5 +3,5 @@ import jobs from '../../../mocks/jobs/jobs.json';
 import { JobsType } from './types';
 
 export const useJobs = (): JobsType => {
-  return useQuery({ queryKey: ['jobs'], queryFn: () => jobs});
-}
+  return useQuery({ queryKey: ['jobs'], queryFn: () => jobs });
+};

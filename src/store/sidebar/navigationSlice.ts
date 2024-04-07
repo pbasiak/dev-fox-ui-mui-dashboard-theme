@@ -24,7 +24,7 @@ export const navigationSlice = createSlice({
       } else {
         return {
           ...state,
-          openNavigationIds: [...state.openNavigationIds, id]
+          openNavigationIds: [...state.openNavigationIds, id],
         };
       }
     },
@@ -34,8 +34,8 @@ export const navigationSlice = createSlice({
         ...state,
         isSidebarOpen: action.payload,
       };
-    }
-  }
+    },
+  },
 });
 
 export const { toggleNavigationIdAction, toggleSidebarAction } = navigationSlice.actions;

@@ -4,12 +4,12 @@ import notifications from './../../../mocks/notifications/notifications.json';
 export enum NotificationType {
   Message = 'message',
   Alert = 'alert',
-  Reminder = 'reminder'
+  Reminder = 'reminder',
 }
 
 export enum NotificationStatus {
   Read = 'read',
-  Unread = 'unread'
+  Unread = 'unread',
 }
 
 export interface Notification {
@@ -25,8 +25,8 @@ interface Response {
   notifications: Notification[];
 }
 
-type UseNotifications = UseQueryResult<Response>
+type UseNotifications = UseQueryResult<Response>;
 
 export const useNotifications = (): UseNotifications => {
-  return useQuery({queryKey: ['notifications'], queryFn: () => notifications});
-}
+  return useQuery({ queryKey: ['notifications'], queryFn: () => notifications });
+};

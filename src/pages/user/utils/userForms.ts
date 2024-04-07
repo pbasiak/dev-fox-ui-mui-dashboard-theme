@@ -1,22 +1,21 @@
-import * as yup from "yup";
-
+import * as yup from 'yup';
 
 export enum AccountGeneralFieldsNames {
-  firstName = "firstName",
-  lastName = "lastName",
-  username = "username",
-  email = "email",
-  phone = "phone",
-  image = "image",
-  birthDate = "birthDate",
-  age = "age",
+  firstName = 'firstName',
+  lastName = 'lastName',
+  username = 'username',
+  email = 'email',
+  phone = 'phone',
+  image = 'image',
+  birthDate = 'birthDate',
+  age = 'age',
 }
 
 export enum AccountSocialFieldsNames {
-  facebook = "facebook",
-  twitter = "twitter",
-  instagram = "instagram",
-  linkedin = "linkedin",
+  facebook = 'facebook',
+  twitter = 'twitter',
+  instagram = 'instagram',
+  linkedin = 'linkedin',
 }
 
 export const accountGeneralFormSchema = yup.object({

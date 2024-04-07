@@ -6,5 +6,5 @@ export const NavigationItemBadge = styled(Badge)(() => ({
     display: 'flex',
     position: 'relative',
     transform: 'none',
-  }
-}))
+  },
+}));

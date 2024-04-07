@@ -79,4 +79,4 @@ export const ButtonPage = () => {
       </Container>
     </SidebarLayout>
   );
-}
+};

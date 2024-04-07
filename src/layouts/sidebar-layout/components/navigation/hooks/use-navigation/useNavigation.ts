@@ -8,8 +8,8 @@ export const useNavigation = () => {
   const dispatch = useAppDispatch();
 
   const toggleNavigationId = useCallback((id: string) => dispatch(toggleNavigationIdAction(id)), [dispatch]);
-  const getIsOpen = useCallback((id: string) => navigation.includes(id), [navigation])
+  const getIsOpen = useCallback((id: string) => navigation.includes(id), [navigation]);
   const toggleSidebar = useCallback(() => dispatch(toggleSidebarAction(!isSidebarOpen)), [dispatch, isSidebarOpen]);
 
-  return { getIsOpen, isSidebarOpen, toggleNavigationId, toggleSidebar }
-}
+  return { getIsOpen, isSidebarOpen, toggleNavigationId, toggleSidebar };
+};

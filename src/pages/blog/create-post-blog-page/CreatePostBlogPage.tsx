@@ -1,12 +1,18 @@
 import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import {
-  Accordion, AccordionDetails,
-  AccordionSummary, Button, Checkbox,
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+  Checkbox,
   Container,
-  FormControl, FormControlLabel, FormGroup,
+  FormControl,
+  FormControlLabel,
+  FormGroup,
   Grid,
   Paper,
-  Stack, Switch,
+  Stack,
+  Switch,
   TextField,
   Typography,
 } from '@mui/material';
@@ -24,7 +30,12 @@ import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 export const CreatePostBlogPage = () => {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
-  const { register, handleSubmit, formState: { errors }, control } = useForm<BlogPostForm>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm<BlogPostForm>({
     resolver: yupResolver(blogPostFormSchema),
   });
 
@@ -37,7 +48,7 @@ export const CreatePostBlogPage = () => {
   ];
 
   const categoriesList = categories.map((category) => (
-    <FormGroup key={category.id} aria-label="position" row>
+    <FormGroup key={category.id} aria-label='position' row>
       <FormControlLabel control={<Checkbox />} label={category.name} />
     </FormGroup>
   ));
@@ -53,15 +64,25 @@ export const CreatePostBlogPage = () => {
   return (
     <SidebarLayout>
       <Container maxWidth={'xl'}>
-        <PageHeader title={'Create post'} breadcrumbs={['Blog', 'Create post']} renderRight={<Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
-          <Button variant={'outlined'} onClick={() => navigate(routes.blog)}>Cancel</Button>
-          <Button variant={'contained'} onClick={handlePublish}>Publish</Button>
-        </Stack>} />
+        <PageHeader
+          title={'Create post'}
+          breadcrumbs={['Blog', 'Create post']}
+          renderRight={
+            <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
+              <Button variant={'outlined'} onClick={() => navigate(routes.blog)}>
+                Cancel
+              </Button>
+              <Button variant={'contained'} onClick={handlePublish}>
+                Publish
+              </Button>
+            </Stack>
+          }
+        />
 
         <form ref={formRef} onSubmit={handleSubmit(handleCreatePost)}>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              <Paper sx={{padding: 4}}>
+              <Paper sx={{ padding: 4 }}>
                 <Stack spacing={2}>
                   <FormControl fullWidth>
                     <TextField label={'Post title'} {...register(BlogPostFieldsNames.title)} />
@@ -81,50 +102,40 @@ export const CreatePostBlogPage = () => {
                       </>
                     )}
                     name={BlogPostFieldsNames.content}
-                    control={control} />
+                    control={control}
+                  />
                 </Stack>
               </Paper>
             </Grid>
             <Grid item xs={4}>
               <Accordion defaultExpanded={true}>
-                <AccordionSummary
-                  expandIcon={<ExpandMore />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
+                <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel1a-content' id='panel1a-header'>
                   <Typography>General</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Stack spacing={2} justifyContent={'flex-start'}>
-                    <FormControl component="fieldset">
-                      <FormGroup aria-label="position" row>
+                    <FormControl component='fieldset'>
+                      <FormGroup aria-label='position' row>
                         <FormControlLabel control={<Switch />} label={'Public post'} />
                       </FormGroup>
-                      <FormGroup aria-label="position" row>
+                      <FormGroup aria-label='position' row>
                         <FormControlLabel control={<Checkbox />} label={'Pin to the top'} />
                       </FormGroup>
-                      <FormGroup aria-label="position" row>
+                      <FormGroup aria-label='position' row>
                         <FormControlLabel control={<Checkbox />} label={'Waiting for the review'} />
                       </FormGroup>
                     </FormControl>
-
                   </Stack>
                 </AccordionDetails>
               </Accordion>
               <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMore />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                >
+                <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel2a-content' id='panel2a-header'>
                   <Typography>Categories</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Stack spacing={2}>
                     <TextField placeholder={'Search categories'} size={'small'} />
-                    <Stack>
-                      {categoriesList}
-                    </Stack>
+                    <Stack>{categoriesList}</Stack>
                   </Stack>
                 </AccordionDetails>
               </Accordion>
@@ -134,4 +145,4 @@ export const CreatePostBlogPage = () => {
       </Container>
     </SidebarLayout>
   );
-}
+};

@@ -10,11 +10,17 @@ export const MaintenancePage = () => {
   return (
     <FullWidthLayout>
       <CenterLayout>
-        <Typography variant="h1" fontWeight={'fontWeightBold'}>Under construction</Typography>
-        <Typography variant="subtitle1">Page is under maintenance mode.</Typography>
-        <Typography variant="subtitle1" marginBottom={4}>Please try it again later.</Typography>
-        <Button variant={'contained'} size={'large'} onClick={() => navigate(routes.dashboard)}>Go to main page</Button>
+        <Typography variant='h1' fontWeight={'fontWeightBold'}>
+          Under construction
+        </Typography>
+        <Typography variant='subtitle1'>Page is under maintenance mode.</Typography>
+        <Typography variant='subtitle1' marginBottom={4}>
+          Please try it again later.
+        </Typography>
+        <Button variant={'contained'} size={'large'} onClick={() => navigate(routes.dashboard)}>
+          Go to main page
+        </Button>
       </CenterLayout>
     </FullWidthLayout>
   );
-}
+};

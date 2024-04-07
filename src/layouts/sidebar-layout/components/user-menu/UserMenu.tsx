@@ -11,7 +11,7 @@ import { Typography } from '@mui/material';
 import { User } from '../../../../types/user/userTypes';
 import { UserAvatar } from '../../../../components/user-avatar/UserAvatar';
 
-export const UserMenu = ({user}: {user: User}) => {
+export const UserMenu = ({ user }: { user: User }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -26,7 +26,7 @@ export const UserMenu = ({user}: {user: User}) => {
         <UserAvatar src={user.image} />
       </UserMenuIconButton>
       <UserMenuMenu
-        id="user-menu"
+        id='user-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -35,7 +35,9 @@ export const UserMenu = ({user}: {user: User}) => {
         }}
       >
         <UserMenuInfo>
-          <Typography fontSize={14} color={'text.secondary'}>{user.email}</Typography>
+          <Typography fontSize={14} color={'text.secondary'}>
+            {user.email}
+          </Typography>
         </UserMenuInfo>
         <UserMenuMenuItem onClick={handleClose}>Profile</UserMenuMenuItem>
         <UserMenuMenuItem onClick={handleClose}>My account</UserMenuMenuItem>
@@ -43,4 +45,4 @@ export const UserMenu = ({user}: {user: User}) => {
       </UserMenuMenu>
     </UserMenuContainer>
   );
-}
+};

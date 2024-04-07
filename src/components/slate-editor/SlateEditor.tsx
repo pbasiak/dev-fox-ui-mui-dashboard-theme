@@ -22,7 +22,7 @@ const SlateEditorContainer = styled(Box)(({ theme }) => ({
   '& [data-slate-placeholder]': {
     color: theme.palette.text.secondary,
     opacity: '1 !important',
-  }
+  },
 }));
 
 interface Props {
@@ -31,13 +31,13 @@ interface Props {
 }
 
 export const SlateEditor = ({ onChange, placeholder }: Props) => {
-  const [editor] = useState(() => withReact(createEditor()))
+  const [editor] = useState(() => withReact(createEditor()));
   const initialValue = [
     {
       type: 'paragraph',
       children: [{ text: '' }],
     },
-  ]
+  ];
 
   return (
     <SlateEditorContainer>
@@ -45,5 +45,5 @@ export const SlateEditor = ({ onChange, placeholder }: Props) => {
         <Editable placeholder={placeholder} />
       </Slate>
     </SlateEditorContainer>
-  )
-}
+  );
+};

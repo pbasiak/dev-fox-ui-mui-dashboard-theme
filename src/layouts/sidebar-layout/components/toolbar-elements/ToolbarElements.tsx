@@ -22,4 +22,4 @@ export const ToolbarElements = () => {
       <UserMenu user={user} />
     </Stack>
   );
-}
+};

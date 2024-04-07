@@ -39,31 +39,31 @@ const router = createBrowserRouter([
   },
   {
     path: routes.userAccount,
-    element: <UserAccountPage />
+    element: <UserAccountPage />,
   },
   {
     path: routes.userProfile,
-    element: <UserProfilePage />
+    element: <UserProfilePage />,
   },
   {
     path: routes.userList,
-    element: <UserListPage />
+    element: <UserListPage />,
   },
   {
     path: routes.userCreate,
-    element: <UserCreatePage />
+    element: <UserCreatePage />,
   },
   {
     path: routes.blog,
-    element: <BlogPage />
+    element: <BlogPage />,
   },
   {
     path: routes.blogPost,
-    element: <BlogPostPage />
+    element: <BlogPostPage />,
   },
   {
     path: routes.blogCreatePost,
-    element: <CreatePostBlogPage />
+    element: <CreatePostBlogPage />,
   },
   {
     path: routes.themeColors,
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
   },
   {
     path: routes.maintenance,
-    element: <MaintenancePage />
+    element: <MaintenancePage />,
   },
   {
     path: routes.todoList,
@@ -129,7 +129,7 @@ const router = createBrowserRouter([
     path: '*',
     element: <NotFoundPage />,
   },
-])
+]);
 
 const queryClient = new QueryClient();
 
@@ -142,10 +142,10 @@ const AppRouter = () => {
     return <Loader />;
   }
   if (!user) return null;
-  return (<RouterProvider router={router} />)
-}
+  return <RouterProvider router={router} />;
+};
 
-export function App () {
+export function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
   const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme'>('shadTheme');
   const colorMode = React.useMemo(
@@ -172,5 +172,5 @@ export function App () {
         </QueryClientProvider>
       </ThemeProvider>
     </ColorModeContext.Provider>
-  )
+  );
 }

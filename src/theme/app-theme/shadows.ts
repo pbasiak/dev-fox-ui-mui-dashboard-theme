@@ -4,10 +4,10 @@ const shadowsOpacity = {
   first: 0.02,
   second: 0.02,
   third: 0.02,
-}
+};
 
 export const themeShadows: Shadows = [
-  "none",
+  'none',
   `0px 2px 1px -1px rgba(0,0,0,${shadowsOpacity.first}),0px 1px 1px 0px rgba(0,0,0,${shadowsOpacity.second}),0px 1px 3px 0px rgba(0,0,0,${shadowsOpacity.third})`,
   `0px 3px 1px -2px rgba(0,0,0,${shadowsOpacity.first}),0px 2px 2px 0px rgba(0,0,0,${shadowsOpacity.second}),0px 1px 5px 0px rgba(0,0,0,${shadowsOpacity.third})`,
   `0px 3px 3px -2px rgba(0,0,0,${shadowsOpacity.first}),0px 3px 4px 0px rgba(0,0,0,${shadowsOpacity.second}),0px 1px 8px 0px rgba(0,0,0,${shadowsOpacity.third})`,
@@ -32,5 +32,4 @@ export const themeShadows: Shadows = [
   `0px 10px 14px -6px rgba(0,0,0,${shadowsOpacity.first}),0px 22px 35px 3px rgba(0,0,0,${shadowsOpacity.second}),0px 8px 42px 7px rgba(0,0,0,${shadowsOpacity.third})`,
   `0px 11px 14px -7px rgba(0,0,0,${shadowsOpacity.first}),0px 23px 36px 3px rgba(0,0,0,${shadowsOpacity.second}),0px 9px 44px 8px rgba(0,0,0,${shadowsOpacity.third})`,
   `0px 11px 15px -7px rgba(0,0,0,${shadowsOpacity.first}),0px 24px 38px 3px rgba(0,0,0,${shadowsOpacity.second}),0px 9px 46px 8px rgba(0,0,0,${shadowsOpacity.third})`,
-]
-
+];

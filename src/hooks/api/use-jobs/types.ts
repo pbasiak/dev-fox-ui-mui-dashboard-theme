@@ -17,5 +17,4 @@ interface JobsResponse {
   page: number;
 }
 
-
 export type JobsType = UseQueryResult<JobsResponse>;

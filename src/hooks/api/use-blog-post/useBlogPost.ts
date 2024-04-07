@@ -3,5 +3,5 @@ import blogPost from '../../../mocks/blog/blog-post.json';
 import { BlogPostType } from './types';
 
 export const useBlogPost = (): BlogPostType => {
-  return useQuery({queryKey: ['blogPost'], queryFn: () => blogPost});
-}
+  return useQuery({ queryKey: ['blogPost'], queryFn: () => blogPost });
+};

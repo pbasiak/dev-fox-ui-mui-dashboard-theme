@@ -25,35 +25,43 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
       }}
     >
       <Checkbox color={'default'} checked={task.completed} onChange={() => onComplete(task.id)} />
-      {
-        editMode ? (
-          <TextField
-            label="Edit task"
-            variant="outlined"
-            size={'small'}
-            value={editTaskValue}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEditTaskValue(e.target.value)
-            }
-            sx={{ flexGrow: 1, marginRight: 4, color: task.completed ? 'success.contrastText' : 'text.primary' }}
-          />
-        ) : (
-          <ListItemText primary={task.name} />
-        )
-      }
+      {editMode ? (
+        <TextField
+          label='Edit task'
+          variant='outlined'
+          size={'small'}
+          value={editTaskValue}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditTaskValue(e.target.value)}
+          sx={{ flexGrow: 1, marginRight: 4, color: task.completed ? 'success.contrastText' : 'text.primary' }}
+        />
+      ) : (
+        <ListItemText primary={task.name} />
+      )}
       <ListItemIcon>
-        {
-          editMode ? <IconButton sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }} onClick={() => setEditMode(false)}><Save /></IconButton> :
-            <IconButton onClick={() => setEditMode(true)} sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}>
-              <Edit />
-            </IconButton>
-        }
+        {editMode ? (
+          <IconButton
+            sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}
+            onClick={() => setEditMode(false)}
+          >
+            <Save />
+          </IconButton>
+        ) : (
+          <IconButton
+            onClick={() => setEditMode(true)}
+            sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}
+          >
+            <Edit />
+          </IconButton>
+        )}
       </ListItemIcon>
       <ListItemIcon>
-        <IconButton onClick={() => onDelete(task.id)} sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}>
+        <IconButton
+          onClick={() => onDelete(task.id)}
+          sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}
+        >
           <Delete />
         </IconButton>
       </ListItemIcon>
     </ListItem>
-  )
-}
+  );
+};

@@ -29,20 +29,24 @@ export const DeleteDialog = ({ open, onDeleteItems, onClose, itemsLength }: Prop
     <Dialog
       open={open}
       onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
+      aria-labelledby='alert-dialog-title'
+      aria-describedby='alert-dialog-description'
     >
-      <DialogTitle id="alert-dialog-title">Delete</DialogTitle>
+      <DialogTitle id='alert-dialog-title'>Delete</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          Are you sure you want to delete <Typography component={'span'} fontWeight={'fontWeightBold'}>{itemsLength}</Typography> user(s)?
+        <DialogContentText id='alert-dialog-description'>
+          Are you sure you want to delete{' '}
+          <Typography component={'span'} fontWeight={'fontWeightBold'}>
+            {itemsLength}
+          </Typography>{' '}
+          user(s)?
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="primary">
+        <Button onClick={handleClose} color='primary'>
           Cancel
         </Button>
-        <Button variant={'contained'} onClick={handleDelete} color="error" autoFocus>
+        <Button variant={'contained'} onClick={handleDelete} color='error' autoFocus>
           Delete
         </Button>
       </DialogActions>

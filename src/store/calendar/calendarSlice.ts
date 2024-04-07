@@ -14,7 +14,7 @@ export const calendarSlice = createSlice({
       // return array with new date
       return [...state, date];
     },
-  }
+  },
 });
 
 export const { setSingleData } = calendarSlice.actions;

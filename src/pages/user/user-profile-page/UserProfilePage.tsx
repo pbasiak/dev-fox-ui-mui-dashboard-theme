@@ -36,5 +36,5 @@ export const UserProfilePage = () => {
         </Grid>
       </Container>
     </SidebarLayout>
-  )
-}
+  );
+};

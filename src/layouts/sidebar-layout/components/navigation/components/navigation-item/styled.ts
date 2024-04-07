@@ -5,7 +5,9 @@ interface NavigationListItemButtonProps {
   nested?: boolean;
 }
 
-export const NavigationListItemButton = styled(ListItemButton, { shouldForwardProp: prop => prop !== 'active' && prop !== 'nested' })<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
+export const NavigationListItemButton = styled(ListItemButton, {
+  shouldForwardProp: (prop) => prop !== 'active' && prop !== 'nested',
+})<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
   borderRadius: theme.shape.borderRadius,
   paddingLeft: nested ? theme.spacing(3) : theme.spacing(2),
   paddingTop: nested ? theme.spacing(0.5) : theme.spacing(1),
@@ -31,18 +33,18 @@ export const NavigationListItemButton = styled(ListItemButton, { shouldForwardPr
       '.MuiSvgIcon-root': {
         color: theme.palette.primary.contrastText,
       },
-    }
+    },
   }),
-}))
+}));
 
 export const NavigationListItemIcon = styled(ListItemIcon)(({ theme }) => ({
   minWidth: '42px',
   fontSize: '0.5rem',
-  color: theme.palette.text.primary
-}))
+  color: theme.palette.text.primary,
+}));
 
 export const NavigationListItemNestedIcon = styled(ListItemIcon)(({ theme }) => ({
   minWidth: '34px',
   fontSize: '0.5rem',
-  color: theme.palette.text.primary
-}))
+  color: theme.palette.text.primary,
+}));

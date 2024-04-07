@@ -1,25 +1,10 @@
 import { Widget } from '../../../../components/widget/Widget';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 import { useTheme } from '@mui/material';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const options = {
   responsive: true,
@@ -49,11 +34,11 @@ const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
 
 export const SalesWidget = () => {
   const theme = useTheme();
-  const data = getData({ backgroundColor: theme.palette.primary.dark })
+  const data = getData({ backgroundColor: theme.palette.primary.dark });
 
   return (
     <Widget title={'Sales summary'}>
       <Bar options={options} data={data} />
     </Widget>
   );
-}
+};
