@@ -86,50 +86,48 @@ export const CreatePostBlogPage = () => {
               </Paper>
             </Grid>
             <Grid item xs={4}>
-              <Paper>
-                <Accordion defaultExpanded={true}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMore />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>General</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Stack spacing={2} justifyContent={'flex-start'}>
-                      <FormControl component="fieldset">
-                        <FormGroup aria-label="position" row>
-                          <FormControlLabel control={<Switch />} label={'Public post'} />
-                        </FormGroup>
-                        <FormGroup aria-label="position" row>
-                          <FormControlLabel control={<Checkbox />} label={'Pin to the top'} />
-                        </FormGroup>
-                        <FormGroup aria-label="position" row>
-                          <FormControlLabel control={<Checkbox />} label={'Waiting for the review'} />
-                        </FormGroup>
-                      </FormControl>
+              <Accordion defaultExpanded={true}>
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>General</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Stack spacing={2} justifyContent={'flex-start'}>
+                    <FormControl component="fieldset">
+                      <FormGroup aria-label="position" row>
+                        <FormControlLabel control={<Switch />} label={'Public post'} />
+                      </FormGroup>
+                      <FormGroup aria-label="position" row>
+                        <FormControlLabel control={<Checkbox />} label={'Pin to the top'} />
+                      </FormGroup>
+                      <FormGroup aria-label="position" row>
+                        <FormControlLabel control={<Checkbox />} label={'Waiting for the review'} />
+                      </FormGroup>
+                    </FormControl>
 
+                  </Stack>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMore />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Categories</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Stack spacing={2}>
+                    <TextField placeholder={'Search categories'} size={'small'} />
+                    <Stack>
+                      {categoriesList}
                     </Stack>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMore />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
-                  >
-                    <Typography>Categories</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Stack spacing={2}>
-                      <TextField placeholder={'Search categories'} size={'small'} />
-                      <Stack>
-                        {categoriesList}
-                      </Stack>
-                    </Stack>
-                  </AccordionDetails>
-                </Accordion>
-              </Paper>
+                  </Stack>
+                </AccordionDetails>
+              </Accordion>
             </Grid>
           </Grid>
         </form>

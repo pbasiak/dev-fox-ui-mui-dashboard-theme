@@ -1,5 +1,5 @@
 import {
-  Button,
+  Button, Divider,
   FormControl,
   Link,
   Stack,
@@ -23,8 +23,8 @@ export const ResetPassword = () => {
         <FormControl fullWidth>
           <TextField fullWidth placeholder={'Email'}/>
         </FormControl>
-
         <Button variant={'contained'} fullWidth onClick={() => navigate(routes.dashboard)}>Reset password</Button>
+        <Divider sx={{ width: '100%' }} />
         <Stack spacing={1}>
           <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>Don't have an account? <Link onClick={() => navigate(routes.register)} underline={'hover'} component={'button'}>Sign up</Link></Typography>
           <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>Already have an account? <Link onClick={() => navigate(routes.login)} component={'button'} underline={'hover'}>Log in</Link></Typography>

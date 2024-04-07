@@ -1,6 +1,6 @@
 import { BlogPost } from '../../types/blogPost';
 import { BlogListPost } from '../blog-list-post/BlogListPost';
-import { Grid, Stack } from '@mui/material';
+import { Grid } from '@mui/material';
 import { BlogView } from '../../types/blogView';
 
 interface Props {
@@ -20,10 +20,8 @@ export const BlogList = ({posts, view}: Props) => {
   });
 
   return (
-    <Stack spacing={6}>
-      <Grid container spacing={4}>
-        {postsList}
-      </Grid>
-    </Stack>
+    <Grid container spacing={4}>
+      {postsList}
+    </Grid>
   )
 }
