@@ -1,10 +1,9 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { DemoTypography } from './styled';
 
 export const TypographyPage = () => {
   return (
-    <SidebarLayout>
+    <Container>
       <Box>
         <DemoTypography variant='h1'>h1. Heading</DemoTypography>
         <DemoTypography variant='h2'>h2. Heading</DemoTypography>
@@ -32,6 +31,6 @@ export const TypographyPage = () => {
         <DemoTypography variant='caption'>caption text</DemoTypography>
         <DemoTypography variant='overline'>overline text</DemoTypography>
       </Box>
-    </SidebarLayout>
+    </Container>
   );
 };

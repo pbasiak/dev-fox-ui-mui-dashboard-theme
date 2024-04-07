@@ -1,4 +1,3 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
 import {
   Accordion,
   AccordionDetails,
@@ -62,87 +61,85 @@ export const CreatePostBlogPage = () => {
   }, []);
 
   return (
-    <SidebarLayout>
-      <Container maxWidth={'xl'}>
-        <PageHeader
-          title={'Create post'}
-          breadcrumbs={['Blog', 'Create post']}
-          renderRight={
-            <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
-              <Button variant={'outlined'} onClick={() => navigate(routes.blog)}>
-                Cancel
-              </Button>
-              <Button variant={'contained'} onClick={handlePublish}>
-                Publish
-              </Button>
-            </Stack>
-          }
-        />
+    <Container maxWidth={'xl'}>
+      <PageHeader
+        title={'Create post'}
+        breadcrumbs={['Blog', 'Create post']}
+        renderRight={
+          <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
+            <Button variant={'outlined'} onClick={() => navigate(routes.blog)}>
+              Cancel
+            </Button>
+            <Button variant={'contained'} onClick={handlePublish}>
+              Publish
+            </Button>
+          </Stack>
+        }
+      />
 
-        <form ref={formRef} onSubmit={handleSubmit(handleCreatePost)}>
-          <Grid container spacing={2}>
-            <Grid item xs={8}>
-              <Paper sx={{ padding: 4 }}>
-                <Stack spacing={2}>
-                  <FormControl fullWidth>
-                    <TextField label={'Post title'} {...register(BlogPostFieldsNames.title)} />
-                    {errors.title && <Typography color={'error'}>{errors.title.message}</Typography>}
-                  </FormControl>
+      <form ref={formRef} onSubmit={handleSubmit(handleCreatePost)}>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
+            <Paper sx={{ padding: 4 }}>
+              <Stack spacing={2}>
+                <FormControl fullWidth>
+                  <TextField label={'Post title'} {...register(BlogPostFieldsNames.title)} />
+                  {errors.title && <Typography color={'error'}>{errors.title.message}</Typography>}
+                </FormControl>
 
-                  <FormControl fullWidth>
-                    <TextField label={'Post description'} multiline {...register(BlogPostFieldsNames.description)} />
-                    {errors.description && <Typography color={'error'}>{errors.description.message}</Typography>}
-                  </FormControl>
+                <FormControl fullWidth>
+                  <TextField label={'Post description'} multiline {...register(BlogPostFieldsNames.description)} />
+                  {errors.description && <Typography color={'error'}>{errors.description.message}</Typography>}
+                </FormControl>
 
-                  <Controller
-                    render={({ fieldState, field: { onChange } }) => (
-                      <>
-                        <SlateEditor onChange={onChange} placeholder={'Post content'} />
-                        {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
-                      </>
-                    )}
-                    name={BlogPostFieldsNames.content}
-                    control={control}
-                  />
-                </Stack>
-              </Paper>
-            </Grid>
-            <Grid item xs={4}>
-              <Accordion defaultExpanded={true}>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel1a-content' id='panel1a-header'>
-                  <Typography>General</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Stack spacing={2} justifyContent={'flex-start'}>
-                    <FormControl component='fieldset'>
-                      <FormGroup aria-label='position' row>
-                        <FormControlLabel control={<Switch />} label={'Public post'} />
-                      </FormGroup>
-                      <FormGroup aria-label='position' row>
-                        <FormControlLabel control={<Checkbox />} label={'Pin to the top'} />
-                      </FormGroup>
-                      <FormGroup aria-label='position' row>
-                        <FormControlLabel control={<Checkbox />} label={'Waiting for the review'} />
-                      </FormGroup>
-                    </FormControl>
-                  </Stack>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion>
-                <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel2a-content' id='panel2a-header'>
-                  <Typography>Categories</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Stack spacing={2}>
-                    <TextField placeholder={'Search categories'} size={'small'} />
-                    <Stack>{categoriesList}</Stack>
-                  </Stack>
-                </AccordionDetails>
-              </Accordion>
-            </Grid>
+                <Controller
+                  render={({ fieldState, field: { onChange } }) => (
+                    <>
+                      <SlateEditor onChange={onChange} placeholder={'Post content'} />
+                      {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
+                    </>
+                  )}
+                  name={BlogPostFieldsNames.content}
+                  control={control}
+                />
+              </Stack>
+            </Paper>
           </Grid>
-        </form>
-      </Container>
-    </SidebarLayout>
+          <Grid item xs={4}>
+            <Accordion defaultExpanded={true}>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel1a-content' id='panel1a-header'>
+                <Typography>General</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Stack spacing={2} justifyContent={'flex-start'}>
+                  <FormControl component='fieldset'>
+                    <FormGroup aria-label='position' row>
+                      <FormControlLabel control={<Switch />} label={'Public post'} />
+                    </FormGroup>
+                    <FormGroup aria-label='position' row>
+                      <FormControlLabel control={<Checkbox />} label={'Pin to the top'} />
+                    </FormGroup>
+                    <FormGroup aria-label='position' row>
+                      <FormControlLabel control={<Checkbox />} label={'Waiting for the review'} />
+                    </FormGroup>
+                  </FormControl>
+                </Stack>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMore />} aria-controls='panel2a-content' id='panel2a-header'>
+                <Typography>Categories</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Stack spacing={2}>
+                  <TextField placeholder={'Search categories'} size={'small'} />
+                  <Stack>{categoriesList}</Stack>
+                </Stack>
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
+        </Grid>
+      </form>
+    </Container>
   );
 };

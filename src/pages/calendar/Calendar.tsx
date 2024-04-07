@@ -1,4 +1,3 @@
-import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 import { Box, Container, Typography } from '@mui/material';
 import Calendar from 'react-calendar';
 
@@ -112,12 +111,10 @@ export const CalendarPage = () => {
   };
 
   return (
-    <SidebarLayout>
-      <Container>
-        <CalendarStyles>
-          <Calendar tileContent={tileContent} onChange={console.log} value={new Date()} />
-        </CalendarStyles>
-      </Container>
-    </SidebarLayout>
+    <Container>
+      <CalendarStyles>
+        <Calendar tileContent={tileContent} onChange={console.log} value={new Date()} />
+      </CalendarStyles>
+    </Container>
   );
 };

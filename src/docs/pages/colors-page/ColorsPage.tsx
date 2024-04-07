@@ -1,5 +1,4 @@
-import { SidebarLayout } from '../../../layouts/sidebar-layout/SidebarLayout';
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { ColorStack } from './styled';
 
 interface ColorBoxProps {
@@ -12,7 +11,7 @@ export const ColorBox = ({ color }: ColorBoxProps) => {
 
 export const ColorsPage = () => {
   return (
-    <SidebarLayout>
+    <Container maxWidth={false}>
       <ColorStack>
         <Typography marginBottom={1}>Primary</Typography>
         <ColorBox color='primary.light' />
@@ -49,6 +48,6 @@ export const ColorsPage = () => {
         <ColorBox color='success.main' />
         <ColorBox color='success.dark' />
       </ColorStack>
-    </SidebarLayout>
+    </Container>
   );
 };

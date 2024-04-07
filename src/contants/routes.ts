@@ -7,6 +7,7 @@ const jobsPrefix = '/jobs';
 
 export const routes = {
   dashboard: '/',
+  user: userPrefix,
   userAccount: `${userPrefix}/account`,
   userProfile: `${userPrefix}/profile`,
   userList: `${userPrefix}/list`,
