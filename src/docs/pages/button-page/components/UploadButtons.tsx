@@ -5,13 +5,13 @@ import Stack from '@mui/material/Stack';
 
 export default function UploadButtons() {
   return (
-    <Stack direction="row" alignItems="center" spacing={2}>
-      <Button variant="contained" component="label">
+    <Stack direction='row' alignItems='center' spacing={2}>
+      <Button variant='contained' component='label'>
         Upload
-        <input hidden accept="image/*" multiple type="file" />
+        <input hidden accept='image/*' multiple type='file' />
       </Button>
-      <IconButton color="primary" aria-label="upload picture" component="label">
-        <input hidden accept="image/*" type="file" />
+      <IconButton color='primary' aria-label='upload picture' component='label'>
+        <input hidden accept='image/*' type='file' />
         <PhotoCamera />
       </IconButton>
     </Stack>

@@ -30,22 +30,21 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
   const handleDelete = useCallback((event: MouseEvent<HTMLLIElement>, id: string) => {
     event.stopPropagation();
     console.log(id);
-  }, [])
+  }, []);
 
   const handleEdit = useCallback((event: MouseEvent<HTMLLIElement>, id: string) => {
     event.stopPropagation();
     console.log(id);
-  }, [])
+  }, []);
 
   const labelId = `checkbox-list-label-${order.id}`;
-
 
   return (
     <>
       <ListItemButton key={order.id} dense onClick={() => setOpenDetails(true)}>
         <ListItemIcon>
           <Checkbox
-            edge="start"
+            edge='start'
             tabIndex={-1}
             inputProps={{ 'aria-labelledby': labelId }}
             checked={selected}
@@ -56,12 +55,14 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
         <ListItemText sx={{ flex: '1 1 40%' }} primary={order.customer} />
         <ListItemText sx={{ flex: '1 1 20%' }} primary={order.total} />
         <ListItemText sx={{ flex: '1 1 20%' }} primary={order.date} />
-        <ListItemText sx={{ flex: '1 1 20%' }}><Chip label={order.status} /></ListItemText>
+        <ListItemText sx={{ flex: '1 1 20%' }}>
+          <Chip label={order.status} />
+        </ListItemText>
         <Box>
           <IconButton
-            id="product-button"
+            id='product-button'
             aria-controls={open ? 'product-menu' : undefined}
-            aria-haspopup="true"
+            aria-haspopup='true'
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
           >
@@ -70,7 +71,7 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
         </Box>
       </ListItemButton>
       <Menu
-        id="product-menu"
+        id='product-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -81,11 +82,7 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
         <MenuItem onClick={(event) => handleEdit(event, order.id)}>Edit</MenuItem>
         <MenuItem onClick={(event) => handleDelete(event, order.id)}>Delete</MenuItem>
       </Menu>
-      {
-        openDetails && (
-          <OrderDetails order={order} open={openDetails} onClose={() => setOpenDetails(false)} />
-        )
-      }
+      {openDetails && <OrderDetails order={order} open={openDetails} onClose={() => setOpenDetails(false)} />}
     </>
   );
-}
+};

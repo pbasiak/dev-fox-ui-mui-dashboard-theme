@@ -5,6 +5,8 @@ import { useCurrentUser } from '../use-current-user/useCurrentUser';
 
 export const useUser = ({ id }: { id?: number } = {}): UserReturn => {
   const { data } = useCurrentUser();
-  return useQuery({queryKey: ['user'], queryFn: () => users.users.find((user) => user.id === id || user.id === data?.id)});
-
-}
+  return useQuery({
+    queryKey: ['user'],
+    queryFn: () => users.users.find((user) => user.id === id || user.id === data?.id),
+  });
+};

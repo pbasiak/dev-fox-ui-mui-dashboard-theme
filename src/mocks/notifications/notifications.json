@@ -22,7 +22,7 @@
       "message": "The meeting scheduled for tomorrow has been postponed.",
       "timestamp": "2023-05-15T14:15:00Z",
       "status": "read",
-        "type": "reminder"
+      "type": "reminder"
     },
     {
       "id": 4,

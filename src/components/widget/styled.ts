@@ -8,14 +8,14 @@ export const WidgetContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   flexDirection: 'column',
   height: '100%',
-}))
+}));
 
 export const WidgetTitleContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
-}))
+}));
 
 export const WidgetTitle = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.h6.fontSize,
   fontWeight: theme.typography.h6.fontWeight,
   color: theme.palette.text.primary,
-}))
+}));

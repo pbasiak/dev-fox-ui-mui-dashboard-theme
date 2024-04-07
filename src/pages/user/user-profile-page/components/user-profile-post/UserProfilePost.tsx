@@ -6,7 +6,7 @@ import React from 'react';
 import { Comment, Delete, Edit, Favorite, MoreVert, Share } from '@mui/icons-material';
 import { UserProfileComment } from '../user-profile-comment/UserProfileComment';
 
-export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) => {
+export const UserProfilePost = ({ post, user }: { post: UserPost; user: User }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -16,10 +16,8 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
     setAnchorEl(null);
   };
 
-  const commentsList = post.comments.map(comment => {
-    return (
-      <UserProfileComment key={comment.id} comment={comment} />
-    )
+  const commentsList = post.comments.map((comment) => {
+    return <UserProfileComment key={comment.id} comment={comment} />;
   });
 
   return (
@@ -30,7 +28,9 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
             <UserAvatar />
             <Stack>
               <Stack spacing={0.5} direction={'row'} alignItems={'center'}>
-                <Typography fontSize={'14px'} fontWeight={'fontWeightMedium'}>{user.firstName} {user.lastName}</Typography>
+                <Typography fontSize={'14px'} fontWeight={'fontWeightMedium'}>
+                  {user.firstName} {user.lastName}
+                </Typography>
                 <Typography fontSize={'14px'}>updated status</Typography>
               </Stack>
               <Typography fontSize={'12px'}>{post.created}</Typography>
@@ -38,16 +38,16 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
           </Stack>
           <div>
             <IconButton
-              id="post-menu-button"
+              id='post-menu-button'
               aria-controls={open ? 'post-menu-button' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
             >
               <MoreVert />
             </IconButton>
             <Menu
-              id="post-menu"
+              id='post-menu'
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
@@ -59,35 +59,40 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
             >
               <MenuItem onClick={handleClose}>
                 <Typography fontSize={'16px'} display={'inline-flex'} alignItems={'center'}>
-                  <Edit fontSize={'inherit'} /><span>&nbsp;Edit</span>
+                  <Edit fontSize={'inherit'} />
+                  <span>&nbsp;Edit</span>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Typography fontSize={'16px'} display={'inline-flex'} alignItems={'center'}>
-                  <Share fontSize={'inherit'} /><span>&nbsp;Share</span>
+                  <Share fontSize={'inherit'} />
+                  <span>&nbsp;Share</span>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Typography color={'error'} fontSize={'16px'} display={'inline-flex'} alignItems={'center'}>
-                  <Delete fontSize={'inherit'} /><span>&nbsp;Delete</span>
+                  <Delete fontSize={'inherit'} />
+                  <span>&nbsp;Delete</span>
                 </Typography>
               </MenuItem>
             </Menu>
           </div>
         </Stack>
 
-        <Stack>
-          {post.description}
-        </Stack>
+        <Stack>{post.description}</Stack>
 
         <Stack direction={'row'} justifyContent={'space-between'}>
           <Stack direction={'row'} spacing={0.5} alignItems={'center'}>
-            <IconButton><Favorite color={'primary'} /></IconButton>
+            <IconButton>
+              <Favorite color={'primary'} />
+            </IconButton>
             <Typography variant={'body2'}>{post.likes}</Typography>
           </Stack>
 
           <Stack direction={'row'} alignItems={'center'}>
-            <IconButton><Comment /></IconButton>
+            <IconButton>
+              <Comment />
+            </IconButton>
             <Typography variant={'body2'}>{post.commentsTotal} comment(s)</Typography>
           </Stack>
         </Stack>
@@ -100,4 +105,4 @@ export const UserProfilePost = ({ post, user }: { post: UserPost, user: User }) 
       </Stack>
     </Paper>
   );
-}
+};

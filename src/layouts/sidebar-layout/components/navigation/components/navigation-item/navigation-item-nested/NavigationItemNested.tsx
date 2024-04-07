@@ -23,23 +23,21 @@ export const NavigationItemNested = ({ item }: Props) => {
   }, [item.label, toggleNavigationId]);
 
   const nestedItems = item.items.map((item) => {
-    return <NavigationItemSimple key={item.path} item={item} nested />
-  })
+    return <NavigationItemSimple key={item.path} item={item} nested />;
+  });
 
-  return  (
+  return (
     <>
-      <NavigationListItemButton onClick={handleToggleOpen} >
-        <NavigationListItemIcon>
-          {item.icon({})}
-        </NavigationListItemIcon>
+      <NavigationListItemButton onClick={handleToggleOpen}>
+        <NavigationListItemIcon>{item.icon({})}</NavigationListItemIcon>
         <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
         {isOpen ? <ExpandLess /> : <ExpandMore />}
       </NavigationListItemButton>
-      <Collapse in={isOpen} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
+      <Collapse in={isOpen} timeout='auto' unmountOnExit>
+        <List component='div' disablePadding>
           {nestedItems}
         </List>
       </Collapse>
     </>
   );
-}
+};

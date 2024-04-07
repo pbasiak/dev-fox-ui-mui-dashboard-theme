@@ -1,11 +1,4 @@
-import {
-  Box,
-  Drawer,
-  IconButton, Stack,
-  styled,
-  Toolbar,
-  useTheme,
-} from '@mui/material';
+import { Box, Drawer, IconButton, Stack, styled, Toolbar, useTheme } from '@mui/material';
 
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -72,20 +65,25 @@ interface Props {
   children: ReactNode;
 }
 
-export function SidebarLayout({children}: Props) {
+export function SidebarLayout({ children }: Props) {
   const theme = useTheme();
   const { isSidebarOpen, toggleSidebar } = useNavigation();
 
   return (
     <Box>
-      <AppBar position="relative" open={isSidebarOpen} color='transparent'>
+      <AppBar position='relative' open={isSidebarOpen} color='transparent'>
         <Toolbar>
-          <Stack justifyContent={isSidebarOpen ? 'flex-end' : 'space-between'} direction={'row'} flex={1} alignItems={'center'}>
+          <Stack
+            justifyContent={isSidebarOpen ? 'flex-end' : 'space-between'}
+            direction={'row'}
+            flex={1}
+            alignItems={'center'}
+          >
             <IconButton
-              color="inherit"
-              aria-label="open navigation"
+              color='inherit'
+              aria-label='open navigation'
               onClick={toggleSidebar}
-              edge="start"
+              edge='start'
               sx={{ mr: 2, ...(isSidebarOpen && { display: 'none' }) }}
             >
               <MenuIcon />
@@ -104,8 +102,8 @@ export function SidebarLayout({children}: Props) {
           },
         }}
         elevation={0}
-        variant="persistent"
-        anchor="left"
+        variant='persistent'
+        anchor='left'
         open={isSidebarOpen}
       >
         <DrawerHeader>

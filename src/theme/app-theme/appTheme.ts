@@ -24,7 +24,7 @@ export const appTheme = (mode: 'light' | 'dark') => {
         main: red['A400'],
       },
       info: {
-        main: lightBlue['A400']
+        main: lightBlue['A400'],
       },
       warning: {
         main: amber['A700'],
@@ -33,10 +33,10 @@ export const appTheme = (mode: 'light' | 'dark') => {
       background: {
         default: isDarkMode ? background : grey[50],
         paper: isDarkMode ? background : grey[50],
-      }
+      },
     },
     shape: {
-      borderRadius: 4
+      borderRadius: 4,
     },
     spacing: 8,
     typography: {
@@ -78,7 +78,7 @@ export const appTheme = (mode: 'light' | 'dark') => {
       h6: {
         fontSize: '1.25rem',
         fontWeight: 600,
-      }
+      },
     },
     shadows: themeShadows,
     components: {
@@ -96,13 +96,13 @@ export const appTheme = (mode: 'light' | 'dark') => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top right',
             backgroundSize: '100%',
-          }
-        }
+          },
+        },
       },
       MuiListItemButton: {
         defaultProps: {
           disableRipple: true,
-        }
+        },
       },
       MuiButton: {
         defaultProps: {
@@ -126,37 +126,37 @@ export const appTheme = (mode: 'light' | 'dark') => {
           sizeLarge: {
             padding: '10px 24px',
           },
-        }
+        },
       },
       MuiAppBar: {
         styleOverrides: {
           root: {
-            boxShadow: "none",
-          }
-        }
+            boxShadow: 'none',
+          },
+        },
       },
       MuiDrawer: {
         styleOverrides: {
           paper: {
             borderRight: '0',
             backgroundColor: isDarkMode ? background : grey[50],
-          }
-        }
+          },
+        },
       },
       MuiCard: {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-          }
-        }
+          },
+        },
       },
       MuiPaper: {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-          }
-        }
-      }
+          },
+        },
+      },
     },
   });
 };

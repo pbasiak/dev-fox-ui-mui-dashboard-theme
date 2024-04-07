@@ -7,7 +7,7 @@ interface Props {
 
 export const CenterLayout = ({ children }: Props) => {
   return (
-    <Box 
+    <Box
       sx={{
         width: '100%',
         display: 'flex',
@@ -17,10 +17,10 @@ export const CenterLayout = ({ children }: Props) => {
         position: 'absolute',
         left: '50%',
         top: '50%',
-        transform: 'translateY(-50%) translateX(-50%)'
+        transform: 'translateY(-50%) translateX(-50%)',
       }}
     >
       {children}
     </Box>
   );
-}
+};

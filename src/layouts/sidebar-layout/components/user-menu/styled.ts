@@ -1,8 +1,6 @@
 import { Box, IconButton, Menu, MenuItem, styled } from '@mui/material';
 
-export const UserMenuContainer = styled(Box)(() => ({
-}))
-
+export const UserMenuContainer = styled(Box)(() => ({}));
 
 export const UserMenuIconButton = styled(IconButton)(({ theme }) => ({
   width: 40,
@@ -12,8 +10,8 @@ export const UserMenuIconButton = styled(IconButton)(({ theme }) => ({
 
   '& img': {
     width: '100%',
-  }
-}))
+  },
+}));
 
 export const UserMenuMenu = styled(Menu)(({ theme }) => ({
   marginTop: theme.spacing(1),
@@ -22,14 +20,14 @@ export const UserMenuMenu = styled(Menu)(({ theme }) => ({
     border: `1px solid ${theme.palette.divider}`,
     boxShadow: theme.shadows[0],
   },
-}))
+}));
 
 export const UserMenuMenuItem = styled(MenuItem)(({ theme }) => ({
   padding: theme.spacing(1, 1.5),
   borderRadius: theme.shape.borderRadius,
   fontSize: '14px',
   minWidth: '160px',
-}))
+}));
 
 export const UserMenuMenuItemWithSeparator = styled(UserMenuMenuItem)(({ theme }) => ({
   position: 'relative',
@@ -44,11 +42,11 @@ export const UserMenuMenuItemWithSeparator = styled(UserMenuMenuItem)(({ theme }
     width: '100%',
     height: '1px',
     borderTop: `1px solid ${theme.palette.divider}`,
-  }
-}))
+  },
+}));
 
 export const UserMenuInfo = styled('li')(({ theme }) => ({
-  padding: theme.spacing(0.5,1.5, 1.5),
+  padding: theme.spacing(0.5, 1.5, 1.5),
   marginBottom: theme.spacing(1),
   borderBottom: `1px solid ${theme.palette.divider}`,
-}))
+}));

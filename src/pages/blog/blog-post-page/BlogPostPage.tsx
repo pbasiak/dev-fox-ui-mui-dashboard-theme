@@ -15,10 +15,8 @@ export const BlogPostPage = () => {
         <Box sx={{ borderRadius: '6px', overflow: 'hidden', mb: 2, boxShadow: 5 }}>
           <img src={data?.image} alt={data?.title} style={{ maxWidth: '100%', display: 'block' }} />
         </Box>
-        <Paper sx={{ padding: 4 }}>
-
-        </Paper>
+        <Paper sx={{ padding: 4 }}></Paper>
       </Container>
     </SidebarLayout>
-  )
-}
+  );
+};

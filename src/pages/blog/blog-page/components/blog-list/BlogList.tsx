@@ -8,7 +8,7 @@ interface Props {
   view: BlogView;
 }
 
-export const BlogList = ({posts, view}: Props) => {
+export const BlogList = ({ posts, view }: Props) => {
   const mdConfig = view === BlogView.LIST ? 12 : 4;
 
   const postsList = posts.map((post) => {
@@ -16,12 +16,12 @@ export const BlogList = ({posts, view}: Props) => {
       <Grid item xs={12} md={mdConfig} key={post.id}>
         <BlogListPost post={post} key={post.id} size={view === BlogView.GRID ? 'small' : 'medium'} />
       </Grid>
-    )
+    );
   });
 
   return (
     <Grid container spacing={4}>
       {postsList}
     </Grid>
-  )
-}
+  );
+};

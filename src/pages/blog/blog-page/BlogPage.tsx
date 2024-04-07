@@ -10,7 +10,8 @@ import {
   Select,
   SelectChangeEvent,
   Stack,
-  TextField, Typography,
+  TextField,
+  Typography,
 } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { BlogList } from './components/blog-list/BlogList';
@@ -41,18 +42,38 @@ export const BlogPage = () => {
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
-        <PageHeader title={'Blog'} breadcrumbs={['Blog', 'List']} renderRight={<Button onClick={() => navigate(routes.blogCreatePost)} startIcon={<Add />} variant={'contained'}>Add post</Button>} />
+        <PageHeader
+          title={'Blog'}
+          breadcrumbs={['Blog', 'List']}
+          renderRight={
+            <Button onClick={() => navigate(routes.blogCreatePost)} startIcon={<Add />} variant={'contained'}>
+              Add post
+            </Button>
+          }
+        />
 
         <Stack direction={'row'} marginBottom={2} justifyContent={'space-between'} alignItems={'flex-start'}>
-          <TextField InputProps={{ startAdornment:  <InputAdornment position="start"><Search color={'inherit'} /></InputAdornment> }} fullWidth={false} size={'small'} variant={'outlined'} placeholder={'Search posts...'} />
+          <TextField
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <Search color={'inherit'} />
+                </InputAdornment>
+              ),
+            }}
+            fullWidth={false}
+            size={'small'}
+            variant={'outlined'}
+            placeholder={'Search posts...'}
+          />
           <Stack direction={'row'} spacing={2}>
             <FormControl>
-              <InputLabel id="sort-select-label">Sort</InputLabel>
+              <InputLabel id='sort-select-label'>Sort</InputLabel>
               <Select
-                labelId="sort-select-label"
-                id="sort-select"
+                labelId='sort-select-label'
+                id='sort-select'
                 value={sort}
-                label="Sort"
+                label='Sort'
                 size={'small'}
                 onChange={handleChange}
               >
@@ -63,20 +84,36 @@ export const BlogPage = () => {
             </FormControl>
 
             <ButtonGroup variant={'outlined'} color={'primary'}>
-              <Button onClick={() => handleViewChange(BlogView.GRID)} variant={view === BlogView.GRID ? 'contained' : 'outlined'} size={'small'}><GridView /></Button>
-              <Button onClick={() => handleViewChange(BlogView.LIST)} variant={view === BlogView.LIST ? 'contained' : 'outlined'} size={'small'}><Splitscreen /></Button>
+              <Button
+                onClick={() => handleViewChange(BlogView.GRID)}
+                variant={view === BlogView.GRID ? 'contained' : 'outlined'}
+                size={'small'}
+              >
+                <GridView />
+              </Button>
+              <Button
+                onClick={() => handleViewChange(BlogView.LIST)}
+                variant={view === BlogView.LIST ? 'contained' : 'outlined'}
+                size={'small'}
+              >
+                <Splitscreen />
+              </Button>
             </ButtonGroup>
           </Stack>
         </Stack>
         <Stack mt={4} mb={4} spacing={2}>
           <Typography variant={'h4'}>Read latest articles</Typography>
           <Typography variant={'body1'} color={'text.secondary'}>
-            Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere. Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam porttitor vel purus eu commodo.
+            Aenean euismod imperdiet tortor, at euismod dolor. Pellentesque mollis lorem lacus, eu suscipit leo
+            hendrerit sed. Proin neque ante, malesuada at sagittis sit amet, dignissim sit amet ex. Vivamus consequat
+            ante sed laoreet sollicitudin. Donec fermentum enim sit amet leo consectetur, a euismod nunc posuere.
+            Curabitur ipsum massa, pellentesque id arcu vitae, finibus accumsan ex. Morbi vel lobortis ligula. Etiam
+            porttitor vel purus eu commodo.
           </Typography>
         </Stack>
-        { isLoading && <Loader /> }
-        { !isLoading && data && <BlogList posts={data} view={view} /> }
+        {isLoading && <Loader />}
+        {!isLoading && data && <BlogList posts={data} view={view} />}
       </Container>
     </SidebarLayout>
-  )
-}
+  );
+};

@@ -22,8 +22,7 @@ const columns: GridColDef[] = [
     description: 'This column has a value getter and is not sortable.',
     sortable: false,
     width: 160,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+    valueGetter: (params: GridValueGetterParams) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
 ];
 
@@ -60,20 +59,45 @@ export const UserListPage = () => {
 
   const handleDeleteItems = useCallback(() => {
     console.log('delete items');
-  }, [])
+  }, []);
 
   return (
     <SidebarLayout>
       <Container maxWidth={'lg'}>
-        <PageHeader title={'Users list'} breadcrumbs={['Users', 'List']} renderRight={<Button variant={'contained'} startIcon={<Add />}>Add user</Button>} />
-        {showEditBar ? <Stack direction={'row'} spacing={1} sx={{ backgroundColor: 'primary.main', borderRadius: '4px', mb: 1, px: 1, py: 0.5 }}>
-          {isSingleRowSelected ? <IconButton color={'secondary'}><Edit /></IconButton> : null}
+        <PageHeader
+          title={'Users list'}
+          breadcrumbs={['Users', 'List']}
+          renderRight={
+            <Button variant={'contained'} startIcon={<Add />}>
+              Add user
+            </Button>
+          }
+        />
+        {showEditBar ? (
+          <Stack
+            direction={'row'}
+            spacing={1}
+            sx={{ backgroundColor: 'primary.main', borderRadius: '4px', mb: 1, px: 1, py: 0.5 }}
+          >
+            {isSingleRowSelected ? (
+              <IconButton color={'secondary'}>
+                <Edit />
+              </IconButton>
+            ) : null}
 
-          <IconButton color={'secondary'} onClick={handleDeleteDialogOpen}><DeleteOutline /></IconButton>
+            <IconButton color={'secondary'} onClick={handleDeleteDialogOpen}>
+              <DeleteOutline />
+            </IconButton>
 
-          <DeleteDialog open={deleteDialogOpen} onClose={handleDeleteDialogClose} onDeleteItems={handleDeleteItems} itemsLength={selectedRows.length} />
-        </Stack> : null}
-        <Box sx={{ height: 400, width: '100%', p: 0, borderRadius: 1, overflow:'hidden' }} component={Paper}>
+            <DeleteDialog
+              open={deleteDialogOpen}
+              onClose={handleDeleteDialogClose}
+              onDeleteItems={handleDeleteItems}
+              itemsLength={selectedRows.length}
+            />
+          </Stack>
+        ) : null}
+        <Box sx={{ height: 400, width: '100%', p: 0, borderRadius: 1, overflow: 'hidden' }} component={Paper}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -86,4 +110,4 @@ export const UserListPage = () => {
       </Container>
     </SidebarLayout>
   );
-}
+};

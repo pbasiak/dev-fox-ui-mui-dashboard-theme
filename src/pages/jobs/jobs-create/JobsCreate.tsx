@@ -12,7 +12,12 @@ import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 export const JobsCreate = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const { register, handleSubmit, formState: { errors }, control } = useForm<JobsCreateForm>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm<JobsCreateForm>({
     resolver: yupResolver(jobsCreateFormSchema),
   });
 
@@ -23,17 +28,23 @@ export const JobsCreate = () => {
   const handlePublish = () => {
     formRef.current && formRef.current.requestSubmit();
     console.log('Publish');
-  }
+  };
 
   return (
     <SidebarLayout>
       <Container>
-        <PageHeader title={'Create Job'} breadcrumbs={['Jobs', 'Create']} renderRight={
-          <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
-            <Button variant={'outlined'}>Cancel</Button>
-            <Button variant={'contained'} onClick={handlePublish}>Publish</Button>
-          </Stack>
-        } />
+        <PageHeader
+          title={'Create Job'}
+          breadcrumbs={['Jobs', 'Create']}
+          renderRight={
+            <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
+              <Button variant={'outlined'}>Cancel</Button>
+              <Button variant={'contained'} onClick={handlePublish}>
+                Publish
+              </Button>
+            </Stack>
+          }
+        />
 
         <form ref={formRef} onSubmit={handleSubmit(handleCreatePost)}>
           <Paper sx={{ padding: 4 }}>
@@ -77,5 +88,5 @@ export const JobsCreate = () => {
         </form>
       </Container>
     </SidebarLayout>
-  )
-}
+  );
+};

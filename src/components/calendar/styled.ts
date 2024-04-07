@@ -18,15 +18,15 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
       flexGrow: 1,
     },
 
-    'button': {
+    button: {
       border: 0,
       transition: theme.transitions.create(['background-color', 'box-shadow'], {
         duration: theme.transitions.duration.short,
       }),
 
       '&:enabled:hover': {
-        cursor: 'pointer'
-      }
+        cursor: 'pointer',
+      },
     },
 
     '&__navigation': {
@@ -38,7 +38,7 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
         fontSize: '22px',
       },
 
-      'button': {
+      button: {
         minWidth: '44px',
         background: '#DDD',
 
@@ -48,8 +48,8 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
 
         '&:enabled:hover, &:enabled:focus': {
           backgroundColor: theme.palette.action.hover,
-        }
-      }
+        },
+      },
     },
 
     '&__month-view': {
@@ -61,7 +61,7 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
 
         '&__weekday': {
           padding: theme.spacing(1),
-        }
+        },
       },
 
       '&__weekNumbers': {
@@ -87,16 +87,16 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
           },
 
           '&--neighboringMonth': {
-            color: theme.palette.text.secondary
-          }
-        }
-      }
+            color: theme.palette.text.secondary,
+          },
+        },
+      },
     },
 
     '&__year-view, &__decade-view, &__century-view': {
       '.react-calendar__tile': {
         padding: theme.spacing(2, 0.5),
-      }
+      },
     },
 
     '&__tile': {
@@ -112,7 +112,7 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
         duration: theme.transitions.duration.short,
       }),
 
-      'abbr': {
+      abbr: {
         textAlign: 'right',
         padding: theme.spacing(1),
         fontSize: 12,
@@ -132,7 +132,7 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
 
         '&:enabled:hover, &:enabled:focus': {
           // backgroundColor: theme.palette.action.hover,
-        }
+        },
       },
 
       '&--hasActive': {
@@ -140,7 +140,7 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
 
         '&:enabled:hover, &:enabled:focus': {
           // backgroundColor: theme.palette.action.hover,
-        }
+        },
       },
 
       '&--active': {
@@ -149,14 +149,14 @@ export const CalendarStyles = styled(Box)(({ theme }) => ({
 
         '&:enabled:hover, &:enabled:focus': {
           // backgroundColor: theme.palette.primary.dark,
-        }
+        },
       },
     },
 
     '&--selectRange': {
       '.react-calendar__tile:hover': {
         // backgroundColor: theme.palette.action.hover,
-      }
-    }
+      },
+    },
   },
 }));

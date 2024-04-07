@@ -21,24 +21,32 @@ export const OrderList: FC = () => {
 
   const handleGlobalSelect = useCallback(() => {
     if (selected.length === data?.orders.length) {
-      setSelected([])
+      setSelected([]);
     } else {
-      setSelected(data?.orders.map((order) => order.id) || [])
+      setSelected(data?.orders.map((order) => order.id) || []);
     }
   }, [data?.orders, selected.length]);
 
-  const handleToggleSelect = useCallback((id: string) => {
-    if (selected.indexOf(id) === -1) {
-      setSelected([...selected, id]);
-    } else {
-      setSelected(selected.filter((selectedId) => selectedId !== id));
-    }
-  }, [selected]);
+  const handleToggleSelect = useCallback(
+    (id: string) => {
+      if (selected.indexOf(id) === -1) {
+        setSelected([...selected, id]);
+      } else {
+        setSelected(selected.filter((selectedId) => selectedId !== id));
+      }
+    },
+    [selected],
+  );
 
   const ordersList = data?.orders.map((order) => {
     return (
-      <OrderItem key={order.id} order={order} onSelect={handleToggleSelect} selected={selected.indexOf(order.id) !== -1} />
-    )
+      <OrderItem
+        key={order.id}
+        order={order}
+        onSelect={handleToggleSelect}
+        selected={selected.indexOf(order.id) !== -1}
+      />
+    );
   });
 
   return (
@@ -50,27 +58,52 @@ export const OrderList: FC = () => {
             <ListItem dense>
               <ListItemIcon>
                 <Checkbox
-                  edge="start"
+                  edge='start'
                   tabIndex={-1}
                   onChange={handleGlobalSelect}
                   checked={selected.length === data?.orders.length}
                 />
               </ListItemIcon>
-              <ListItemText sx={{ flex: '1 1 40%' }} primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }} id={'All'} primary={'Customer'} />
-              <ListItemText sx={{ flex: '1 1 20%' }} primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }} id={'All'} primary={'Total'} />
-              <ListItemText sx={{ flex: '1 1 20%' }} primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }} id={'All'} primary={'Date'} />
-              <ListItemText sx={{ flex: '1 1 20%' }} primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }} id={'All'} primary={'Status'} />
-              <ListItemText sx={{ flex: '1 1 20%' }} primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }} id={'All'} primary={'Actions'} />
+              <ListItemText
+                sx={{ flex: '1 1 40%' }}
+                primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+                id={'All'}
+                primary={'Customer'}
+              />
+              <ListItemText
+                sx={{ flex: '1 1 20%' }}
+                primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+                id={'All'}
+                primary={'Total'}
+              />
+              <ListItemText
+                sx={{ flex: '1 1 20%' }}
+                primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+                id={'All'}
+                primary={'Date'}
+              />
+              <ListItemText
+                sx={{ flex: '1 1 20%' }}
+                primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+                id={'All'}
+                primary={'Status'}
+              />
+              <ListItemText
+                sx={{ flex: '1 1 20%' }}
+                primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+                id={'All'}
+                primary={'Actions'}
+              />
             </ListItem>
           </List>
-          {data?.orders && !isLoading ? <OrderListWrapper>
-            <List>
-              {ordersList}
-            </List>
-            <Stack direction={'row'} justifyContent={'center'} p={1}>
-              <Pagination count={data.totalPages} variant="outlined" shape="rounded" />
-            </Stack>
-          </OrderListWrapper> : null}
+          {data?.orders && !isLoading ? (
+            <OrderListWrapper>
+              <List>{ordersList}</List>
+              <Stack direction={'row'} justifyContent={'center'} p={1}>
+                <Pagination count={data.totalPages} variant='outlined' shape='rounded' />
+              </Stack>
+            </OrderListWrapper>
+          ) : null}
         </Box>
       </Container>
     </SidebarLayout>

@@ -16,7 +16,19 @@ export const HalfLayout = ({ children }: Props) => {
   return (
     <FullWidthLayout hideLogo>
       <Grid container sx={{ height: '100vh' }}>
-        <Grid item xs={12} md={6} padding={2} sx={{ backgroundColor: 'primary.dark', color: 'primary.contrastText', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          padding={2}
+          sx={{
+            backgroundColor: 'primary.dark',
+            color: 'primary.contrastText',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
           {children[0]}
         </Grid>
         <Grid item xs={12} md={6} padding={2} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -24,5 +36,5 @@ export const HalfLayout = ({ children }: Props) => {
         </Grid>
       </Grid>
     </FullWidthLayout>
-  )
-}
+  );
+};

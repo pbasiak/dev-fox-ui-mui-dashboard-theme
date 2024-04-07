@@ -7,13 +7,17 @@ interface Props {
   hideLogo?: boolean;
 }
 
-export const FullWidthLayout = ({children, hideLogo = false}: Props) => {
+export const FullWidthLayout = ({ children, hideLogo = false }: Props) => {
   return (
     <Box>
       {!hideLogo && (
-        <Paper><Stack px={3} py={2}><Logo /></Stack></Paper>
+        <Paper>
+          <Stack px={3} py={2}>
+            <Logo />
+          </Stack>
+        </Paper>
       )}
       {children}
     </Box>
-  )
-}
+  );
+};

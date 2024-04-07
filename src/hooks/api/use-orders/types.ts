@@ -24,5 +24,4 @@ interface OrderResponse {
   page: number;
 }
 
-
 export type OrderType = UseQueryResult<OrderResponse>;

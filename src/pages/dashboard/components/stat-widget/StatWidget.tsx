@@ -13,9 +13,7 @@ export const StatWidget = ({ title, value, footerText }: StatWidgetProps) => {
         <Typography variant={'h4'} component={'p'} fontWeight={'fontWeightBold'}>
           {value}
         </Typography>
-        {footerText ? <Typography variant={'body2'}>
-          {footerText}
-        </Typography> : null}
+        {footerText ? <Typography variant={'body2'}>{footerText}</Typography> : null}
       </Stack>
     </Widget>
   );

@@ -1,12 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import {
-  Typography,
-  TextField,
-  Button,
-  List,
-  Stack, Container,
-} from '@mui/material';
+import { Typography, TextField, Button, List, Stack, Container } from '@mui/material';
 import { SidebarLayout } from '../../layouts/sidebar-layout/SidebarLayout';
 import { PageHeader } from '../../components/page-header/PageHeader';
 import { Task } from './types/task';
@@ -29,16 +23,15 @@ export const TodoList: React.FC = () => {
     }
   };
 
-  const handleDeleteTask = useCallback((id: string) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  }, [tasks])
+  const handleDeleteTask = useCallback(
+    (id: string) => {
+      setTasks(tasks.filter((task) => task.id !== id));
+    },
+    [tasks],
+  );
 
   const handleCompleteTask = (id: string) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+    setTasks(tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
   };
 
   return (
@@ -47,24 +40,20 @@ export const TodoList: React.FC = () => {
         <PageHeader title={'Todo List'} breadcrumbs={['Todo List']} />
         <Stack direction={'row'} spacing={2} justifyContent={'space-between'} marginBottom={2}>
           <TextField
-            label="Add a task"
-            variant="outlined"
+            label='Add a task'
+            variant='outlined'
             value={task}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setTask(e.target.value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTask(e.target.value)}
             sx={{ flexGrow: 1 }}
           />
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleAddTask}
-          >
+          <Button variant='contained' color='primary' onClick={handleAddTask}>
             Add Task
           </Button>
         </Stack>
         {tasks.length === 0 ? (
-          <Typography variant="body1" textAlign={'center'} marginTop={4} fontWeight={'fontWeightMedium'}>No tasks added yet.</Typography>
+          <Typography variant='body1' textAlign={'center'} marginTop={4} fontWeight={'fontWeightMedium'}>
+            No tasks added yet.
+          </Typography>
         ) : (
           <List>
             {tasks.map((task) => (

@@ -13,7 +13,7 @@ export const Dashboard = () => {
       <PageHeader title={'Dashboard'} />
       <Grid container spacing={4}>
         <Grid container item xs={12} md={12} spacing={2}>
-          <Grid item xs={6} display={'flex'} >
+          <Grid item xs={6} display={'flex'}>
             <WelcomeWidget title={'Welcome'} description={'This is an example sentence to welcome a user'} />
           </Grid>
           <Grid item xs={6}>
@@ -27,15 +27,15 @@ export const Dashboard = () => {
           </Grid>
 
           <Grid item md={3} xs={6}>
-            <StatWidget title={'Users'} value={'19 539'} footerText={'Current Month'}  />
+            <StatWidget title={'Users'} value={'19 539'} footerText={'Current Month'} />
           </Grid>
 
           <Grid item md={3} xs={6}>
-            <StatWidget title={'Sales'} value={'1 521'} footerText={'Current Month'}  />
+            <StatWidget title={'Sales'} value={'1 521'} footerText={'Current Month'} />
           </Grid>
 
           <Grid item md={3} xs={6}>
-            <StatWidget title={'Posts'} value={'126'} footerText={'Current Month'}  />
+            <StatWidget title={'Posts'} value={'126'} footerText={'Current Month'} />
           </Grid>
         </Grid>
 
@@ -50,5 +50,5 @@ export const Dashboard = () => {
         </Grid>
       </Grid>
     </SidebarLayout>
-  )
-}
+  );
+};

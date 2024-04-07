@@ -5,5 +5,5 @@ export const listItemPrimaryTypographyProps = {
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-  }
-}
+  },
+};

@@ -1,13 +1,4 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Stack,
-  TextField,
-} from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField } from '@mui/material';
 import { useCallback, useState } from 'react';
 import { SearchOutlined } from '@mui/icons-material';
 
@@ -25,14 +16,14 @@ export const JobsSearch = () => {
 
   return (
     <Stack direction={'row'} spacing={0.5} alignItems={'stretch'}>
-      <TextField id="outlined-basic" label="Search" variant="filled" fullWidth />
+      <TextField id='outlined-basic' label='Search' variant='filled' fullWidth />
       <FormControl fullWidth>
-        <InputLabel id="salary-select-label">Salary</InputLabel>
+        <InputLabel id='salary-select-label'>Salary</InputLabel>
         <Select
-          labelId="salary-select-label"
-          id="salary-select"
+          labelId='salary-select-label'
+          id='salary-select'
           value={salary}
-          label="Age"
+          label='Age'
           onChange={handleSalaryChange}
           variant={'filled'}
         >
@@ -44,12 +35,12 @@ export const JobsSearch = () => {
       </FormControl>
 
       <FormControl fullWidth>
-        <InputLabel id="location-select-label">Location</InputLabel>
+        <InputLabel id='location-select-label'>Location</InputLabel>
         <Select
-          labelId="location-select-label"
-          id="location-select"
+          labelId='location-select-label'
+          id='location-select'
           value={location}
-          label="Age"
+          label='Age'
           onChange={handleLocationChange}
           variant={'filled'}
           placeholder={'Location'}
@@ -59,7 +50,9 @@ export const JobsSearch = () => {
           <MenuItem value={'new-york'}>New York</MenuItem>
         </Select>
       </FormControl>
-      <Button endIcon={<SearchOutlined />} variant={'contained'} sx={{ minWidth: 'auto' }}>Search</Button>
+      <Button endIcon={<SearchOutlined />} variant={'contained'} sx={{ minWidth: 'auto' }}>
+        Search
+      </Button>
     </Stack>
-  )
-}
+  );
+};
