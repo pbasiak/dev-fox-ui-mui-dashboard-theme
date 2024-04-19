@@ -11,7 +11,7 @@ export const UserProfileHeader = ({ user }: { user: User }) => {
         sx={{ background: `url(${user.profileBackground})`, backgroundSize: 'cover', height: '300px', padding: 2 }}
       >
         <Stack justifyContent={'flex-end'} alignItems={'flex-end'} height={'100%'}>
-          <Button startIcon={<Photo />} variant={'outlined'} color={'info'}>
+          <Button startIcon={<Photo />} variant={'contained'} color={'secondary'}>
             Add photo
           </Button>
         </Stack>

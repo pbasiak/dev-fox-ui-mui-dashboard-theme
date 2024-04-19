@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { amber, common, grey, lightBlue, lightGreen, red } from '@mui/material/colors';
+import { amber, common, green, grey, lightBlue, red } from '@mui/material/colors';
 import { shadThemeShadows } from './shadows.ts';
 
 const background = common['black'];
@@ -15,19 +15,19 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         main: isDarkMode ? common['white'] : common['black'],
       },
       secondary: {
-        main: isDarkMode ? common['white'] : common['black'],
+        main: isDarkMode ? grey['100'] : grey['800'],
       },
       success: {
-        main: lightGreen['A700'],
+        main: green['900'],
       },
       error: {
-        main: red['A400'],
+        main: red['900'],
       },
       info: {
-        main: lightBlue['A400'],
+        main: lightBlue['900'],
       },
       warning: {
-        main: amber['A700'],
+        main: amber['900'],
       },
       divider: isDarkMode ? grey[800] : grey[300],
       background: {
@@ -114,7 +114,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiInputBase: {
         styleOverrides: {
           root: {
-            backgroundColor: isDarkMode ? 'none' : '#FFFFFF',
+            backgroundColor: isDarkMode ? common['black'] : common['white'],
           },
         },
       },
@@ -155,7 +155,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundColor: isDarkMode ? background : '#FFFFFF',
+            backgroundColor: isDarkMode ? background : common['white'],
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           },
         },
@@ -171,7 +171,7 @@ export const shadTheme = (mode: 'light' | 'dark') => {
         styleOverrides: {
           root: {
             backgroundImage: 'none',
-            backgroundColor: isDarkMode ? '#090909' : '#FFFFFF',
+            backgroundColor: isDarkMode ? '#090909' : common['white'],
             border: `1px solid ${isDarkMode ? grey[800] : grey[300]}`,
           },
         },
