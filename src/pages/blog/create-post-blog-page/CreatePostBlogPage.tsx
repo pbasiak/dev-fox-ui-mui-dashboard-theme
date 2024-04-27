@@ -20,7 +20,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BlogPostFieldsNames, BlogPostForm, blogPostFormSchema } from './utils/blogPostForms';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
