@@ -25,6 +25,7 @@
     "@types/jest": "^29.5.12",
     "@vercel/analytics": "^1.2.2",
     "chart.js": "^4.4.2",
+    "is-hotkey": "^0.2.0",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
     "react-chartjs-2": "^5.2.0",
@@ -33,6 +34,7 @@
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.22.3",
     "slate": "^0.102.0",
+    "slate-history": "^0.100.0",
     "slate-react": "^0.102.0",
     "uuid": "^9.0.1",
     "yup": "^1.4.0"
