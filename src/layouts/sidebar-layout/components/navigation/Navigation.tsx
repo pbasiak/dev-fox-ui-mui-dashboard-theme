@@ -14,6 +14,7 @@ import {
   Notes,
   QuestionMarkOutlined,
   ShapeLineOutlined,
+  SystemUpdate,
   ViewStreamOutlined,
 } from '@mui/icons-material';
 import { useMemo } from 'react';
@@ -33,7 +34,7 @@ export function Navigation() {
         icon: (props: any) => <DashboardOutlined {...props} />,
       },
       {
-        header: 'Apps & Pages',
+        header: 'Pages',
       },
       {
         label: 'User',
@@ -104,6 +105,44 @@ export function Navigation() {
         ],
       },
       {
+        label: 'System',
+        icon: (props: any) => <SystemUpdate {...props} />,
+        items: [
+          {
+            path: routes.notFound,
+            label: 'Page not found',
+            icon: (props: any) => <QuestionMarkOutlined {...props} />,
+          },
+          {
+            path: routes.maintenance,
+            label: 'Maintenance',
+            icon: (props: any) => <ConstructionOutlined {...props} />,
+          },
+        ],
+      },
+      {
+        label: 'Authentication',
+        icon: (props: any) => <Login {...props} />,
+        items: [
+          {
+            path: routes.login,
+            label: 'Login',
+          },
+          {
+            path: routes.register,
+            label: 'Register',
+          },
+          {
+            path: routes.resetPassword,
+            label: 'Reset password',
+          },
+          {
+            path: routes.verifyCode,
+            label: 'Verify code',
+          },
+        ],
+      },
+      {
         header: 'Apps',
       },
       {
@@ -115,42 +154,6 @@ export function Navigation() {
         path: routes.todoList,
         label: 'Tasks',
         icon: (props: any) => <ListAltOutlined {...props} />,
-      },
-      {
-        header: 'Other pages',
-      },
-      {
-        path: routes.notFound,
-        label: 'Page not found',
-        icon: (props: any) => <QuestionMarkOutlined {...props} />,
-      },
-      {
-        path: routes.maintenance,
-        label: 'Maintenance',
-        icon: (props: any) => <ConstructionOutlined {...props} />,
-      },
-      {
-        header: 'Authentication',
-      },
-      {
-        path: routes.login,
-        label: 'Login',
-        icon: (props: any) => <Login {...props} />,
-      },
-      {
-        path: routes.register,
-        label: 'Register',
-        icon: (props: any) => <Login {...props} />,
-      },
-      {
-        path: routes.resetPassword,
-        label: 'Reset password',
-        icon: (props: any) => <Login {...props} />,
-      },
-      {
-        path: routes.verifyCode,
-        label: 'Verify code',
-        icon: (props: any) => <Login {...props} />,
       },
       {
         header: 'Documentation',
