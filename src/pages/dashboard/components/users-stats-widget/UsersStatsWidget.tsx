@@ -25,7 +25,7 @@ const getData = ({ backgroundColor }: { backgroundColor: string }) => ({
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
+      label: 'Users',
       data: labels.map(() => faker.number.int({ min: 0, max: 500 })),
       backgroundColor,
     },
