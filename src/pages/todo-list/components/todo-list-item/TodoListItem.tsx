@@ -1,5 +1,5 @@
 import { Checkbox, IconButton, ListItem, ListItemIcon, ListItemText, TextField } from '@mui/material';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Delete, Edit, Save } from '@mui/icons-material';
 import { Task } from '../../types/task';
 
@@ -7,11 +7,17 @@ interface Props {
   task: Task;
   onDelete: (id: string) => void;
   onComplete: (id: string) => void;
+  onEdit: (id: string, name: string) => void;
 }
 
-export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
+export const TodoListItem = ({ task, onDelete, onComplete, onEdit }: Props) => {
   const [editTaskValue, setEditTaskValue] = React.useState<string>(task.name);
   const [editMode, setEditMode] = React.useState<boolean>(false);
+
+  const handleSave = useCallback(() => {
+    onEdit(task.id, editTaskValue);
+    setEditMode(false);
+  }, [editTaskValue]);
 
   return (
     <ListItem
@@ -39,10 +45,7 @@ export const TodoListItem = ({ task, onDelete, onComplete }: Props) => {
       )}
       <ListItemIcon>
         {editMode ? (
-          <IconButton
-            sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }}
-            onClick={() => setEditMode(false)}
-          >
+          <IconButton sx={{ color: task.completed ? 'success.contrastText' : 'text.primary' }} onClick={handleSave}>
             <Save />
           </IconButton>
         ) : (
