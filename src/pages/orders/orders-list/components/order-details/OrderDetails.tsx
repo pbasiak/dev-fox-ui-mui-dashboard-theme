@@ -30,7 +30,7 @@ export const OrderDetails = ({ order, open, onClose }: Props) => {
         <OrderDetailsRow label={'Status'} value={<Chip label={order.status} />} />
         <OrderDetailsRow label={'Total'} value={order.total} />
         <OrderDetailsRow label={'Date'} value={order.date} />
-        <Typography mt={2} variant={'subtitle1'}>
+        <Typography mt={2} mb={2} variant={'h6'} component={'h4'}>
           Products
         </Typography>
         <OrderDetailsProductsList products={order.items} />

@@ -13,7 +13,7 @@ interface Props {
 
 export const OrderDetailsProductsList = ({ products }: Props) => {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ px: 2 }}>
       <Table aria-label='products list'>
         <TableHead>
           <TableRow>
