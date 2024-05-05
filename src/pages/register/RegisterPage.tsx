@@ -51,15 +51,31 @@ export const RegisterPage = () => {
           </Button>
         </Stack>
         <Stack spacing={1}>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Already have an account?{' '}
-            <Link onClick={() => navigate(routes.login)} underline={'hover'} component={'button'}>
+            <Link
+              onClick={() => navigate(routes.login)}
+              underline={'hover'}
+              component={'button'}
+              fontWeight={'fontWeightMedium'}
+            >
               Sign in
             </Link>
           </Typography>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Forgot password?{' '}
-            <Link onClick={() => navigate(routes.resetPassword)} component={'button'} underline={'hover'}>
+            <Link
+              onClick={() => navigate(routes.resetPassword)}
+              component={'button'}
+              underline={'hover'}
+              fontWeight={'fontWeightMedium'}
+            >
               Reset password
             </Link>
           </Typography>

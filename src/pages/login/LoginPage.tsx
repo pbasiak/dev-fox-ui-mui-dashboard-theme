@@ -13,7 +13,7 @@ export const LoginPage = () => {
       <WelcomeContent />
       <Stack spacing={2} sx={{ minWidth: '60%' }} alignItems={'center'}>
         <Typography variant={'h3'} component={'h1'}>
-          Hello again,
+          Hello,
         </Typography>
         <Typography variant={'body1'}>Enter your credentials below</Typography>
         <FormControl fullWidth>
@@ -37,15 +37,31 @@ export const LoginPage = () => {
           </Button>
         </Stack>
         <Stack spacing={1}>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Don't have an account?{' '}
-            <Link onClick={() => navigate(routes.register)} underline={'hover'} component={'button'}>
+            <Link
+              onClick={() => navigate(routes.register)}
+              underline={'hover'}
+              component={'button'}
+              fontWeight={'fontWeightMedium'}
+            >
               Sign up
             </Link>
           </Typography>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Forgot password?{' '}
-            <Link onClick={() => navigate(routes.resetPassword)} component={'button'} underline={'hover'}>
+            <Link
+              onClick={() => navigate(routes.resetPassword)}
+              component={'button'}
+              underline={'hover'}
+              fontWeight={'fontWeightMedium'}
+            >
               Reset password
             </Link>
           </Typography>
