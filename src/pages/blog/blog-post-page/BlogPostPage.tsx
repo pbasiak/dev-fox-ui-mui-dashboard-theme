@@ -8,7 +8,7 @@ export const BlogPostPage = () => {
   if (data !== undefined && isLoading) return null;
 
   return (
-    <Container maxWidth='lg'>
+    <Container maxWidth='md'>
       <PageHeader title={data?.title || ''} breadcrumbs={['Blog', data?.title || '']} />
       <Box sx={{ borderRadius: '6px', overflow: 'hidden', mb: 2, boxShadow: 5 }}>
         <img src={data?.image} alt={data?.title} style={{ maxWidth: '100%', display: 'block' }} />
