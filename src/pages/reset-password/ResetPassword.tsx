@@ -23,15 +23,31 @@ export const ResetPassword = () => {
         </Button>
         <Divider sx={{ width: '100%' }} />
         <Stack spacing={1}>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Don't have an account?{' '}
-            <Link onClick={() => navigate(routes.register)} underline={'hover'} component={'button'}>
+            <Link
+              onClick={() => navigate(routes.register)}
+              underline={'hover'}
+              component={'button'}
+              fontWeight={'fontWeightMedium'}
+            >
               Sign up
             </Link>
           </Typography>
-          <Typography textAlign={'center'} variant={'body2'} sx={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <Typography
+            variant={'body2'}
+            sx={{ display: 'flex', gap: '4px', alignItems: 'center', justifyContent: 'center' }}
+          >
             Already have an account?{' '}
-            <Link onClick={() => navigate(routes.login)} component={'button'} underline={'hover'}>
+            <Link
+              onClick={() => navigate(routes.login)}
+              component={'button'}
+              underline={'hover'}
+              fontWeight={'fontWeightMedium'}
+            >
               Log in
             </Link>
           </Typography>
