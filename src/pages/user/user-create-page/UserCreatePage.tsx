@@ -5,7 +5,7 @@ import { UserForm } from '../components/user-form/UserForm';
 export const UserCreatePage = () => {
   return (
     <Container maxWidth={'lg'}>
-      <PageHeader title={'User create'} breadcrumbs={['User', 'Create']} />
+      <PageHeader title={'Create new user'} breadcrumbs={['User', 'Create']} />
       <UserForm submitButtonText={'Create account'} />
     </Container>
   );

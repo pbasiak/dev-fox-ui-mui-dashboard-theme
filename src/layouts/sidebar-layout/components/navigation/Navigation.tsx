@@ -39,6 +39,7 @@ export function Navigation() {
       {
         label: 'User',
         icon: (props: any) => <AccountBoxOutlined {...props} />,
+        description: 'User management',
         items: [
           {
             path: routes.userAccount,
@@ -61,6 +62,7 @@ export function Navigation() {
       {
         label: 'Blog',
         icon: (props: any) => <Notes {...props} />,
+        description: 'Blog management',
         items: [
           {
             path: routes.blog,
@@ -79,6 +81,7 @@ export function Navigation() {
       {
         label: 'Orders',
         icon: (props: any) => <Abc {...props} />,
+        description: 'Order management',
         items: [
           {
             path: routes.ordersList,
@@ -89,6 +92,7 @@ export function Navigation() {
       {
         label: 'Jobs',
         icon: (props: any) => <Abc {...props} />,
+        description: 'Job management',
         items: [
           {
             path: routes.jobsCreate,
@@ -107,6 +111,7 @@ export function Navigation() {
       {
         label: 'System',
         icon: (props: any) => <SystemUpdate {...props} />,
+        description: 'System pages',
         items: [
           {
             path: routes.notFound,
@@ -123,6 +128,7 @@ export function Navigation() {
       {
         label: 'Authentication',
         icon: (props: any) => <Login {...props} />,
+        description: 'Authentication pages',
         items: [
           {
             path: routes.login,
@@ -195,6 +201,14 @@ export function Navigation() {
         icon: (props: any) => <ViewStreamOutlined {...props} />,
         badgeText: `${notifications?.notifications?.length}`,
         badgeColor: 'primary',
+      },
+      {
+        path: '',
+        label: 'Example',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'info',
+        description: 'This is a description',
       },
       {
         path: '',

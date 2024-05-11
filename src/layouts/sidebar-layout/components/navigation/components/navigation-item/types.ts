@@ -11,6 +11,8 @@ interface NavigationItemIcon {
 export interface NavigationItemBaseType {
   label: string;
   active?: boolean;
+  disabled?: boolean;
+  description?: string;
 }
 
 export interface NavigationItemSimpleType extends NavigationItemBaseType, NavigationItemIcon {
