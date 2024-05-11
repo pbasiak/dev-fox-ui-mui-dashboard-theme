@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { alpha, createTheme } from '@mui/material';
 import { themeShadows } from './shadows.ts';
 import { amber, blue, blueGrey, grey, lightBlue, lightGreen, pink, red } from '@mui/material/colors';
 
@@ -13,6 +13,7 @@ export const appTheme = (mode: 'light' | 'dark') => {
       mode,
       primary: {
         main: blue['A700'],
+        light: isDarkMode ? blue['A400'] : alpha(blue['A100'], 0.2),
       },
       secondary: {
         main: pink['A700'],
