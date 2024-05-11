@@ -29,7 +29,7 @@ export const NavigationItemSimple = ({ item, nested = false }: Props) => {
   const shouldDisplayLaunchIcon = item?.external && !shouldDisplayBadge;
 
   return (
-    <NavigationListItemButton nested={nested} onClick={handleClick} active={isActive}>
+    <NavigationListItemButton nested={nested} onClick={handleClick} active={isActive} disabled={item.disabled}>
       {!nested && 'icon' in item ? (
         <NavigationListItemIcon>{item.icon(iconProps)}</NavigationListItemIcon>
       ) : (

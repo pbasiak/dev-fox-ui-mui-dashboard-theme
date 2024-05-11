@@ -29,7 +29,7 @@ export const NavigationItemNested = ({ item }: Props) => {
 
   return (
     <>
-      <NavigationListItemButton onClick={handleToggleOpen}>
+      <NavigationListItemButton onClick={handleToggleOpen} disabled={item.disabled}>
         <NavigationListItemIcon>{item.icon({})}</NavigationListItemIcon>
         <Stack flex={1}>
           <ListItemText
