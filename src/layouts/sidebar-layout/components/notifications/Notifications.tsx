@@ -4,20 +4,18 @@ import {
   useNotifications,
 } from '../../../../hooks/api/use-notifications/useNotifications';
 import IconButton from '@mui/material/IconButton';
-import { Badge, Box, Button, Menu, MenuItem, Stack, Typography } from '@mui/material';
+import { Badge, Box, Button, Menu, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Event, Info, MessageOutlined, NotificationsOutlined } from '@mui/icons-material';
+import { NotificationsMenuItem } from './Notifications.styled.ts';
 
 export const MessageContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'status' })<{
   status: NotificationStatus;
-}>(({ theme, status }) => ({
-  borderLeft: '2px solid transparent',
-  borderColor: status === NotificationStatus.Unread ? theme.palette.primary.main : 'transparent',
-  paddingLeft: theme.spacing(1),
+}>(({ theme }) => ({
   display: 'flex',
+  gap: theme.spacing(1),
   alignItems: 'center',
-  color: status === NotificationStatus.Unread ? theme.palette.primary.main : theme.palette.text.primary,
 }));
 
 export const Notifications = () => {
@@ -61,7 +59,7 @@ export const Notifications = () => {
         onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
-          sx: { paddingBottom: 0 },
+          sx: { padding: 1, gap: 2 },
         }}
       >
         <Typography
@@ -75,7 +73,11 @@ export const Notifications = () => {
           Notifications
         </Typography>
         {notificationsData?.notifications.map((notification) => (
-          <MenuItem key={notification.id} sx={{ fontSize: 14, maxWidth: 320, whiteSpace: 'normal' }}>
+          <NotificationsMenuItem
+            key={notification.id}
+            status={notification.status}
+            sx={{ fontSize: 14, maxWidth: 320, whiteSpace: 'normal', borderRadius: 1 }}
+          >
             <MessageContainer status={notification.status}>
               {notificationIcon(notification.type)}
               <Stack ml={1}>
@@ -85,10 +87,10 @@ export const Notifications = () => {
                 </Typography>
               </Stack>
             </MessageContainer>
-          </MenuItem>
+          </NotificationsMenuItem>
         ))}
         <Box mt={1}>
-          <Button variant={'contained'} fullWidth size={'small'}>
+          <Button variant={'contained'} fullWidth size={'medium'}>
             View all
           </Button>
         </Box>

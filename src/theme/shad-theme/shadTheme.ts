@@ -12,7 +12,9 @@ export const shadTheme = (mode: 'light' | 'dark') => {
     palette: {
       mode,
       primary: {
-        main: isDarkMode ? common['white'] : common['black'],
+        dark: isDarkMode ? grey['200'] : common['black'],
+        main: isDarkMode ? common['white'] : grey['900'],
+        light: isDarkMode ? grey['800'] : grey['100'],
       },
       secondary: {
         main: isDarkMode ? grey['100'] : grey['800'],
