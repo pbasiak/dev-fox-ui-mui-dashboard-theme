@@ -4,7 +4,7 @@ import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps
 import { NavigationListItemButton, NavigationListItemIcon, NavigationListItemNestedIcon } from '../styled';
 import { useNavigate } from 'react-router-dom';
 import { NavigationItemBadge } from './styled';
-import { Stack, ListItemText } from '@mui/material';
+import { Stack, ListItemText, Typography } from '@mui/material';
 import { Launch, Circle } from '@mui/icons-material';
 
 interface Props {
@@ -29,17 +29,39 @@ export const NavigationItemSimple = ({ item, nested = false }: Props) => {
   const shouldDisplayLaunchIcon = item?.external && !shouldDisplayBadge;
 
   return (
-    <NavigationListItemButton nested={nested} onClick={handleClick} active={isActive}>
-      <Stack direction={'row'} flex={1} alignItems={'center'} overflow={'hidden'}>
-        {!nested && 'icon' in item ? (
-          <NavigationListItemIcon>{item.icon(iconProps)}</NavigationListItemIcon>
-        ) : (
-          <NavigationListItemNestedIcon>
-            <Circle fontSize={'inherit'} />
-          </NavigationListItemNestedIcon>
-        )}
-
-        <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
+    <NavigationListItemButton nested={nested} onClick={handleClick} active={isActive} disabled={item.disabled}>
+      {!nested && 'icon' in item ? (
+        <NavigationListItemIcon>{item.icon(iconProps)}</NavigationListItemIcon>
+      ) : (
+        <NavigationListItemNestedIcon>
+          <Circle fontSize={'inherit'} />
+        </NavigationListItemNestedIcon>
+      )}
+      <Stack
+        justifyContent={'flex-start'}
+        alignItems={'flex-start'}
+        textOverflow={'ellipsis'}
+        whiteSpace={'nowrap'}
+        minWidth={0}
+        overflow={'hidden'}
+        flex={1}
+      >
+        <ListItemText
+          primary={item.label}
+          primaryTypographyProps={listItemPrimaryTypographyProps}
+          sx={{ margin: 0, minWidth: 0, maxWidth: '100%' }}
+        />
+        {item?.description ? (
+          <Typography
+            variant={'caption'}
+            overflow={'hidden'}
+            textOverflow={'ellipsis'}
+            whiteSpace={'nowrap'}
+            maxWidth={'100%'}
+          >
+            {item.description}
+          </Typography>
+        ) : null}
       </Stack>
       <Stack direction={'row'} alignItems={'center'} spacing={1}>
         {shouldDisplayLaunchIcon ? <Launch /> : null}

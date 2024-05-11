@@ -36,7 +36,7 @@ export const appTheme = (mode: 'light' | 'dark') => {
       },
     },
     shape: {
-      borderRadius: 4,
+      borderRadius: 8,
     },
     spacing: 8,
     typography: {

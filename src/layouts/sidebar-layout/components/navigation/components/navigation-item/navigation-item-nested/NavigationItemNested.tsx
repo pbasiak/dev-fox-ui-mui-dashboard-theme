@@ -9,6 +9,7 @@ import { NavigationItemSimple } from '../navigation-item-simple/NavigationItemSi
 import { NavigationListItemButton, NavigationListItemIcon } from '../styled';
 import { useCallback } from 'react';
 import { useNavigation } from '../../../hooks/use-navigation/useNavigation';
+import { Stack, Typography } from '@mui/material';
 
 interface Props {
   item: NavigationItemNestedType;
@@ -28,13 +29,20 @@ export const NavigationItemNested = ({ item }: Props) => {
 
   return (
     <>
-      <NavigationListItemButton onClick={handleToggleOpen}>
+      <NavigationListItemButton onClick={handleToggleOpen} disabled={item.disabled}>
         <NavigationListItemIcon>{item.icon({})}</NavigationListItemIcon>
-        <ListItemText primary={item.label} primaryTypographyProps={listItemPrimaryTypographyProps} />
+        <Stack flex={1}>
+          <ListItemText
+            primary={item.label}
+            primaryTypographyProps={listItemPrimaryTypographyProps}
+            sx={{ margin: 0 }}
+          />
+          {item?.description ? <Typography variant={'caption'}>{item.description}</Typography> : null}
+        </Stack>
         {isOpen ? <ExpandLess /> : <ExpandMore />}
       </NavigationListItemButton>
       <Collapse in={isOpen} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding>
+        <List component='div' disablePadding sx={{ marginLeft: 2 }}>
           {nestedItems}
         </List>
       </Collapse>

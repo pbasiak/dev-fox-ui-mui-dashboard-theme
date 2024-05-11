@@ -39,6 +39,7 @@ export function Navigation() {
       {
         label: 'User',
         icon: (props: any) => <AccountBoxOutlined {...props} />,
+        description: 'User management',
         items: [
           {
             path: routes.userAccount,
@@ -61,6 +62,7 @@ export function Navigation() {
       {
         label: 'Blog',
         icon: (props: any) => <Notes {...props} />,
+        description: 'Blog management',
         items: [
           {
             path: routes.blog,
@@ -79,6 +81,7 @@ export function Navigation() {
       {
         label: 'Orders',
         icon: (props: any) => <Abc {...props} />,
+        description: 'Order management',
         items: [
           {
             path: routes.ordersList,
@@ -89,6 +92,7 @@ export function Navigation() {
       {
         label: 'Jobs',
         icon: (props: any) => <Abc {...props} />,
+        description: 'Job management',
         items: [
           {
             path: routes.jobsCreate,
@@ -107,6 +111,7 @@ export function Navigation() {
       {
         label: 'System',
         icon: (props: any) => <SystemUpdate {...props} />,
+        description: 'System pages',
         items: [
           {
             path: routes.notFound,
@@ -123,6 +128,7 @@ export function Navigation() {
       {
         label: 'Authentication',
         icon: (props: any) => <Login {...props} />,
+        description: 'Authentication pages',
         items: [
           {
             path: routes.login,
@@ -198,21 +204,37 @@ export function Navigation() {
       },
       {
         path: '',
-        label: 'Text (primary)',
+        label: 'Description',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeText: 'New',
+        badgeColor: 'info',
+        description: 'This is a description',
+      },
+      {
+        path: '',
+        label: 'Disabled',
+        icon: (props: any) => <ViewStreamOutlined {...props} />,
+        badgeColor: 'info',
+        disabled: true,
+        description: 'This is a disabled item',
+      },
+      {
+        path: '',
+        label: 'Color primary',
         icon: (props: any) => <ViewStreamOutlined {...props} />,
         badgeText: 'New',
         badgeColor: 'primary',
       },
       {
         path: '',
-        label: 'Text (secondary)',
+        label: 'Color secondary',
         icon: (props: any) => <ViewStreamOutlined {...props} />,
         badgeText: 'New',
         badgeColor: 'secondary',
       },
       {
         path: '',
-        label: 'Text (info)',
+        label: 'Color info',
         icon: (props: any) => <ViewStreamOutlined {...props} />,
         badgeText: 'New',
         badgeColor: 'info',
