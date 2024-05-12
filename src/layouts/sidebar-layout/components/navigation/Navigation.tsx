@@ -54,6 +54,10 @@ export function Navigation() {
             label: 'List',
           },
           {
+            path: routes.userEdit,
+            label: 'Edit',
+          },
+          {
             path: routes.userCreate,
             label: 'Create',
           },

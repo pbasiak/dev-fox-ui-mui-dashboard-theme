@@ -32,6 +32,7 @@ import React, { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { getThemeByName } from './theme/theme.ts';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
+import { UserEditPage } from './pages/user/user-edit-page/UserEditPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: routes.userList,
         element: <UserListPage />,
+      },
+      {
+        path: routes.userEdit,
+        element: <UserEditPage />,
       },
       {
         path: routes.userCreate,
