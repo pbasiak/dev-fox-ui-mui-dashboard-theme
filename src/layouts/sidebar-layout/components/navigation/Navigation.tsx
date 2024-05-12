@@ -47,7 +47,7 @@ export function Navigation() {
           },
           {
             path: routes.userProfile,
-            label: 'Public profile',
+            label: 'Profile',
           },
           {
             path: routes.userList,
@@ -70,7 +70,7 @@ export function Navigation() {
           },
           {
             path: routes.blogPost,
-            label: 'Post',
+            label: 'Details',
           },
           {
             path: routes.blogCreatePost,
@@ -115,12 +115,12 @@ export function Navigation() {
         items: [
           {
             path: routes.notFound,
-            label: 'Page not found',
+            label: '(404) Page not found',
             icon: (props: any) => <QuestionMarkOutlined {...props} />,
           },
           {
             path: routes.maintenance,
-            label: 'Maintenance',
+            label: 'Under construction',
             icon: (props: any) => <ConstructionOutlined {...props} />,
           },
         ],
@@ -168,10 +168,6 @@ export function Navigation() {
         label: 'Theme',
         icon: (props: any) => <DesignServicesOutlined {...props} />,
         items: [
-          {
-            path: routes.themeGeneral,
-            label: 'General',
-          },
           {
             path: routes.themeTypography,
             label: 'Typography',
