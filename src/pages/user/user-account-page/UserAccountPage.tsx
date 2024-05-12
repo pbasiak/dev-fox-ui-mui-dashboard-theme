@@ -50,7 +50,22 @@ export const UserAccountPage = () => {
     iconPosition: 'start',
   };
 
-  if (isLoading) return <Loader />;
+  console.log(user);
+
+  const defaultValues = user
+    ? {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        phone: user.phone,
+        username: user.username,
+        image: user.image,
+        age: user.age,
+        birthDate: user.birthDate,
+      }
+    : undefined;
+
+  if (isLoading || !user) return <Loader />;
 
   return (
     <Container maxWidth='lg'>
@@ -64,7 +79,7 @@ export const UserAccountPage = () => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <UserForm user={user} />
+          <UserForm defaultValues={defaultValues} />
         </TabPanel>
         <TabPanel value={value} index={1}>
           <SocialLinksForm />

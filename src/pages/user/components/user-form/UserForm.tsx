@@ -16,14 +16,14 @@ import { AccountGeneralFieldsNames, AccountGeneralForm, accountGeneralFormSchema
 import { useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { User } from '../../../../types/user/userTypes';
+import { UserFormDefaultValues } from './types/userFormDefaultValues.ts';
 
 interface Props {
-  user?: User;
+  defaultValues?: UserFormDefaultValues;
   submitButtonText?: string;
 }
 
-export const UserForm = ({ user, submitButtonText = 'Save changes' }: Props) => {
+export const UserForm = ({ defaultValues, submitButtonText = 'Save changes' }: Props) => {
   const {
     register,
     handleSubmit,
@@ -31,14 +31,7 @@ export const UserForm = ({ user, submitButtonText = 'Save changes' }: Props) => 
     getValues,
   } = useForm<AccountGeneralForm>({
     resolver: yupResolver(accountGeneralFormSchema),
-    defaultValues: {
-      [AccountGeneralFieldsNames.firstName]: user?.firstName || '',
-      [AccountGeneralFieldsNames.lastName]: user?.lastName || '',
-      [AccountGeneralFieldsNames.email]: user?.email || '',
-      [AccountGeneralFieldsNames.phone]: user?.phone || '',
-      [AccountGeneralFieldsNames.username]: user?.username || '',
-      [AccountGeneralFieldsNames.image]: user?.image || '',
-    },
+    defaultValues,
   });
 
   const userFormValues = getValues();
