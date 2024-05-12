@@ -11,6 +11,7 @@ export interface UserAddress {
 
 export interface User {
   id: number | null;
+  age: number;
   firstName: string;
   lastName: string;
   image: string;
