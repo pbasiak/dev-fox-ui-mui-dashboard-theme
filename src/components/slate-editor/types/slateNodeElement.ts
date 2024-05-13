@@ -51,6 +51,30 @@ export type HeadingTwoElement = {
   children: CustomText[];
 };
 
+export type HeadingThreeElement = {
+  type: 'heading-three';
+  align?: string;
+  children: CustomText[];
+};
+
+export type HeadingFourElement = {
+  type: 'heading-four';
+  align?: string;
+  children: CustomText[];
+};
+
+export type HeadingFiveElement = {
+  type: 'heading-five';
+  align?: string;
+  children: CustomText[];
+};
+
+export type HeadingSixElement = {
+  type: 'heading-six';
+  align?: string;
+  children: CustomText[];
+};
+
 export type NumberedListElement = {
   type: 'numbered-list';
   align?: string;
@@ -64,6 +88,10 @@ export type CustomElement =
   | BulletedListElement
   | HeadingOneElement
   | HeadingTwoElement
+  | HeadingThreeElement
+  | HeadingFourElement
+  | HeadingFiveElement
+  | HeadingSixElement
   | NumberedListElement;
 
 declare module 'slate' {

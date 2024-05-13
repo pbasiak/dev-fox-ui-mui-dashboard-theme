@@ -1,7 +1,7 @@
 import { Editable, RenderElementProps, RenderLeafProps, Slate, withReact } from 'slate-react';
 import { useCallback, useMemo } from 'react';
 import { createEditor, Descendant } from 'slate';
-import { List, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { withHistory } from 'slate-history';
 import isHotkey from 'is-hotkey';
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
@@ -24,57 +24,100 @@ import { MarkButton } from './components/mark-button/MarkButton.tsx';
 import { BlockButton } from './components/block-button/BlockButton.tsx';
 import { Element } from './components/element/Element.tsx';
 import { Leaf } from './components/leaf/Leaf.tsx';
+import { TypographyType } from './components/typography-type/TypographyType.tsx';
 
 interface Props {
   onChange: (value: Descendant[]) => void;
   placeholder?: string;
+  readOnly: boolean;
 }
 
 const initialValue: Descendant[] = [
   {
-    type: 'paragraph',
+    type: 'heading-one',
     children: [
-      { text: 'This is editable ' },
-      { text: 'rich', bold: true },
-      { text: ' text, ' },
-      { text: 'much', italic: true },
-      { text: ' better than a ' },
-      { text: '<textarea>', code: true },
-      { text: '!' },
+      {
+        text: 'Heading 1',
+      },
+    ],
+  },
+  {
+    type: 'heading-two',
+    children: [
+      {
+        text: 'Heading 2',
+      },
+    ],
+  },
+  {
+    type: 'heading-three',
+    children: [
+      {
+        text: 'Heading 3',
+      },
+    ],
+  },
+  {
+    type: 'heading-four',
+    children: [
+      {
+        text: 'Heading 4',
+      },
+    ],
+  },
+  {
+    type: 'heading-five',
+    children: [
+      {
+        text: 'Heading 5',
+      },
+    ],
+  },
+  {
+    type: 'heading-six',
+    children: [
+      {
+        text: 'Heading 6',
+      },
     ],
   },
   {
     type: 'paragraph',
     children: [
       {
-        text: "Since it's rich text, you can do things like turn a selection of text ",
-      },
-      { text: 'bold', bold: true },
-      {
-        text: ', or add a semantically rendered block quote in the middle of the page, like this:',
+        text: "Since it's rich text, you can do things like turn a selection of text bold, or add a semantically rendered block quote in the middle of the page, like this:",
       },
     ],
   },
   {
     type: 'block-quote',
-    children: [{ text: 'A wise quote.' }],
+    children: [
+      {
+        text: 'A wise quote.',
+      },
+    ],
   },
   {
     type: 'paragraph',
     align: 'center',
-    children: [{ text: 'Try it out for yourself!' }],
+    children: [
+      {
+        text: 'Try it out for yourself!',
+      },
+    ],
   },
 ];
 
-export const SlateEditor = ({ onChange, placeholder }: Props) => {
+export const SlateEditor = ({ onChange, placeholder, readOnly }: Props) => {
   const renderElement = useCallback((props: RenderElementProps) => <Element {...props} />, []);
   const renderLeaf = useCallback((props: RenderLeafProps) => <Leaf {...props} />, []);
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
 
   return (
-    <SlateEditorContainer>
+    <SlateEditorContainer readOnly={readOnly}>
       <Slate editor={editor} initialValue={initialValue} onChange={onChange}>
-        <List>
+        <Stack direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
+          <TypographyType editor={editor} />
           <MarkButton format='bold' icon={<FormatBoldIcon />} />
           <MarkButton format='italic' icon={<FormatItalic />} />
           <MarkButton format='underline' icon={<FormatUnderlined />} />
@@ -88,12 +131,13 @@ export const SlateEditor = ({ onChange, placeholder }: Props) => {
           <BlockButton format='center' icon={<FormatAlignCenter />} />
           <BlockButton format='right' icon={<FormatAlignRight />} />
           <BlockButton format='justify' icon={<FormatAlignJustify />} />
-        </List>
+        </Stack>
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}
           placeholder={placeholder}
           spellCheck
+          readOnly={readOnly}
           autoFocus
           onKeyDown={(event) => {
             for (const hotkey in HOTKEYS) {
