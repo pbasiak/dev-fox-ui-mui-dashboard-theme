@@ -1,7 +1,7 @@
 import { Editable, RenderElementProps, RenderLeafProps, Slate, withReact } from 'slate-react';
 import { useCallback, useMemo } from 'react';
 import { createEditor, Descendant } from 'slate';
-import { Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import { withHistory } from 'slate-history';
 import isHotkey from 'is-hotkey';
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
@@ -122,8 +122,6 @@ export const SlateEditor = ({ onChange, placeholder, readOnly }: Props) => {
           <MarkButton format='italic' icon={<FormatItalic />} />
           <MarkButton format='underline' icon={<FormatUnderlined />} />
           <MarkButton format='code' icon={<Code />} />
-          <BlockButton format='heading-one' icon={<Typography fontWeight={'fontWeightBold'}>H1</Typography>} />
-          <BlockButton format='heading-two' icon={<Typography fontWeight={'fontWeightBold'}>H2</Typography>} />
           <BlockButton format='block-quote' icon={<FormatQuote />} />
           <BlockButton format='numbered-list' icon={<FormatListNumbered />} />
           <BlockButton format='bulleted-list' icon={<FormatListBulleted />} />
