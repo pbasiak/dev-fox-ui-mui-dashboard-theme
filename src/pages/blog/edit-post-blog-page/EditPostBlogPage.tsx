@@ -143,15 +143,15 @@ export const EditPostBlogPage = () => {
   return (
     <Container maxWidth={'xl'}>
       <PageHeader
-        title={'Create post'}
-        breadcrumbs={['Blog', 'Create post']}
+        title={'New opportunity for developers & product engineers'}
+        breadcrumbs={['Blog', 'New opportunity for developers & product engineers']}
         renderRight={
           <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
             <Button variant={'outlined'} onClick={() => navigate(routes.blog)}>
               Cancel
             </Button>
             <Button variant={'contained'} onClick={handlePublish}>
-              Publish
+              Update
             </Button>
           </Stack>
         }
