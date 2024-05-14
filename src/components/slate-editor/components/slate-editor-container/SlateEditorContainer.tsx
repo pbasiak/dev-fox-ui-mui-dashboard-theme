@@ -1,9 +1,10 @@
 import { Box, styled } from '@mui/material';
 
-export const SlateEditorContainer = styled(Box)(({ theme }) => ({
-  '& > div': {
-    border: `1px solid #c0c0c0`,
-    borderColor: theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.23)' : 'rgba(0, 0, 0, 0.23)',
+export const SlateEditorContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'readOnly' })<{
+  readOnly?: boolean;
+}>(({ theme, readOnly }) => ({
+  '& > div[role="textbox"]': {
+    border: readOnly ? 0 : `1px solid ${theme.palette.divider}`,
     borderRadius: theme.shape.borderRadius,
     padding: `calc(${theme.spacing(2)} + 1px)`,
     '&:hover': {

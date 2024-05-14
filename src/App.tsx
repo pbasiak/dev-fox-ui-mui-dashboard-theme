@@ -33,6 +33,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { getThemeByName } from './theme/theme.ts';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
 import { UserEditPage } from './pages/user/user-edit-page/UserEditPage.tsx';
+import { EditPostBlogPage } from './pages/blog/edit-post-blog-page/EditPostBlogPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: routes.blogCreatePost,
         element: <CreatePostBlogPage />,
+      },
+      {
+        path: routes.blogEditPost,
+        element: <EditPostBlogPage />,
       },
       {
         path: routes.themeColors,

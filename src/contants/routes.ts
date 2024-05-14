@@ -15,6 +15,7 @@ export const routes = {
   userEdit: `${userPrefix}/edit`,
   blog: `${blogPrefix}/list`,
   blogCreatePost: `${blogPrefix}/create`,
+  blogEditPost: `${blogPrefix}/edit`,
   blogPost: `${blogPrefix}/post`,
   themeTypography: `${themePrefix}/typography`,
   themeColors: `${themePrefix}/colors`,
