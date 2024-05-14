@@ -77,6 +77,10 @@ export function Navigation() {
             label: 'Details',
           },
           {
+            path: routes.blogEditPost,
+            label: 'Edit',
+          },
+          {
             path: routes.blogCreatePost,
             label: 'Create',
           },

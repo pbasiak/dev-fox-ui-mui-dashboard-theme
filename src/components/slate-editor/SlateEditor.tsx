@@ -29,93 +29,25 @@ import { TypographyType } from './components/typography-type/TypographyType.tsx'
 interface Props {
   onChange: (value: Descendant[]) => void;
   placeholder?: string;
-  readOnly: boolean;
+  readOnly?: boolean;
+  initialValue?: Descendant[];
 }
 
-const initialValue: Descendant[] = [
-  {
-    type: 'heading-one',
-    children: [
-      {
-        text: 'Heading 1',
-      },
-    ],
-  },
-  {
-    type: 'heading-two',
-    children: [
-      {
-        text: 'Heading 2',
-      },
-    ],
-  },
-  {
-    type: 'heading-three',
-    children: [
-      {
-        text: 'Heading 3',
-      },
-    ],
-  },
-  {
-    type: 'heading-four',
-    children: [
-      {
-        text: 'Heading 4',
-      },
-    ],
-  },
-  {
-    type: 'heading-five',
-    children: [
-      {
-        text: 'Heading 5',
-      },
-    ],
-  },
-  {
-    type: 'heading-six',
-    children: [
-      {
-        text: 'Heading 6',
-      },
-    ],
-  },
-  {
-    type: 'paragraph',
-    children: [
-      {
-        text: "Since it's rich text, you can do things like turn a selection of text bold, or add a semantically rendered block quote in the middle of the page, like this:",
-      },
-    ],
-  },
-  {
-    type: 'block-quote',
-    children: [
-      {
-        text: 'A wise quote.',
-      },
-    ],
-  },
-  {
-    type: 'paragraph',
-    align: 'center',
-    children: [
-      {
-        text: 'Try it out for yourself!',
-      },
-    ],
-  },
-];
-
-export const SlateEditor = ({ onChange, placeholder, readOnly }: Props) => {
+export const SlateEditor = ({ onChange, placeholder, readOnly, initialValue }: Props) => {
   const renderElement = useCallback((props: RenderElementProps) => <Element {...props} />, []);
   const renderLeaf = useCallback((props: RenderLeafProps) => <Leaf {...props} />, []);
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
 
+  const editorValue = initialValue || [
+    {
+      type: 'paragraph',
+      children: [{ text: '' }],
+    },
+  ];
+
   return (
     <SlateEditorContainer readOnly={readOnly}>
-      <Slate editor={editor} initialValue={initialValue} onChange={onChange}>
+      <Slate editor={editor} onChange={onChange} initialValue={editorValue}>
         <Stack direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
           <TypographyType editor={editor} />
           <MarkButton format='bold' icon={<FormatBoldIcon />} />

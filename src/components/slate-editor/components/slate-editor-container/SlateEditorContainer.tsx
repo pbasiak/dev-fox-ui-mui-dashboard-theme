@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
 
 export const SlateEditorContainer = styled(Box, { shouldForwardProp: (prop) => prop !== 'readOnly' })<{
-  readOnly: boolean;
+  readOnly?: boolean;
 }>(({ theme, readOnly }) => ({
   '& > div[role="textbox"]': {
     border: readOnly ? 0 : `1px solid ${theme.palette.divider}`,
