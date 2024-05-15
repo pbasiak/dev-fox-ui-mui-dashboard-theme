@@ -27,7 +27,7 @@ import { Leaf } from './components/leaf/Leaf.tsx';
 import { TypographyType } from './components/typography-type/TypographyType.tsx';
 
 interface Props {
-  onChange: (value: Descendant[]) => void;
+  onChange?: (value: Descendant[]) => void;
   placeholder?: string;
   readOnly?: boolean;
   initialValue?: Descendant[];
@@ -48,20 +48,22 @@ export const SlateEditor = ({ onChange, placeholder, readOnly, initialValue }: P
   return (
     <SlateEditorContainer readOnly={readOnly}>
       <Slate editor={editor} onChange={onChange} initialValue={editorValue}>
-        <Stack direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
-          <TypographyType editor={editor} />
-          <MarkButton format='bold' icon={<FormatBoldIcon />} />
-          <MarkButton format='italic' icon={<FormatItalic />} />
-          <MarkButton format='underline' icon={<FormatUnderlined />} />
-          <MarkButton format='code' icon={<Code />} />
-          <BlockButton format='block-quote' icon={<FormatQuote />} />
-          <BlockButton format='numbered-list' icon={<FormatListNumbered />} />
-          <BlockButton format='bulleted-list' icon={<FormatListBulleted />} />
-          <BlockButton format='left' icon={<FormatAlignLeft />} />
-          <BlockButton format='center' icon={<FormatAlignCenter />} />
-          <BlockButton format='right' icon={<FormatAlignRight />} />
-          <BlockButton format='justify' icon={<FormatAlignJustify />} />
-        </Stack>
+        {readOnly ? null : (
+          <Stack direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
+            <TypographyType editor={editor} />
+            <MarkButton format='bold' icon={<FormatBoldIcon />} />
+            <MarkButton format='italic' icon={<FormatItalic />} />
+            <MarkButton format='underline' icon={<FormatUnderlined />} />
+            <MarkButton format='code' icon={<Code />} />
+            <BlockButton format='block-quote' icon={<FormatQuote />} />
+            <BlockButton format='numbered-list' icon={<FormatListNumbered />} />
+            <BlockButton format='bulleted-list' icon={<FormatListBulleted />} />
+            <BlockButton format='left' icon={<FormatAlignLeft />} />
+            <BlockButton format='center' icon={<FormatAlignCenter />} />
+            <BlockButton format='right' icon={<FormatAlignRight />} />
+            <BlockButton format='justify' icon={<FormatAlignJustify />} />
+          </Stack>
+        )}
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}
