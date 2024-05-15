@@ -26,6 +26,7 @@ import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
 import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 import { Descendant } from 'slate';
+
 const initialValue: Descendant[] = [
   {
     type: 'heading-one',
@@ -101,6 +102,7 @@ const initialValue: Descendant[] = [
     ],
   },
 ];
+
 export const EditPostBlogPage = () => {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
