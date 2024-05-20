@@ -1,103 +1,558 @@
 {
   "orders": [
     {
-      "id": 1,
-      "customer": "John Doe",
-      "items": [
+      "id": "1",
+      "customer": {
+        "customer_id": "101",
+        "name": "Alice Smith",
+        "email": "alice.smith@example.com",
+        "phone": "+1234567890",
+        "address": {
+          "street": "456 Elm St",
+          "city": "Springfield",
+          "state": "IL",
+          "zip": "62701",
+          "country": "USA"
+        }
+      },
+      "products": [
         {
-          "id": 1001,
-          "name": "T-Shirt",
+          "product_id": "SKU001",
+          "name": "Product X",
+          "price": 29.99,
+          "quantity": 1
+        }
+      ],
+      "total": 29.99,
+      "payment_method": "Credit Card",
+      "status": "Shipped",
+      "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z1234W5678901234",
+        "estimated_delivery_date": "2024-05-18"
+      },
+      "notes": ""
+    },
+    {
+      "id": "2",
+      "customer": {
+        "customer_id": "102",
+        "name": "Bob Johnson",
+        "email": "bob.johnson@example.com",
+        "phone": "+1987654321",
+        "address": {
+          "street": "789 Oak St",
+          "city": "Oakland",
+          "state": "CA",
+          "zip": "94601",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU002",
+          "name": "Product Y",
+          "price": 39.99,
+          "quantity": 2
+        }
+      ],
+      "total": 79.98,
+      "payment_method": "PayPal",
+      "status": "Pending",
+      "delivery": {
+        "carrier": "FedEx",
+        "tracking_number": "",
+        "estimated_delivery_date": ""
+      },
+      "notes": "Customer requested gift wrapping."
+    },
+    {
+      "id": "3",
+      "customer": {
+        "customer_id": "103",
+        "name": "Charlie Brown",
+        "email": "charlie.brown@example.com",
+        "phone": "+1122334455",
+        "address": {
+          "street": "321 Pine St",
+          "city": "Portland",
+          "state": "OR",
+          "zip": "97201",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU003",
+          "name": "Product Z",
+          "price": 49.99,
+          "quantity": 1
+        },
+        {
+          "product_id": "SKU004",
+          "name": "Product W",
+          "price": 19.99,
+          "quantity": 3
+        }
+      ],
+      "total": 129.95,
+      "payment_method": "Credit Card",
+      "status": "Processing",
+      "delivery": {
+        "carrier": "USPS",
+        "tracking_number": "9405501234567890123456",
+        "estimated_delivery_date": "2024-05-22"
+      },
+      "notes": ""
+    },
+    {
+      "id": "4",
+      "customer": {
+        "customer_id": "104",
+        "name": "David Wilson",
+        "email": "david.wilson@example.com",
+        "phone": "+1654321876",
+        "address": {
+          "street": "555 Maple St",
+          "city": "Seattle",
+          "state": "WA",
+          "zip": "98101",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU005",
+          "name": "Product A",
           "price": 19.99,
           "quantity": 2
         },
         {
-          "id": 1002,
-          "name": "Jeans",
-          "price": 39.99,
+          "product_id": "SKU006",
+          "name": "Product B",
+          "price": 24.99,
           "quantity": 1
         }
       ],
-      "total": 79.97,
-      "date": "2022-04-01",
-      "status": "pending"
+      "total": 64.97,
+      "payment_method": "Debit Card",
+      "status": "Shipped",
+      "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z9876W5432109876",
+        "estimated_delivery_date": "2024-05-20"
+      },
+      "notes": ""
     },
     {
-      "id": 2,
-      "customer": "Jane Smith",
-      "items": [
+      "id": "5",
+      "customer": {
+        "customer_id": "105",
+        "name": "Emma Davis",
+        "email": "emma.davis@example.com",
+        "phone": "+1789456123",
+        "address": {
+          "street": "888 Pine St",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80202",
+          "country": "USA"
+        }
+      },
+      "products": [
         {
-          "id": 1003,
-          "name": "Sneakers",
-          "price": 59.99,
+          "product_id": "SKU007",
+          "name": "Product C",
+          "price": 34.99,
           "quantity": 1
         },
         {
-          "id": 1004,
-          "name": "Backpack",
+          "product_id": "SKU008",
+          "name": "Product D",
+          "price": 29.99,
+          "quantity": 2
+        }
+      ],
+      "total": 94.97,
+      "payment_method": "Credit Card",
+      "status": "Pending",
+      "delivery": {
+        "carrier": "FedEx",
+        "tracking_number": "",
+        "estimated_delivery_date": ""
+      },
+      "notes": "Customer requested expedited shipping."
+    },
+    {
+      "id": "6",
+      "customer": {
+        "customer_id": "106",
+        "name": "Frank White",
+        "email": "frank.white@example.com",
+        "phone": "+1357924680",
+        "address": {
+          "street": "777 Oak St",
+          "city": "Chicago",
+          "state": "IL",
+          "zip": "60601",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU009",
+          "name": "Product E",
+          "price": 39.99,
+          "quantity": 1
+        },
+        {
+          "product_id": "SKU010",
+          "name": "Product F",
+          "price": 19.99,
+          "quantity": 3
+        }
+      ],
+      "total": 99.96,
+      "payment_method": "PayPal",
+      "status": "Processing",
+      "delivery": {
+        "carrier": "USPS",
+        "tracking_number": "9405512345678901234567",
+        "estimated_delivery_date": "2024-05-24"
+      },
+      "notes": ""
+    },
+    {
+      "id": "7",
+      "customer": {
+        "customer_id": "107",
+        "name": "Grace Lee",
+        "email": "grace.lee@example.com",
+        "phone": "+1888777666",
+        "address": {
+          "street": "123 Cedar St",
+          "city": "Boston",
+          "state": "MA",
+          "zip": "02101",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU011",
+          "name": "Product G",
+          "price": 44.99,
+          "quantity": 1
+        }
+      ],
+      "total": 44.99,
+      "payment_method": "Bank Transfer",
+      "status": "Shipped",
+      "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z5678W9876543210",
+        "estimated_delivery_date": "2024-05-21"
+      },
+      "notes": ""
+    },
+    {
+      "id": "8",
+      "customer": {
+        "customer_id": "108",
+        "name": "Hannah Taylor",
+        "email": "hannah.taylor@example.com",
+        "phone": "+1777888999",
+        "address": {
+          "street": "987 Maple St",
+          "city": "New York",
+          "state": "NY",
+          "zip": "10001",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU012",
+          "name": "Product H",
+          "price": 19.99,
+          "quantity": 2
+        },
+        {
+          "product_id": "SKU013",
+          "name": "Product I",
+          "price": 29.99,
+          "quantity": 1
+        }
+      ],
+      "total": 69.97,
+      "payment_method": "Credit Card",
+      "status": "Processing",
+      "delivery": {
+        "carrier": "USPS",
+        "tracking_number": "9405523456789012345678",
+        "estimated_delivery_date": "2024-05-23"
+      },
+      "notes": ""
+    },
+    {
+      "id": "9",
+      "customer": {
+        "customer_id": "109",
+        "name": "Isaac Clark",
+        "email": "isaac.clark@example.com",
+        "phone": "+1999888777",
+        "address": {
+          "street": "222 Elm St",
+          "city": "Los Angeles",
+          "state": "CA",
+          "zip": "90001",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU014",
+          "name": "Product J",
+          "price": 49.99,
+          "quantity": 1
+        }
+      ],
+      "total": 49.99,
+      "payment_method": "Cash on Delivery",
+      "status": "Pending",
+      "delivery": {
+        "carrier": "FedEx",
+        "tracking_number": "",
+        "estimated_delivery_date": ""
+      },
+      "notes": "Customer requested signature on delivery."
+    },
+    {
+      "id": "10",
+      "customer": {
+        "customer_id": "110",
+        "name": "Jackie Brown",
+        "email": "jackie.brown@example.com",
+        "phone": "+1555666777",
+        "address": {
+          "street": "555 Oak St",
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94101",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU015",
+          "name": "Product K",
+          "price": 24.99,
+          "quantity": 2
+        }
+      ],
+      "total": 49.98,
+      "payment_method": "Credit Card",
+      "status": "Shipped",
+      "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z8765W4321098765",
+        "estimated_delivery_date": "2024-05-19"
+      },
+      "notes": ""
+    },
+    {
+      "id": "11",
+      "customer": {
+        "customer_id": "111",
+        "name": "Kevin Martinez",
+        "email": "kevin.martinez@example.com",
+        "phone": "+1333444555",
+        "address": {
+          "street": "333 Maple St",
+          "city": "Houston",
+          "state": "TX",
+          "zip": "77001",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU016",
+          "name": "Product L",
           "price": 29.99,
           "quantity": 1
         },
         {
-          "id": 1005,
-          "name": "Water Bottle",
-          "price": 9.99,
+          "product_id": "SKU017",
+          "name": "Product M",
+          "price": 19.99,
           "quantity": 2
         }
       ],
-      "total": 109.95,
-      "date": "2022-04-02",
-      "status": "delivered"
+      "total": 69.97,
+      "payment_method": "PayPal",
+      "status": "Processing",
+      "delivery": {
+        "carrier": "USPS",
+        "tracking_number": "9405534567890123456789",
+        "estimated_delivery_date": "2024-05-25"
+      },
+      "notes": ""
     },
     {
-      "id": 3,
-      "customer": "Bob Johnson",
-      "items": [
+      "id": "12",
+      "customer": {
+        "customer_id": "112",
+        "name": "Linda Anderson",
+        "email": "linda.anderson@example.com",
+        "phone": "+1222333444",
+        "address": {
+          "street": "777 Pine St",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30301",
+          "country": "USA"
+        }
+      },
+      "products": [
         {
-          "id": 1006,
-          "name": "Hoodie",
-          "price": 49.99,
-          "quantity": 2
+          "product_id": "SKU018",
+          "name": "Product N",
+          "price": 34.99,
+          "quantity": 1
         },
         {
-          "id": 1007,
-          "name": "Sweatpants",
+          "product_id": "SKU019",
+          "name": "Product O",
+          "price": 29.99,
+          "quantity": 2
+        }
+      ],
+      "total": 94.97,
+      "payment_method": "Credit Card",
+      "status": "Pending",
+      "delivery": {
+        "carrier": "FedEx",
+        "tracking_number": "",
+        "estimated_delivery_date": ""
+      },
+      "notes": "Customer requested special packaging."
+    },
+    {
+      "id": "13",
+      "customer": {
+        "customer_id": "113",
+        "name": "Mike Roberts",
+        "email": "mike.roberts@example.com",
+        "phone": "+1888999000",
+        "address": {
+          "street": "444 Oak St",
+          "city": "Dallas",
+          "state": "TX",
+          "zip": "75201",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU020",
+          "name": "Product P",
           "price": 39.99,
           "quantity": 1
-        },
-        {
-          "id": 1008,
-          "name": "Sneakers",
-          "price": 59.99,
-          "quantity": 1
         }
       ],
-      "total": 199.95,
-      "date": "2022-04-03",
-      "status": "delivered"
+      "total": 39.99,
+      "payment_method": "Debit Card",
+      "status": "Shipped",
+      "delivery": {
+        "carrier": "UPS",
+        "tracking_number": "1Z7654W3210987654",
+        "estimated_delivery_date": "2024-05-21"
+      },
+      "notes": ""
     },
     {
-      "id": 4,
-      "customer": "Sarah Lee",
-      "items": [
+      "id": "14",
+      "customer": {
+        "customer_id": "114",
+        "name": "Nancy Moore",
+        "email": "nancy.moore@example.com",
+        "phone": "+1888777666",
+        "address": {
+          "street": "999 Elm St",
+          "city": "Miami",
+          "state": "FL",
+          "zip": "33101",
+          "country": "USA"
+        }
+      },
+      "products": [
         {
-          "id": 1009,
-          "name": "Pencil Case",
-          "price": 7.99,
-          "quantity": 1
-        },
-        {
-          "id": 1010,
-          "name": "Notebook",
-          "price": 12.99,
-          "quantity": 2
+          "product_id": "SKU021",
+          "name": "Product Q",
+          "price": 19.99,
+          "quantity": 3
         }
       ],
-      "total": 33.97,
-      "date": "2022-04-04",
-      "status": "delivered"
+      "total": 59.97,
+      "payment_method": "Credit Card",
+      "status": "Processing",
+      "delivery": {
+        "carrier": "USPS",
+        "tracking_number": "9405545678901234567890",
+        "estimated_delivery_date": "2024-05-26"
+      },
+      "notes": ""
+    },
+    {
+      "id": "15",
+      "customer": {
+        "customer_id": "115",
+        "name": "Olivia Taylor",
+        "email": "olivia.taylor@example.com",
+        "phone": "+1999888777",
+        "address": {
+          "street": "777 Cedar St",
+          "city": "Phoenix",
+          "state": "AZ",
+          "zip": "85001",
+          "country": "USA"
+        }
+      },
+      "products": [
+        {
+          "product_id": "SKU022",
+          "name": "Product R",
+          "price": 24.99,
+          "quantity": 2
+        },
+        {
+          "product_id": "SKU023",
+          "name": "Product S",
+          "price": 29.99,
+          "quantity": 1
+        }
+      ],
+      "total": 79.97,
+      "payment_method": "Cash on Delivery",
+      "status": "Pending",
+      "delivery": {
+        "carrier": "FedEx",
+        "tracking_number": "",
+        "estimated_delivery_date": ""
+      },
+      "notes": ""
     }
   ],
   "totalItems": 33,
   "totalPages": 3,
-  "page": 1
+  "page": 1,
+  "ordersCount": {
+    "All": 27,
+    "Shipped": 5,
+    "Pending": 5,
+    "Processing": 5,
+    "Delivered": 0,
+    "Cancelled": 0
+  }
 }

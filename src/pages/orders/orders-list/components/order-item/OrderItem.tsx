@@ -52,9 +52,9 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
             onChange={() => onSelect(order.id)}
           />
         </ListItemIcon>
-        <ListItemText sx={{ flex: '1 1 40%' }} primary={order.customer} />
+        <ListItemText sx={{ flex: '1 1 40%' }} primary={order.customer.name} />
         <ListItemText sx={{ flex: '1 1 20%' }} primary={order.total} />
-        <ListItemText sx={{ flex: '1 1 20%' }} primary={order.date} />
+        <ListItemText sx={{ flex: '1 1 20%' }} primary={order.payment_method} />
         <ListItemText sx={{ flex: '1 1 20%' }}>
           <Chip label={order.status} />
         </ListItemText>
