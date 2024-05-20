@@ -22,6 +22,7 @@ import { FC, useCallback, useState } from 'react';
 import { OrderItem } from './components/order-item/OrderItem';
 import { OrderStatus } from '../../../hooks/api/use-orders/types.ts';
 import { useOrdersCount } from '../../../hooks/api/use-orders-count/useOrdersCount.ts';
+import { IcecreamRounded } from '@mui/icons-material';
 
 const OrderListWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
@@ -80,7 +81,7 @@ export const OrderList: FC = () => {
         value={status}
         icon={<Badge badgeContent={<>{ordersCount?.[status]}</>} color={'primary'} />}
         iconPosition={'end'}
-        sx={{ display: 'flex', gap: 1 }}
+        sx={{ display: 'flex', gap: 1, px: 2 }}
       />
     );
   });
@@ -98,7 +99,9 @@ export const OrderList: FC = () => {
           <Stack p={2} direction='row' justifyContent='space-between'>
             <TextField placeholder={'Search orders...'} size='small' onChange={handleSearchChange} />
 
-            <Typography fontWeight='fontWeightBold'>20 results found</Typography>
+            <Typography fontWeight='fontWeightBold' display={'flex'} alignItems={'center'}>
+              20 results found
+            </Typography>
           </Stack>
         </Box>
         <List sx={{ marginBottom: 1, pr: 11, borderBottom: `1px solid`, borderColor: 'divider' }}>
