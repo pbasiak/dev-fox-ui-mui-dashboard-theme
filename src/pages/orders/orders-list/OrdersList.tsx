@@ -104,7 +104,7 @@ export const OrderList: FC = () => {
             </Typography>
           </Stack>
         </Box>
-        <List sx={{ marginBottom: 1, pr: 11, borderBottom: `1px solid`, borderColor: 'divider' }}>
+        <List sx={{ marginBottom: 1, borderBottom: `1px solid`, borderColor: 'divider' }}>
           <ListItem dense>
             <ListItemIcon>
               <Checkbox
@@ -131,13 +131,19 @@ export const OrderList: FC = () => {
               sx={{ flex: '1 1 20%' }}
               primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
               id={'All'}
+              primary={'Payment method'}
+            />
+            <ListItemText
+              sx={{ flex: '1 1 15%' }}
+              primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
+              id={'All'}
               primary={'Status'}
             />
             <ListItemText
-              sx={{ flex: '1 1 20%' }}
+              sx={{ flex: '1 1 5%' }}
               primaryTypographyProps={{ fontWeight: 'fontWeightMedium' }}
               id={'All'}
-              primary={'Actions'}
+              primary={<>&nbsp;</>}
             />
           </ListItem>
         </List>

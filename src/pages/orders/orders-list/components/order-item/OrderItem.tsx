@@ -55,10 +55,10 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
         <ListItemText sx={{ flex: '1 1 40%' }} primary={order.customer.name} />
         <ListItemText sx={{ flex: '1 1 20%' }} primary={order.total} />
         <ListItemText sx={{ flex: '1 1 20%' }} primary={order.payment_method} />
-        <ListItemText sx={{ flex: '1 1 20%' }}>
+        <ListItemText sx={{ flex: '1 1 15%' }}>
           <Chip label={order.status} />
         </ListItemText>
-        <Box>
+        <Box flex={'1 1 5%'}>
           <IconButton
             id='product-button'
             aria-controls={open ? 'product-menu' : undefined}
