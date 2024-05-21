@@ -1,6 +1,6 @@
 # DevFoxUI Material UI Client & Admin theme & templates
 
-Free dashboard templates for personal and commercial use. Please **support me by starring this repository**. Thank you so much!
+Free dashboard templates for personal and commercial use. Please ⭐ **support me by starring this repository** ⭐. Thank you so much!
 
 ![image](https://github.com/pbasiak/dev-fox-ui-mui-dashboard-theme/assets/4548734/d8c276c8-7bcb-40b0-92ec-4db3d6808ef6)
 
