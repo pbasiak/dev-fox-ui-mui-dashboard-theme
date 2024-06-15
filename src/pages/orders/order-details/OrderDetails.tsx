@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Container, Grid, ListItem, Stack, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardHeader, Container, Grid, ListItem, Stack } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader.tsx';
 import { useOrder } from '../../../hooks/api/use-order/useOrder.ts';
 import { OrderProducts } from './components/order-products/OrderProducts.tsx';
