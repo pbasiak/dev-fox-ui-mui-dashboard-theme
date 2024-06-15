@@ -95,6 +95,10 @@ export function Navigation() {
             path: routes.ordersList,
             label: 'List',
           },
+          {
+            path: routes.ordersDetails,
+            label: 'Details',
+          },
         ],
       },
       {

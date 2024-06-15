@@ -34,6 +34,7 @@ import { getThemeByName } from './theme/theme.ts';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
 import { UserEditPage } from './pages/user/user-edit-page/UserEditPage.tsx';
 import { EditPostBlogPage } from './pages/blog/edit-post-blog-page/EditPostBlogPage.tsx';
+import { OrderDetails } from './pages/orders/order-details/OrderDetails.tsx';
 
 const router = createBrowserRouter([
   {
@@ -107,6 +108,10 @@ const router = createBrowserRouter([
       {
         path: routes.ordersList,
         element: <OrderList />,
+      },
+      {
+        path: routes.ordersDetails,
+        element: <OrderDetails />,
       },
       {
         path: routes.jobsList,

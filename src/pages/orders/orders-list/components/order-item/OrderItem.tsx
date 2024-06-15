@@ -4,9 +4,10 @@ import { Box, Chip, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
-import { OrderDetails } from '../order-details/OrderDetails';
 import { useCallback, useState, MouseEvent } from 'react';
 import { MoreVert } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../../../../contants/routes.ts';
 
 interface Props {
   order: Order;
@@ -15,9 +16,8 @@ interface Props {
 }
 
 export const OrderItem = ({ order, onSelect, selected }: Props) => {
-  const [openDetails, setOpenDetails] = useState(false);
-
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
   const open = Boolean(anchorEl);
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
@@ -41,7 +41,7 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
 
   return (
     <>
-      <ListItemButton key={order.id} dense onClick={() => setOpenDetails(true)}>
+      <ListItemButton key={order.id} dense onClick={() => navigate(routes.ordersDetails)}>
         <ListItemIcon>
           <Checkbox
             edge='start'
@@ -82,7 +82,6 @@ export const OrderItem = ({ order, onSelect, selected }: Props) => {
         <MenuItem onClick={(event) => handleEdit(event, order.id)}>Edit</MenuItem>
         <MenuItem onClick={(event) => handleDelete(event, order.id)}>Delete</MenuItem>
       </Menu>
-      {openDetails && <OrderDetails order={order} open={openDetails} onClose={() => setOpenDetails(false)} />}
     </>
   );
 };

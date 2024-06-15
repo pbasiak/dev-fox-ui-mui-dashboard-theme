@@ -22,7 +22,6 @@ import { FC, useCallback, useState } from 'react';
 import { OrderItem } from './components/order-item/OrderItem';
 import { OrderStatus } from '../../../hooks/api/use-orders/types.ts';
 import { useOrdersCount } from '../../../hooks/api/use-orders-count/useOrdersCount.ts';
-import { IcecreamRounded } from '@mui/icons-material';
 
 const OrderListWrapper = styled(Box)(({ theme }) => ({
   width: '100%',

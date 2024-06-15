@@ -25,7 +25,7 @@ interface Customer {
   address: Address;
 }
 
-interface Product {
+export interface Product {
   product_id: string;
   name: string;
   price: number;
@@ -40,6 +40,7 @@ interface Delivery {
 
 export interface Order {
   id: string;
+  date: Date;
   customer: Customer;
   products: Product[];
   total: number;

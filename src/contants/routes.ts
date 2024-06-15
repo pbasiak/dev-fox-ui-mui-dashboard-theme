@@ -25,6 +25,7 @@ export const routes = {
   maintenance: '/maintenance',
   todoList: '/todo-list',
   ordersList: `${orderPrefix}/list`,
+  ordersDetails: `${orderPrefix}/details`,
   jobsList: `${jobsPrefix}/list`,
   jobsDetails: `${jobsPrefix}/details`,
   jobsCreate: `${jobsPrefix}/create`,
