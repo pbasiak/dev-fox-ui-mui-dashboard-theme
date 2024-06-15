@@ -24,7 +24,7 @@ export const NavigationItemNested = ({ item }: Props) => {
   }, [item.label, toggleNavigationId]);
 
   const nestedItems = item.items.map((item) => {
-    return <NavigationItemSimple key={item.path} item={item} nested />;
+    return <NavigationItemSimple key={item.path} item={item} nested animateOn={isOpen} />;
   });
 
   return (
@@ -42,9 +42,7 @@ export const NavigationItemNested = ({ item }: Props) => {
         {isOpen ? <ExpandLess /> : <ExpandMore />}
       </NavigationListItemButton>
       <Collapse in={isOpen} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding sx={{ marginLeft: 2 }}>
-          {nestedItems}
-        </List>
+        <List component='div'>{nestedItems}</List>
       </Collapse>
     </>
   );

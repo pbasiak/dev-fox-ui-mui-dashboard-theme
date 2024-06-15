@@ -4,16 +4,17 @@ import { listItemPrimaryTypographyProps } from '../../../constants/listItemProps
 import { NavigationListItemButton, NavigationListItemIcon, NavigationListItemNestedIcon } from '../styled';
 import { useNavigate } from 'react-router-dom';
 import { NavigationItemBadge } from './styled';
-import { Stack, ListItemText, Typography } from '@mui/material';
+import { Stack, ListItemText, Typography, Zoom } from '@mui/material';
 import { Launch, Circle } from '@mui/icons-material';
 
 interface Props {
   iconColor?: NavigationItemIconProps['color'];
   nested?: boolean;
   item: NavigationItemSimpleType | NavigationItemSimpleTypeWithoutIcon;
+  animateOn?: boolean;
 }
 
-export const NavigationItemSimple = ({ item, nested = false }: Props) => {
+export const NavigationItemSimple = ({ item, nested = false, animateOn }: Props) => {
   const location = window.location.pathname;
   const navigate = useNavigate();
   const isActive = location === item.path;
@@ -34,7 +35,9 @@ export const NavigationItemSimple = ({ item, nested = false }: Props) => {
         <NavigationListItemIcon>{item.icon(iconProps)}</NavigationListItemIcon>
       ) : (
         <NavigationListItemNestedIcon>
-          <Circle fontSize={'inherit'} />
+          <Zoom in={animateOn}>
+            <Circle color={'inherit'} fontSize={'inherit'} />
+          </Zoom>
         </NavigationListItemNestedIcon>
       )}
       <Stack
