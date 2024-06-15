@@ -9,7 +9,7 @@ export const NavigationListItemButton = styled(ListItemButton, {
   shouldForwardProp: (prop) => prop !== 'active' && prop !== 'nested',
 })<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
   borderRadius: theme.shape.borderRadius,
-  paddingLeft: nested ? theme.spacing(3) : theme.spacing(2),
+  paddingLeft: nested ? theme.spacing(2) : theme.spacing(2),
   paddingTop: nested ? theme.spacing(0.5) : theme.spacing(1),
   paddingBottom: nested ? theme.spacing(0.5) : theme.spacing(1),
   marginBottom: theme.spacing(1),
@@ -46,7 +46,7 @@ export const NavigationListItemIcon = styled(ListItemIcon)(({ theme }) => ({
 }));
 
 export const NavigationListItemNestedIcon = styled(ListItemIcon)(({ theme }) => ({
-  minWidth: '24px',
+  minWidth: '36px',
   fontSize: '0.5rem',
-  color: theme.palette.text.primary,
+  paddingLeft: theme.spacing(1),
 }));
