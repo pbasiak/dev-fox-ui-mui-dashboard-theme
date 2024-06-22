@@ -1,4 +1,4 @@
-import { UseQueryResult } from '@tanstack/react-query';
+import { UseSuspenseQueryResult } from '@tanstack/react-query';
 
 export enum OrderStatus {
   ALL = 'All',
@@ -60,4 +60,4 @@ interface OrderResponse {
   page: number;
 }
 
-export type OrderType = UseQueryResult<OrderResponse>;
+export type OrderType = UseSuspenseQueryResult<OrderResponse>;

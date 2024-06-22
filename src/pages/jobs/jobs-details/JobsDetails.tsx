@@ -15,7 +15,7 @@ import {
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
 
-export const JobsDetails = () => {
+export default function JobsDetails() {
   const { data: job } = useJobsDetails();
 
   if (!job) {
@@ -83,4 +83,4 @@ export const JobsDetails = () => {
       </Grid>
     </Container>
   );
-};
+}

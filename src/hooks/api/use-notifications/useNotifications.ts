@@ -1,4 +1,4 @@
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import { useSuspenseQuery, UseSuspenseQueryResult } from '@tanstack/react-query';
 import notifications from './../../../mocks/notifications/notifications.json';
 
 export enum NotificationType {
@@ -25,8 +25,8 @@ interface Response {
   notifications: Notification[];
 }
 
-type UseNotifications = UseQueryResult<Response>;
+type UseNotifications = UseSuspenseQueryResult<Response>;
 
 export const useNotifications = (): UseNotifications => {
-  return useQuery({ queryKey: ['notifications'], queryFn: () => notifications });
+  return useSuspenseQuery({ queryKey: ['notifications'], queryFn: () => notifications });
 };

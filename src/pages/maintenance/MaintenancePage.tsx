@@ -4,7 +4,7 @@ import { CenterLayout } from '../../layouts/center-layout/CenterLayout';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../contants/routes';
 
-export const MaintenancePage = () => {
+export default function MaintenancePage() {
   const navigate = useNavigate();
 
   return (
@@ -23,4 +23,4 @@ export const MaintenancePage = () => {
       </CenterLayout>
     </FullWidthLayout>
   );
-};
+}

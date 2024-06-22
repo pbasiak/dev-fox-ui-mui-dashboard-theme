@@ -37,7 +37,7 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-export const UserAccountPage = () => {
+export default function UserAccountPage() {
   const [value, setValue] = React.useState(0);
   const { data: user, isLoading } = useCurrentUser();
 
@@ -90,4 +90,4 @@ export const UserAccountPage = () => {
       </Box>
     </Container>
   );
-};
+}

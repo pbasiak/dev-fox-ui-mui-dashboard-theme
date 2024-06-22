@@ -1,7 +1,7 @@
 import { Box, Container } from '@mui/material';
 import { DemoTypography } from './styled';
 
-export const TypographyPage = () => {
+export default function TypographyPage() {
   return (
     <Container>
       <Box>
@@ -33,4 +33,4 @@ export const TypographyPage = () => {
       </Box>
     </Container>
   );
-};
+}

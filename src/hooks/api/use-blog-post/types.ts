@@ -1,4 +1,4 @@
-import { UseQueryResult } from '@tanstack/react-query';
+import { UseSuspenseQueryResult } from '@tanstack/react-query';
 
 interface BlogPostResponse {
   title: string;
@@ -7,4 +7,4 @@ interface BlogPostResponse {
   image: string;
 }
 
-export type BlogPostType = UseQueryResult<BlogPostResponse>;
+export type BlogPostType = UseSuspenseQueryResult<BlogPostResponse>;

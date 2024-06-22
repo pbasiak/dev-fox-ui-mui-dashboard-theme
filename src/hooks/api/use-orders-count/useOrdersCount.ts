@@ -1,8 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import ordersCount from '../../../mocks/orders/orders-count.json';
 
 export const useOrdersCount = () => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: ['orders-count'],
     queryFn: () => ordersCount,
   });

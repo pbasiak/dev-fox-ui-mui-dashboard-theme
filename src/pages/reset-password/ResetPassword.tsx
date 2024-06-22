@@ -4,7 +4,7 @@ import { routes } from '../../contants/routes';
 import { WelcomeContent } from '../../content/welcome-content/WelcomeContent';
 import { HalfLayout } from '../../layouts/half-layout/HalfLayout';
 
-export const ResetPassword = () => {
+export default function ResetPassword() {
   const navigate = useNavigate();
 
   return (
@@ -55,4 +55,4 @@ export const ResetPassword = () => {
       </Stack>
     </HalfLayout>
   );
-};
+}

@@ -39,7 +39,7 @@ const rows = [
 
 // TODO: refactor data
 
-export const UserListPage = () => {
+export default function UserListPage() {
   const [showEditBar, setShowEditBar] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedRows, setSelectedRows] = useState<GridSelectionModel>([]);
@@ -107,4 +107,4 @@ export const UserListPage = () => {
       </Box>
     </Container>
   );
-};
+}
