@@ -1,4 +1,4 @@
-import { UseQueryResult } from '@tanstack/react-query';
+import { UseSuspenseQueryResult } from '@tanstack/react-query';
 
 export interface CalendarEvent {
   id: string;
@@ -14,4 +14,4 @@ export interface CalendarData {
   events: CalendarEvent[];
 }
 
-export type CalendarType = UseQueryResult<CalendarData[]>;
+export type CalendarType = UseSuspenseQueryResult<CalendarData[]>;

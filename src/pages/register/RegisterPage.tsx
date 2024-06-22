@@ -5,7 +5,7 @@ import { routes } from '../../contants/routes';
 import { WelcomeContent } from '../../content/welcome-content/WelcomeContent';
 import { HalfLayout } from '../../layouts/half-layout/HalfLayout';
 
-export const RegisterPage = () => {
+export default function RegisterPage() {
   const navigate = useNavigate();
 
   return (
@@ -83,4 +83,4 @@ export const RegisterPage = () => {
       </Stack>
     </HalfLayout>
   );
-};
+}

@@ -16,7 +16,7 @@ const CardWrapper = styled(Card)(({ theme }) => ({
   },
 }));
 
-export const JobsList = () => {
+export default function JobsList() {
   const { data } = useJobs();
   const navigate = useNavigate();
 
@@ -66,4 +66,4 @@ export const JobsList = () => {
       </Stack>
     </Container>
   );
-};
+}

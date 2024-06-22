@@ -8,7 +8,7 @@ import { BlogPostFieldsNames } from '../../blog/create-post-blog-page/utils/blog
 import { FieldErrorText } from '../../../components/field-error-text/FieldErrorText';
 import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 
-export const JobsCreate = () => {
+export default function JobsCreate() {
   const formRef = useRef<HTMLFormElement>(null);
 
   const {
@@ -86,4 +86,4 @@ export const JobsCreate = () => {
       </form>
     </Container>
   );
-};
+}

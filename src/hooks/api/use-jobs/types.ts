@@ -1,4 +1,4 @@
-import { UseQueryResult } from '@tanstack/react-query';
+import { UseSuspenseQueryResult } from '@tanstack/react-query';
 
 export interface Job {
   title: string;
@@ -17,4 +17,4 @@ interface JobsResponse {
   page: number;
 }
 
-export type JobsType = UseQueryResult<JobsResponse>;
+export type JobsType = UseSuspenseQueryResult<JobsResponse>;

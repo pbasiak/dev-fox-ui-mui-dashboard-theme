@@ -4,7 +4,7 @@ import { routes } from '../../contants/routes';
 import { HalfLayout } from '../../layouts/half-layout/HalfLayout';
 import { WelcomeContent } from '../../content/welcome-content/WelcomeContent';
 
-export const VerifyCode = () => {
+export default function VerifyCode() {
   const navigate = useNavigate();
 
   return (
@@ -55,4 +55,4 @@ export const VerifyCode = () => {
       </Stack>
     </HalfLayout>
   );
-};
+}

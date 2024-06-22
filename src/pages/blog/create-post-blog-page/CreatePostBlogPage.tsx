@@ -26,7 +26,7 @@ import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
 import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 
-export const CreatePostBlogPage = () => {
+export default function CreatePostBlogPage() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -142,4 +142,4 @@ export const CreatePostBlogPage = () => {
       </form>
     </Container>
   );
-};
+}

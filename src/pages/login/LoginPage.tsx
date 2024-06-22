@@ -5,7 +5,7 @@ import { routes } from '../../contants/routes';
 import { WelcomeContent } from '../../content/welcome-content/WelcomeContent';
 import { HalfLayout } from '../../layouts/half-layout/HalfLayout';
 
-export const LoginPage = () => {
+export default function LoginPage() {
   const navigate = useNavigate();
 
   return (
@@ -69,4 +69,4 @@ export const LoginPage = () => {
       </Stack>
     </HalfLayout>
   );
-};
+}

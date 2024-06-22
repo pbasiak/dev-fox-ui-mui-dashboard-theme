@@ -9,7 +9,7 @@ export const ColorBox = ({ color }: ColorBoxProps) => {
   return <Box sx={{ padding: 2, backgroundColor: color }}>{color}</Box>;
 };
 
-export const ColorsPage = () => {
+export default function ColorsPage() {
   return (
     <Container maxWidth={false}>
       <ColorStack>
@@ -50,4 +50,4 @@ export const ColorsPage = () => {
       </ColorStack>
     </Container>
   );
-};
+}

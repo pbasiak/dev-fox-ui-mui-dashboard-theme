@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Typography, Button, List, Container, Paper, Stack } from '@mui/material';
 import { PageHeader } from '../../components/page-header/PageHeader';
@@ -13,7 +13,7 @@ const defaultTasks: Task[] = [
   { id: uuid(), name: 'Task 3', completed: false },
 ];
 
-export const TodoList: React.FC = () => {
+export default function TodoList() {
   const [tasks, setTasks] = useState<Task[]>(defaultTasks);
   const [addTaskModalOpen, setAddTaskModalOpen] = useState<boolean>(false);
   const [hideCompleted, setHideCompleted] = useState<boolean>(false);
@@ -91,4 +91,4 @@ export const TodoList: React.FC = () => {
       <AddTodo open={addTaskModalOpen} handleClose={handleAddTaskModalClose} onSubmit={handleAddTask} />
     </Container>
   );
-};
+}

@@ -103,7 +103,7 @@ const initialValue: Descendant[] = [
   },
 ];
 
-export const EditPostBlogPage = () => {
+export default function EditPostBlogPage() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
   const {
@@ -224,4 +224,4 @@ export const EditPostBlogPage = () => {
       </form>
     </Container>
   );
-};
+}

@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import posts from '../../../mocks/blog/blog-posts.json';
 import { BlogPost } from '../../../pages/blog/blog-page/types/blogPost.ts';
 
@@ -13,7 +13,7 @@ const images = [post1, post2, post3, post4, post5, post6];
 
 export const useBlogPosts = () => {
   const mappedPosts = posts.posts.map((post, index) => ({ ...post, image: images[index] ?? '' }));
-  return useQuery<BlogPost[]>({
+  return useSuspenseQuery<BlogPost[]>({
     queryKey: ['blog-posts'],
     queryFn: () => mappedPosts,
   });

@@ -1,4 +1,4 @@
-import { UseQueryResult } from '@tanstack/react-query';
+import { UseSuspenseQueryResult } from '@tanstack/react-query';
 import { User } from '../../../types/user/userTypes';
 
-export type UserReturn = UseQueryResult<User>;
+export type UserReturn = UseSuspenseQueryResult<User>;

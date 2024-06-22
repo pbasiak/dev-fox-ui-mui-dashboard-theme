@@ -8,7 +8,7 @@ import { ReactNode } from 'react';
 import { Navigation } from './components/navigation/Navigation';
 
 import { ToolbarElements } from './components/toolbar-elements/ToolbarElements';
-import { useNavigation } from './components/navigation/hooks/use-navigation/useNavigation';
+import { useAppNavigation } from './components/navigation/hooks/use-app-navigation/useAppNavigation';
 import { Logo } from '../../components/logo/Logo';
 
 const drawerWidth = 280;
@@ -67,7 +67,7 @@ interface Props {
 
 export function SidebarLayout({ children }: Props) {
   const theme = useTheme();
-  const { isSidebarOpen, toggleSidebar } = useNavigation();
+  const { isSidebarOpen, toggleSidebar } = useAppNavigation();
 
   return (
     <Box>

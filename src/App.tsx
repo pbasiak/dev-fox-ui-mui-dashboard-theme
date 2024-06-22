@@ -1,47 +1,54 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { Dashboard } from './pages/dashboard/Dashboard';
-import { TypographyPage } from './docs/pages/typography-page/TypographyPage';
+import { CssBaseline, Fade, ThemeProvider } from '@mui/material';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { routes } from './contants/routes';
-import { ColorsPage } from './docs/pages/colors-page/ColorsPage';
-import { UserAccountPage } from './pages/user/user-account-page/UserAccountPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCurrentUser } from './hooks/api/use-current-user/useCurrentUser';
 import { Loader } from './components/loader/Loader';
-import { ButtonPage } from './docs/pages/button-page/ButtonPage';
-import { UserProfilePage } from './pages/user/user-profile-page/UserProfilePage';
-import { UserListPage } from './pages/user/user-list-page/UserListPage';
-import { UserCreatePage } from './pages/user/user-create-page/UserCreatePage';
-import { BlogPage } from './pages/blog/blog-page/BlogPage';
-import { CreatePostBlogPage } from './pages/blog/create-post-blog-page/CreatePostBlogPage';
-import { BlogPostPage } from './pages/blog/blog-post-page/BlogPostPage';
-import { CalendarPage } from './pages/calendar/Calendar';
-import { NotFoundPage } from './pages/not-found/NotFoundPage';
-import { MaintenancePage } from './pages/maintenance/MaintenancePage';
-import { TodoList } from './pages/todo-list/TodoList';
-import { OrderList } from './pages/orders/orders-list/OrdersList';
-import { JobsList } from './pages/jobs/jobs-list/JobsListPage';
-import { JobsDetails } from './pages/jobs/jobs-details/JobsDetails';
-import { JobsCreate } from './pages/jobs/jobs-create/JobsCreate';
-import { LoginPage } from './pages/login/LoginPage';
-import { RegisterPage } from './pages/register/RegisterPage';
-import { ResetPassword } from './pages/reset-password/ResetPassword';
-import { VerifyCode } from './pages/verify-code/VerifyCode';
 import { ThemeConfigurator } from './demo/theme-configurator/ThemeConfigurator';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { getThemeByName } from './theme/theme.ts';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
-import { UserEditPage } from './pages/user/user-edit-page/UserEditPage.tsx';
-import { EditPostBlogPage } from './pages/blog/edit-post-blog-page/EditPostBlogPage.tsx';
-import { OrderDetails } from './pages/orders/order-details/OrderDetails.tsx';
+
+const Dashboard = React.lazy(() => import('./pages/dashboard/Dashboard'));
+const UserAccountPage = React.lazy(() => import('./pages/user/user-account-page/UserAccountPage'));
+const UserProfilePage = React.lazy(() => import('./pages/user/user-profile-page/UserProfilePage'));
+const UserListPage = React.lazy(() => import('./pages/user/user-list-page/UserListPage'));
+const UserEditPage = React.lazy(() => import('./pages/user/user-edit-page/UserEditPage'));
+const UserCreatePage = React.lazy(() => import('./pages/user/user-create-page/UserCreatePage'));
+const BlogPage = React.lazy(() => import('./pages/blog/blog-page/BlogPage'));
+const BlogPostPage = React.lazy(() => import('./pages/blog/blog-post-page/BlogPostPage'));
+const CreatePostBlogPage = React.lazy(() => import('./pages/blog/create-post-blog-page/CreatePostBlogPage'));
+const EditPostBlogPage = React.lazy(() => import('./pages/blog/edit-post-blog-page/EditPostBlogPage'));
+const ColorsPage = React.lazy(() => import('./docs/pages/colors-page/ColorsPage'));
+const TypographyPage = React.lazy(() => import('./docs/pages/typography-page/TypographyPage'));
+const ButtonPage = React.lazy(() => import('./docs/pages/button-page/ButtonPage'));
+const CalendarPage = React.lazy(() => import('./pages/calendar/Calendar'));
+const TodoList = React.lazy(() => import('./pages/todo-list/TodoList'));
+const OrderList = React.lazy(() => import('./pages/orders/orders-list/OrdersList'));
+const OrderDetails = React.lazy(() => import('./pages/orders/order-details/OrderDetails'));
+const JobsList = React.lazy(() => import('./pages/jobs/jobs-list/JobsListPage'));
+const JobsDetails = React.lazy(() => import('./pages/jobs/jobs-details/JobsDetails'));
+const JobsCreate = React.lazy(() => import('./pages/jobs/jobs-create/JobsCreate'));
+const NotFoundPage = React.lazy(() => import('./pages/not-found/NotFoundPage'));
+const MaintenancePage = React.lazy(() => import('./pages/maintenance/MaintenancePage'));
+const LoginPage = React.lazy(() => import('./pages/login/LoginPage'));
+const RegisterPage = React.lazy(() => import('./pages/register/RegisterPage'));
+const ResetPassword = React.lazy(() => import('./pages/reset-password/ResetPassword'));
+const VerifyCode = React.lazy(() => import('./pages/verify-code/VerifyCode'));
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: (
       <SidebarLayout>
-        <Outlet />
+        <Suspense>
+          <Fade in={true} timeout={500}>
+            <div>
+              <Outlet />
+            </div>
+          </Fade>
+        </Suspense>
       </SidebarLayout>
     ),
     children: [
@@ -129,27 +136,51 @@ const router = createBrowserRouter([
   },
   {
     path: routes.notFound,
-    element: <NotFoundPage />,
+    element: (
+      <Suspense>
+        <NotFoundPage />
+      </Suspense>
+    ),
   },
   {
     path: routes.maintenance,
-    element: <MaintenancePage />,
+    element: (
+      <Suspense>
+        <MaintenancePage />
+      </Suspense>
+    ),
   },
   {
     path: routes.login,
-    element: <LoginPage />,
+    element: (
+      <Suspense>
+        <LoginPage />
+      </Suspense>
+    ),
   },
   {
     path: routes.register,
-    element: <RegisterPage />,
+    element: (
+      <Suspense>
+        <RegisterPage />
+      </Suspense>
+    ),
   },
   {
     path: routes.resetPassword,
-    element: <ResetPassword />,
+    element: (
+      <Suspense>
+        <ResetPassword />
+      </Suspense>
+    ),
   },
   {
     path: routes.verifyCode,
-    element: <VerifyCode />,
+    element: (
+      <Suspense>
+        <VerifyCode />
+      </Suspense>
+    ),
   },
 ]);
 
@@ -164,7 +195,14 @@ const AppRouter = () => {
     return <Loader />;
   }
   if (!user) return null;
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 };
 
 export function App() {

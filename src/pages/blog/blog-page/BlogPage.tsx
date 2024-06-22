@@ -22,7 +22,7 @@ import { routes } from '../../../contants/routes';
 import { BlogView } from './types/blogView';
 import { useBlogPosts } from '../../../hooks/api/use-blog-posts';
 
-export const BlogPage = () => {
+export default function BlogPage() {
   const { isLoading, data } = useBlogPosts();
   const [sort, setSort] = useState('newest');
   const [view, setView] = useState<BlogView>(BlogView.GRID);
@@ -35,8 +35,6 @@ export const BlogPage = () => {
   const handleViewChange = useCallback((view: BlogView) => {
     setView(view);
   }, []);
-
-  if (!isLoading && !data) return null;
 
   return (
     <Container maxWidth={'lg'}>
@@ -113,4 +111,4 @@ export const BlogPage = () => {
       {!isLoading && data && <BlogList posts={data} view={view} />}
     </Container>
   );
-};
+}

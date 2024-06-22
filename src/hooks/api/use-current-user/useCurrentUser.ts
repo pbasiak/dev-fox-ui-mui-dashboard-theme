@@ -1,11 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import users from '../../../mocks/users/users.json';
 import { CurrentUserReturn } from '../use-user/types';
 import mockAvatar from '../../../mocks/users/assets/avatar.png';
 import mockCover from '../../../mocks/users/assets/cover.png';
 
 export const useCurrentUser = (): CurrentUserReturn => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: ['currentUser'],
     queryFn: () => ({
       ...users.users[0],

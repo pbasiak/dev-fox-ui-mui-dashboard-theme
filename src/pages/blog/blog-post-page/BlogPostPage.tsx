@@ -80,7 +80,7 @@ const initialValue: Descendant[] = [
   },
 ];
 
-export const BlogPostPage = () => {
+export default function BlogPostPage() {
   const { data, isLoading } = useBlogPost();
 
   if (data !== undefined && isLoading) return null;
@@ -96,4 +96,4 @@ export const BlogPostPage = () => {
       </Paper>
     </Container>
   );
-};
+}

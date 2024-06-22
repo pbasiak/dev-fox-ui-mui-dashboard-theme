@@ -12,7 +12,7 @@ import IconButtonColors from './components/IconButtonColors';
 import IconButtonSizes from './components/IconButtonSizes';
 import UploadButtons from './components/UploadButtons';
 
-export const ButtonPage = () => {
+export default function ButtonPage() {
   const componentsList = [
     {
       name: 'Button',
@@ -76,4 +76,4 @@ export const ButtonPage = () => {
       </Paper>
     </Container>
   );
-};
+}

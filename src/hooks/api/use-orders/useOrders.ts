@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 import orders from '../../../mocks/orders/orders-list.json';
 import { OrderType } from './types';
 
@@ -8,7 +8,7 @@ interface Params {
 }
 
 export const useOrders = ({ status }: Params = {}): OrderType => {
-  return useQuery({
+  return useSuspenseQuery({
     queryKey: ['orders', status],
     queryFn: () => {
       if (status && status !== 'All') {

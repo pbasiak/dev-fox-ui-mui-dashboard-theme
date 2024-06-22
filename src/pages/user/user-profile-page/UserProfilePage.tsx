@@ -7,11 +7,9 @@ import { useUserPosts } from '../../../hooks/api/use-user-posts/useUserPosts';
 import { UserProfileNewComment } from './components/user-profile-new-comment/UserProfileNewComment';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 
-export const UserProfilePage = () => {
+export default function UserProfilePage() {
   const { data: user } = useUser({ id: 1 });
   const { data: posts } = useUserPosts();
-
-  if (!user || !posts) return null;
 
   return (
     <Container maxWidth={'lg'}>
@@ -34,4 +32,4 @@ export const UserProfilePage = () => {
       </Grid>
     </Container>
   );
-};
+}

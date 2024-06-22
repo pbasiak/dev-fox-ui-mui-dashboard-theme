@@ -6,7 +6,7 @@ import { SalesWidget } from './components/sales-widget/SalesWidget';
 import { BlogWidget } from './components/blog-widget/BlogWidget';
 import { UsersStatsWidget } from './components/users-stats-widget/UsersStatsWidget.tsx';
 
-export const Dashboard = () => {
+export default function Dashboard() {
   return (
     <Container maxWidth={false}>
       <PageHeader title={'Dashboard'} />
@@ -50,4 +50,4 @@ export const Dashboard = () => {
       </Grid>
     </Container>
   );
-};
+}

@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader.tsx';
 import { useCurrentUser } from '../../../hooks/api/use-current-user/useCurrentUser.ts';
 
-export const UserEditPage = () => {
+export default function UserEditPage() {
   // Get the user data (replace with your own)
   const { data: user } = useCurrentUser();
 
@@ -29,4 +29,4 @@ export const UserEditPage = () => {
       <UserForm submitButtonText={'Save changes'} defaultValues={defaultValues} />
     </Container>
   );
-};
+}

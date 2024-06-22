@@ -5,7 +5,7 @@ import { CalendarStyles } from '../../components/calendar/styled';
 import { useCalendar } from '../../hooks/api/use-calendar/useCalendar';
 import { useState } from 'react';
 
-export const CalendarPage = () => {
+export default function CalendarPage() {
   const { data } = useCalendar();
   const [hoveredEvent, setHoveredEvent] = useState<string>('');
 
@@ -117,4 +117,4 @@ export const CalendarPage = () => {
       </CalendarStyles>
     </Container>
   );
-};
+}

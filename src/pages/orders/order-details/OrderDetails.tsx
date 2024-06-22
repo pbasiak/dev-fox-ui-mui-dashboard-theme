@@ -6,7 +6,7 @@ import List from '@mui/material/List';
 import { CreditCard, DeliveryDining, Edit, Person, Remove, ShoppingBasket } from '@mui/icons-material';
 import { OrderRowDetail } from './components/order-row-detail/OrderRowDetail.tsx';
 
-export const OrderDetails = () => {
+export default function OrderDetails() {
   const { data, isLoading } = useOrder();
 
   if (isLoading || !data) {
@@ -129,4 +129,4 @@ export const OrderDetails = () => {
       </Grid>
     </Container>
   );
-};
+}
