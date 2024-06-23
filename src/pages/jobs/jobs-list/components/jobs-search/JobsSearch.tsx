@@ -1,4 +1,13 @@
-import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField } from '@mui/material';
+import {
+  FormControl,
+  IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Stack,
+  TextField,
+} from '@mui/material';
 import { useCallback, useState } from 'react';
 import { SearchOutlined } from '@mui/icons-material';
 
@@ -15,17 +24,17 @@ export const JobsSearch = () => {
   }, []);
 
   return (
-    <Stack direction={'row'} spacing={0.5} alignItems={'stretch'}>
-      <TextField id='outlined-basic' label='Search' variant='filled' fullWidth />
+    <Stack direction={'row'} spacing={0.5} alignItems={'center'}>
+      <TextField id='outlined-basic' label='Search' variant='outlined' size={'medium'} fullWidth />
       <FormControl fullWidth>
         <InputLabel id='salary-select-label'>Salary</InputLabel>
         <Select
           labelId='salary-select-label'
           id='salary-select'
           value={salary}
-          label='Age'
+          label='Salary'
           onChange={handleSalaryChange}
-          variant={'filled'}
+          variant={'outlined'}
         >
           <MenuItem value={'10'}>$10.000</MenuItem>
           <MenuItem value={'20'}>$20.000</MenuItem>
@@ -40,9 +49,9 @@ export const JobsSearch = () => {
           labelId='location-select-label'
           id='location-select'
           value={location}
-          label='Age'
+          label='Location'
           onChange={handleLocationChange}
-          variant={'filled'}
+          variant={'outlined'}
           placeholder={'Location'}
         >
           <MenuItem value={'chicago'}>Chicago</MenuItem>
@@ -50,9 +59,10 @@ export const JobsSearch = () => {
           <MenuItem value={'new-york'}>New York</MenuItem>
         </Select>
       </FormControl>
-      <Button endIcon={<SearchOutlined />} variant={'contained'} sx={{ minWidth: 'auto' }}>
-        Search
-      </Button>
+
+      <IconButton size={'large'} color={'primary'}>
+        <SearchOutlined />
+      </IconButton>
     </Stack>
   );
 };

@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import { styled } from '@mui/material/styles';
-import { Card, CardContent, Typography, List, Container, Stack, Chip, Pagination } from '@mui/material';
+import { Card, CardContent, Typography, List, Container, Stack, Chip, Pagination, Button } from '@mui/material';
 import { useJobs } from '../../../hooks/api/use-jobs/useJobs';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { JobsSearch } from './components/jobs-search/JobsSearch';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
+import { PostAdd } from '@mui/icons-material';
 
 const CardWrapper = styled(Card)(({ theme }) => ({
   marginBottom: 10,
@@ -34,7 +35,15 @@ export default function JobsList() {
 
   return (
     <Container maxWidth={'lg'}>
-      <PageHeader title={'Jobs'} breadcrumbs={['Jobs', 'List']} />
+      <PageHeader
+        title={'Jobs'}
+        breadcrumbs={['Jobs', 'List']}
+        renderRight={
+          <Button variant={'contained'} startIcon={<PostAdd />}>
+            Create
+          </Button>
+        }
+      />
       <JobsSearch />
       <List sx={{ marginTop: 2 }}>
         {data.jobs.map((job) => (
