@@ -11,6 +11,9 @@ import { PostAdd } from '@mui/icons-material';
 const CardWrapper = styled(Card)(({ theme }) => ({
   marginBottom: 10,
   cursor: 'pointer',
+  transition: theme.transitions.create(['box-shadow', 'background-color'], {
+    duration: theme.transitions.duration.shorter,
+  }),
   '&:hover': {
     boxShadow: theme.shadows[15],
     backgroundColor: theme.palette.grey[50],
