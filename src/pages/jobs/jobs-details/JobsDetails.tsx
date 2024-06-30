@@ -16,6 +16,7 @@ import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../../contants/routes.ts';
+import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 
 export default function JobsDetails() {
   const { data: job } = useJobsDetails();
@@ -56,7 +57,7 @@ export default function JobsDetails() {
               Description
             </Typography>
             <Typography variant='body1' gutterBottom mb={2}>
-              {job.description}
+              <SlateEditor readOnly={true} initialValue={job.description} />
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Typography variant='h5' gutterBottom>

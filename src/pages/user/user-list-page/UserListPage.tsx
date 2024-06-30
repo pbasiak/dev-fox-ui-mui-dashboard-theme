@@ -1,5 +1,5 @@
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import { DataGrid, GridColDef, GridSelectionModel, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid';
 import { Container, Button, Stack, IconButton, Box, Paper } from '@mui/material';
 import { Add, DeleteOutline, Edit } from '@mui/icons-material';
 import { useCallback, useState } from 'react';
@@ -14,14 +14,6 @@ const columns: GridColDef[] = [
     headerName: 'Age',
     type: 'number',
     width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params: GridValueGetterParams) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
 ];
 
@@ -42,11 +34,11 @@ const rows = [
 export default function UserListPage() {
   const [showEditBar, setShowEditBar] = useState(false);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-  const [selectedRows, setSelectedRows] = useState<GridSelectionModel>([]);
+  const [selectedRows, setSelectedRows] = useState<GridRowSelectionModel>([]);
 
   const isSingleRowSelected = selectedRows.length === 1;
 
-  const handleSelectionChange = useCallback((model: GridSelectionModel) => {
+  const handleSelectionChange = useCallback((model: GridRowSelectionModel) => {
     const isSelectionEmpty = model.length === 0;
 
     setSelectedRows(model);
@@ -96,14 +88,7 @@ export default function UserListPage() {
         </Stack>
       ) : null}
       <Box sx={{ height: 400, width: '100%', p: 0, borderRadius: 1, overflow: 'hidden' }} component={Paper}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
-          onSelectionModelChange={handleSelectionChange}
-        />
+        <DataGrid rows={rows} columns={columns} checkboxSelection onRowSelectionModelChange={handleSelectionChange} />
       </Box>
     </Container>
   );

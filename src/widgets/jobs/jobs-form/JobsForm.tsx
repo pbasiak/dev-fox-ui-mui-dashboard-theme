@@ -53,10 +53,6 @@ export const JobsForm = ({ defaultValues, formRef, onSubmit }: JobsFormProps) =>
             {errors.requirements && <FieldErrorText>{errors.requirements.message}</FieldErrorText>}
           </FormControl>
           <FormControl fullWidth>
-            <TextField label={'Tags'} {...register(JobsFormFieldsNames.tags)} />
-            {errors.tags && <FieldErrorText>{errors.tags.message}</FieldErrorText>}
-          </FormControl>
-          <FormControl fullWidth>
             <TextField label={'Salary'} {...register(JobsFormFieldsNames.salary)} />
             {errors.salary && <FieldErrorText>{errors.salary.message}</FieldErrorText>}
           </FormControl>

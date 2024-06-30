@@ -1,10 +1,11 @@
 import { UseSuspenseQueryResult } from '@tanstack/react-query';
+import { Descendant } from 'slate';
 
 export interface Job {
   title: string;
   company: string;
   location: string;
-  description: string;
+  description: Descendant[];
   requirements: string[];
   salary: string;
   tags: string[];

@@ -28,7 +28,6 @@ export default function JobsEdit() {
     location: data.location,
     description: data.description,
     requirements: data.requirements,
-    tags: data.tags,
     salary: data.salary,
   };
 
