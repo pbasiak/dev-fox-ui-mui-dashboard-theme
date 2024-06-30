@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import { Typography, Button, List, Container, Paper, Stack } from '@mui/material';
 import { PageHeader } from '../../components/page-header/PageHeader';
 import { Task } from './types/task';
@@ -7,10 +6,12 @@ import { TodoListItem } from './components/todo-list-item/TodoListItem';
 import { Add } from '@mui/icons-material';
 import { AddTodo } from './components/add-todo/AddTodo.tsx';
 
+const createUUID = () => self.crypto.randomUUID();
+
 const defaultTasks: Task[] = [
-  { id: uuid(), name: 'Task 1', completed: true },
-  { id: uuid(), name: 'Task 2', completed: false },
-  { id: uuid(), name: 'Task 3', completed: false },
+  { id: createUUID(), name: 'Task 1', completed: true },
+  { id: createUUID(), name: 'Task 2', completed: false },
+  { id: createUUID(), name: 'Task 3', completed: false },
 ];
 
 export default function TodoList() {
@@ -27,7 +28,7 @@ export default function TodoList() {
 
   const handleAddTask = (value: string) => {
     if (value.trim() !== '') {
-      setTasks([...tasks, { id: uuid(), name: value, completed: false }]);
+      setTasks([...tasks, { id: createUUID(), name: value, completed: false }]);
     }
   };
 

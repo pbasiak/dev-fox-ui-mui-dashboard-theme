@@ -14,9 +14,13 @@ import {
 } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../../contants/routes.ts';
+import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 
 export default function JobsDetails() {
   const { data: job } = useJobsDetails();
+  const navigate = useNavigate();
 
   if (!job) {
     return null;
@@ -31,6 +35,12 @@ export default function JobsDetails() {
         breadcrumbs={['Jobs', 'Details', job.title]}
         renderRight={
           <Stack direction={'row'} spacing={1}>
+            <Button variant={'outlined'} color={'secondary'} onClick={() => navigate(routes.jobsEdit)}>
+              Edit
+            </Button>
+            <Button color={'error'} variant={'outlined'}>
+              Remove
+            </Button>
             <Button variant={'outlined'} startIcon={<FavoriteBorder />}>
               Save
             </Button>
@@ -47,7 +57,7 @@ export default function JobsDetails() {
               Description
             </Typography>
             <Typography variant='body1' gutterBottom mb={2}>
-              {job.description}
+              <SlateEditor readOnly={true} initialValue={job.description} />
             </Typography>
             <Divider sx={{ my: 2 }} />
             <Typography variant='h5' gutterBottom>
