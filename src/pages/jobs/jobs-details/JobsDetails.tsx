@@ -14,9 +14,12 @@ import {
 } from '@mui/material';
 import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../../contants/routes.ts';
 
 export default function JobsDetails() {
   const { data: job } = useJobsDetails();
+  const navigate = useNavigate();
 
   if (!job) {
     return null;
@@ -31,6 +34,12 @@ export default function JobsDetails() {
         breadcrumbs={['Jobs', 'Details', job.title]}
         renderRight={
           <Stack direction={'row'} spacing={1}>
+            <Button variant={'outlined'} color={'secondary'} onClick={() => navigate(routes.jobsEdit)}>
+              Edit
+            </Button>
+            <Button color={'error'} variant={'outlined'}>
+              Remove
+            </Button>
             <Button variant={'outlined'} startIcon={<FavoriteBorder />}>
               Save
             </Button>

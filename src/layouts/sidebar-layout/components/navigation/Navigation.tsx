@@ -111,6 +111,10 @@ export function Navigation() {
             label: 'Create',
           },
           {
+            path: routes.jobsEdit,
+            label: 'Edit',
+          },
+          {
             path: routes.jobsList,
             label: 'List',
           },

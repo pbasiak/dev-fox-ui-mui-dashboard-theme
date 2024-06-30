@@ -3,10 +3,10 @@ import { styled } from '@mui/material/styles';
 import { Card, CardContent, Typography, List, Container, Stack, Chip, Pagination, Button } from '@mui/material';
 import { useJobs } from '../../../hooks/api/use-jobs/useJobs';
 import { PageHeader } from '../../../components/page-header/PageHeader';
-import { JobsSearch } from './components/jobs-search/JobsSearch';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
 import { PostAdd } from '@mui/icons-material';
+import { JobsSearch } from '../../../widgets/jobs/jobs-search/JobsSearch.tsx';
 
 const CardWrapper = styled(Card)(({ theme }) => ({
   marginBottom: 10,
@@ -42,7 +42,7 @@ export default function JobsList() {
         title={'Jobs'}
         breadcrumbs={['Jobs', 'List']}
         renderRight={
-          <Button variant={'contained'} startIcon={<PostAdd />}>
+          <Button variant={'contained'} startIcon={<PostAdd />} onClick={() => navigate(routes.jobsCreate)}>
             Create
           </Button>
         }

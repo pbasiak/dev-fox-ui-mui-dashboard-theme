@@ -30,6 +30,7 @@ const OrderDetails = React.lazy(() => import('./pages/orders/order-details/Order
 const JobsList = React.lazy(() => import('./pages/jobs/jobs-list/JobsListPage'));
 const JobsDetails = React.lazy(() => import('./pages/jobs/jobs-details/JobsDetails'));
 const JobsCreate = React.lazy(() => import('./pages/jobs/jobs-create/JobsCreate'));
+const JobsEdit = React.lazy(() => import('./pages/jobs/jobs-edit/JobsEdit'));
 const NotFoundPage = React.lazy(() => import('./pages/not-found/NotFoundPage'));
 const MaintenancePage = React.lazy(() => import('./pages/maintenance/MaintenancePage'));
 const LoginPage = React.lazy(() => import('./pages/login/LoginPage'));
@@ -131,6 +132,10 @@ const router = createBrowserRouter([
       {
         path: routes.jobsCreate,
         element: <JobsCreate />,
+      },
+      {
+        path: routes.jobsEdit,
+        element: <JobsEdit />,
       },
     ],
   },
