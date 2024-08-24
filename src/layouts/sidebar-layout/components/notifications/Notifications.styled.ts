@@ -9,6 +9,7 @@ export const NotificationsMenuItem = styled(MenuItem, { shouldForwardProp: (prop
   gap: theme.spacing(1),
   alignItems: 'center',
   backgroundColor: status === NotificationStatus.Unread ? theme.palette.primary.light : 'none',
+  color: status === NotificationStatus.Unread ? theme.palette.primary.contrastText : theme.palette.text.primary,
   marginBottom: theme.spacing(0.5),
   transition: theme.transitions.create(['color', 'background-color'], {
     easing: theme.transitions.easing.easeInOut,

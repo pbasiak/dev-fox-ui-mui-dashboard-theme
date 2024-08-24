@@ -78,6 +78,7 @@ export function SidebarLayout({ children }: Props) {
             direction={'row'}
             flex={1}
             alignItems={'center'}
+            sx={{ color: (theme) => theme.palette.text.primary }}
           >
             <IconButton
               color='inherit'

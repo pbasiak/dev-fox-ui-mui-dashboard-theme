@@ -1,13 +1,16 @@
-import { alpha, ListItemButton, ListItemIcon, styled } from '@mui/material';
+import { alpha, ListItemButton, ListItemButtonProps, ListItemIcon, styled } from '@mui/material';
+import { PropsWithChildren } from 'react';
 
-interface NavigationListItemButtonProps {
+export interface NavigationListItemButtonProps {
   active?: boolean;
   nested?: boolean;
 }
 
 export const NavigationListItemButton = styled(ListItemButton, {
+  name: 'FoxUiNavigationItem',
+  slot: 'button',
   shouldForwardProp: (prop) => prop !== 'active' && prop !== 'nested',
-})<NavigationListItemButtonProps>(({ theme, active, nested }) => ({
+})<PropsWithChildren<NavigationListItemButtonProps & ListItemButtonProps>>(({ theme, active, nested }) => ({
   borderRadius: theme.shape.borderRadius,
   paddingLeft: nested ? theme.spacing(2) : theme.spacing(2),
   paddingTop: nested ? theme.spacing(0.5) : theme.spacing(1),

@@ -22,7 +22,7 @@ export function ThemeConfigurator({
   setThemeName,
   themeName,
 }: {
-  setThemeName: React.Dispatch<React.SetStateAction<'appTheme' | 'shadTheme'>>;
+  setThemeName: React.Dispatch<React.SetStateAction<'appTheme' | 'shadTheme' | 'cyberpunkTheme'>>;
   themeName: string;
 }) {
   const [open, setOpen] = React.useState(false);
@@ -116,6 +116,7 @@ export function ThemeConfigurator({
                 >
                   <MenuItem value={'appTheme'}>AppTheme</MenuItem>
                   <MenuItem value={'shadTheme'}>ShadTheme</MenuItem>
+                  <MenuItem value={'cyberpunkTheme'}>CyberpunkTheme</MenuItem>
                 </Select>
               </FormControl>
             </Box>
