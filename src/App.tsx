@@ -10,6 +10,16 @@ import { Analytics } from '@vercel/analytics/react';
 import { getThemeByName } from './theme/theme.ts';
 import { SidebarLayout } from './layouts/sidebar-layout/SidebarLayout.tsx';
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/rajdhani/300.css';
+import '@fontsource/rajdhani/400.css';
+import '@fontsource/rajdhani/500.css';
+import '@fontsource/rajdhani/600.css';
+import '@fontsource/rajdhani/700.css';
+
 const Dashboard = React.lazy(() => import('./pages/dashboard/Dashboard'));
 const UserAccountPage = React.lazy(() => import('./pages/user/user-account-page/UserAccountPage'));
 const UserProfilePage = React.lazy(() => import('./pages/user/user-profile-page/UserProfilePage'));
@@ -212,7 +222,7 @@ const AppRouter = () => {
 
 export function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
-  const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme'>('shadTheme');
+  const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme' | 'cyberpunkTheme'>('shadTheme');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

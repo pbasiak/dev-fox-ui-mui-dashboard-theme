@@ -1,13 +1,13 @@
 import { Grid } from '@mui/material';
 import { FullWidthLayout } from '../full-width-layout/FullWidthLayout';
-import React from 'react';
+import { Children } from 'react';
 
 interface Props {
   children: React.ReactNode[];
 }
 
 export const HalfLayout = ({ children }: Props) => {
-  const count = React.Children.count(children);
+  const count = Children.count(children);
 
   if (count !== 2) {
     throw new Error('HalfLayout must have exactly 2 children');

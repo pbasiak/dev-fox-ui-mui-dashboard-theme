@@ -1,8 +1,32 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, BoxProps, Typography, TypographyProps } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../contants/routes';
 import logo from '../../assets/logo.png';
+import { styled } from '@mui/material/styles';
+import { PropsWithChildren } from 'react';
+
+const LogoText = styled(Typography, { name: 'FoxUiLogo', slot: 'text' })<PropsWithChildren<TypographyProps>>(
+  ({ theme }) => ({
+    ...theme.typography.h4,
+    fontSize: '1.5rem',
+    fontWeight: theme.typography.fontWeightBold,
+  }),
+);
+
+const LogoImgContainer = styled(Box, {
+  name: 'FoxUiLogo',
+  slot: 'imgContainer',
+  shouldForwardProp: (prop) => prop !== 'invertImage',
+})<{ invertImage?: boolean }>(({ invertImage }) => ({
+  filter: `invert(${invertImage ? '1' : '0'})`,
+}));
+
+const LogoImg = styled(Box, { name: 'FoxUiLogo', slot: 'img' })<BoxProps<'img'>>(({ theme }) => ({
+  maxWidth: '40px',
+  marginRight: theme.spacing(2),
+  filter: `invert(${theme.palette.mode === 'light' ? '0' : '1'})`,
+}));
 
 interface Params {
   invertImage?: boolean;
@@ -10,7 +34,6 @@ interface Params {
 
 export const Logo = ({ invertImage }: Params) => {
   const navigate = useNavigate();
-  const theme = useTheme();
 
   return (
     <Box
@@ -25,17 +48,10 @@ export const Logo = ({ invertImage }: Params) => {
       onClick={() => navigate(routes.dashboard)}
       component={'a'}
     >
-      <Box sx={{ filter: `invert(${invertImage ? '1' : '0'})` }}>
-        <Box
-          component={'img'}
-          src={logo}
-          alt={''}
-          sx={{ maxWidth: '40px', mr: 2, filter: `invert(${theme.palette.mode === 'light' ? '0' : '1'})` }}
-        />
-      </Box>
-      <Typography variant={'h4'} component={'h1'} fontSize={'1.5rem'} fontWeight={'fontWeightBold'}>
-        DevFoxUI
-      </Typography>
+      <LogoImgContainer invertImage={invertImage}>
+        <LogoImg component={'img'} src={logo} alt={''} />
+      </LogoImgContainer>
+      <LogoText component={'h1'}>DevFoxUI</LogoText>
     </Box>
   );
 };

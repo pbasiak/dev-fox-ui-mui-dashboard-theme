@@ -47,7 +47,7 @@ export const Notifications = () => {
 
   return (
     <>
-      <IconButton onClick={handleClick}>
+      <IconButton onClick={handleClick} color={'primary'}>
         <Badge badgeContent={unreadNotifications?.length} color={'primary'}>
           <NotificationsOutlined />
         </Badge>
@@ -81,8 +81,10 @@ export const Notifications = () => {
             <MessageContainer status={notification.status}>
               {notificationIcon(notification.type)}
               <Stack ml={1}>
-                <Typography variant={'body2'}>{notification.message}</Typography>
-                <Typography variant={'caption'} color={'text.secondary'}>
+                <Typography variant={'body2'} color={'inherit'}>
+                  {notification.message}
+                </Typography>
+                <Typography variant={'caption'} color={'inherit'}>
                   {notification.timestamp}
                 </Typography>
               </Stack>
