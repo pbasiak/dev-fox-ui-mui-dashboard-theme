@@ -51,17 +51,17 @@ export const SlateEditor = ({ onChange, placeholder, readOnly, initialValue }: P
         {readOnly ? null : (
           <Stack direction={'row'} alignItems={'center'} flexWrap={'wrap'}>
             <TypographyType editor={editor} />
-            <MarkButton format='bold' icon={<FormatBoldIcon />} />
-            <MarkButton format='italic' icon={<FormatItalic />} />
-            <MarkButton format='underline' icon={<FormatUnderlined />} />
-            <MarkButton format='code' icon={<Code />} />
-            <BlockButton format='block-quote' icon={<FormatQuote />} />
-            <BlockButton format='numbered-list' icon={<FormatListNumbered />} />
-            <BlockButton format='bulleted-list' icon={<FormatListBulleted />} />
-            <BlockButton format='left' icon={<FormatAlignLeft />} />
-            <BlockButton format='center' icon={<FormatAlignCenter />} />
-            <BlockButton format='right' icon={<FormatAlignRight />} />
-            <BlockButton format='justify' icon={<FormatAlignJustify />} />
+            <MarkButton format='bold' icon={<FormatBoldIcon color={'secondary'} />} />
+            <MarkButton format='italic' icon={<FormatItalic color={'secondary'} />} />
+            <MarkButton format='underline' icon={<FormatUnderlined color={'secondary'} />} />
+            <MarkButton format='code' icon={<Code color={'secondary'} />} />
+            <BlockButton format='block-quote' icon={<FormatQuote color={'secondary'} />} />
+            <BlockButton format='numbered-list' icon={<FormatListNumbered color={'secondary'} />} />
+            <BlockButton format='bulleted-list' icon={<FormatListBulleted color={'secondary'} />} />
+            <BlockButton format='left' icon={<FormatAlignLeft color={'secondary'} />} />
+            <BlockButton format='center' icon={<FormatAlignCenter color={'secondary'} />} />
+            <BlockButton format='right' icon={<FormatAlignRight color={'secondary'} />} />
+            <BlockButton format='justify' icon={<FormatAlignJustify color={'secondary'} />} />
           </Stack>
         )}
         <Editable

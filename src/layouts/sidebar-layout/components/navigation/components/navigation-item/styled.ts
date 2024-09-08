@@ -19,6 +19,11 @@ export const NavigationListItemButton = styled(ListItemButton, {
   position: 'relative',
   gap: theme.spacing(1),
   minHeight: nested ? '0' : '55px',
+  transition: theme.transitions.create(['background-color', 'color', 'border']),
+
+  '.MuiSvgIcon-root': {
+    transition: theme.transitions.create(['color']),
+  },
 
   '&:hover': {
     backgroundColor: `${alpha(theme.palette.primary.main, 0.1)}`,
