@@ -6,6 +6,9 @@ Free dashboard templates for personal and commercial use. Please ⭐ **support m
 
 ![image](https://github.com/pbasiak/dev-fox-ui-mui-dashboard-theme/assets/4548734/bf88e9ef-5631-45b4-a066-ce48b1cac28f)
 
+![image](https://github.com/user-attachments/assets/7105f3b6-efdd-4ecb-a5a7-473ea6eda333)
+
+
 
 ## Under development
 
