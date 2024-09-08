@@ -222,7 +222,7 @@ const AppRouter = () => {
 
 export function App() {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light');
-  const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme' | 'cyberpunkTheme'>('cyberpunkTheme');
+  const [themeName, setThemeName] = useState<'appTheme' | 'shadTheme' | 'cyberpunkTheme'>('shadTheme');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
