@@ -1,15 +1,16 @@
-import { useAppDispatch, useAppSelector } from '../../../../../../store/hooks';
-import { toggleNavigationIdAction, toggleSidebarAction } from '../../../../../../store/sidebar/navigationSlice';
 import { useCallback } from 'react';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { isSidebarOpenAtom, openNavigationsIdsAtom, toggleNavigationsIdsAtom } from '../../state/navigationAtom.ts';
 
 export const useAppNavigation = () => {
-  const navigation = useAppSelector((state) => state.navigation.openNavigationIds);
-  const isSidebarOpen = useAppSelector((state) => state.navigation.isSidebarOpen);
-  const dispatch = useAppDispatch();
+  const openNavigationIds = useAtomValue(openNavigationsIdsAtom);
+  const setOpenedNavigationIds = useSetAtom(toggleNavigationsIdsAtom);
+  const isSidebarOpen = useAtomValue(isSidebarOpenAtom);
+  const setIsSidebarOpen = useSetAtom(isSidebarOpenAtom);
 
-  const toggleNavigationId = useCallback((id: string) => dispatch(toggleNavigationIdAction(id)), [dispatch]);
-  const getIsOpen = useCallback((id: string) => navigation.includes(id), [navigation]);
-  const toggleSidebar = useCallback(() => dispatch(toggleSidebarAction(!isSidebarOpen)), [dispatch, isSidebarOpen]);
+  const toggleNavigationId = useCallback((id: string) => setOpenedNavigationIds(id), []);
+  const getIsOpen = useCallback((id: string) => openNavigationIds.includes(id), [openNavigationIds]);
+  const toggleSidebar = useCallback(() => setIsSidebarOpen(!isSidebarOpen), [isSidebarOpen]);
 
   return { getIsOpen, isSidebarOpen, toggleNavigationId, toggleSidebar };
 };
