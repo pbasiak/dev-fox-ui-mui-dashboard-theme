@@ -8,6 +8,7 @@ export const WidgetContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   flexDirection: 'column',
   height: '100%',
+  display: 'flex',
 }));
 
 export const WidgetTitleContainer = styled(Box)(({ theme }) => ({
