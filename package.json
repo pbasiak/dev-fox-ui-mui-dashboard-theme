@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@fontsource/rajdhani": "^5.0.14",
-    "@fontsource/roboto": "^5.0.13",
+    "@fontsource/rajdhani": "^5.1.0",
+    "@fontsource/roboto": "^5.1.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
     "@mui/x-data-grid": "^7.17.0",
