@@ -30,7 +30,7 @@
     "react": "^18.3.1",
     "react-calendar": "^4.8.0",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.52.0",
+    "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.24.0",
     "slate": "^0.103.0",
     "slate-history": "^0.100.0",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@hookform/resolvers": "^3.6.0",
+    "@hookform/resolvers": "^3.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
