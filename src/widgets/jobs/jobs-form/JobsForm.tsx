@@ -2,8 +2,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormControl, Paper, Stack, TextField } from '@mui/material';
 import { FieldErrorText } from '../../../components/field-error-text/FieldErrorText.tsx';
-import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
 import { JobsFormSchema, JobsFormFieldsNames, jobsFormSchema } from './formSchema.ts';
+import { RichTextEditor } from '../../../components/rich-text-editor/RichTextEditor.tsx';
 
 interface JobsFormProps {
   defaultValues?: JobsFormSchema;
@@ -41,7 +41,7 @@ export const JobsForm = ({ defaultValues, formRef, onSubmit }: JobsFormProps) =>
           <Controller
             render={({ fieldState, field }) => (
               <>
-                <SlateEditor onChange={field.onChange} placeholder={'Description'} />
+                <RichTextEditor onChange={field.onChange} placeholder={'Description'} />
                 {fieldState.error && <FieldErrorText>{fieldState.error.message}</FieldErrorText>}
               </>
             )}

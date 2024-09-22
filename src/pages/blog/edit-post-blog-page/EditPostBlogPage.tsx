@@ -24,88 +24,14 @@ import { useCallback, useRef } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
-import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
-import { Descendant } from 'slate';
-
-const initialValue: Descendant[] = [
-  {
-    type: 'heading-one',
-    children: [
-      {
-        text: 'Heading 1',
-      },
-    ],
-  },
-  {
-    type: 'heading-two',
-    children: [
-      {
-        text: 'Heading 2',
-      },
-    ],
-  },
-  {
-    type: 'heading-three',
-    children: [
-      {
-        text: 'Heading 3',
-      },
-    ],
-  },
-  {
-    type: 'heading-four',
-    children: [
-      {
-        text: 'Heading 4',
-      },
-    ],
-  },
-  {
-    type: 'heading-five',
-    children: [
-      {
-        text: 'Heading 5',
-      },
-    ],
-  },
-  {
-    type: 'heading-six',
-    children: [
-      {
-        text: 'Heading 6',
-      },
-    ],
-  },
-  {
-    type: 'paragraph',
-    children: [
-      {
-        text: "Since it's rich text, you can do things like turn a selection of text bold, or add a semantically rendered block quote in the middle of the page, like this:",
-      },
-    ],
-  },
-  {
-    type: 'block-quote',
-    children: [
-      {
-        text: 'A wise quote.',
-      },
-    ],
-  },
-  {
-    type: 'paragraph',
-    align: 'center',
-    children: [
-      {
-        text: 'Try it out for yourself!',
-      },
-    ],
-  },
-];
+import { RichTextEditor } from '../../../components/rich-text-editor/RichTextEditor.tsx';
+import { useBlogPost } from '../../../hooks/api/use-blog-post/useBlogPost.ts';
 
 export default function EditPostBlogPage() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement>(null);
+  const { data, isLoading } = useBlogPost();
+
   const {
     register,
     handleSubmit,
@@ -116,7 +42,7 @@ export default function EditPostBlogPage() {
     defaultValues: {
       title: 'New opportunity for developers & product engineers',
       description: 'We are looking for a developer to join our team. You will be working on a new project.',
-      content: initialValue,
+      content: data.content,
     },
   });
 
@@ -141,6 +67,8 @@ export default function EditPostBlogPage() {
   const handlePublish = useCallback(() => {
     formRef.current && formRef.current.requestSubmit();
   }, []);
+
+  if (isLoading) return null;
 
   return (
     <Container maxWidth={'xl'}>
@@ -177,7 +105,7 @@ export default function EditPostBlogPage() {
                 <Controller
                   render={({ fieldState, field: { onChange, value } }) => (
                     <>
-                      <SlateEditor onChange={onChange} placeholder={'Post content'} initialValue={value} />
+                      <RichTextEditor onChange={onChange} placeholder={'Post content'} initialValue={value} />
                       {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
                     </>
                   )}

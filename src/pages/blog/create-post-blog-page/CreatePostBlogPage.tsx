@@ -24,7 +24,7 @@ import { useCallback, useRef } from 'react';
 import { ExpandMore } from '@mui/icons-material';
 import { routes } from '../../../contants/routes';
 import { useNavigate } from 'react-router-dom';
-import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
+import { RichTextEditor } from '../../../components/rich-text-editor/RichTextEditor.tsx';
 
 export default function CreatePostBlogPage() {
   const navigate = useNavigate();
@@ -95,7 +95,7 @@ export default function CreatePostBlogPage() {
                 <Controller
                   render={({ fieldState, field: { onChange } }) => (
                     <>
-                      <SlateEditor onChange={onChange} placeholder={'Post content'} />
+                      <RichTextEditor onChange={onChange} placeholder={'Post content'} />
                       {fieldState.error && <Typography color={'error'}>{fieldState.error.message}</Typography>}
                     </>
                   )}
