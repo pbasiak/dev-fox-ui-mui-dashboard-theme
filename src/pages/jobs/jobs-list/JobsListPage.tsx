@@ -50,7 +50,7 @@ export default function JobsList() {
       <JobsSearch />
       <List sx={{ marginTop: 2 }}>
         {data.jobs.map((job) => (
-          <CardWrapper key={job.title} onClick={handleJobClick}>
+          <CardWrapper key={`${job.title}-${job.company}`} onClick={handleJobClick}>
             <CardContent>
               <Stack direction={'row'} justifyContent={'space-between'}>
                 <Stack>

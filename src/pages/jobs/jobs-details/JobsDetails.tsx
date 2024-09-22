@@ -16,7 +16,7 @@ import { PageHeader } from '../../../components/page-header/PageHeader';
 import { FavoriteBorder, OpenInNew } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../../contants/routes.ts';
-import { SlateEditor } from '../../../components/slate-editor/SlateEditor.tsx';
+import { RichTextEditor } from '../../../components/rich-text-editor/RichTextEditor.tsx';
 
 export default function JobsDetails() {
   const { data: job } = useJobsDetails();
@@ -56,9 +56,7 @@ export default function JobsDetails() {
             <Typography variant='h5' gutterBottom>
               Description
             </Typography>
-            <Typography variant='body1' gutterBottom mb={2}>
-              <SlateEditor readOnly={true} initialValue={job.description} />
-            </Typography>
+            <RichTextEditor readOnly={true} initialValue={job.description} />
             <Divider sx={{ my: 2 }} />
             <Typography variant='h5' gutterBottom>
               Requirements:

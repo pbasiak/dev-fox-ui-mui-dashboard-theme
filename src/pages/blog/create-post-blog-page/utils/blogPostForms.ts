@@ -9,7 +9,7 @@ export enum BlogPostFieldsNames {
 export const blogPostFormSchema = yup.object({
   [BlogPostFieldsNames.title]: yup.string().required(),
   [BlogPostFieldsNames.description]: yup.string().optional(),
-  [BlogPostFieldsNames.content]: yup.array().required(),
+  [BlogPostFieldsNames.content]: yup.string().required(),
 });
 
 export type BlogPostForm = yup.InferType<typeof blogPostFormSchema>;
