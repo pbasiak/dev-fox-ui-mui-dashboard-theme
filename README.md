@@ -4,7 +4,18 @@ A thoughtful React + Material UI dashboard template. Take a component, copy a fe
 
 **Runs locally. No API keys, account, database, remote fonts, or backend required.**
 
-![DevFox dashboard](docs/images/dashboard.png)
+## Four themes, eight combinations
+
+Every theme includes a light and dark palette. Click any preview to open the full-size screenshot.
+
+| Theme                                                                  | Light                                                                                                                                      | Dark                                                                                                                                    |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **DevFox**<br>Warm terracotta and balanced neutrals<br>`devfox`        | [<img src="docs/images/devfox-light.png" alt="DevFox theme in light mode" width="320" />](docs/images/devfox-light.png)                    | [<img src="docs/images/devfox-dark.png" alt="DevFox theme in dark mode" width="320" />](docs/images/devfox-dark.png)                    |
+| **App**<br>Clear blue and cool surfaces<br>`appTheme`                  | [<img src="docs/images/appTheme-light.png" alt="App theme in light mode" width="320" />](docs/images/appTheme-light.png)                   | [<img src="docs/images/appTheme-dark.png" alt="App theme in dark mode" width="320" />](docs/images/appTheme-dark.png)                   |
+| **Shad**<br>Monochrome and minimal details<br>`shadTheme`              | [<img src="docs/images/shadTheme-light.png" alt="Shad theme in light mode" width="320" />](docs/images/shadTheme-light.png)                | [<img src="docs/images/shadTheme-dark.png" alt="Shad theme in dark mode" width="320" />](docs/images/shadTheme-dark.png)                |
+| **Cyberpunk**<br>Coral, cyan, and a technical grid<br>`cyberpunkTheme` | [<img src="docs/images/cyberpunkTheme-light.png" alt="Cyberpunk theme in light mode" width="320" />](docs/images/cyberpunkTheme-light.png) | [<img src="docs/images/cyberpunkTheme-dark.png" alt="Cyberpunk theme in dark mode" width="320" />](docs/images/cyberpunkTheme-dark.png) |
+
+Choose a theme in **Settings → Appearance**. Colors, surfaces, semantic states, component defaults, and typography share a single theme factory. See the [theme guide](src/theme/README.md) for customization and [theme previews](docs/theme-preview.md) for a dedicated gallery.
 
 ## Start here
 
@@ -40,17 +51,6 @@ npm run preview         # serve the production build locally
 | App shell         | Mobile drawer, keyboard page search (`⌘/Ctrl K`), notifications, account menu, and theme toggle |
 
 The authentication screens are **UI examples**, not authentication. They never store or send credentials. Orders and analytics are demo data; no payments are processed. Features save changes in this browser, not on a server.
-
-## Four themes, eight combinations
-
-| Theme     | Direction                                                           | ID               |
-| --------- | ------------------------------------------------------------------- | ---------------- |
-| DevFox    | Warm terracotta, balanced neutrals, and a welcoming workspace       | `devfox`         |
-| App       | Clear blue, cool surfaces, and a polished product feel              | `appTheme`       |
-| Shad      | Monochrome, restrained details, and clean geometry                  | `shadTheme`      |
-| Cyberpunk | Coral and cyan, a subtle grid, crisp corners, and Rajdhani headings | `cyberpunkTheme` |
-
-Every theme has a separate light and dark palette. Choose one in **Settings → Appearance**. Colors, backgrounds, semantic states, component defaults, and typography share a single theme factory. See the [theme guide](src/theme/README.md) and [all eight previews](docs/theme-preview.md).
 
 ## Built to take apart
 
