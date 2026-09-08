@@ -10,7 +10,8 @@ export function Logo({ light = false }: { light?: boolean }) {
       sx={{
         alignItems: 'center',
         gap: 1,
-        ...{ textDecoration: 'none', color: light ? 'primary.contrastText' : 'text.primary' },
+        textDecoration: 'none',
+        color: light ? 'primary.contrastText' : 'text.primary',
       }}
       aria-label='DevFox home'
     >
