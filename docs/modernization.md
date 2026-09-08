@@ -6,6 +6,8 @@ The template is being rebuilt as a collection of independent features, with dete
 - [x] **2 · Design system:** Rebuild App, Shad, and Cyberpunk in light and dark modes; add the DevFox preset; create shared accessible components and theme preferences.
 - [x] **3 · Workspace:** Add responsive navigation, page search, notifications, and an interactive analytics dashboard.
 - [x] **4 · Features:** Build customers, orders, projects, tasks, calendar, articles, account settings, auth examples, and a component gallery with typed persistent demo data.
-- [ ] **5 · Delivery:** Document setup, module boundaries, theme customization, feature extraction, and API integration; verify build, lint, behavior, responsiveness, and all eight theme combinations.
+- [x] **5 · Delivery:** Document setup, module boundaries, theme customization, feature extraction, and API integration; verify build, lint, behavior, responsiveness, and all eight theme combinations.
 
 Each task is delivered in a separate commit. The old template is intentionally replaced rather than retained as a second architecture.
+
+All tasks are complete. See the [verification record](verification.md) for build, test, accessibility, and runtime coverage.

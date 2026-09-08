@@ -20,5 +20,43 @@ export default tseslint.config(
   },
   // Router configuration intentionally exports route objects containing lazy components.
   { files: ['src/app/router.tsx'], rules: { 'react-refresh/only-export-components': 'off' } },
+  {
+    files: [
+      'src/components/**/*.{ts,tsx}',
+      'src/hooks/**/*.{ts,tsx}',
+      'src/lib/**/*.{ts,tsx}',
+      'src/theme/**/*.{ts,tsx}',
+    ],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['**/features/**', '**/app/**'],
+              message: 'Shared modules must not depend on features or app composition.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/features/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            { group: ['**/app/**'], message: 'Features must not depend on app composition.' },
+            {
+              regex: '^\\.\\./(?!\\.)[^/]+/',
+              message: 'Use a sibling feature’s public index.ts instead of importing its internals.',
+            },
+          ],
+        },
+      ],
+    },
+  },
   prettier,
 );
